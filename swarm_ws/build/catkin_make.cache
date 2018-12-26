@@ -1,0 +1,2 @@
+
+-DCATKIN_DEVEL_PREFIX=/home/wade/SJTU-swarm/swarm_ws/devel -DCMAKE_INSTALL_PREFIX=/home/wade/SJTU-swarm/swarm_ws/install -G Unix Makefiles
