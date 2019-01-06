@@ -1,0 +1,1 @@
+2019/1/6 Only the last source command in the .bashrc file is active.
