@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<launch>
+    <arg name="robot_name"/>
+    <arg name="behaviour_lib" />
+
+    <group ns="$(arg robot_name)">
+        <!-- LOADING BEHAVIOURS -->
+        <include file="$(find swarm_robot)/launch/behaviour_lib/$(arg behaviour_lib).launch">
+            <arg name="robot_name" value="$(arg robot_name)"/>
+        </include>
+
+        <node pkg="swarm_robot" type="robot_controller" name="robot_controller" args="$(arg robot_name)">
+        </node>
+    </group>
+</launch>

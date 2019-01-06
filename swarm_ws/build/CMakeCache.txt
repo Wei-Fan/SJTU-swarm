@@ -344,6 +344,12 @@ swarm_config_BINARY_DIR:STATIC=/home/wade/SJTU-swarm/swarm_ws/build/swarm_config
 //Value Computed by CMake
 swarm_config_SOURCE_DIR:STATIC=/home/wade/SJTU-swarm/swarm_ws/src/swarm_config
 
+//Value Computed by CMake
+swarm_robot_BINARY_DIR:STATIC=/home/wade/SJTU-swarm/swarm_ws/build/swarm_robot
+
+//Value Computed by CMake
+swarm_robot_SOURCE_DIR:STATIC=/home/wade/SJTU-swarm/swarm_ws/src/swarm_robot
+
 //The directory containing a CMake configuration file for xmlrpcpp.
 xmlrpcpp_DIR:PATH=/opt/ros/kinetic/share/xmlrpcpp/cmake
 
@@ -449,7 +455,7 @@ CMAKE_MODULE_LINKER_FLAGS_RELWITHDEBINFO-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_NM
 CMAKE_NM-ADVANCED:INTERNAL=1
 //number of local generators
-CMAKE_NUMBER_OF_MAKEFILES:INTERNAL=4
+CMAKE_NUMBER_OF_MAKEFILES:INTERNAL=5
 //ADVANCED property for variable: CMAKE_OBJCOPY
 CMAKE_OBJCOPY-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_OBJDUMP

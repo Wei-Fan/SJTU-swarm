@@ -555,6 +555,32 @@ rosgraph_msgs_generate_messages_lisp/fast:
 	$(MAKE) -f swarm_config/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/build.make swarm_config/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/build
 .PHONY : rosgraph_msgs_generate_messages_lisp/fast
 
+#=============================================================================
+# Target rules for targets named robot_controller
+
+# Build rule for target.
+robot_controller: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 robot_controller
+.PHONY : robot_controller
+
+# fast build rule for target.
+robot_controller/fast:
+	$(MAKE) -f swarm_robot/CMakeFiles/robot_controller.dir/build.make swarm_robot/CMakeFiles/robot_controller.dir/build
+.PHONY : robot_controller/fast
+
+#=============================================================================
+# Target rules for targets named formation_controller
+
+# Build rule for target.
+formation_controller: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 formation_controller
+.PHONY : formation_controller
+
+# fast build rule for target.
+formation_controller/fast:
+	$(MAKE) -f swarm_robot/CMakeFiles/formation_controller.dir/build.make swarm_robot/CMakeFiles/formation_controller.dir/build
+.PHONY : formation_controller/fast
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -598,6 +624,8 @@ help:
 	@echo "... rosgraph_msgs_generate_messages_py"
 	@echo "... roscpp_generate_messages_nodejs"
 	@echo "... rosgraph_msgs_generate_messages_lisp"
+	@echo "... robot_controller"
+	@echo "... formation_controller"
 .PHONY : help
 
 

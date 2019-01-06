@@ -56,3 +56,12 @@
 /home/wade/SJTU-swarm/swarm_ws/build/swarm_config/CMakeFiles/roscpp_generate_messages_nodejs.dir
 /home/wade/SJTU-swarm/swarm_ws/build/swarm_config/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir
 /home/wade/SJTU-swarm/swarm_ws/build/swarm_config/CMakeFiles/install/strip.dir
+/home/wade/SJTU-swarm/swarm_ws/build/swarm_robot/CMakeFiles/list_install_components.dir
+/home/wade/SJTU-swarm/swarm_ws/build/swarm_robot/CMakeFiles/install.dir
+/home/wade/SJTU-swarm/swarm_ws/build/swarm_robot/CMakeFiles/rebuild_cache.dir
+/home/wade/SJTU-swarm/swarm_ws/build/swarm_robot/CMakeFiles/edit_cache.dir
+/home/wade/SJTU-swarm/swarm_ws/build/swarm_robot/CMakeFiles/test.dir
+/home/wade/SJTU-swarm/swarm_ws/build/swarm_robot/CMakeFiles/robot_controller.dir
+/home/wade/SJTU-swarm/swarm_ws/build/swarm_robot/CMakeFiles/formation_controller.dir
+/home/wade/SJTU-swarm/swarm_ws/build/swarm_robot/CMakeFiles/install/strip.dir
+/home/wade/SJTU-swarm/swarm_ws/build/swarm_robot/CMakeFiles/install/local.dir

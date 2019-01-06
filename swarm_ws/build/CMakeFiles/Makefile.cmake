@@ -15,9 +15,13 @@ set(CMAKE_MAKEFILE_DEPENDS
   "catkin_generated/order_packages.cmake"
   "swarm_config/catkin_generated/ordered_paths.cmake"
   "swarm_config/catkin_generated/package.cmake"
+  "swarm_robot/catkin_generated/ordered_paths.cmake"
+  "swarm_robot/catkin_generated/package.cmake"
   "/home/wade/SJTU-swarm/swarm_ws/src/CMakeLists.txt"
   "/home/wade/SJTU-swarm/swarm_ws/src/swarm_config/CMakeLists.txt"
   "/home/wade/SJTU-swarm/swarm_ws/src/swarm_config/package.xml"
+  "/home/wade/SJTU-swarm/swarm_ws/src/swarm_robot/CMakeLists.txt"
+  "/home/wade/SJTU-swarm/swarm_ws/src/swarm_robot/package.xml"
   "/opt/ros/kinetic/share/catkin/cmake/../package.xml"
   "/opt/ros/kinetic/share/catkin/cmake/all.cmake"
   "/opt/ros/kinetic/share/catkin/cmake/assert.cmake"
@@ -157,6 +161,7 @@ set(CMAKE_MAKEFILE_PRODUCTS
   "gtest/CMakeFiles/CMakeDirectoryInformation.cmake"
   "gtest/gtest/CMakeFiles/CMakeDirectoryInformation.cmake"
   "swarm_config/CMakeFiles/CMakeDirectoryInformation.cmake"
+  "swarm_robot/CMakeFiles/CMakeDirectoryInformation.cmake"
   )
 
 # Dependency information for all targets:
@@ -191,4 +196,6 @@ set(CMAKE_DEPEND_INFO_FILES
   "swarm_config/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/DependInfo.cmake"
   "swarm_config/CMakeFiles/roscpp_generate_messages_nodejs.dir/DependInfo.cmake"
   "swarm_config/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/DependInfo.cmake"
+  "swarm_robot/CMakeFiles/robot_controller.dir/DependInfo.cmake"
+  "swarm_robot/CMakeFiles/formation_controller.dir/DependInfo.cmake"
   )

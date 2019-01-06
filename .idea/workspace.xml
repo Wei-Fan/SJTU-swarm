@@ -10,6 +10,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5b582add-7293-46c9-8cb2-5d9a77dfa8df" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/swarm_ws/build/CMakeCache.txt" beforeDir="false" afterPath="$PROJECT_DIR$/swarm_ws/build/CMakeCache.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/swarm_ws/build/CMakeFiles/Makefile.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/swarm_ws/build/CMakeFiles/Makefile.cmake" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/swarm_ws/build/CMakeFiles/Makefile2" beforeDir="false" afterPath="$PROJECT_DIR$/swarm_ws/build/CMakeFiles/Makefile2" afterDir="false" />
@@ -17,11 +18,24 @@
       <change beforePath="$PROJECT_DIR$/swarm_ws/build/CMakeFiles/progress.marks" beforeDir="false" afterPath="$PROJECT_DIR$/swarm_ws/build/CMakeFiles/progress.marks" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/swarm_ws/build/CTestTestfile.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/swarm_ws/build/CTestTestfile.cmake" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/swarm_ws/build/Makefile" beforeDir="false" afterPath="$PROJECT_DIR$/swarm_ws/build/Makefile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/swarm_ws/build/catkin_generated/generate_cached_setup.py" beforeDir="false" afterPath="$PROJECT_DIR$/swarm_ws/build/catkin_generated/generate_cached_setup.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/swarm_ws/build/catkin_generated/installspace/_setup_util.py" beforeDir="false" afterPath="$PROJECT_DIR$/swarm_ws/build/catkin_generated/installspace/_setup_util.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/swarm_ws/build/catkin_generated/order_packages.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/swarm_ws/build/catkin_generated/order_packages.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/swarm_ws/build/catkin_generated/order_packages.py" beforeDir="false" afterPath="$PROJECT_DIR$/swarm_ws/build/catkin_generated/order_packages.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/swarm_ws/build/catkin_generated/setup_cached.sh" beforeDir="false" afterPath="$PROJECT_DIR$/swarm_ws/build/catkin_generated/setup_cached.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/swarm_ws/build/catkin_generated/stamps/Project/_setup_util.py.stamp" beforeDir="false" afterPath="$PROJECT_DIR$/swarm_ws/build/catkin_generated/stamps/Project/_setup_util.py.stamp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/swarm_ws/build/catkin_make.cache" beforeDir="false" afterPath="$PROJECT_DIR$/swarm_ws/build/catkin_make.cache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/swarm_ws/build/cmake_install.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/swarm_ws/build/cmake_install.cmake" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/swarm_ws/src/swarm_config/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/swarm_ws/src/swarm_config/CMakeLists.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/swarm_ws/build/gtest/CMakeFiles/gmock.dir/progress.make" beforeDir="false" afterPath="$PROJECT_DIR$/swarm_ws/build/gtest/CMakeFiles/gmock.dir/progress.make" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/swarm_ws/build/gtest/CMakeFiles/gmock_main.dir/progress.make" beforeDir="false" afterPath="$PROJECT_DIR$/swarm_ws/build/gtest/CMakeFiles/gmock_main.dir/progress.make" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/swarm_ws/build/gtest/gtest/CMakeFiles/gtest.dir/progress.make" beforeDir="false" afterPath="$PROJECT_DIR$/swarm_ws/build/gtest/gtest/CMakeFiles/gtest.dir/progress.make" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/swarm_ws/build/gtest/gtest/CMakeFiles/gtest_main.dir/progress.make" beforeDir="false" afterPath="$PROJECT_DIR$/swarm_ws/build/gtest/gtest/CMakeFiles/gtest_main.dir/progress.make" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/swarm_ws/build/swarm_config/CMakeFiles/hey_swarm.dir/progress.make" beforeDir="false" afterPath="$PROJECT_DIR$/swarm_ws/build/swarm_config/CMakeFiles/hey_swarm.dir/progress.make" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/swarm_ws/build/swarm_config/catkin_generated/installspace/swarm_configConfig.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/swarm_ws/build/swarm_config/catkin_generated/installspace/swarm_configConfig.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/swarm_ws/devel/_setup_util.py" beforeDir="false" afterPath="$PROJECT_DIR$/swarm_ws/devel/_setup_util.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/swarm_ws/devel/share/swarm_config/cmake/swarm_configConfig.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/swarm_ws/devel/share/swarm_config/cmake/swarm_configConfig.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/swarm_ws/src/swarm_robot/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/swarm_ws/src/swarm_robot/CMakeLists.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/swarm_ws/src/swarm_robot/src/robot_controller.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/swarm_ws/src/swarm_robot/src/robot_controller.cpp" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -39,36 +53,106 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="cpp" value="1" />
+          <entry key="cpp" value="2" />
+          <entry key="h" value="1" />
+          <entry key="launch" value="2" />
           <entry key="md" value="1" />
+          <entry key="txt" value="2" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
+          <entry key="CMakeLists.txt" value="2" />
+          <entry key="DTD" value="2" />
           <entry key="Markdown" value="1" />
-          <entry key="ObjectiveC" value="1" />
+          <entry key="ObjectiveC" value="3" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
+          <entry key="cpp" value="861" />
+          <entry key="h" value="41" />
+          <entry key="launch" value="123" />
           <entry key="md" value="82" />
+          <entry key="txt" value="168" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
+          <entry key="CMakeLists.txt" value="168" />
+          <entry key="DTD" value="123" />
           <entry key="Markdown" value="82" />
+          <entry key="ObjectiveC" value="902" />
         </counts>
       </usages-collector>
     </session>
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/swarm_ws/src/swarm_robot/src/robot_controller.cpp">
-          <provider selected="true" editor-type-id="text-editor" />
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="418">
+              <caret line="37" column="18" selection-start-line="32" selection-start-column="7" selection-end-line="37" selection-end-column="18" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/swarm_ws/src/swarm_robot/launch/one_robot.launch">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="38">
+              <caret line="2" column="28" selection-start-line="2" selection-start-column="28" selection-end-line="2" selection-end-column="28" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/swarm_ws/src/swarm_robot/launch/behaviour_lib/formation_control.launch">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="95">
+              <caret line="5" selection-start-line="5" selection-end-line="5" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/swarm_ws/src/swarm_robot/src/formation_controller.cpp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="285">
+              <caret line="15" column="33" lean-forward="true" selection-start-line="15" selection-start-column="33" selection-end-line="15" selection-end-column="33" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/swarm_ws/src/swarm_robot/include/swarm_robot/formation_controller.h">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="665">
+              <caret line="74" column="12" selection-start-line="74" selection-start-column="12" selection-end-line="74" selection-end-column="12" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/swarm_ws/src/swarm_robot/CMakeLists.txt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="456">
+              <caret line="122" column="15" selection-start-line="122" selection-start-column="15" selection-end-line="122" selection-end-column="15" />
+            </state>
+          </provider>
         </entry>
       </file>
     </leaf>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>RobotController</find>
+      <find>robot_info</find>
+    </findStrings>
+    <replaceStrings>
+      <replace>FormationController</replace>
+    </replaceStrings>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -77,6 +161,12 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/Note.md" />
+        <option value="$PROJECT_DIR$/swarm_ws/src/swarm_robot/src/robot_controller.cpp" />
+        <option value="$PROJECT_DIR$/swarm_ws/src/swarm_robot/launch/one_robot.launch" />
+        <option value="$PROJECT_DIR$/swarm_ws/src/swarm_robot/launch/behaviour_lib/formation_control.launch" />
+        <option value="$PROJECT_DIR$/swarm_ws/src/swarm_robot/CMakeLists.txt" />
+        <option value="$PROJECT_DIR$/swarm_ws/src/swarm_robot/include/swarm_robot/formation_controller.h" />
+        <option value="$PROJECT_DIR$/swarm_ws/src/swarm_robot/src/formation_controller.cpp" />
       </list>
     </option>
   </component>
@@ -86,11 +176,11 @@
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
+  <component name="ProjectFrameBounds" extendedState="4">
     <option name="x" value="65" />
-    <option name="y" value="-4" />
-    <option name="width" value="928" />
-    <option name="height" value="1084" />
+    <option name="y" value="24" />
+    <option name="width" value="1447" />
+    <option name="height" value="1056" />
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
@@ -135,6 +225,40 @@
               <item name="swarm_ws" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="swarm_robot" type="462c0819:PsiDirectoryNode" />
+              <item name="include" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="SJTU-swarm" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SJTU-swarm" type="462c0819:PsiDirectoryNode" />
+              <item name="swarm_ws" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="swarm_robot" type="462c0819:PsiDirectoryNode" />
+              <item name="include" type="462c0819:PsiDirectoryNode" />
+              <item name="swarm_robot" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="SJTU-swarm" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SJTU-swarm" type="462c0819:PsiDirectoryNode" />
+              <item name="swarm_ws" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="swarm_robot" type="462c0819:PsiDirectoryNode" />
+              <item name="launch" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="SJTU-swarm" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SJTU-swarm" type="462c0819:PsiDirectoryNode" />
+              <item name="swarm_ws" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="swarm_robot" type="462c0819:PsiDirectoryNode" />
+              <item name="launch" type="462c0819:PsiDirectoryNode" />
+              <item name="behaviour_lib" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="SJTU-swarm" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SJTU-swarm" type="462c0819:PsiDirectoryNode" />
+              <item name="swarm_ws" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="swarm_robot" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
@@ -172,19 +296,19 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1546779483300</updated>
-      <workItem from="1546779484561" duration="1330000" />
+      <workItem from="1546779484561" duration="6330000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1330000" />
+    <option name="totallyTimeSpent" value="6330000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="65" y="-4" width="1855" height="1084" extended-state="6" />
+    <frame x="65" y="24" width="1447" height="1056" extended-state="4" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.35796046" visible="true" weight="0.15444015" />
-      <window_info id="Structure" order="1" sideWeight="0.64203954" side_tool="true" visible="true" weight="0.15444015" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.357985" visible="true" weight="0.14875445" />
+      <window_info id="Structure" order="1" sideWeight="0.642015" side_tool="true" visible="true" weight="0.14875445" />
       <window_info id="Favorites" order="2" side_tool="true" weight="0.32991913" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" sideWeight="0.499375" weight="0.10175879" />
@@ -200,7 +324,7 @@
       <window_info anchor="bottom" id="Database Changes" order="11" show_stripe_button="false" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.24967659" />
       <window_info anchor="right" id="Database" order="3" />
     </layout>
   </component>
@@ -223,8 +347,50 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/swarm_ws/src/swarm_robot/src/robot_controller.cpp">
+    <entry file="file://$PROJECT_DIR$/swarm_ws/src/swarm_config/CMakeLists.txt">
       <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/swarm_ws/src/swarm_robot/src/robot_controller.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="418">
+          <caret line="37" column="18" selection-start-line="32" selection-start-column="7" selection-end-line="37" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/swarm_ws/src/swarm_robot/launch/one_robot.launch">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="38">
+          <caret line="2" column="28" selection-start-line="2" selection-start-column="28" selection-end-line="2" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/swarm_ws/src/swarm_robot/launch/behaviour_lib/formation_control.launch">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="95">
+          <caret line="5" selection-start-line="5" selection-end-line="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/swarm_ws/src/swarm_robot/CMakeLists.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="456">
+          <caret line="122" column="15" selection-start-line="122" selection-start-column="15" selection-end-line="122" selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/swarm_ws/src/swarm_robot/include/swarm_robot/formation_controller.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="665">
+          <caret line="74" column="12" selection-start-line="74" selection-start-column="12" selection-end-line="74" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/swarm_ws/src/swarm_robot/src/formation_controller.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="15" column="33" lean-forward="true" selection-start-line="15" selection-start-column="33" selection-end-line="15" selection-end-column="33" />
+        </state>
+      </provider>
     </entry>
   </component>
 </project>

@@ -12,7 +12,7 @@ try:
     from catkin.environment_cache import generate_environment_script
 except ImportError:
     # search for catkin package in all workspaces and prepend to path
-    for workspace in "/home/wade/swarm-primitives/swarm_simulator/devel;/home/wade/catkin_ws/devel;/opt/ros/kinetic".split(';'):
+    for workspace in "/home/wade/SJTU-swarm/swarm_ws/devel;/home/wade/swarm-primitives/swarm_simulator/devel;/home/wade/catkin_ws/devel;/opt/ros/kinetic".split(';'):
         python_path = os.path.join(workspace, 'lib/python2.7/dist-packages')
         if os.path.isdir(os.path.join(python_path, 'catkin')):
             sys.path.insert(0, python_path)
