@@ -35,6 +35,14 @@
         <!--<param name="save_file_path" value="$(find cmuswarm_performance)/results/performance.xlsx"/>-->
     <!--</node>-->
 
+    <include file="$(find swarm_center)/launch/commander.launch">
+        <arg name="robot_number" value="1"/>
+        <!--<arg name="init_pose" value="-x -1.531748 -y 2.067988 -z 0"/>-->
+        <!--<arg name="behaviour_lib" value="formation_control"/>-->
+        <!--<arg name="calculator_lib" value="default_calculators"/>-->
+        <!--<arg name="driver_lib" value="ugv"/>-->
+    </include>
+
     ==================== PERFORMANCE SUMMARIZERS ==================
     <!--<node name="collision_summarizer" pkg="cmuswarm_performance" type="collision_summarizer">-->
         <!--<rosparam param="termination_conditions/max_execution_time">300.000000</rosparam>-->
@@ -78,6 +86,14 @@
 
     <include file="$(find swarm_robot)/launch/one_robot.launch">
         <arg name="robot_name" value="swarmbot0"/>
+        <!--<arg name="init_pose" value="-x -1.531748 -y 2.067988 -z 0"/>-->
+        <arg name="behaviour_lib" value="formation_control"/>
+        <!--<arg name="calculator_lib" value="default_calculators"/>-->
+        <!--<arg name="driver_lib" value="ugv"/>-->
+    </include>
+
+    <include file="$(find swarm_robot)/launch/one_robot.launch">
+        <arg name="robot_name" value="swarmbot1"/>
         <!--<arg name="init_pose" value="-x -1.531748 -y 2.067988 -z 0"/>-->
         <arg name="behaviour_lib" value="formation_control"/>
         <!--<arg name="calculator_lib" value="default_calculators"/>-->

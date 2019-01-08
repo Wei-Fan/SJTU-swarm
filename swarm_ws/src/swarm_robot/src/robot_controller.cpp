@@ -27,6 +27,7 @@ private:
 public:
     RobotController(const string &robot_name, bool debug = false){
         this->robot_name = robot_name;
+        ROS_INFO("ROBOT CONTROLLER for %s is activated!",this->robot_name.c_str());
     }
 
     void run(){

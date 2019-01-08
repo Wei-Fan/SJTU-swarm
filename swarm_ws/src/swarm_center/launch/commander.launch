@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<launch>
+    <arg name="robot_number" default = "1"/>
+    <!--<rosparam param="/behaviours">[{'name':'formation_control','centralized':false,'bandwidth':8}]-->
+    <!--</rosparam>-->
+
+    <!-- formation control with role assignment -->
+    <node pkg="swarm_center" type="swarm_commander" name="swarm_commander" output="screen">
+        <!--<param name="arg robot_number" value="$(arg robot_number)"></param>-->
+        <!--<remap from="cmd_vel" to="robot_controller/cmd_vel"/>-->
+    </node>
+</launch>

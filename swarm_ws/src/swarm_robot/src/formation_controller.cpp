@@ -11,12 +11,13 @@ using namespace std;
 
 FormationController::FormationController(const string &robot_name, bool debug) {
     this->robot_name = robot_name;
+    ROS_INFO("FORMATION CONTROL behavior is enacted!");
 }
 
 void FormationController::run() {
     ros::Rate r(DEFAULT_RATE);
     while(ros::ok()){
-        ROS_INFO(" run formation~~~");
+//        ROS_INFO(" run formation~~~");
     }
     ros::spinOnce();
     r.sleep();
