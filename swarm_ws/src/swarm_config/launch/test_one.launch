@@ -1,0 +1,89 @@
+<?xml version="1.0"?>
+<launch>
+
+    <!-- Trial Name-->
+    <!--<rosparam param="trial_name">cpp_role_assignment</rosparam>-->
+    <!--<rosparam param="connectivity_radius">10.000000</rosparam>-->
+
+    ==================== FIXED CONTENT ==================
+
+    <!--<rosparam param="swarm_prefix">"swarmbot"</rosparam>-->
+    <!--<rosparam param="use_sim_time">true</rosparam>-->
+    <!--<rosparam param="framework_mode">"BENCHMARKING"</rosparam>-->
+
+    <!--<node name="benchmark_trial" pkg="cmuswarm_performance" type="benchmark_trial" output="screen"></node>-->
+
+    <!--<rosparam param="behaviours">[{'name':'move_to_goal_bc','centralized':false,'bandwidth':8},-->
+        <!--{'name':'bc_biased_flocking','centralized':false,'bandwidth':8},-->
+        <!--{'name':'move_to_goal','centralized':false,'bandwidth':8}]-->
+    <!--</rosparam>-->
+
+    <!--<node name="main_controller" pkg="cmuswarm_core" type="main_controller">-->
+    <!--</node>-->
+    <!--<node name="request_handler" pkg="cmuswarm_core" type="request_handler" output="screen">-->
+    <!--</node>-->
+    <!--<node name="connectivity" pkg="cmuswarm_core" type="connectivity" output="screen">-->
+    <!--</node>-->
+    <!--<node name="message_communication" pkg="cmuswarm_core" type="message_communication" output="screen">-->
+    <!--</node>-->
+    <!--<node name="gazebo_drawing" pkg="cmuswarm_visual" type="gazebo_drawing" output="screen">-->
+    <!--</node>-->
+
+    <!--<rosparam param="performance_summarizer/benchmark_trial_metrics">["work"]</rosparam>-->
+
+    <!--<node name="performance_summarizer" pkg="cmuswarm_performance" type="performance_summarizer_node.py" output="screen" required="true">-->
+        <!--<param name="save_file_path" value="$(find cmuswarm_performance)/results/performance.xlsx"/>-->
+    <!--</node>-->
+
+    ==================== PERFORMANCE SUMMARIZERS ==================
+    <!--<node name="collision_summarizer" pkg="cmuswarm_performance" type="collision_summarizer">-->
+        <!--<rosparam param="termination_conditions/max_execution_time">300.000000</rosparam>-->
+    <!--</node>-->
+    <!--<node name="work_summarizer" pkg="cmuswarm_performance" type="work_summarizer">-->
+        <!--<rosparam param="termination_conditions/max_execution_time">300.000000</rosparam>-->
+    <!--</node>-->
+
+
+    ==================== BEHAVIOUR REQUESTS ==================
+    <!--<rosparam>-->
+        <!--/benchmark_trial/behaviour_requests:-->
+        <!-- - -->
+        <!--name: cpp_role_formation-->
+        <!--time: 1-->
+        <!--strs:-->
+        <!-- - -->
+        <!--name: formation_type-->
+        <!--value: circle-->
+        <!--doubles:-->
+        <!-- - -->
+        <!--name: x-->
+        <!--value: 10.000000-->
+        <!-- - -->
+        <!--name: y-->
+        <!--value: 0.000000-->
+        <!-- - -->
+        <!--name: r-->
+        <!--value: 8.000000-->
+    <!--</rosparam>-->
+
+    =========== SIMULATION INITIALIZATION ============
+
+    <!--<include file="$(find gazebo_ros)/launch/empty_world.launch">-->
+        <!--<arg name="world_name" value="/home/wade/tmp/cpp_role_assignment_29/0.world"/>-->
+        <!--<arg name="paused" value="true"/>-->
+    <!--</include>-->
+
+    =========== SWARM GENERATION ============
+    <!--<rosparam param="robot_ids">[0,1,2,3,4,5,6,7,8,9]</rosparam>-->
+
+    <include file="$(find swarm_robot)/launch/one_robot.launch">
+        <arg name="robot_name" value="swarmbot0"/>
+        <!--<arg name="init_pose" value="-x -1.531748 -y 2.067988 -z 0"/>-->
+        <arg name="behaviour_lib" value="formation_control"/>
+        <!--<arg name="calculator_lib" value="default_calculators"/>-->
+        <!--<arg name="driver_lib" value="ugv"/>-->
+    </include>
+
+    ==================== TOPIC LOGGERS ==================
+
+</launch>
