@@ -166,6 +166,21 @@ depend:
 .PHONY : depend
 
 # Convenience name for target.
+swarm_center/CMakeFiles/coverage_commander.dir/rule:
+	cd /home/wade/SJTU-swarm/swarm_ws/build && $(MAKE) -f CMakeFiles/Makefile2 swarm_center/CMakeFiles/coverage_commander.dir/rule
+.PHONY : swarm_center/CMakeFiles/coverage_commander.dir/rule
+
+# Convenience name for target.
+coverage_commander: swarm_center/CMakeFiles/coverage_commander.dir/rule
+
+.PHONY : coverage_commander
+
+# fast build rule for target.
+coverage_commander/fast:
+	cd /home/wade/SJTU-swarm/swarm_ws/build && $(MAKE) -f swarm_center/CMakeFiles/coverage_commander.dir/build.make swarm_center/CMakeFiles/coverage_commander.dir/build
+.PHONY : coverage_commander/fast
+
+# Convenience name for target.
 swarm_center/CMakeFiles/geometry_msgs_generate_messages_py.dir/rule:
 	cd /home/wade/SJTU-swarm/swarm_ws/build && $(MAKE) -f CMakeFiles/Makefile2 swarm_center/CMakeFiles/geometry_msgs_generate_messages_py.dir/rule
 .PHONY : swarm_center/CMakeFiles/geometry_msgs_generate_messages_py.dir/rule
@@ -466,46 +481,49 @@ rosgraph_msgs_generate_messages_lisp/fast:
 .PHONY : rosgraph_msgs_generate_messages_lisp/fast
 
 # Convenience name for target.
-swarm_center/CMakeFiles/swarm_commander.dir/rule:
-	cd /home/wade/SJTU-swarm/swarm_ws/build && $(MAKE) -f CMakeFiles/Makefile2 swarm_center/CMakeFiles/swarm_commander.dir/rule
-.PHONY : swarm_center/CMakeFiles/swarm_commander.dir/rule
+swarm_center/CMakeFiles/formation_commander.dir/rule:
+	cd /home/wade/SJTU-swarm/swarm_ws/build && $(MAKE) -f CMakeFiles/Makefile2 swarm_center/CMakeFiles/formation_commander.dir/rule
+.PHONY : swarm_center/CMakeFiles/formation_commander.dir/rule
 
 # Convenience name for target.
-swarm_commander: swarm_center/CMakeFiles/swarm_commander.dir/rule
+formation_commander: swarm_center/CMakeFiles/formation_commander.dir/rule
 
-.PHONY : swarm_commander
+.PHONY : formation_commander
 
 # fast build rule for target.
-swarm_commander/fast:
-	cd /home/wade/SJTU-swarm/swarm_ws/build && $(MAKE) -f swarm_center/CMakeFiles/swarm_commander.dir/build.make swarm_center/CMakeFiles/swarm_commander.dir/build
-.PHONY : swarm_commander/fast
+formation_commander/fast:
+	cd /home/wade/SJTU-swarm/swarm_ws/build && $(MAKE) -f swarm_center/CMakeFiles/formation_commander.dir/build.make swarm_center/CMakeFiles/formation_commander.dir/build
+.PHONY : formation_commander/fast
 
-src/swarm_commander.o: src/swarm_commander.cpp.o
+src/coverage_commander.o: src/coverage_commander.cpp.o
 
-.PHONY : src/swarm_commander.o
+.PHONY : src/coverage_commander.o
 
 # target to build an object file
-src/swarm_commander.cpp.o:
-	cd /home/wade/SJTU-swarm/swarm_ws/build && $(MAKE) -f swarm_center/CMakeFiles/swarm_commander.dir/build.make swarm_center/CMakeFiles/swarm_commander.dir/src/swarm_commander.cpp.o
-.PHONY : src/swarm_commander.cpp.o
+src/coverage_commander.cpp.o:
+	cd /home/wade/SJTU-swarm/swarm_ws/build && $(MAKE) -f swarm_center/CMakeFiles/coverage_commander.dir/build.make swarm_center/CMakeFiles/coverage_commander.dir/src/coverage_commander.cpp.o
+	cd /home/wade/SJTU-swarm/swarm_ws/build && $(MAKE) -f swarm_center/CMakeFiles/formation_commander.dir/build.make swarm_center/CMakeFiles/formation_commander.dir/src/coverage_commander.cpp.o
+.PHONY : src/coverage_commander.cpp.o
 
-src/swarm_commander.i: src/swarm_commander.cpp.i
+src/coverage_commander.i: src/coverage_commander.cpp.i
 
-.PHONY : src/swarm_commander.i
+.PHONY : src/coverage_commander.i
 
 # target to preprocess a source file
-src/swarm_commander.cpp.i:
-	cd /home/wade/SJTU-swarm/swarm_ws/build && $(MAKE) -f swarm_center/CMakeFiles/swarm_commander.dir/build.make swarm_center/CMakeFiles/swarm_commander.dir/src/swarm_commander.cpp.i
-.PHONY : src/swarm_commander.cpp.i
+src/coverage_commander.cpp.i:
+	cd /home/wade/SJTU-swarm/swarm_ws/build && $(MAKE) -f swarm_center/CMakeFiles/coverage_commander.dir/build.make swarm_center/CMakeFiles/coverage_commander.dir/src/coverage_commander.cpp.i
+	cd /home/wade/SJTU-swarm/swarm_ws/build && $(MAKE) -f swarm_center/CMakeFiles/formation_commander.dir/build.make swarm_center/CMakeFiles/formation_commander.dir/src/coverage_commander.cpp.i
+.PHONY : src/coverage_commander.cpp.i
 
-src/swarm_commander.s: src/swarm_commander.cpp.s
+src/coverage_commander.s: src/coverage_commander.cpp.s
 
-.PHONY : src/swarm_commander.s
+.PHONY : src/coverage_commander.s
 
 # target to generate assembly for a file
-src/swarm_commander.cpp.s:
-	cd /home/wade/SJTU-swarm/swarm_ws/build && $(MAKE) -f swarm_center/CMakeFiles/swarm_commander.dir/build.make swarm_center/CMakeFiles/swarm_commander.dir/src/swarm_commander.cpp.s
-.PHONY : src/swarm_commander.cpp.s
+src/coverage_commander.cpp.s:
+	cd /home/wade/SJTU-swarm/swarm_ws/build && $(MAKE) -f swarm_center/CMakeFiles/coverage_commander.dir/build.make swarm_center/CMakeFiles/coverage_commander.dir/src/coverage_commander.cpp.s
+	cd /home/wade/SJTU-swarm/swarm_ws/build && $(MAKE) -f swarm_center/CMakeFiles/formation_commander.dir/build.make swarm_center/CMakeFiles/formation_commander.dir/src/coverage_commander.cpp.s
+.PHONY : src/coverage_commander.cpp.s
 
 # Help Target
 help:
@@ -519,6 +537,8 @@ help:
 	@echo "... edit_cache"
 	@echo "... test"
 	@echo "... install/local"
+	@echo "... install/strip"
+	@echo "... coverage_commander"
 	@echo "... geometry_msgs_generate_messages_py"
 	@echo "... geometry_msgs_generate_messages_cpp"
 	@echo "... roscpp_generate_messages_cpp"
@@ -539,11 +559,10 @@ help:
 	@echo "... rosgraph_msgs_generate_messages_py"
 	@echo "... roscpp_generate_messages_nodejs"
 	@echo "... rosgraph_msgs_generate_messages_lisp"
-	@echo "... swarm_commander"
-	@echo "... install/strip"
-	@echo "... src/swarm_commander.o"
-	@echo "... src/swarm_commander.i"
-	@echo "... src/swarm_commander.s"
+	@echo "... formation_commander"
+	@echo "... src/coverage_commander.o"
+	@echo "... src/coverage_commander.i"
+	@echo "... src/coverage_commander.s"
 .PHONY : help
 
 

@@ -135,7 +135,8 @@ include_directories(
 ## With catkin_make all packages are built within a single CMake context
 ## The recommended prefix ensures that target names across packages don't collide
 # add_executable(${PROJECT_NAME}_node src/swarm_center_node.cpp)
-add_executable(swarm_commander src/swarm_commander.cpp)
+add_executable(coverage_commander src/coverage_commander.cpp)
+add_executable(formation_commander src/coverage_commander.cpp)
 
 ## Rename C++ executable without prefix
 ## The above recommended prefix causes long target names, the following renames the
@@ -151,7 +152,8 @@ add_executable(swarm_commander src/swarm_commander.cpp)
 # target_link_libraries(${PROJECT_NAME}_node
 #   ${catkin_LIBRARIES}
 # )
-target_link_libraries(swarm_commander ${catkin_LIBRARIES})
+target_link_libraries(coverage_commander ${catkin_LIBRARIES})
+target_link_libraries(formation_commander ${catkin_LIBRARIES})
 
 #############
 ## Install ##

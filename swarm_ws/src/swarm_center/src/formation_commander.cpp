@@ -1,3 +1,9 @@
+/**
+ * This is the commander for multi robot coverage trial
+ * Date: 2019.3 Author: Weifan Zhang
+ */
+
+
 #include <ros/ros.h>
 #include <iostream>
 #include <string>
@@ -8,7 +14,7 @@
 
 using namespace std;
 
-class SwarmCommander
+class FormationCommander
 {
 private:
     int robot_number;
@@ -23,7 +29,7 @@ private:
 //    ros::Publisher cmd_vel_pub;
 
 public:
-    SwarmCommander(){
+    FormationCommander(){
         ROS_INFO("SWARM COMMANDER is activated!");
 //        this->robot_number = robot_num;
     }
@@ -39,9 +45,9 @@ public:
 };
 
 int main(int argc, char ** argv) {
-    ros::init(argc, argv, "swarm_commander");
+    ros::init(argc, argv, "formation_commander");
 
-    SwarmCommander node;
+    FormationCommander node;
     node.run();
 
     return 0;

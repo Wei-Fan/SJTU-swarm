@@ -283,6 +283,19 @@ gtest_main/fast:
 .PHONY : gtest_main/fast
 
 #=============================================================================
+# Target rules for targets named coverage_commander
+
+# Build rule for target.
+coverage_commander: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 coverage_commander
+.PHONY : coverage_commander
+
+# fast build rule for target.
+coverage_commander/fast:
+	$(MAKE) -f swarm_center/CMakeFiles/coverage_commander.dir/build.make swarm_center/CMakeFiles/coverage_commander.dir/build
+.PHONY : coverage_commander/fast
+
+#=============================================================================
 # Target rules for targets named geometry_msgs_generate_messages_py
 
 # Build rule for target.
@@ -543,17 +556,17 @@ rosgraph_msgs_generate_messages_lisp/fast:
 .PHONY : rosgraph_msgs_generate_messages_lisp/fast
 
 #=============================================================================
-# Target rules for targets named swarm_commander
+# Target rules for targets named formation_commander
 
 # Build rule for target.
-swarm_commander: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 swarm_commander
-.PHONY : swarm_commander
+formation_commander: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 formation_commander
+.PHONY : formation_commander
 
 # fast build rule for target.
-swarm_commander/fast:
-	$(MAKE) -f swarm_center/CMakeFiles/swarm_commander.dir/build.make swarm_center/CMakeFiles/swarm_commander.dir/build
-.PHONY : swarm_commander/fast
+formation_commander/fast:
+	$(MAKE) -f swarm_center/CMakeFiles/formation_commander.dir/build.make swarm_center/CMakeFiles/formation_commander.dir/build
+.PHONY : formation_commander/fast
 
 #=============================================================================
 # Target rules for targets named hey_swarm
@@ -616,6 +629,7 @@ help:
 	@echo "... gmock_main"
 	@echo "... gtest"
 	@echo "... gtest_main"
+	@echo "... coverage_commander"
 	@echo "... geometry_msgs_generate_messages_py"
 	@echo "... geometry_msgs_generate_messages_cpp"
 	@echo "... roscpp_generate_messages_cpp"
@@ -636,7 +650,7 @@ help:
 	@echo "... rosgraph_msgs_generate_messages_py"
 	@echo "... roscpp_generate_messages_nodejs"
 	@echo "... rosgraph_msgs_generate_messages_lisp"
-	@echo "... swarm_commander"
+	@echo "... formation_commander"
 	@echo "... hey_swarm"
 	@echo "... robot_controller"
 	@echo "... formation_controller"
