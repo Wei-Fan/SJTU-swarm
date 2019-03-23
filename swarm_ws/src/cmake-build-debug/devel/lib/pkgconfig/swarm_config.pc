@@ -1,0 +1,8 @@
+prefix=/home/wade/SJTU-swarm/swarm_ws/src/cmake-build-debug/devel
+
+Name: swarm_config
+Description: Description of swarm_config
+Version: 0.0.0
+Cflags: 
+Libs: -L/home/wade/SJTU-swarm/swarm_ws/src/cmake-build-debug/devel/lib 
+Requires: 

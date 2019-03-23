@@ -1,0 +1,30 @@
+/home/wade/clion-2018.2.5/bin/cmake/linux/bin/cmake -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - Unix Makefiles" /home/wade/SJTU-swarm/swarm_ws/src
+-- Using CATKIN_DEVEL_PREFIX: /home/wade/SJTU-swarm/swarm_ws/src/cmake-build-debug/devel
+-- Using CMAKE_PREFIX_PATH: /home/wade/SJTU-swarm/swarm_ws/devel;/home/wade/swarm-primitives/swarm_simulator/devel;/home/wade/catkin_ws/devel;/opt/ros/kinetic
+-- This workspace overlays: /home/wade/SJTU-swarm/swarm_ws/devel;/home/wade/swarm-primitives/swarm_simulator/devel;/home/wade/catkin_ws/devel;/opt/ros/kinetic
+-- Using PYTHON_EXECUTABLE: /usr/bin/python
+-- Using Debian Python package layout
+-- Using empy: /usr/bin/empy
+-- Using CATKIN_ENABLE_TESTING: ON
+-- Call enable_testing()
+-- Using CATKIN_TEST_RESULTS_DIR: /home/wade/SJTU-swarm/swarm_ws/src/cmake-build-debug/test_results
+-- Found gmock sources under '/usr/src/gmock': gmock will be built
+-- Found gtest sources under '/usr/src/gmock': gtests will be built
+-- Using Python nosetests: /usr/bin/nosetests-2.7
+-- catkin 0.7.14
+-- BUILD_SHARED_LIBS is on
+-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+-- ~~  traversing 3 packages in topological order:
+-- ~~  - swarm_center
+-- ~~  - swarm_config
+-- ~~  - swarm_robot
+-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+-- +++ processing catkin package: 'swarm_center'
+-- ==> add_subdirectory(swarm_center)
+-- +++ processing catkin package: 'swarm_config'
+-- ==> add_subdirectory(swarm_config)
+-- +++ processing catkin package: 'swarm_robot'
+-- ==> add_subdirectory(swarm_robot)
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /home/wade/SJTU-swarm/swarm_ws/src/cmake-build-debug

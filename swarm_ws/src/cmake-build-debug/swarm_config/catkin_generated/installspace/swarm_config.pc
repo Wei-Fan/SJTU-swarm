@@ -1,0 +1,8 @@
+prefix=/usr/local
+
+Name: swarm_config
+Description: Description of swarm_config
+Version: 0.0.0
+Cflags: 
+Libs: -L/usr/local/lib 
+Requires: 

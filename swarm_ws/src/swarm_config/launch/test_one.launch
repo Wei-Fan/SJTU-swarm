@@ -36,7 +36,7 @@
     <!--</node>-->
 
     <include file="$(find swarm_center)/launch/commander.launch">
-        <arg name="robot_number" value="1"/>
+        <arg name="robot_number" value="2"/>
         <!--<arg name="init_pose" value="-x -1.531748 -y 2.067988 -z 0"/>-->
         <!--<arg name="behaviour_lib" value="formation_control"/>-->
         <!--<arg name="calculator_lib" value="default_calculators"/>-->
