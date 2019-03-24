@@ -166,6 +166,21 @@ depend:
 .PHONY : depend
 
 # Convenience name for target.
+swarm_center/CMakeFiles/formation_commander.dir/rule:
+	cd /home/wade/SJTU-swarm/swarm_ws/build && $(MAKE) -f CMakeFiles/Makefile2 swarm_center/CMakeFiles/formation_commander.dir/rule
+.PHONY : swarm_center/CMakeFiles/formation_commander.dir/rule
+
+# Convenience name for target.
+formation_commander: swarm_center/CMakeFiles/formation_commander.dir/rule
+
+.PHONY : formation_commander
+
+# fast build rule for target.
+formation_commander/fast:
+	cd /home/wade/SJTU-swarm/swarm_ws/build && $(MAKE) -f swarm_center/CMakeFiles/formation_commander.dir/build.make swarm_center/CMakeFiles/formation_commander.dir/build
+.PHONY : formation_commander/fast
+
+# Convenience name for target.
 swarm_center/CMakeFiles/coverage_commander.dir/rule:
 	cd /home/wade/SJTU-swarm/swarm_ws/build && $(MAKE) -f CMakeFiles/Makefile2 swarm_center/CMakeFiles/coverage_commander.dir/rule
 .PHONY : swarm_center/CMakeFiles/coverage_commander.dir/rule
@@ -181,19 +196,184 @@ coverage_commander/fast:
 .PHONY : coverage_commander/fast
 
 # Convenience name for target.
-swarm_center/CMakeFiles/geometry_msgs_generate_messages_py.dir/rule:
-	cd /home/wade/SJTU-swarm/swarm_ws/build && $(MAKE) -f CMakeFiles/Makefile2 swarm_center/CMakeFiles/geometry_msgs_generate_messages_py.dir/rule
-.PHONY : swarm_center/CMakeFiles/geometry_msgs_generate_messages_py.dir/rule
+swarm_center/CMakeFiles/swarm_center_generate_messages_py.dir/rule:
+	cd /home/wade/SJTU-swarm/swarm_ws/build && $(MAKE) -f CMakeFiles/Makefile2 swarm_center/CMakeFiles/swarm_center_generate_messages_py.dir/rule
+.PHONY : swarm_center/CMakeFiles/swarm_center_generate_messages_py.dir/rule
 
 # Convenience name for target.
-geometry_msgs_generate_messages_py: swarm_center/CMakeFiles/geometry_msgs_generate_messages_py.dir/rule
+swarm_center_generate_messages_py: swarm_center/CMakeFiles/swarm_center_generate_messages_py.dir/rule
 
-.PHONY : geometry_msgs_generate_messages_py
+.PHONY : swarm_center_generate_messages_py
 
 # fast build rule for target.
-geometry_msgs_generate_messages_py/fast:
-	cd /home/wade/SJTU-swarm/swarm_ws/build && $(MAKE) -f swarm_center/CMakeFiles/geometry_msgs_generate_messages_py.dir/build.make swarm_center/CMakeFiles/geometry_msgs_generate_messages_py.dir/build
-.PHONY : geometry_msgs_generate_messages_py/fast
+swarm_center_generate_messages_py/fast:
+	cd /home/wade/SJTU-swarm/swarm_ws/build && $(MAKE) -f swarm_center/CMakeFiles/swarm_center_generate_messages_py.dir/build.make swarm_center/CMakeFiles/swarm_center_generate_messages_py.dir/build
+.PHONY : swarm_center_generate_messages_py/fast
+
+# Convenience name for target.
+swarm_center/CMakeFiles/swarm_center_genlisp.dir/rule:
+	cd /home/wade/SJTU-swarm/swarm_ws/build && $(MAKE) -f CMakeFiles/Makefile2 swarm_center/CMakeFiles/swarm_center_genlisp.dir/rule
+.PHONY : swarm_center/CMakeFiles/swarm_center_genlisp.dir/rule
+
+# Convenience name for target.
+swarm_center_genlisp: swarm_center/CMakeFiles/swarm_center_genlisp.dir/rule
+
+.PHONY : swarm_center_genlisp
+
+# fast build rule for target.
+swarm_center_genlisp/fast:
+	cd /home/wade/SJTU-swarm/swarm_ws/build && $(MAKE) -f swarm_center/CMakeFiles/swarm_center_genlisp.dir/build.make swarm_center/CMakeFiles/swarm_center_genlisp.dir/build
+.PHONY : swarm_center_genlisp/fast
+
+# Convenience name for target.
+swarm_center/CMakeFiles/swarm_center_generate_messages_lisp.dir/rule:
+	cd /home/wade/SJTU-swarm/swarm_ws/build && $(MAKE) -f CMakeFiles/Makefile2 swarm_center/CMakeFiles/swarm_center_generate_messages_lisp.dir/rule
+.PHONY : swarm_center/CMakeFiles/swarm_center_generate_messages_lisp.dir/rule
+
+# Convenience name for target.
+swarm_center_generate_messages_lisp: swarm_center/CMakeFiles/swarm_center_generate_messages_lisp.dir/rule
+
+.PHONY : swarm_center_generate_messages_lisp
+
+# fast build rule for target.
+swarm_center_generate_messages_lisp/fast:
+	cd /home/wade/SJTU-swarm/swarm_ws/build && $(MAKE) -f swarm_center/CMakeFiles/swarm_center_generate_messages_lisp.dir/build.make swarm_center/CMakeFiles/swarm_center_generate_messages_lisp.dir/build
+.PHONY : swarm_center_generate_messages_lisp/fast
+
+# Convenience name for target.
+swarm_center/CMakeFiles/swarm_center_geneus.dir/rule:
+	cd /home/wade/SJTU-swarm/swarm_ws/build && $(MAKE) -f CMakeFiles/Makefile2 swarm_center/CMakeFiles/swarm_center_geneus.dir/rule
+.PHONY : swarm_center/CMakeFiles/swarm_center_geneus.dir/rule
+
+# Convenience name for target.
+swarm_center_geneus: swarm_center/CMakeFiles/swarm_center_geneus.dir/rule
+
+.PHONY : swarm_center_geneus
+
+# fast build rule for target.
+swarm_center_geneus/fast:
+	cd /home/wade/SJTU-swarm/swarm_ws/build && $(MAKE) -f swarm_center/CMakeFiles/swarm_center_geneus.dir/build.make swarm_center/CMakeFiles/swarm_center_geneus.dir/build
+.PHONY : swarm_center_geneus/fast
+
+# Convenience name for target.
+swarm_center/CMakeFiles/swarm_center_genpy.dir/rule:
+	cd /home/wade/SJTU-swarm/swarm_ws/build && $(MAKE) -f CMakeFiles/Makefile2 swarm_center/CMakeFiles/swarm_center_genpy.dir/rule
+.PHONY : swarm_center/CMakeFiles/swarm_center_genpy.dir/rule
+
+# Convenience name for target.
+swarm_center_genpy: swarm_center/CMakeFiles/swarm_center_genpy.dir/rule
+
+.PHONY : swarm_center_genpy
+
+# fast build rule for target.
+swarm_center_genpy/fast:
+	cd /home/wade/SJTU-swarm/swarm_ws/build && $(MAKE) -f swarm_center/CMakeFiles/swarm_center_genpy.dir/build.make swarm_center/CMakeFiles/swarm_center_genpy.dir/build
+.PHONY : swarm_center_genpy/fast
+
+# Convenience name for target.
+swarm_center/CMakeFiles/swarm_center_generate_messages_cpp.dir/rule:
+	cd /home/wade/SJTU-swarm/swarm_ws/build && $(MAKE) -f CMakeFiles/Makefile2 swarm_center/CMakeFiles/swarm_center_generate_messages_cpp.dir/rule
+.PHONY : swarm_center/CMakeFiles/swarm_center_generate_messages_cpp.dir/rule
+
+# Convenience name for target.
+swarm_center_generate_messages_cpp: swarm_center/CMakeFiles/swarm_center_generate_messages_cpp.dir/rule
+
+.PHONY : swarm_center_generate_messages_cpp
+
+# fast build rule for target.
+swarm_center_generate_messages_cpp/fast:
+	cd /home/wade/SJTU-swarm/swarm_ws/build && $(MAKE) -f swarm_center/CMakeFiles/swarm_center_generate_messages_cpp.dir/build.make swarm_center/CMakeFiles/swarm_center_generate_messages_cpp.dir/build
+.PHONY : swarm_center_generate_messages_cpp/fast
+
+# Convenience name for target.
+swarm_center/CMakeFiles/swarm_center_gencpp.dir/rule:
+	cd /home/wade/SJTU-swarm/swarm_ws/build && $(MAKE) -f CMakeFiles/Makefile2 swarm_center/CMakeFiles/swarm_center_gencpp.dir/rule
+.PHONY : swarm_center/CMakeFiles/swarm_center_gencpp.dir/rule
+
+# Convenience name for target.
+swarm_center_gencpp: swarm_center/CMakeFiles/swarm_center_gencpp.dir/rule
+
+.PHONY : swarm_center_gencpp
+
+# fast build rule for target.
+swarm_center_gencpp/fast:
+	cd /home/wade/SJTU-swarm/swarm_ws/build && $(MAKE) -f swarm_center/CMakeFiles/swarm_center_gencpp.dir/build.make swarm_center/CMakeFiles/swarm_center_gencpp.dir/build
+.PHONY : swarm_center_gencpp/fast
+
+# Convenience name for target.
+swarm_center/CMakeFiles/_swarm_center_generate_messages_check_deps_mCPPReq.dir/rule:
+	cd /home/wade/SJTU-swarm/swarm_ws/build && $(MAKE) -f CMakeFiles/Makefile2 swarm_center/CMakeFiles/_swarm_center_generate_messages_check_deps_mCPPReq.dir/rule
+.PHONY : swarm_center/CMakeFiles/_swarm_center_generate_messages_check_deps_mCPPReq.dir/rule
+
+# Convenience name for target.
+_swarm_center_generate_messages_check_deps_mCPPReq: swarm_center/CMakeFiles/_swarm_center_generate_messages_check_deps_mCPPReq.dir/rule
+
+.PHONY : _swarm_center_generate_messages_check_deps_mCPPReq
+
+# fast build rule for target.
+_swarm_center_generate_messages_check_deps_mCPPReq/fast:
+	cd /home/wade/SJTU-swarm/swarm_ws/build && $(MAKE) -f swarm_center/CMakeFiles/_swarm_center_generate_messages_check_deps_mCPPReq.dir/build.make swarm_center/CMakeFiles/_swarm_center_generate_messages_check_deps_mCPPReq.dir/build
+.PHONY : _swarm_center_generate_messages_check_deps_mCPPReq/fast
+
+# Convenience name for target.
+swarm_center/CMakeFiles/swarm_center_gennodejs.dir/rule:
+	cd /home/wade/SJTU-swarm/swarm_ws/build && $(MAKE) -f CMakeFiles/Makefile2 swarm_center/CMakeFiles/swarm_center_gennodejs.dir/rule
+.PHONY : swarm_center/CMakeFiles/swarm_center_gennodejs.dir/rule
+
+# Convenience name for target.
+swarm_center_gennodejs: swarm_center/CMakeFiles/swarm_center_gennodejs.dir/rule
+
+.PHONY : swarm_center_gennodejs
+
+# fast build rule for target.
+swarm_center_gennodejs/fast:
+	cd /home/wade/SJTU-swarm/swarm_ws/build && $(MAKE) -f swarm_center/CMakeFiles/swarm_center_gennodejs.dir/build.make swarm_center/CMakeFiles/swarm_center_gennodejs.dir/build
+.PHONY : swarm_center_gennodejs/fast
+
+# Convenience name for target.
+swarm_center/CMakeFiles/swarm_center_generate_messages_nodejs.dir/rule:
+	cd /home/wade/SJTU-swarm/swarm_ws/build && $(MAKE) -f CMakeFiles/Makefile2 swarm_center/CMakeFiles/swarm_center_generate_messages_nodejs.dir/rule
+.PHONY : swarm_center/CMakeFiles/swarm_center_generate_messages_nodejs.dir/rule
+
+# Convenience name for target.
+swarm_center_generate_messages_nodejs: swarm_center/CMakeFiles/swarm_center_generate_messages_nodejs.dir/rule
+
+.PHONY : swarm_center_generate_messages_nodejs
+
+# fast build rule for target.
+swarm_center_generate_messages_nodejs/fast:
+	cd /home/wade/SJTU-swarm/swarm_ws/build && $(MAKE) -f swarm_center/CMakeFiles/swarm_center_generate_messages_nodejs.dir/build.make swarm_center/CMakeFiles/swarm_center_generate_messages_nodejs.dir/build
+.PHONY : swarm_center_generate_messages_nodejs/fast
+
+# Convenience name for target.
+swarm_center/CMakeFiles/swarm_center_generate_messages.dir/rule:
+	cd /home/wade/SJTU-swarm/swarm_ws/build && $(MAKE) -f CMakeFiles/Makefile2 swarm_center/CMakeFiles/swarm_center_generate_messages.dir/rule
+.PHONY : swarm_center/CMakeFiles/swarm_center_generate_messages.dir/rule
+
+# Convenience name for target.
+swarm_center_generate_messages: swarm_center/CMakeFiles/swarm_center_generate_messages.dir/rule
+
+.PHONY : swarm_center_generate_messages
+
+# fast build rule for target.
+swarm_center_generate_messages/fast:
+	cd /home/wade/SJTU-swarm/swarm_ws/build && $(MAKE) -f swarm_center/CMakeFiles/swarm_center_generate_messages.dir/build.make swarm_center/CMakeFiles/swarm_center_generate_messages.dir/build
+.PHONY : swarm_center_generate_messages/fast
+
+# Convenience name for target.
+swarm_center/CMakeFiles/std_srvs_generate_messages_nodejs.dir/rule:
+	cd /home/wade/SJTU-swarm/swarm_ws/build && $(MAKE) -f CMakeFiles/Makefile2 swarm_center/CMakeFiles/std_srvs_generate_messages_nodejs.dir/rule
+.PHONY : swarm_center/CMakeFiles/std_srvs_generate_messages_nodejs.dir/rule
+
+# Convenience name for target.
+std_srvs_generate_messages_nodejs: swarm_center/CMakeFiles/std_srvs_generate_messages_nodejs.dir/rule
+
+.PHONY : std_srvs_generate_messages_nodejs
+
+# fast build rule for target.
+std_srvs_generate_messages_nodejs/fast:
+	cd /home/wade/SJTU-swarm/swarm_ws/build && $(MAKE) -f swarm_center/CMakeFiles/std_srvs_generate_messages_nodejs.dir/build.make swarm_center/CMakeFiles/std_srvs_generate_messages_nodejs.dir/build
+.PHONY : std_srvs_generate_messages_nodejs/fast
 
 # Convenience name for target.
 swarm_center/CMakeFiles/geometry_msgs_generate_messages_cpp.dir/rule:
@@ -256,6 +436,21 @@ std_msgs_generate_messages_py/fast:
 .PHONY : std_msgs_generate_messages_py/fast
 
 # Convenience name for target.
+swarm_center/CMakeFiles/swarm_center_generate_messages_eus.dir/rule:
+	cd /home/wade/SJTU-swarm/swarm_ws/build && $(MAKE) -f CMakeFiles/Makefile2 swarm_center/CMakeFiles/swarm_center_generate_messages_eus.dir/rule
+.PHONY : swarm_center/CMakeFiles/swarm_center_generate_messages_eus.dir/rule
+
+# Convenience name for target.
+swarm_center_generate_messages_eus: swarm_center/CMakeFiles/swarm_center_generate_messages_eus.dir/rule
+
+.PHONY : swarm_center_generate_messages_eus
+
+# fast build rule for target.
+swarm_center_generate_messages_eus/fast:
+	cd /home/wade/SJTU-swarm/swarm_ws/build && $(MAKE) -f swarm_center/CMakeFiles/swarm_center_generate_messages_eus.dir/build.make swarm_center/CMakeFiles/swarm_center_generate_messages_eus.dir/build
+.PHONY : swarm_center_generate_messages_eus/fast
+
+# Convenience name for target.
 swarm_center/CMakeFiles/std_msgs_generate_messages_lisp.dir/rule:
 	cd /home/wade/SJTU-swarm/swarm_ws/build && $(MAKE) -f CMakeFiles/Makefile2 swarm_center/CMakeFiles/std_msgs_generate_messages_lisp.dir/rule
 .PHONY : swarm_center/CMakeFiles/std_msgs_generate_messages_lisp.dir/rule
@@ -316,6 +511,21 @@ std_msgs_generate_messages_nodejs/fast:
 .PHONY : std_msgs_generate_messages_nodejs/fast
 
 # Convenience name for target.
+swarm_center/CMakeFiles/std_srvs_generate_messages_lisp.dir/rule:
+	cd /home/wade/SJTU-swarm/swarm_ws/build && $(MAKE) -f CMakeFiles/Makefile2 swarm_center/CMakeFiles/std_srvs_generate_messages_lisp.dir/rule
+.PHONY : swarm_center/CMakeFiles/std_srvs_generate_messages_lisp.dir/rule
+
+# Convenience name for target.
+std_srvs_generate_messages_lisp: swarm_center/CMakeFiles/std_srvs_generate_messages_lisp.dir/rule
+
+.PHONY : std_srvs_generate_messages_lisp
+
+# fast build rule for target.
+std_srvs_generate_messages_lisp/fast:
+	cd /home/wade/SJTU-swarm/swarm_ws/build && $(MAKE) -f swarm_center/CMakeFiles/std_srvs_generate_messages_lisp.dir/build.make swarm_center/CMakeFiles/std_srvs_generate_messages_lisp.dir/build
+.PHONY : std_srvs_generate_messages_lisp/fast
+
+# Convenience name for target.
 swarm_center/CMakeFiles/std_msgs_generate_messages_eus.dir/rule:
 	cd /home/wade/SJTU-swarm/swarm_ws/build && $(MAKE) -f CMakeFiles/Makefile2 swarm_center/CMakeFiles/std_msgs_generate_messages_eus.dir/rule
 .PHONY : swarm_center/CMakeFiles/std_msgs_generate_messages_eus.dir/rule
@@ -359,6 +569,21 @@ geometry_msgs_generate_messages_nodejs: swarm_center/CMakeFiles/geometry_msgs_ge
 geometry_msgs_generate_messages_nodejs/fast:
 	cd /home/wade/SJTU-swarm/swarm_ws/build && $(MAKE) -f swarm_center/CMakeFiles/geometry_msgs_generate_messages_nodejs.dir/build.make swarm_center/CMakeFiles/geometry_msgs_generate_messages_nodejs.dir/build
 .PHONY : geometry_msgs_generate_messages_nodejs/fast
+
+# Convenience name for target.
+swarm_center/CMakeFiles/std_srvs_generate_messages_py.dir/rule:
+	cd /home/wade/SJTU-swarm/swarm_ws/build && $(MAKE) -f CMakeFiles/Makefile2 swarm_center/CMakeFiles/std_srvs_generate_messages_py.dir/rule
+.PHONY : swarm_center/CMakeFiles/std_srvs_generate_messages_py.dir/rule
+
+# Convenience name for target.
+std_srvs_generate_messages_py: swarm_center/CMakeFiles/std_srvs_generate_messages_py.dir/rule
+
+.PHONY : std_srvs_generate_messages_py
+
+# fast build rule for target.
+std_srvs_generate_messages_py/fast:
+	cd /home/wade/SJTU-swarm/swarm_ws/build && $(MAKE) -f swarm_center/CMakeFiles/std_srvs_generate_messages_py.dir/build.make swarm_center/CMakeFiles/std_srvs_generate_messages_py.dir/build
+.PHONY : std_srvs_generate_messages_py/fast
 
 # Convenience name for target.
 swarm_center/CMakeFiles/roscpp_generate_messages_eus.dir/rule:
@@ -481,19 +706,49 @@ rosgraph_msgs_generate_messages_lisp/fast:
 .PHONY : rosgraph_msgs_generate_messages_lisp/fast
 
 # Convenience name for target.
-swarm_center/CMakeFiles/formation_commander.dir/rule:
-	cd /home/wade/SJTU-swarm/swarm_ws/build && $(MAKE) -f CMakeFiles/Makefile2 swarm_center/CMakeFiles/formation_commander.dir/rule
-.PHONY : swarm_center/CMakeFiles/formation_commander.dir/rule
+swarm_center/CMakeFiles/std_srvs_generate_messages_cpp.dir/rule:
+	cd /home/wade/SJTU-swarm/swarm_ws/build && $(MAKE) -f CMakeFiles/Makefile2 swarm_center/CMakeFiles/std_srvs_generate_messages_cpp.dir/rule
+.PHONY : swarm_center/CMakeFiles/std_srvs_generate_messages_cpp.dir/rule
 
 # Convenience name for target.
-formation_commander: swarm_center/CMakeFiles/formation_commander.dir/rule
+std_srvs_generate_messages_cpp: swarm_center/CMakeFiles/std_srvs_generate_messages_cpp.dir/rule
 
-.PHONY : formation_commander
+.PHONY : std_srvs_generate_messages_cpp
 
 # fast build rule for target.
-formation_commander/fast:
-	cd /home/wade/SJTU-swarm/swarm_ws/build && $(MAKE) -f swarm_center/CMakeFiles/formation_commander.dir/build.make swarm_center/CMakeFiles/formation_commander.dir/build
-.PHONY : formation_commander/fast
+std_srvs_generate_messages_cpp/fast:
+	cd /home/wade/SJTU-swarm/swarm_ws/build && $(MAKE) -f swarm_center/CMakeFiles/std_srvs_generate_messages_cpp.dir/build.make swarm_center/CMakeFiles/std_srvs_generate_messages_cpp.dir/build
+.PHONY : std_srvs_generate_messages_cpp/fast
+
+# Convenience name for target.
+swarm_center/CMakeFiles/geometry_msgs_generate_messages_py.dir/rule:
+	cd /home/wade/SJTU-swarm/swarm_ws/build && $(MAKE) -f CMakeFiles/Makefile2 swarm_center/CMakeFiles/geometry_msgs_generate_messages_py.dir/rule
+.PHONY : swarm_center/CMakeFiles/geometry_msgs_generate_messages_py.dir/rule
+
+# Convenience name for target.
+geometry_msgs_generate_messages_py: swarm_center/CMakeFiles/geometry_msgs_generate_messages_py.dir/rule
+
+.PHONY : geometry_msgs_generate_messages_py
+
+# fast build rule for target.
+geometry_msgs_generate_messages_py/fast:
+	cd /home/wade/SJTU-swarm/swarm_ws/build && $(MAKE) -f swarm_center/CMakeFiles/geometry_msgs_generate_messages_py.dir/build.make swarm_center/CMakeFiles/geometry_msgs_generate_messages_py.dir/build
+.PHONY : geometry_msgs_generate_messages_py/fast
+
+# Convenience name for target.
+swarm_center/CMakeFiles/std_srvs_generate_messages_eus.dir/rule:
+	cd /home/wade/SJTU-swarm/swarm_ws/build && $(MAKE) -f CMakeFiles/Makefile2 swarm_center/CMakeFiles/std_srvs_generate_messages_eus.dir/rule
+.PHONY : swarm_center/CMakeFiles/std_srvs_generate_messages_eus.dir/rule
+
+# Convenience name for target.
+std_srvs_generate_messages_eus: swarm_center/CMakeFiles/std_srvs_generate_messages_eus.dir/rule
+
+.PHONY : std_srvs_generate_messages_eus
+
+# fast build rule for target.
+std_srvs_generate_messages_eus/fast:
+	cd /home/wade/SJTU-swarm/swarm_ws/build && $(MAKE) -f swarm_center/CMakeFiles/std_srvs_generate_messages_eus.dir/build.make swarm_center/CMakeFiles/std_srvs_generate_messages_eus.dir/build
+.PHONY : std_srvs_generate_messages_eus/fast
 
 src/coverage_commander.o: src/coverage_commander.cpp.o
 
@@ -502,7 +757,6 @@ src/coverage_commander.o: src/coverage_commander.cpp.o
 # target to build an object file
 src/coverage_commander.cpp.o:
 	cd /home/wade/SJTU-swarm/swarm_ws/build && $(MAKE) -f swarm_center/CMakeFiles/coverage_commander.dir/build.make swarm_center/CMakeFiles/coverage_commander.dir/src/coverage_commander.cpp.o
-	cd /home/wade/SJTU-swarm/swarm_ws/build && $(MAKE) -f swarm_center/CMakeFiles/formation_commander.dir/build.make swarm_center/CMakeFiles/formation_commander.dir/src/coverage_commander.cpp.o
 .PHONY : src/coverage_commander.cpp.o
 
 src/coverage_commander.i: src/coverage_commander.cpp.i
@@ -512,7 +766,6 @@ src/coverage_commander.i: src/coverage_commander.cpp.i
 # target to preprocess a source file
 src/coverage_commander.cpp.i:
 	cd /home/wade/SJTU-swarm/swarm_ws/build && $(MAKE) -f swarm_center/CMakeFiles/coverage_commander.dir/build.make swarm_center/CMakeFiles/coverage_commander.dir/src/coverage_commander.cpp.i
-	cd /home/wade/SJTU-swarm/swarm_ws/build && $(MAKE) -f swarm_center/CMakeFiles/formation_commander.dir/build.make swarm_center/CMakeFiles/formation_commander.dir/src/coverage_commander.cpp.i
 .PHONY : src/coverage_commander.cpp.i
 
 src/coverage_commander.s: src/coverage_commander.cpp.s
@@ -522,8 +775,34 @@ src/coverage_commander.s: src/coverage_commander.cpp.s
 # target to generate assembly for a file
 src/coverage_commander.cpp.s:
 	cd /home/wade/SJTU-swarm/swarm_ws/build && $(MAKE) -f swarm_center/CMakeFiles/coverage_commander.dir/build.make swarm_center/CMakeFiles/coverage_commander.dir/src/coverage_commander.cpp.s
-	cd /home/wade/SJTU-swarm/swarm_ws/build && $(MAKE) -f swarm_center/CMakeFiles/formation_commander.dir/build.make swarm_center/CMakeFiles/formation_commander.dir/src/coverage_commander.cpp.s
 .PHONY : src/coverage_commander.cpp.s
+
+src/formation_commander.o: src/formation_commander.cpp.o
+
+.PHONY : src/formation_commander.o
+
+# target to build an object file
+src/formation_commander.cpp.o:
+	cd /home/wade/SJTU-swarm/swarm_ws/build && $(MAKE) -f swarm_center/CMakeFiles/formation_commander.dir/build.make swarm_center/CMakeFiles/formation_commander.dir/src/formation_commander.cpp.o
+.PHONY : src/formation_commander.cpp.o
+
+src/formation_commander.i: src/formation_commander.cpp.i
+
+.PHONY : src/formation_commander.i
+
+# target to preprocess a source file
+src/formation_commander.cpp.i:
+	cd /home/wade/SJTU-swarm/swarm_ws/build && $(MAKE) -f swarm_center/CMakeFiles/formation_commander.dir/build.make swarm_center/CMakeFiles/formation_commander.dir/src/formation_commander.cpp.i
+.PHONY : src/formation_commander.cpp.i
+
+src/formation_commander.s: src/formation_commander.cpp.s
+
+.PHONY : src/formation_commander.s
+
+# target to generate assembly for a file
+src/formation_commander.cpp.s:
+	cd /home/wade/SJTU-swarm/swarm_ws/build && $(MAKE) -f swarm_center/CMakeFiles/formation_commander.dir/build.make swarm_center/CMakeFiles/formation_commander.dir/src/formation_commander.cpp.s
+.PHONY : src/formation_commander.cpp.s
 
 # Help Target
 help:
@@ -538,19 +817,34 @@ help:
 	@echo "... test"
 	@echo "... install/local"
 	@echo "... install/strip"
+	@echo "... formation_commander"
 	@echo "... coverage_commander"
-	@echo "... geometry_msgs_generate_messages_py"
+	@echo "... swarm_center_generate_messages_py"
+	@echo "... swarm_center_genlisp"
+	@echo "... swarm_center_generate_messages_lisp"
+	@echo "... swarm_center_geneus"
+	@echo "... swarm_center_genpy"
+	@echo "... swarm_center_generate_messages_cpp"
+	@echo "... swarm_center_gencpp"
+	@echo "... _swarm_center_generate_messages_check_deps_mCPPReq"
+	@echo "... swarm_center_gennodejs"
+	@echo "... swarm_center_generate_messages_nodejs"
+	@echo "... swarm_center_generate_messages"
+	@echo "... std_srvs_generate_messages_nodejs"
 	@echo "... geometry_msgs_generate_messages_cpp"
 	@echo "... roscpp_generate_messages_cpp"
 	@echo "... geometry_msgs_generate_messages_eus"
 	@echo "... std_msgs_generate_messages_py"
+	@echo "... swarm_center_generate_messages_eus"
 	@echo "... std_msgs_generate_messages_lisp"
 	@echo "... geometry_msgs_generate_messages_lisp"
 	@echo "... rosgraph_msgs_generate_messages_nodejs"
 	@echo "... std_msgs_generate_messages_nodejs"
+	@echo "... std_srvs_generate_messages_lisp"
 	@echo "... std_msgs_generate_messages_eus"
 	@echo "... roscpp_generate_messages_lisp"
 	@echo "... geometry_msgs_generate_messages_nodejs"
+	@echo "... std_srvs_generate_messages_py"
 	@echo "... roscpp_generate_messages_eus"
 	@echo "... roscpp_generate_messages_py"
 	@echo "... rosgraph_msgs_generate_messages_eus"
@@ -559,10 +853,15 @@ help:
 	@echo "... rosgraph_msgs_generate_messages_py"
 	@echo "... roscpp_generate_messages_nodejs"
 	@echo "... rosgraph_msgs_generate_messages_lisp"
-	@echo "... formation_commander"
+	@echo "... std_srvs_generate_messages_cpp"
+	@echo "... geometry_msgs_generate_messages_py"
+	@echo "... std_srvs_generate_messages_eus"
 	@echo "... src/coverage_commander.o"
 	@echo "... src/coverage_commander.i"
 	@echo "... src/coverage_commander.s"
+	@echo "... src/formation_commander.o"
+	@echo "... src/formation_commander.i"
+	@echo "... src/formation_commander.s"
 .PHONY : help
 
 

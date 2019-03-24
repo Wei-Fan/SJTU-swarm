@@ -57,38 +57,38 @@ include swarm_center/CMakeFiles/formation_commander.dir/progress.make
 # Include the compile flags for this target's objects.
 include swarm_center/CMakeFiles/formation_commander.dir/flags.make
 
-swarm_center/CMakeFiles/formation_commander.dir/src/coverage_commander.cpp.o: swarm_center/CMakeFiles/formation_commander.dir/flags.make
-swarm_center/CMakeFiles/formation_commander.dir/src/coverage_commander.cpp.o: /home/wade/SJTU-swarm/swarm_ws/src/swarm_center/src/coverage_commander.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/wade/SJTU-swarm/swarm_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object swarm_center/CMakeFiles/formation_commander.dir/src/coverage_commander.cpp.o"
-	cd /home/wade/SJTU-swarm/swarm_ws/build/swarm_center && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/formation_commander.dir/src/coverage_commander.cpp.o -c /home/wade/SJTU-swarm/swarm_ws/src/swarm_center/src/coverage_commander.cpp
+swarm_center/CMakeFiles/formation_commander.dir/src/formation_commander.cpp.o: swarm_center/CMakeFiles/formation_commander.dir/flags.make
+swarm_center/CMakeFiles/formation_commander.dir/src/formation_commander.cpp.o: /home/wade/SJTU-swarm/swarm_ws/src/swarm_center/src/formation_commander.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/wade/SJTU-swarm/swarm_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object swarm_center/CMakeFiles/formation_commander.dir/src/formation_commander.cpp.o"
+	cd /home/wade/SJTU-swarm/swarm_ws/build/swarm_center && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/formation_commander.dir/src/formation_commander.cpp.o -c /home/wade/SJTU-swarm/swarm_ws/src/swarm_center/src/formation_commander.cpp
 
-swarm_center/CMakeFiles/formation_commander.dir/src/coverage_commander.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/formation_commander.dir/src/coverage_commander.cpp.i"
-	cd /home/wade/SJTU-swarm/swarm_ws/build/swarm_center && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/wade/SJTU-swarm/swarm_ws/src/swarm_center/src/coverage_commander.cpp > CMakeFiles/formation_commander.dir/src/coverage_commander.cpp.i
+swarm_center/CMakeFiles/formation_commander.dir/src/formation_commander.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/formation_commander.dir/src/formation_commander.cpp.i"
+	cd /home/wade/SJTU-swarm/swarm_ws/build/swarm_center && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/wade/SJTU-swarm/swarm_ws/src/swarm_center/src/formation_commander.cpp > CMakeFiles/formation_commander.dir/src/formation_commander.cpp.i
 
-swarm_center/CMakeFiles/formation_commander.dir/src/coverage_commander.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/formation_commander.dir/src/coverage_commander.cpp.s"
-	cd /home/wade/SJTU-swarm/swarm_ws/build/swarm_center && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/wade/SJTU-swarm/swarm_ws/src/swarm_center/src/coverage_commander.cpp -o CMakeFiles/formation_commander.dir/src/coverage_commander.cpp.s
+swarm_center/CMakeFiles/formation_commander.dir/src/formation_commander.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/formation_commander.dir/src/formation_commander.cpp.s"
+	cd /home/wade/SJTU-swarm/swarm_ws/build/swarm_center && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/wade/SJTU-swarm/swarm_ws/src/swarm_center/src/formation_commander.cpp -o CMakeFiles/formation_commander.dir/src/formation_commander.cpp.s
 
-swarm_center/CMakeFiles/formation_commander.dir/src/coverage_commander.cpp.o.requires:
+swarm_center/CMakeFiles/formation_commander.dir/src/formation_commander.cpp.o.requires:
 
-.PHONY : swarm_center/CMakeFiles/formation_commander.dir/src/coverage_commander.cpp.o.requires
+.PHONY : swarm_center/CMakeFiles/formation_commander.dir/src/formation_commander.cpp.o.requires
 
-swarm_center/CMakeFiles/formation_commander.dir/src/coverage_commander.cpp.o.provides: swarm_center/CMakeFiles/formation_commander.dir/src/coverage_commander.cpp.o.requires
-	$(MAKE) -f swarm_center/CMakeFiles/formation_commander.dir/build.make swarm_center/CMakeFiles/formation_commander.dir/src/coverage_commander.cpp.o.provides.build
-.PHONY : swarm_center/CMakeFiles/formation_commander.dir/src/coverage_commander.cpp.o.provides
+swarm_center/CMakeFiles/formation_commander.dir/src/formation_commander.cpp.o.provides: swarm_center/CMakeFiles/formation_commander.dir/src/formation_commander.cpp.o.requires
+	$(MAKE) -f swarm_center/CMakeFiles/formation_commander.dir/build.make swarm_center/CMakeFiles/formation_commander.dir/src/formation_commander.cpp.o.provides.build
+.PHONY : swarm_center/CMakeFiles/formation_commander.dir/src/formation_commander.cpp.o.provides
 
-swarm_center/CMakeFiles/formation_commander.dir/src/coverage_commander.cpp.o.provides.build: swarm_center/CMakeFiles/formation_commander.dir/src/coverage_commander.cpp.o
+swarm_center/CMakeFiles/formation_commander.dir/src/formation_commander.cpp.o.provides.build: swarm_center/CMakeFiles/formation_commander.dir/src/formation_commander.cpp.o
 
 
 # Object files for target formation_commander
 formation_commander_OBJECTS = \
-"CMakeFiles/formation_commander.dir/src/coverage_commander.cpp.o"
+"CMakeFiles/formation_commander.dir/src/formation_commander.cpp.o"
 
 # External object files for target formation_commander
 formation_commander_EXTERNAL_OBJECTS =
 
-/home/wade/SJTU-swarm/swarm_ws/devel/lib/swarm_center/formation_commander: swarm_center/CMakeFiles/formation_commander.dir/src/coverage_commander.cpp.o
+/home/wade/SJTU-swarm/swarm_ws/devel/lib/swarm_center/formation_commander: swarm_center/CMakeFiles/formation_commander.dir/src/formation_commander.cpp.o
 /home/wade/SJTU-swarm/swarm_ws/devel/lib/swarm_center/formation_commander: swarm_center/CMakeFiles/formation_commander.dir/build.make
 /home/wade/SJTU-swarm/swarm_ws/devel/lib/swarm_center/formation_commander: /opt/ros/kinetic/lib/libroscpp.so
 /home/wade/SJTU-swarm/swarm_ws/devel/lib/swarm_center/formation_commander: /usr/lib/x86_64-linux-gnu/libboost_filesystem.so
@@ -118,7 +118,7 @@ swarm_center/CMakeFiles/formation_commander.dir/build: /home/wade/SJTU-swarm/swa
 
 .PHONY : swarm_center/CMakeFiles/formation_commander.dir/build
 
-swarm_center/CMakeFiles/formation_commander.dir/requires: swarm_center/CMakeFiles/formation_commander.dir/src/coverage_commander.cpp.o.requires
+swarm_center/CMakeFiles/formation_commander.dir/requires: swarm_center/CMakeFiles/formation_commander.dir/src/formation_commander.cpp.o.requires
 
 .PHONY : swarm_center/CMakeFiles/formation_commander.dir/requires
 

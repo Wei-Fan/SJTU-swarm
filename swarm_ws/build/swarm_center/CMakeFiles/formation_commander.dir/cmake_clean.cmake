@@ -1,5 +1,5 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/formation_commander.dir/src/coverage_commander.cpp.o"
+  "CMakeFiles/formation_commander.dir/src/formation_commander.cpp.o"
   "/home/wade/SJTU-swarm/swarm_ws/devel/lib/swarm_center/formation_commander.pdb"
   "/home/wade/SJTU-swarm/swarm_ws/devel/lib/swarm_center/formation_commander"
 )

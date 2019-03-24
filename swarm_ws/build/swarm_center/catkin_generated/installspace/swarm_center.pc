@@ -3,6 +3,6 @@ prefix=/home/wade/SJTU-swarm/swarm_ws/install
 Name: swarm_center
 Description: Description of swarm_center
 Version: 0.0.0
-Cflags: 
-Libs: -L/home/wade/SJTU-swarm/swarm_ws/install/lib 
-Requires: 
+Cflags: -I/home/wade/SJTU-swarm/swarm_ws/install/include
+Libs: -L/home/wade/SJTU-swarm/swarm_ws/install/lib -lswarm_center
+Requires: geometery_msgs roscpp rospy std_msgs message_runtime

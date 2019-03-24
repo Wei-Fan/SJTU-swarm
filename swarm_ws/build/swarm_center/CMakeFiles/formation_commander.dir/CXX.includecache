@@ -6,7 +6,7 @@
 
 #IncludeRegexTransform: 
 
-/home/wade/SJTU-swarm/swarm_ws/src/swarm_center/src/coverage_commander.cpp
+/home/wade/SJTU-swarm/swarm_ws/src/swarm_center/src/formation_commander.cpp
 ros/ros.h
 -
 iostream

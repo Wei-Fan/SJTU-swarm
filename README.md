@@ -18,6 +18,7 @@ This is a package created for my diploma project<br>
 * **How to add a new behavior?**<br>
 -> Create a new behavior launch file with the name of the new behavior. Please refer to formation_control.launch.<br>
 -> Write a new ros node and realize the new behavior in the package of swarm_robot.<br>
+-> The new behaviour name won't be passed to the commander node. So, if you want to do something in the swarm_center part, remember modify the commander.launch file.<br>
 -> Declare a new behavior name (coming up soon)<br>
 
 * **What does Swarm Center include?**<br>

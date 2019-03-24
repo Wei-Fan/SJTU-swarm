@@ -5,7 +5,7 @@
 		<Option title="swarm_center"/>
 		<Option makefile_is_custom="1"/>
 		<Option compiler="gcc"/>
-		<Option virtualFolders="CMake Files\;CMake Files\..\;CMake Files\..\..\;CMake Files\..\..\..\;CMake Files\..\..\..\..\;CMake Files\..\..\..\..\..\;CMake Files\..\..\..\..\..\opt\;CMake Files\..\..\..\..\..\opt\ros\;CMake Files\..\..\..\..\..\opt\ros\kinetic\;CMake Files\..\..\..\..\..\opt\ros\kinetic\share\;CMake Files\..\..\..\..\..\opt\ros\kinetic\share\catkin\;CMake Files\..\..\..\..\..\opt\ros\kinetic\share\catkin\cmake\;CMake Files\..\..\..\..\..\opt\ros\kinetic\share\catkin\cmake\platform\;CMake Files\..\..\..\..\..\opt\ros\kinetic\share\catkin\cmake\test\;CMake Files\..\..\..\..\..\opt\ros\kinetic\share\catkin\cmake\tools\;CMake Files\..\..\..\..\..\opt\ros\kinetic\share\catkin\cmake\templates\;CMake Files\..\..\..\..\..\opt\ros\kinetic\share\catkin\cmake\em\;CMake Files\..\..\..\..\..\opt\ros\kinetic\share\geometry_msgs\;CMake Files\..\..\..\..\..\opt\ros\kinetic\share\geometry_msgs\cmake\;CMake Files\..\..\..\..\..\opt\ros\kinetic\share\message_runtime\;CMake Files\..\..\..\..\..\opt\ros\kinetic\share\message_runtime\cmake\;CMake Files\..\..\..\..\..\opt\ros\kinetic\share\cpp_common\;CMake Files\..\..\..\..\..\opt\ros\kinetic\share\cpp_common\cmake\;CMake Files\..\..\..\..\..\opt\ros\kinetic\share\roscpp_serialization\;CMake Files\..\..\..\..\..\opt\ros\kinetic\share\roscpp_serialization\cmake\;CMake Files\..\..\..\..\..\opt\ros\kinetic\share\roscpp_traits\;CMake Files\..\..\..\..\..\opt\ros\kinetic\share\roscpp_traits\cmake\;CMake Files\..\..\..\..\..\opt\ros\kinetic\share\rostime\;CMake Files\..\..\..\..\..\opt\ros\kinetic\share\rostime\cmake\;CMake Files\..\..\..\..\..\opt\ros\kinetic\share\std_msgs\;CMake Files\..\..\..\..\..\opt\ros\kinetic\share\std_msgs\cmake\;CMake Files\..\..\..\..\..\opt\ros\kinetic\share\roscpp\;CMake Files\..\..\..\..\..\opt\ros\kinetic\share\roscpp\cmake\;CMake Files\..\..\..\..\..\opt\ros\kinetic\share\rosconsole\;CMake Files\..\..\..\..\..\opt\ros\kinetic\share\rosconsole\cmake\;CMake Files\..\..\..\..\..\opt\ros\kinetic\share\rosgraph_msgs\;CMake Files\..\..\..\..\..\opt\ros\kinetic\share\rosgraph_msgs\cmake\;CMake Files\..\..\..\..\..\opt\ros\kinetic\share\xmlrpcpp\;CMake Files\..\..\..\..\..\opt\ros\kinetic\share\xmlrpcpp\cmake\;CMake Files\..\..\..\..\..\opt\ros\kinetic\share\rospy\;CMake Files\..\..\..\..\..\opt\ros\kinetic\share\rospy\cmake\;CMake Files\..\..\..\..\..\usr\;CMake Files\..\..\..\..\..\usr\src\;CMake Files\..\..\..\..\..\usr\src\gmock\;CMake Files\..\..\..\..\..\usr\src\gtest\;CMake Files\..\..\..\..\..\usr\src\gtest\cmake\;CMake Files\cmake-build-debug\;CMake Files\cmake-build-debug\catkin\;CMake Files\cmake-build-debug\catkin\catkin_generated\;CMake Files\cmake-build-debug\catkin\catkin_generated\version\;CMake Files\cmake-build-debug\catkin_generated\;CMake Files\cmake-build-debug\catkin_generated\installspace\;CMake Files\cmake-build-debug\swarm_center\;CMake Files\cmake-build-debug\swarm_center\catkin_generated\;CMake Files\cmake-build-debug\swarm_config\;CMake Files\cmake-build-debug\swarm_config\catkin_generated\;CMake Files\cmake-build-debug\swarm_robot\;CMake Files\cmake-build-debug\swarm_robot\catkin_generated\;CMake Files\swarm_center\;CMake Files\swarm_config\;CMake Files\swarm_robot\;"/>
+		<Option virtualFolders="CMake Files\;CMake Files\..\;CMake Files\..\..\;CMake Files\..\..\..\;CMake Files\..\..\..\..\;CMake Files\..\..\..\..\..\;CMake Files\..\..\..\..\..\opt\;CMake Files\..\..\..\..\..\opt\ros\;CMake Files\..\..\..\..\..\opt\ros\kinetic\;CMake Files\..\..\..\..\..\opt\ros\kinetic\share\;CMake Files\..\..\..\..\..\opt\ros\kinetic\share\catkin\;CMake Files\..\..\..\..\..\opt\ros\kinetic\share\catkin\cmake\;CMake Files\..\..\..\..\..\opt\ros\kinetic\share\catkin\cmake\platform\;CMake Files\..\..\..\..\..\opt\ros\kinetic\share\catkin\cmake\test\;CMake Files\..\..\..\..\..\opt\ros\kinetic\share\catkin\cmake\tools\;CMake Files\..\..\..\..\..\opt\ros\kinetic\share\catkin\cmake\templates\;CMake Files\..\..\..\..\..\opt\ros\kinetic\share\catkin\cmake\em\;CMake Files\..\..\..\..\..\opt\ros\kinetic\share\geometry_msgs\;CMake Files\..\..\..\..\..\opt\ros\kinetic\share\geometry_msgs\cmake\;CMake Files\..\..\..\..\..\opt\ros\kinetic\share\message_runtime\;CMake Files\..\..\..\..\..\opt\ros\kinetic\share\message_runtime\cmake\;CMake Files\..\..\..\..\..\opt\ros\kinetic\share\cpp_common\;CMake Files\..\..\..\..\..\opt\ros\kinetic\share\cpp_common\cmake\;CMake Files\..\..\..\..\..\opt\ros\kinetic\share\roscpp_serialization\;CMake Files\..\..\..\..\..\opt\ros\kinetic\share\roscpp_serialization\cmake\;CMake Files\..\..\..\..\..\opt\ros\kinetic\share\roscpp_traits\;CMake Files\..\..\..\..\..\opt\ros\kinetic\share\roscpp_traits\cmake\;CMake Files\..\..\..\..\..\opt\ros\kinetic\share\rostime\;CMake Files\..\..\..\..\..\opt\ros\kinetic\share\rostime\cmake\;CMake Files\..\..\..\..\..\opt\ros\kinetic\share\std_msgs\;CMake Files\..\..\..\..\..\opt\ros\kinetic\share\std_msgs\cmake\;CMake Files\..\..\..\..\..\opt\ros\kinetic\share\roscpp\;CMake Files\..\..\..\..\..\opt\ros\kinetic\share\roscpp\cmake\;CMake Files\..\..\..\..\..\opt\ros\kinetic\share\rosconsole\;CMake Files\..\..\..\..\..\opt\ros\kinetic\share\rosconsole\cmake\;CMake Files\..\..\..\..\..\opt\ros\kinetic\share\rosgraph_msgs\;CMake Files\..\..\..\..\..\opt\ros\kinetic\share\rosgraph_msgs\cmake\;CMake Files\..\..\..\..\..\opt\ros\kinetic\share\xmlrpcpp\;CMake Files\..\..\..\..\..\opt\ros\kinetic\share\xmlrpcpp\cmake\;CMake Files\..\..\..\..\..\opt\ros\kinetic\share\rospy\;CMake Files\..\..\..\..\..\opt\ros\kinetic\share\rospy\cmake\;CMake Files\..\..\..\..\..\opt\ros\kinetic\share\std_srvs\;CMake Files\..\..\..\..\..\opt\ros\kinetic\share\std_srvs\cmake\;CMake Files\..\..\..\..\..\opt\ros\kinetic\share\message_generation\;CMake Files\..\..\..\..\..\opt\ros\kinetic\share\message_generation\cmake\;CMake Files\..\..\..\..\..\opt\ros\kinetic\share\gencpp\;CMake Files\..\..\..\..\..\opt\ros\kinetic\share\gencpp\cmake\;CMake Files\..\..\..\..\..\opt\ros\kinetic\share\genmsg\;CMake Files\..\..\..\..\..\opt\ros\kinetic\share\genmsg\cmake\;CMake Files\..\..\..\..\..\opt\ros\kinetic\share\geneus\;CMake Files\..\..\..\..\..\opt\ros\kinetic\share\geneus\cmake\;CMake Files\..\..\..\..\..\opt\ros\kinetic\share\genlisp\;CMake Files\..\..\..\..\..\opt\ros\kinetic\share\genlisp\cmake\;CMake Files\..\..\..\..\..\opt\ros\kinetic\share\gennodejs\;CMake Files\..\..\..\..\..\opt\ros\kinetic\share\gennodejs\cmake\;CMake Files\..\..\..\..\..\opt\ros\kinetic\share\genpy\;CMake Files\..\..\..\..\..\opt\ros\kinetic\share\genpy\cmake\;CMake Files\..\..\..\..\..\usr\;CMake Files\..\..\..\..\..\usr\src\;CMake Files\..\..\..\..\..\usr\src\gmock\;CMake Files\..\..\..\..\..\usr\src\gtest\;CMake Files\..\..\..\..\..\usr\src\gtest\cmake\;CMake Files\cmake-build-debug\;CMake Files\cmake-build-debug\catkin\;CMake Files\cmake-build-debug\catkin\catkin_generated\;CMake Files\cmake-build-debug\catkin\catkin_generated\version\;CMake Files\cmake-build-debug\catkin_generated\;CMake Files\cmake-build-debug\catkin_generated\installspace\;CMake Files\cmake-build-debug\swarm_center\;CMake Files\cmake-build-debug\swarm_center\catkin_generated\;CMake Files\cmake-build-debug\swarm_center\cmake\;CMake Files\cmake-build-debug\devel\;CMake Files\cmake-build-debug\devel\share\;CMake Files\cmake-build-debug\devel\share\swarm_center\;CMake Files\cmake-build-debug\devel\share\swarm_center\cmake\;CMake Files\cmake-build-debug\swarm_config\;CMake Files\cmake-build-debug\swarm_config\catkin_generated\;CMake Files\cmake-build-debug\swarm_robot\;CMake Files\cmake-build-debug\swarm_robot\catkin_generated\;CMake Files\swarm_center\;CMake Files\swarm_config\;CMake Files\swarm_robot\;"/>
 		<Build>
 			<Target title="all">
 				<Option working_dir="/home/wade/SJTU-swarm/swarm_ws/src/cmake-build-debug/swarm_center"/>
@@ -17,11 +17,241 @@
 					<DistClean command="/usr/bin/make -j8 -f &quot;/home/wade/SJTU-swarm/swarm_ws/src/cmake-build-debug/swarm_center/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
-			<Target title="geometry_msgs_generate_messages_py">
+			<Target title="formation_commander">
+				<Option output="/home/wade/SJTU-swarm/swarm_ws/src/cmake-build-debug/devel/lib/swarm_center/formation_commander" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/wade/SJTU-swarm/swarm_ws/src/cmake-build-debug/devel/lib/swarm_center"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add option="-DROS_BUILD_SHARED_LIBS=1"/>
+					<Add option="-DROS_PACKAGE_NAME=&quot;swarm_center&quot;"/>
+					<Add option="-DROSCONSOLE_BACKEND_LOG4CXX"/>
+					<Add directory="/home/wade/SJTU-swarm/swarm_ws/src/cmake-build-debug/devel/include"/>
+					<Add directory="/home/wade/SJTU-swarm/swarm_ws/src/swarm_center/./include"/>
+					<Add directory="/opt/ros/kinetic/include"/>
+					<Add directory="/opt/ros/kinetic/share/xmlrpcpp/cmake/../../../include/xmlrpcpp"/>
+					<Add directory="/usr/include/c++/5"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/5"/>
+					<Add directory="/usr/include/c++/5/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/wade/SJTU-swarm/swarm_ws/src/cmake-build-debug/swarm_center/Makefile&quot;  VERBOSE=1 formation_commander"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/wade/SJTU-swarm/swarm_ws/src/cmake-build-debug/swarm_center/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/wade/SJTU-swarm/swarm_ws/src/cmake-build-debug/swarm_center/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/wade/SJTU-swarm/swarm_ws/src/cmake-build-debug/swarm_center/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="formation_commander/fast">
+				<Option output="/home/wade/SJTU-swarm/swarm_ws/src/cmake-build-debug/devel/lib/swarm_center/formation_commander" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/wade/SJTU-swarm/swarm_ws/src/cmake-build-debug/devel/lib/swarm_center"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add option="-DROS_BUILD_SHARED_LIBS=1"/>
+					<Add option="-DROS_PACKAGE_NAME=&quot;swarm_center&quot;"/>
+					<Add option="-DROSCONSOLE_BACKEND_LOG4CXX"/>
+					<Add directory="/home/wade/SJTU-swarm/swarm_ws/src/cmake-build-debug/devel/include"/>
+					<Add directory="/home/wade/SJTU-swarm/swarm_ws/src/swarm_center/./include"/>
+					<Add directory="/opt/ros/kinetic/include"/>
+					<Add directory="/opt/ros/kinetic/share/xmlrpcpp/cmake/../../../include/xmlrpcpp"/>
+					<Add directory="/usr/include/c++/5"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/5"/>
+					<Add directory="/usr/include/c++/5/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/wade/SJTU-swarm/swarm_ws/src/cmake-build-debug/swarm_center/Makefile&quot;  VERBOSE=1 formation_commander/fast"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/wade/SJTU-swarm/swarm_ws/src/cmake-build-debug/swarm_center/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/wade/SJTU-swarm/swarm_ws/src/cmake-build-debug/swarm_center/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/wade/SJTU-swarm/swarm_ws/src/cmake-build-debug/swarm_center/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="coverage_commander">
+				<Option output="/home/wade/SJTU-swarm/swarm_ws/src/cmake-build-debug/devel/lib/swarm_center/coverage_commander" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/wade/SJTU-swarm/swarm_ws/src/cmake-build-debug/devel/lib/swarm_center"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add option="-DROS_BUILD_SHARED_LIBS=1"/>
+					<Add option="-DROS_PACKAGE_NAME=&quot;swarm_center&quot;"/>
+					<Add option="-DROSCONSOLE_BACKEND_LOG4CXX"/>
+					<Add directory="/home/wade/SJTU-swarm/swarm_ws/src/cmake-build-debug/devel/include"/>
+					<Add directory="/home/wade/SJTU-swarm/swarm_ws/src/swarm_center/./include"/>
+					<Add directory="/opt/ros/kinetic/include"/>
+					<Add directory="/opt/ros/kinetic/share/xmlrpcpp/cmake/../../../include/xmlrpcpp"/>
+					<Add directory="/usr/include/c++/5"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/5"/>
+					<Add directory="/usr/include/c++/5/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/wade/SJTU-swarm/swarm_ws/src/cmake-build-debug/swarm_center/Makefile&quot;  VERBOSE=1 coverage_commander"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/wade/SJTU-swarm/swarm_ws/src/cmake-build-debug/swarm_center/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/wade/SJTU-swarm/swarm_ws/src/cmake-build-debug/swarm_center/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/wade/SJTU-swarm/swarm_ws/src/cmake-build-debug/swarm_center/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="coverage_commander/fast">
+				<Option output="/home/wade/SJTU-swarm/swarm_ws/src/cmake-build-debug/devel/lib/swarm_center/coverage_commander" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/wade/SJTU-swarm/swarm_ws/src/cmake-build-debug/devel/lib/swarm_center"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add option="-DROS_BUILD_SHARED_LIBS=1"/>
+					<Add option="-DROS_PACKAGE_NAME=&quot;swarm_center&quot;"/>
+					<Add option="-DROSCONSOLE_BACKEND_LOG4CXX"/>
+					<Add directory="/home/wade/SJTU-swarm/swarm_ws/src/cmake-build-debug/devel/include"/>
+					<Add directory="/home/wade/SJTU-swarm/swarm_ws/src/swarm_center/./include"/>
+					<Add directory="/opt/ros/kinetic/include"/>
+					<Add directory="/opt/ros/kinetic/share/xmlrpcpp/cmake/../../../include/xmlrpcpp"/>
+					<Add directory="/usr/include/c++/5"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/5"/>
+					<Add directory="/usr/include/c++/5/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/wade/SJTU-swarm/swarm_ws/src/cmake-build-debug/swarm_center/Makefile&quot;  VERBOSE=1 coverage_commander/fast"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/wade/SJTU-swarm/swarm_ws/src/cmake-build-debug/swarm_center/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/wade/SJTU-swarm/swarm_ws/src/cmake-build-debug/swarm_center/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/wade/SJTU-swarm/swarm_ws/src/cmake-build-debug/swarm_center/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="swarm_center_generate_messages_py">
 				<Option working_dir="/home/wade/SJTU-swarm/swarm_ws/src/cmake-build-debug/swarm_center"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j8 -f &quot;/home/wade/SJTU-swarm/swarm_ws/src/cmake-build-debug/swarm_center/Makefile&quot;  VERBOSE=1 geometry_msgs_generate_messages_py"/>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/wade/SJTU-swarm/swarm_ws/src/cmake-build-debug/swarm_center/Makefile&quot;  VERBOSE=1 swarm_center_generate_messages_py"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/wade/SJTU-swarm/swarm_ws/src/cmake-build-debug/swarm_center/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/wade/SJTU-swarm/swarm_ws/src/cmake-build-debug/swarm_center/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/wade/SJTU-swarm/swarm_ws/src/cmake-build-debug/swarm_center/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="swarm_center_genlisp">
+				<Option working_dir="/home/wade/SJTU-swarm/swarm_ws/src/cmake-build-debug/swarm_center"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/wade/SJTU-swarm/swarm_ws/src/cmake-build-debug/swarm_center/Makefile&quot;  VERBOSE=1 swarm_center_genlisp"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/wade/SJTU-swarm/swarm_ws/src/cmake-build-debug/swarm_center/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/wade/SJTU-swarm/swarm_ws/src/cmake-build-debug/swarm_center/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/wade/SJTU-swarm/swarm_ws/src/cmake-build-debug/swarm_center/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="swarm_center_generate_messages_lisp">
+				<Option working_dir="/home/wade/SJTU-swarm/swarm_ws/src/cmake-build-debug/swarm_center"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/wade/SJTU-swarm/swarm_ws/src/cmake-build-debug/swarm_center/Makefile&quot;  VERBOSE=1 swarm_center_generate_messages_lisp"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/wade/SJTU-swarm/swarm_ws/src/cmake-build-debug/swarm_center/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/wade/SJTU-swarm/swarm_ws/src/cmake-build-debug/swarm_center/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/wade/SJTU-swarm/swarm_ws/src/cmake-build-debug/swarm_center/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="swarm_center_geneus">
+				<Option working_dir="/home/wade/SJTU-swarm/swarm_ws/src/cmake-build-debug/swarm_center"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/wade/SJTU-swarm/swarm_ws/src/cmake-build-debug/swarm_center/Makefile&quot;  VERBOSE=1 swarm_center_geneus"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/wade/SJTU-swarm/swarm_ws/src/cmake-build-debug/swarm_center/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/wade/SJTU-swarm/swarm_ws/src/cmake-build-debug/swarm_center/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/wade/SJTU-swarm/swarm_ws/src/cmake-build-debug/swarm_center/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="swarm_center_genpy">
+				<Option working_dir="/home/wade/SJTU-swarm/swarm_ws/src/cmake-build-debug/swarm_center"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/wade/SJTU-swarm/swarm_ws/src/cmake-build-debug/swarm_center/Makefile&quot;  VERBOSE=1 swarm_center_genpy"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/wade/SJTU-swarm/swarm_ws/src/cmake-build-debug/swarm_center/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/wade/SJTU-swarm/swarm_ws/src/cmake-build-debug/swarm_center/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/wade/SJTU-swarm/swarm_ws/src/cmake-build-debug/swarm_center/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="swarm_center_generate_messages_cpp">
+				<Option working_dir="/home/wade/SJTU-swarm/swarm_ws/src/cmake-build-debug/swarm_center"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/wade/SJTU-swarm/swarm_ws/src/cmake-build-debug/swarm_center/Makefile&quot;  VERBOSE=1 swarm_center_generate_messages_cpp"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/wade/SJTU-swarm/swarm_ws/src/cmake-build-debug/swarm_center/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/wade/SJTU-swarm/swarm_ws/src/cmake-build-debug/swarm_center/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/wade/SJTU-swarm/swarm_ws/src/cmake-build-debug/swarm_center/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="swarm_center_gencpp">
+				<Option working_dir="/home/wade/SJTU-swarm/swarm_ws/src/cmake-build-debug/swarm_center"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/wade/SJTU-swarm/swarm_ws/src/cmake-build-debug/swarm_center/Makefile&quot;  VERBOSE=1 swarm_center_gencpp"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/wade/SJTU-swarm/swarm_ws/src/cmake-build-debug/swarm_center/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/wade/SJTU-swarm/swarm_ws/src/cmake-build-debug/swarm_center/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/wade/SJTU-swarm/swarm_ws/src/cmake-build-debug/swarm_center/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="_swarm_center_generate_messages_check_deps_mCPPReq">
+				<Option working_dir="/home/wade/SJTU-swarm/swarm_ws/src/cmake-build-debug/swarm_center"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/wade/SJTU-swarm/swarm_ws/src/cmake-build-debug/swarm_center/Makefile&quot;  VERBOSE=1 _swarm_center_generate_messages_check_deps_mCPPReq"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/wade/SJTU-swarm/swarm_ws/src/cmake-build-debug/swarm_center/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/wade/SJTU-swarm/swarm_ws/src/cmake-build-debug/swarm_center/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/wade/SJTU-swarm/swarm_ws/src/cmake-build-debug/swarm_center/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="swarm_center_gennodejs">
+				<Option working_dir="/home/wade/SJTU-swarm/swarm_ws/src/cmake-build-debug/swarm_center"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/wade/SJTU-swarm/swarm_ws/src/cmake-build-debug/swarm_center/Makefile&quot;  VERBOSE=1 swarm_center_gennodejs"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/wade/SJTU-swarm/swarm_ws/src/cmake-build-debug/swarm_center/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/wade/SJTU-swarm/swarm_ws/src/cmake-build-debug/swarm_center/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/wade/SJTU-swarm/swarm_ws/src/cmake-build-debug/swarm_center/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="swarm_center_generate_messages_nodejs">
+				<Option working_dir="/home/wade/SJTU-swarm/swarm_ws/src/cmake-build-debug/swarm_center"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/wade/SJTU-swarm/swarm_ws/src/cmake-build-debug/swarm_center/Makefile&quot;  VERBOSE=1 swarm_center_generate_messages_nodejs"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/wade/SJTU-swarm/swarm_ws/src/cmake-build-debug/swarm_center/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/wade/SJTU-swarm/swarm_ws/src/cmake-build-debug/swarm_center/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/wade/SJTU-swarm/swarm_ws/src/cmake-build-debug/swarm_center/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="swarm_center_generate_messages">
+				<Option working_dir="/home/wade/SJTU-swarm/swarm_ws/src/cmake-build-debug/swarm_center"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/wade/SJTU-swarm/swarm_ws/src/cmake-build-debug/swarm_center/Makefile&quot;  VERBOSE=1 swarm_center_generate_messages"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/wade/SJTU-swarm/swarm_ws/src/cmake-build-debug/swarm_center/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/wade/SJTU-swarm/swarm_ws/src/cmake-build-debug/swarm_center/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/wade/SJTU-swarm/swarm_ws/src/cmake-build-debug/swarm_center/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="std_srvs_generate_messages_nodejs">
+				<Option working_dir="/home/wade/SJTU-swarm/swarm_ws/src/cmake-build-debug/swarm_center"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/wade/SJTU-swarm/swarm_ws/src/cmake-build-debug/swarm_center/Makefile&quot;  VERBOSE=1 std_srvs_generate_messages_nodejs"/>
 					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/wade/SJTU-swarm/swarm_ws/src/cmake-build-debug/swarm_center/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
 					<Clean command="/usr/bin/make -j8 -f &quot;/home/wade/SJTU-swarm/swarm_ws/src/cmake-build-debug/swarm_center/Makefile&quot;  VERBOSE=1 clean"/>
 					<DistClean command="/usr/bin/make -j8 -f &quot;/home/wade/SJTU-swarm/swarm_ws/src/cmake-build-debug/swarm_center/Makefile&quot;  VERBOSE=1 clean"/>
@@ -67,6 +297,16 @@
 					<DistClean command="/usr/bin/make -j8 -f &quot;/home/wade/SJTU-swarm/swarm_ws/src/cmake-build-debug/swarm_center/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
+			<Target title="swarm_center_generate_messages_eus">
+				<Option working_dir="/home/wade/SJTU-swarm/swarm_ws/src/cmake-build-debug/swarm_center"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/wade/SJTU-swarm/swarm_ws/src/cmake-build-debug/swarm_center/Makefile&quot;  VERBOSE=1 swarm_center_generate_messages_eus"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/wade/SJTU-swarm/swarm_ws/src/cmake-build-debug/swarm_center/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/wade/SJTU-swarm/swarm_ws/src/cmake-build-debug/swarm_center/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/wade/SJTU-swarm/swarm_ws/src/cmake-build-debug/swarm_center/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
 			<Target title="std_msgs_generate_messages_lisp">
 				<Option working_dir="/home/wade/SJTU-swarm/swarm_ws/src/cmake-build-debug/swarm_center"/>
 				<Option type="4"/>
@@ -107,6 +347,16 @@
 					<DistClean command="/usr/bin/make -j8 -f &quot;/home/wade/SJTU-swarm/swarm_ws/src/cmake-build-debug/swarm_center/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
+			<Target title="std_srvs_generate_messages_lisp">
+				<Option working_dir="/home/wade/SJTU-swarm/swarm_ws/src/cmake-build-debug/swarm_center"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/wade/SJTU-swarm/swarm_ws/src/cmake-build-debug/swarm_center/Makefile&quot;  VERBOSE=1 std_srvs_generate_messages_lisp"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/wade/SJTU-swarm/swarm_ws/src/cmake-build-debug/swarm_center/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/wade/SJTU-swarm/swarm_ws/src/cmake-build-debug/swarm_center/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/wade/SJTU-swarm/swarm_ws/src/cmake-build-debug/swarm_center/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
 			<Target title="std_msgs_generate_messages_eus">
 				<Option working_dir="/home/wade/SJTU-swarm/swarm_ws/src/cmake-build-debug/swarm_center"/>
 				<Option type="4"/>
@@ -132,6 +382,16 @@
 				<Option type="4"/>
 				<MakeCommands>
 					<Build command="/usr/bin/make -j8 -f &quot;/home/wade/SJTU-swarm/swarm_ws/src/cmake-build-debug/swarm_center/Makefile&quot;  VERBOSE=1 geometry_msgs_generate_messages_nodejs"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/wade/SJTU-swarm/swarm_ws/src/cmake-build-debug/swarm_center/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/wade/SJTU-swarm/swarm_ws/src/cmake-build-debug/swarm_center/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/wade/SJTU-swarm/swarm_ws/src/cmake-build-debug/swarm_center/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="std_srvs_generate_messages_py">
+				<Option working_dir="/home/wade/SJTU-swarm/swarm_ws/src/cmake-build-debug/swarm_center"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/wade/SJTU-swarm/swarm_ws/src/cmake-build-debug/swarm_center/Makefile&quot;  VERBOSE=1 std_srvs_generate_messages_py"/>
 					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/wade/SJTU-swarm/swarm_ws/src/cmake-build-debug/swarm_center/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
 					<Clean command="/usr/bin/make -j8 -f &quot;/home/wade/SJTU-swarm/swarm_ws/src/cmake-build-debug/swarm_center/Makefile&quot;  VERBOSE=1 clean"/>
 					<DistClean command="/usr/bin/make -j8 -f &quot;/home/wade/SJTU-swarm/swarm_ws/src/cmake-build-debug/swarm_center/Makefile&quot;  VERBOSE=1 clean"/>
@@ -217,67 +477,42 @@
 					<DistClean command="/usr/bin/make -j8 -f &quot;/home/wade/SJTU-swarm/swarm_ws/src/cmake-build-debug/swarm_center/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
-			<Target title="swarm_commander">
-				<Option output="/home/wade/SJTU-swarm/swarm_ws/src/cmake-build-debug/devel/lib/swarm_center/swarm_commander" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/home/wade/SJTU-swarm/swarm_ws/src/cmake-build-debug/devel/lib/swarm_center"/>
-				<Option object_output="./"/>
-				<Option type="1"/>
-				<Option compiler="gcc"/>
-				<Compiler>
-					<Add option="-DROS_BUILD_SHARED_LIBS=1"/>
-					<Add option="-DROS_PACKAGE_NAME=&quot;swarm_center&quot;"/>
-					<Add option="-DROSCONSOLE_BACKEND_LOG4CXX"/>
-					<Add directory="/home/wade/SJTU-swarm/swarm_ws/src/swarm_center/include"/>
-					<Add directory="/opt/ros/kinetic/include"/>
-					<Add directory="/opt/ros/kinetic/share/xmlrpcpp/cmake/../../../include/xmlrpcpp"/>
-					<Add directory="/usr/include/c++/5"/>
-					<Add directory="/usr/include/x86_64-linux-gnu/c++/5"/>
-					<Add directory="/usr/include/c++/5/backward"/>
-					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include"/>
-					<Add directory="/usr/local/include"/>
-					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include-fixed"/>
-					<Add directory="/usr/include/x86_64-linux-gnu"/>
-					<Add directory="/usr/include"/>
-				</Compiler>
+			<Target title="std_srvs_generate_messages_cpp">
+				<Option working_dir="/home/wade/SJTU-swarm/swarm_ws/src/cmake-build-debug/swarm_center"/>
+				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j8 -f &quot;/home/wade/SJTU-swarm/swarm_ws/src/cmake-build-debug/swarm_center/Makefile&quot;  VERBOSE=1 swarm_commander"/>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/wade/SJTU-swarm/swarm_ws/src/cmake-build-debug/swarm_center/Makefile&quot;  VERBOSE=1 std_srvs_generate_messages_cpp"/>
 					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/wade/SJTU-swarm/swarm_ws/src/cmake-build-debug/swarm_center/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
 					<Clean command="/usr/bin/make -j8 -f &quot;/home/wade/SJTU-swarm/swarm_ws/src/cmake-build-debug/swarm_center/Makefile&quot;  VERBOSE=1 clean"/>
 					<DistClean command="/usr/bin/make -j8 -f &quot;/home/wade/SJTU-swarm/swarm_ws/src/cmake-build-debug/swarm_center/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
-			<Target title="swarm_commander/fast">
-				<Option output="/home/wade/SJTU-swarm/swarm_ws/src/cmake-build-debug/devel/lib/swarm_center/swarm_commander" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/home/wade/SJTU-swarm/swarm_ws/src/cmake-build-debug/devel/lib/swarm_center"/>
-				<Option object_output="./"/>
-				<Option type="1"/>
-				<Option compiler="gcc"/>
-				<Compiler>
-					<Add option="-DROS_BUILD_SHARED_LIBS=1"/>
-					<Add option="-DROS_PACKAGE_NAME=&quot;swarm_center&quot;"/>
-					<Add option="-DROSCONSOLE_BACKEND_LOG4CXX"/>
-					<Add directory="/home/wade/SJTU-swarm/swarm_ws/src/swarm_center/include"/>
-					<Add directory="/opt/ros/kinetic/include"/>
-					<Add directory="/opt/ros/kinetic/share/xmlrpcpp/cmake/../../../include/xmlrpcpp"/>
-					<Add directory="/usr/include/c++/5"/>
-					<Add directory="/usr/include/x86_64-linux-gnu/c++/5"/>
-					<Add directory="/usr/include/c++/5/backward"/>
-					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include"/>
-					<Add directory="/usr/local/include"/>
-					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include-fixed"/>
-					<Add directory="/usr/include/x86_64-linux-gnu"/>
-					<Add directory="/usr/include"/>
-				</Compiler>
+			<Target title="geometry_msgs_generate_messages_py">
+				<Option working_dir="/home/wade/SJTU-swarm/swarm_ws/src/cmake-build-debug/swarm_center"/>
+				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j8 -f &quot;/home/wade/SJTU-swarm/swarm_ws/src/cmake-build-debug/swarm_center/Makefile&quot;  VERBOSE=1 swarm_commander/fast"/>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/wade/SJTU-swarm/swarm_ws/src/cmake-build-debug/swarm_center/Makefile&quot;  VERBOSE=1 geometry_msgs_generate_messages_py"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/wade/SJTU-swarm/swarm_ws/src/cmake-build-debug/swarm_center/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/wade/SJTU-swarm/swarm_ws/src/cmake-build-debug/swarm_center/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/wade/SJTU-swarm/swarm_ws/src/cmake-build-debug/swarm_center/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="std_srvs_generate_messages_eus">
+				<Option working_dir="/home/wade/SJTU-swarm/swarm_ws/src/cmake-build-debug/swarm_center"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/wade/SJTU-swarm/swarm_ws/src/cmake-build-debug/swarm_center/Makefile&quot;  VERBOSE=1 std_srvs_generate_messages_eus"/>
 					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/wade/SJTU-swarm/swarm_ws/src/cmake-build-debug/swarm_center/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
 					<Clean command="/usr/bin/make -j8 -f &quot;/home/wade/SJTU-swarm/swarm_ws/src/cmake-build-debug/swarm_center/Makefile&quot;  VERBOSE=1 clean"/>
 					<DistClean command="/usr/bin/make -j8 -f &quot;/home/wade/SJTU-swarm/swarm_ws/src/cmake-build-debug/swarm_center/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="/home/wade/SJTU-swarm/swarm_ws/src/swarm_center/src/swarm_commander.cpp">
-			<Option target="swarm_commander"/>
+		<Unit filename="/home/wade/SJTU-swarm/swarm_ws/src/swarm_center/src/coverage_commander.cpp">
+			<Option target="coverage_commander"/>
+		</Unit>
+		<Unit filename="/home/wade/SJTU-swarm/swarm_ws/src/swarm_center/src/formation_commander.cpp">
+			<Option target="formation_commander"/>
 		</Unit>
 		<Unit filename="/home/wade/SJTU-swarm/swarm_ws/src/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>
@@ -450,6 +685,9 @@
 		<Unit filename="/home/wade/SJTU-swarm/swarm_ws/src/../../../../../opt/ros/kinetic/share/geometry_msgs/cmake/geometry_msgs-msg-extras.cmake">
 			<Option virtualFolder="CMake Files\..\..\..\..\..\opt\ros\kinetic\share\geometry_msgs\cmake\"/>
 		</Unit>
+		<Unit filename="/home/wade/SJTU-swarm/swarm_ws/src/../../../../../opt/ros/kinetic/share/geometry_msgs/cmake/geometry_msgs-msg-paths.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\opt\ros\kinetic\share\geometry_msgs\cmake\"/>
+		</Unit>
 		<Unit filename="/home/wade/SJTU-swarm/swarm_ws/src/../../../../../opt/ros/kinetic/share/geometry_msgs/cmake/geometry_msgsConfig-version.cmake">
 			<Option virtualFolder="CMake Files\..\..\..\..\..\opt\ros\kinetic\share\geometry_msgs\cmake\"/>
 		</Unit>
@@ -487,6 +725,9 @@
 			<Option virtualFolder="CMake Files\..\..\..\..\..\opt\ros\kinetic\share\rostime\cmake\"/>
 		</Unit>
 		<Unit filename="/home/wade/SJTU-swarm/swarm_ws/src/../../../../../opt/ros/kinetic/share/std_msgs/cmake/std_msgs-msg-extras.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\opt\ros\kinetic\share\std_msgs\cmake\"/>
+		</Unit>
+		<Unit filename="/home/wade/SJTU-swarm/swarm_ws/src/../../../../../opt/ros/kinetic/share/std_msgs/cmake/std_msgs-msg-paths.cmake">
 			<Option virtualFolder="CMake Files\..\..\..\..\..\opt\ros\kinetic\share\std_msgs\cmake\"/>
 		</Unit>
 		<Unit filename="/home/wade/SJTU-swarm/swarm_ws/src/../../../../../opt/ros/kinetic/share/std_msgs/cmake/std_msgsConfig-version.cmake">
@@ -537,6 +778,90 @@
 		<Unit filename="/home/wade/SJTU-swarm/swarm_ws/src/../../../../../opt/ros/kinetic/share/rospy/cmake/rospyConfig.cmake">
 			<Option virtualFolder="CMake Files\..\..\..\..\..\opt\ros\kinetic\share\rospy\cmake\"/>
 		</Unit>
+		<Unit filename="/home/wade/SJTU-swarm/swarm_ws/src/../../../../../opt/ros/kinetic/share/std_srvs/cmake/std_srvs-msg-extras.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\opt\ros\kinetic\share\std_srvs\cmake\"/>
+		</Unit>
+		<Unit filename="/home/wade/SJTU-swarm/swarm_ws/src/../../../../../opt/ros/kinetic/share/std_srvs/cmake/std_srvsConfig-version.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\opt\ros\kinetic\share\std_srvs\cmake\"/>
+		</Unit>
+		<Unit filename="/home/wade/SJTU-swarm/swarm_ws/src/../../../../../opt/ros/kinetic/share/std_srvs/cmake/std_srvsConfig.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\opt\ros\kinetic\share\std_srvs\cmake\"/>
+		</Unit>
+		<Unit filename="/home/wade/SJTU-swarm/swarm_ws/src/../../../../../opt/ros/kinetic/share/message_generation/cmake/message_generationConfig-version.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\opt\ros\kinetic\share\message_generation\cmake\"/>
+		</Unit>
+		<Unit filename="/home/wade/SJTU-swarm/swarm_ws/src/../../../../../opt/ros/kinetic/share/message_generation/cmake/message_generationConfig.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\opt\ros\kinetic\share\message_generation\cmake\"/>
+		</Unit>
+		<Unit filename="/home/wade/SJTU-swarm/swarm_ws/src/../../../../../opt/ros/kinetic/share/gencpp/cmake/gencpp-extras.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\opt\ros\kinetic\share\gencpp\cmake\"/>
+		</Unit>
+		<Unit filename="/home/wade/SJTU-swarm/swarm_ws/src/../../../../../opt/ros/kinetic/share/gencpp/cmake/gencppConfig-version.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\opt\ros\kinetic\share\gencpp\cmake\"/>
+		</Unit>
+		<Unit filename="/home/wade/SJTU-swarm/swarm_ws/src/../../../../../opt/ros/kinetic/share/gencpp/cmake/gencppConfig.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\opt\ros\kinetic\share\gencpp\cmake\"/>
+		</Unit>
+		<Unit filename="/home/wade/SJTU-swarm/swarm_ws/src/../../../../../opt/ros/kinetic/share/genmsg/cmake/genmsg-extras.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\opt\ros\kinetic\share\genmsg\cmake\"/>
+		</Unit>
+		<Unit filename="/home/wade/SJTU-swarm/swarm_ws/src/../../../../../opt/ros/kinetic/share/genmsg/cmake/genmsgConfig-version.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\opt\ros\kinetic\share\genmsg\cmake\"/>
+		</Unit>
+		<Unit filename="/home/wade/SJTU-swarm/swarm_ws/src/../../../../../opt/ros/kinetic/share/genmsg/cmake/genmsgConfig.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\opt\ros\kinetic\share\genmsg\cmake\"/>
+		</Unit>
+		<Unit filename="/home/wade/SJTU-swarm/swarm_ws/src/../../../../../opt/ros/kinetic/share/genmsg/cmake/pkg-genmsg.cmake.em">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\opt\ros\kinetic\share\genmsg\cmake\"/>
+		</Unit>
+		<Unit filename="/home/wade/SJTU-swarm/swarm_ws/src/../../../../../opt/ros/kinetic/share/genmsg/cmake/pkg-genmsg.context.in">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\opt\ros\kinetic\share\genmsg\cmake\"/>
+		</Unit>
+		<Unit filename="/home/wade/SJTU-swarm/swarm_ws/src/../../../../../opt/ros/kinetic/share/genmsg/cmake/pkg-msg-extras.cmake.in">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\opt\ros\kinetic\share\genmsg\cmake\"/>
+		</Unit>
+		<Unit filename="/home/wade/SJTU-swarm/swarm_ws/src/../../../../../opt/ros/kinetic/share/genmsg/cmake/pkg-msg-paths.cmake.develspace.in">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\opt\ros\kinetic\share\genmsg\cmake\"/>
+		</Unit>
+		<Unit filename="/home/wade/SJTU-swarm/swarm_ws/src/../../../../../opt/ros/kinetic/share/genmsg/cmake/pkg-msg-paths.cmake.installspace.in">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\opt\ros\kinetic\share\genmsg\cmake\"/>
+		</Unit>
+		<Unit filename="/home/wade/SJTU-swarm/swarm_ws/src/../../../../../opt/ros/kinetic/share/geneus/cmake/geneus-extras.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\opt\ros\kinetic\share\geneus\cmake\"/>
+		</Unit>
+		<Unit filename="/home/wade/SJTU-swarm/swarm_ws/src/../../../../../opt/ros/kinetic/share/geneus/cmake/geneusConfig-version.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\opt\ros\kinetic\share\geneus\cmake\"/>
+		</Unit>
+		<Unit filename="/home/wade/SJTU-swarm/swarm_ws/src/../../../../../opt/ros/kinetic/share/geneus/cmake/geneusConfig.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\opt\ros\kinetic\share\geneus\cmake\"/>
+		</Unit>
+		<Unit filename="/home/wade/SJTU-swarm/swarm_ws/src/../../../../../opt/ros/kinetic/share/genlisp/cmake/genlisp-extras.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\opt\ros\kinetic\share\genlisp\cmake\"/>
+		</Unit>
+		<Unit filename="/home/wade/SJTU-swarm/swarm_ws/src/../../../../../opt/ros/kinetic/share/genlisp/cmake/genlispConfig-version.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\opt\ros\kinetic\share\genlisp\cmake\"/>
+		</Unit>
+		<Unit filename="/home/wade/SJTU-swarm/swarm_ws/src/../../../../../opt/ros/kinetic/share/genlisp/cmake/genlispConfig.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\opt\ros\kinetic\share\genlisp\cmake\"/>
+		</Unit>
+		<Unit filename="/home/wade/SJTU-swarm/swarm_ws/src/../../../../../opt/ros/kinetic/share/gennodejs/cmake/gennodejs-extras.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\opt\ros\kinetic\share\gennodejs\cmake\"/>
+		</Unit>
+		<Unit filename="/home/wade/SJTU-swarm/swarm_ws/src/../../../../../opt/ros/kinetic/share/gennodejs/cmake/gennodejsConfig-version.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\opt\ros\kinetic\share\gennodejs\cmake\"/>
+		</Unit>
+		<Unit filename="/home/wade/SJTU-swarm/swarm_ws/src/../../../../../opt/ros/kinetic/share/gennodejs/cmake/gennodejsConfig.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\opt\ros\kinetic\share\gennodejs\cmake\"/>
+		</Unit>
+		<Unit filename="/home/wade/SJTU-swarm/swarm_ws/src/../../../../../opt/ros/kinetic/share/genpy/cmake/genpy-extras.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\opt\ros\kinetic\share\genpy\cmake\"/>
+		</Unit>
+		<Unit filename="/home/wade/SJTU-swarm/swarm_ws/src/../../../../../opt/ros/kinetic/share/genpy/cmake/genpyConfig-version.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\opt\ros\kinetic\share\genpy\cmake\"/>
+		</Unit>
+		<Unit filename="/home/wade/SJTU-swarm/swarm_ws/src/../../../../../opt/ros/kinetic/share/genpy/cmake/genpyConfig.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\opt\ros\kinetic\share\genpy\cmake\"/>
+		</Unit>
 		<Unit filename="/home/wade/SJTU-swarm/swarm_ws/src/../../../../../usr/src/gmock/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\..\..\..\..\..\usr\src\gmock\"/>
 		</Unit>
@@ -560,6 +885,18 @@
 		</Unit>
 		<Unit filename="/home/wade/SJTU-swarm/swarm_ws/src/cmake-build-debug/swarm_center/catkin_generated/package.cmake">
 			<Option virtualFolder="CMake Files\cmake-build-debug\swarm_center\catkin_generated\"/>
+		</Unit>
+		<Unit filename="/home/wade/SJTU-swarm/swarm_ws/src/cmake-build-debug/swarm_center/catkin_generated/swarm_center-msg-extras.cmake.develspace.in">
+			<Option virtualFolder="CMake Files\cmake-build-debug\swarm_center\catkin_generated\"/>
+		</Unit>
+		<Unit filename="/home/wade/SJTU-swarm/swarm_ws/src/cmake-build-debug/swarm_center/catkin_generated/swarm_center-msg-extras.cmake.installspace.in">
+			<Option virtualFolder="CMake Files\cmake-build-debug\swarm_center\catkin_generated\"/>
+		</Unit>
+		<Unit filename="/home/wade/SJTU-swarm/swarm_ws/src/cmake-build-debug/swarm_center/cmake/swarm_center-genmsg.cmake">
+			<Option virtualFolder="CMake Files\cmake-build-debug\swarm_center\cmake\"/>
+		</Unit>
+		<Unit filename="/home/wade/SJTU-swarm/swarm_ws/src/cmake-build-debug/devel/share/swarm_center/cmake/swarm_center-msg-paths.cmake">
+			<Option virtualFolder="CMake Files\cmake-build-debug\devel\share\swarm_center\cmake\"/>
 		</Unit>
 		<Unit filename="/home/wade/SJTU-swarm/swarm_ws/src/cmake-build-debug/swarm_config/catkin_generated/ordered_paths.cmake">
 			<Option virtualFolder="CMake Files\cmake-build-debug\swarm_config\catkin_generated\"/>

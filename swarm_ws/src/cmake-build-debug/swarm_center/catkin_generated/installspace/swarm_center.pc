@@ -3,6 +3,6 @@ prefix=/usr/local
 Name: swarm_center
 Description: Description of swarm_center
 Version: 0.0.0
-Cflags: 
-Libs: -L/usr/local/lib 
-Requires: 
+Cflags: -I/usr/local/include
+Libs: -L/usr/local/lib -lswarm_center
+Requires: geometery_msgs roscpp rospy std_msgs message_runtime
