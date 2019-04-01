@@ -90,6 +90,22 @@ formation_commander_EXTERNAL_OBJECTS =
 
 /home/wade/SJTU-swarm/swarm_ws/devel/lib/swarm_center/formation_commander: swarm_center/CMakeFiles/formation_commander.dir/src/formation_commander.cpp.o
 /home/wade/SJTU-swarm/swarm_ws/devel/lib/swarm_center/formation_commander: swarm_center/CMakeFiles/formation_commander.dir/build.make
+/home/wade/SJTU-swarm/swarm_ws/devel/lib/swarm_center/formation_commander: /opt/ros/kinetic/lib/libcv_bridge.so
+/home/wade/SJTU-swarm/swarm_ws/devel/lib/swarm_center/formation_commander: /opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_core3.so.3.3.1
+/home/wade/SJTU-swarm/swarm_ws/devel/lib/swarm_center/formation_commander: /opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_imgproc3.so.3.3.1
+/home/wade/SJTU-swarm/swarm_ws/devel/lib/swarm_center/formation_commander: /opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_imgcodecs3.so.3.3.1
+/home/wade/SJTU-swarm/swarm_ws/devel/lib/swarm_center/formation_commander: /opt/ros/kinetic/lib/libimage_transport.so
+/home/wade/SJTU-swarm/swarm_ws/devel/lib/swarm_center/formation_commander: /opt/ros/kinetic/lib/libmessage_filters.so
+/home/wade/SJTU-swarm/swarm_ws/devel/lib/swarm_center/formation_commander: /usr/lib/x86_64-linux-gnu/libtinyxml2.so
+/home/wade/SJTU-swarm/swarm_ws/devel/lib/swarm_center/formation_commander: /opt/ros/kinetic/lib/libclass_loader.so
+/home/wade/SJTU-swarm/swarm_ws/devel/lib/swarm_center/formation_commander: /usr/lib/libPocoFoundation.so
+/home/wade/SJTU-swarm/swarm_ws/devel/lib/swarm_center/formation_commander: /usr/lib/x86_64-linux-gnu/libdl.so
+/home/wade/SJTU-swarm/swarm_ws/devel/lib/swarm_center/formation_commander: /opt/ros/kinetic/lib/libroslib.so
+/home/wade/SJTU-swarm/swarm_ws/devel/lib/swarm_center/formation_commander: /opt/ros/kinetic/lib/librospack.so
+/home/wade/SJTU-swarm/swarm_ws/devel/lib/swarm_center/formation_commander: /usr/lib/x86_64-linux-gnu/libpython2.7.so
+/home/wade/SJTU-swarm/swarm_ws/devel/lib/swarm_center/formation_commander: /usr/lib/x86_64-linux-gnu/libboost_program_options.so
+/home/wade/SJTU-swarm/swarm_ws/devel/lib/swarm_center/formation_commander: /usr/lib/x86_64-linux-gnu/libtinyxml.so
+/home/wade/SJTU-swarm/swarm_ws/devel/lib/swarm_center/formation_commander: /opt/ros/kinetic/lib/libdynamic_reconfigure_config_init_mutex.so
 /home/wade/SJTU-swarm/swarm_ws/devel/lib/swarm_center/formation_commander: /opt/ros/kinetic/lib/libroscpp.so
 /home/wade/SJTU-swarm/swarm_ws/devel/lib/swarm_center/formation_commander: /usr/lib/x86_64-linux-gnu/libboost_filesystem.so
 /home/wade/SJTU-swarm/swarm_ws/devel/lib/swarm_center/formation_commander: /usr/lib/x86_64-linux-gnu/libboost_signals.so
@@ -98,8 +114,8 @@ formation_commander_EXTERNAL_OBJECTS =
 /home/wade/SJTU-swarm/swarm_ws/devel/lib/swarm_center/formation_commander: /opt/ros/kinetic/lib/librosconsole_backend_interface.so
 /home/wade/SJTU-swarm/swarm_ws/devel/lib/swarm_center/formation_commander: /usr/lib/x86_64-linux-gnu/liblog4cxx.so
 /home/wade/SJTU-swarm/swarm_ws/devel/lib/swarm_center/formation_commander: /usr/lib/x86_64-linux-gnu/libboost_regex.so
-/home/wade/SJTU-swarm/swarm_ws/devel/lib/swarm_center/formation_commander: /opt/ros/kinetic/lib/libxmlrpcpp.so
 /home/wade/SJTU-swarm/swarm_ws/devel/lib/swarm_center/formation_commander: /opt/ros/kinetic/lib/libroscpp_serialization.so
+/home/wade/SJTU-swarm/swarm_ws/devel/lib/swarm_center/formation_commander: /opt/ros/kinetic/lib/libxmlrpcpp.so
 /home/wade/SJTU-swarm/swarm_ws/devel/lib/swarm_center/formation_commander: /opt/ros/kinetic/lib/librostime.so
 /home/wade/SJTU-swarm/swarm_ws/devel/lib/swarm_center/formation_commander: /opt/ros/kinetic/lib/libcpp_common.so
 /home/wade/SJTU-swarm/swarm_ws/devel/lib/swarm_center/formation_commander: /usr/lib/x86_64-linux-gnu/libboost_system.so

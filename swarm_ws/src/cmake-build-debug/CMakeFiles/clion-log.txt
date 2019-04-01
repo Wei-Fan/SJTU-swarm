@@ -15,10 +15,14 @@
 -- BUILD_SHARED_LIBS is on
 -- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 -- ~~  traversing 3 packages in topological order:
--- ~~  - swarm_center
 -- ~~  - swarm_config
 -- ~~  - swarm_robot
+-- ~~  - swarm_center
 -- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+-- +++ processing catkin package: 'swarm_config'
+-- ==> add_subdirectory(swarm_config)
+-- +++ processing catkin package: 'swarm_robot'
+-- ==> add_subdirectory(swarm_robot)
 -- +++ processing catkin package: 'swarm_center'
 -- ==> add_subdirectory(swarm_center)
 -- Using these message generators: gencpp;geneus;genlisp;gennodejs;genpy
@@ -26,10 +30,6 @@
 -- Boost version: 1.58.0
 -- Found the following Boost libraries:
 --   program_options
--- +++ processing catkin package: 'swarm_config'
--- ==> add_subdirectory(swarm_config)
--- +++ processing catkin package: 'swarm_robot'
--- ==> add_subdirectory(swarm_robot)
 -- Configuring done
 -- Generating done
 -- Build files have been written to: /home/wade/SJTU-swarm/swarm_ws/src/cmake-build-debug

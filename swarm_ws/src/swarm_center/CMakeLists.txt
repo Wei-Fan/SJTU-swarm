@@ -15,6 +15,9 @@ find_package(catkin REQUIRED COMPONENTS
   std_srvs
   message_generation
   genmsg
+  cv_bridge
+  image_transport
+  vicon_bridge
 )
 
 ## System dependencies are found with CMake's conventions
@@ -86,6 +89,8 @@ find_package(Boost REQUIRED COMPONENTS
   #  bind
   REQUIRED)
 
+FIND_PACKAGE(OpenCV REQUIRED)
+
 ################################################
 ## Declare ROS dynamic reconfigure parameters ##
 ################################################
@@ -119,6 +124,9 @@ catkin_package(
   INCLUDE_DIRS include
   LIBRARIES ${PROJECT_NAME}
   CATKIN_DEPENDS geometery_msgs roscpp rospy std_msgs message_runtime
+  message_runtime
+  vicon_bridge
+  visualization_msgs
 #  DEPENDS system_lib
 )
 
@@ -165,7 +173,7 @@ add_dependencies(coverage_commander swarm_center_gencpp)
 # target_link_libraries(${PROJECT_NAME}_node
 #   ${catkin_LIBRARIES}
 # )
-target_link_libraries(coverage_commander ${catkin_LIBRARIES})
+target_link_libraries(coverage_commander ${catkin_LIBRARIES} ${Boost_LIBRARIES} ${OpenCV_LIBS})
 target_link_libraries(formation_commander ${catkin_LIBRARIES})
 
 #############

@@ -5,4 +5,4 @@ Description: Description of swarm_center
 Version: 0.0.0
 Cflags: -I/usr/local/include
 Libs: -L/usr/local/lib -lswarm_center
-Requires: geometery_msgs roscpp rospy std_msgs message_runtime
+Requires: geometery_msgs roscpp rospy std_msgs message_runtime message_runtime vicon_bridge visualization_msgs
