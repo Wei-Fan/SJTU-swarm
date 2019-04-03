@@ -11,6 +11,11 @@
         <!--<remap from="cmd_vel" to="robot_controller/cmd_vel"/>-->
     <!--</node>-->
     <!-- multi robot coverage -->
+    <node pkg="swarm_center" type="dispatch_center" name="dispatch_center" output="screen">
+        <!--<param name="arg robot_number" value="$(arg robot_number)"></param>-->
+        <!--<remap from="cmd_vel" to="robot_controller/cmd_vel"/>-->
+    </node>
+
     <node pkg="swarm_center" type="coverage_commander" name="coverage_commander" output="screen">
         <!--<param name="arg robot_number" value="$(arg robot_number)"></param>-->
         <!--<remap from="cmd_vel" to="robot_controller/cmd_vel"/>-->

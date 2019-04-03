@@ -128,7 +128,12 @@ public:
          * */
         generate_tree();
         path_planning();
-        
+
+        /*
+         * generate planning document
+         * */
+        generate_path();
+
         return true;
     }
 
@@ -711,6 +716,9 @@ public:
         return next;
     }
 
+    void generate_path(){
+
+    }
 };
 
 int main(int argc, char ** argv) {

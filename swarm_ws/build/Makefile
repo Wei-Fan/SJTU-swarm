@@ -582,6 +582,19 @@ formation_controller/fast:
 .PHONY : formation_controller/fast
 
 #=============================================================================
+# Target rules for targets named dispatch_center
+
+# Build rule for target.
+dispatch_center: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 dispatch_center
+.PHONY : dispatch_center
+
+# fast build rule for target.
+dispatch_center/fast:
+	$(MAKE) -f swarm_center/CMakeFiles/dispatch_center.dir/build.make swarm_center/CMakeFiles/dispatch_center.dir/build
+.PHONY : dispatch_center/fast
+
+#=============================================================================
 # Target rules for targets named formation_commander
 
 # Build rule for target.
@@ -1094,6 +1107,7 @@ help:
 	@echo "... rosgraph_msgs_generate_messages_lisp"
 	@echo "... robot_controller"
 	@echo "... formation_controller"
+	@echo "... dispatch_center"
 	@echo "... formation_commander"
 	@echo "... swarm_center_genlisp"
 	@echo "... swarm_center_generate_messages_lisp"

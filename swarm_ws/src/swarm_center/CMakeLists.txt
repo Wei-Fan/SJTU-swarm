@@ -157,6 +157,7 @@ include_directories(
 # add_executable(${PROJECT_NAME}_node src/swarm_center_node.cpp)
 add_executable(coverage_commander src/coverage_commander.cpp)
 add_executable(formation_commander src/formation_commander.cpp)
+add_executable(dispatch_center src/dispatch_center.cpp)
 
 ## Rename C++ executable without prefix
 ## The above recommended prefix causes long target names, the following renames the
@@ -175,6 +176,7 @@ add_dependencies(coverage_commander swarm_center_gencpp)
 # )
 target_link_libraries(coverage_commander ${catkin_LIBRARIES} ${Boost_LIBRARIES} ${OpenCV_LIBS})
 target_link_libraries(formation_commander ${catkin_LIBRARIES})
+target_link_libraries(dispatch_center ${catkin_LIBRARIES})
 
 #############
 ## Install ##
