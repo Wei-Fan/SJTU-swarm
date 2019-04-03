@@ -67,6 +67,7 @@
       <config projectName="Project" targetName="swarm_center_generate_messages_eus" />
       <config projectName="Project" targetName="rosgraph_msgs_generate_messages_cpp" />
       <config projectName="Project" targetName="std_msgs_generate_messages_eus" />
+      <config projectName="Project" targetName="dispatch_center" />
       <config projectName="Project" targetName="gtest" />
       <config projectName="Project" targetName="roscpp_generate_messages_nodejs" />
       <config projectName="Project" targetName="geometry_msgs_generate_messages_py" />
@@ -79,8 +80,29 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5b582add-7293-46c9-8cb2-5d9a77dfa8df" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/swarm_ws/src/swarm_center/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/swarm_ws/src/swarm_center/CMakeLists.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/swarm_ws/src/swarm_center/launch/commander.launch" beforeDir="false" afterPath="$PROJECT_DIR$/swarm_ws/src/swarm_center/launch/commander.launch" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/swarm_ws/src/cmake-build-debug/CMakeFiles/Makefile.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/swarm_ws/src/cmake-build-debug/CMakeFiles/Makefile.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/swarm_ws/src/cmake-build-debug/CMakeFiles/Makefile2" beforeDir="false" afterPath="$PROJECT_DIR$/swarm_ws/src/cmake-build-debug/CMakeFiles/Makefile2" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/swarm_ws/src/cmake-build-debug/CMakeFiles/TargetDirectories.txt" beforeDir="false" afterPath="$PROJECT_DIR$/swarm_ws/src/cmake-build-debug/CMakeFiles/TargetDirectories.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/swarm_ws/src/cmake-build-debug/CMakeFiles/progress.marks" beforeDir="false" afterPath="$PROJECT_DIR$/swarm_ws/src/cmake-build-debug/CMakeFiles/progress.marks" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/swarm_ws/src/cmake-build-debug/Makefile" beforeDir="false" afterPath="$PROJECT_DIR$/swarm_ws/src/cmake-build-debug/Makefile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/swarm_ws/src/cmake-build-debug/Project.cbp" beforeDir="false" afterPath="$PROJECT_DIR$/swarm_ws/src/cmake-build-debug/Project.cbp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/swarm_ws/src/cmake-build-debug/gtest/CMakeFiles/gmock.dir/progress.make" beforeDir="false" afterPath="$PROJECT_DIR$/swarm_ws/src/cmake-build-debug/gtest/CMakeFiles/gmock.dir/progress.make" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/swarm_ws/src/cmake-build-debug/gtest/CMakeFiles/gmock_main.dir/progress.make" beforeDir="false" afterPath="$PROJECT_DIR$/swarm_ws/src/cmake-build-debug/gtest/CMakeFiles/gmock_main.dir/progress.make" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/swarm_ws/src/cmake-build-debug/gtest/gtest/CMakeFiles/gtest.dir/progress.make" beforeDir="false" afterPath="$PROJECT_DIR$/swarm_ws/src/cmake-build-debug/gtest/gtest/CMakeFiles/gtest.dir/progress.make" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/swarm_ws/src/cmake-build-debug/gtest/gtest/CMakeFiles/gtest_main.dir/progress.make" beforeDir="false" afterPath="$PROJECT_DIR$/swarm_ws/src/cmake-build-debug/gtest/gtest/CMakeFiles/gtest_main.dir/progress.make" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/swarm_ws/src/cmake-build-debug/swarm_center/CMakeFiles/formation_commander.dir/progress.make" beforeDir="false" afterPath="$PROJECT_DIR$/swarm_ws/src/cmake-build-debug/swarm_center/CMakeFiles/formation_commander.dir/progress.make" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/swarm_ws/src/cmake-build-debug/swarm_center/CMakeFiles/progress.marks" beforeDir="false" afterPath="$PROJECT_DIR$/swarm_ws/src/cmake-build-debug/swarm_center/CMakeFiles/progress.marks" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/swarm_ws/src/cmake-build-debug/swarm_center/CMakeFiles/swarm_center_generate_messages_cpp.dir/progress.make" beforeDir="false" afterPath="$PROJECT_DIR$/swarm_ws/src/cmake-build-debug/swarm_center/CMakeFiles/swarm_center_generate_messages_cpp.dir/progress.make" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/swarm_ws/src/cmake-build-debug/swarm_center/CMakeFiles/swarm_center_generate_messages_eus.dir/progress.make" beforeDir="false" afterPath="$PROJECT_DIR$/swarm_ws/src/cmake-build-debug/swarm_center/CMakeFiles/swarm_center_generate_messages_eus.dir/progress.make" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/swarm_ws/src/cmake-build-debug/swarm_center/CMakeFiles/swarm_center_generate_messages_lisp.dir/progress.make" beforeDir="false" afterPath="$PROJECT_DIR$/swarm_ws/src/cmake-build-debug/swarm_center/CMakeFiles/swarm_center_generate_messages_lisp.dir/progress.make" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/swarm_ws/src/cmake-build-debug/swarm_center/CMakeFiles/swarm_center_generate_messages_nodejs.dir/progress.make" beforeDir="false" afterPath="$PROJECT_DIR$/swarm_ws/src/cmake-build-debug/swarm_center/CMakeFiles/swarm_center_generate_messages_nodejs.dir/progress.make" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/swarm_ws/src/cmake-build-debug/swarm_center/CMakeFiles/swarm_center_generate_messages_py.dir/progress.make" beforeDir="false" afterPath="$PROJECT_DIR$/swarm_ws/src/cmake-build-debug/swarm_center/CMakeFiles/swarm_center_generate_messages_py.dir/progress.make" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/swarm_ws/src/cmake-build-debug/swarm_center/Makefile" beforeDir="false" afterPath="$PROJECT_DIR$/swarm_ws/src/cmake-build-debug/swarm_center/Makefile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/swarm_ws/src/cmake-build-debug/swarm_center/swarm_center.cbp" beforeDir="false" afterPath="$PROJECT_DIR$/swarm_ws/src/cmake-build-debug/swarm_center/swarm_center.cbp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/swarm_ws/src/cmake-build-debug/swarm_config/CMakeFiles/hey_swarm.dir/progress.make" beforeDir="false" afterPath="$PROJECT_DIR$/swarm_ws/src/cmake-build-debug/swarm_config/CMakeFiles/hey_swarm.dir/progress.make" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/swarm_ws/src/cmake-build-debug/swarm_robot/CMakeFiles/formation_controller.dir/progress.make" beforeDir="false" afterPath="$PROJECT_DIR$/swarm_ws/src/cmake-build-debug/swarm_robot/CMakeFiles/formation_controller.dir/progress.make" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/swarm_ws/src/cmake-build-debug/swarm_robot/CMakeFiles/robot_controller.dir/progress.make" beforeDir="false" afterPath="$PROJECT_DIR$/swarm_ws/src/cmake-build-debug/swarm_robot/CMakeFiles/robot_controller.dir/progress.make" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/swarm_ws/src/swarm_center/src/coverage_commander.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/swarm_ws/src/swarm_center/src/coverage_commander.cpp" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/swarm_ws/src/cmake-build-debug/" />
@@ -109,19 +131,20 @@
     <session id="-1588924461">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="3" />
+          <entry key="project.closed" value="4" />
           <entry key="project.open.time.0" value="1" />
+          <entry key="project.open.time.1" value="1" />
           <entry key="project.open.time.4" value="1" />
           <entry key="project.open.time.5" value="3" />
-          <entry key="project.open.time.6" value="7" />
+          <entry key="project.open.time.6" value="8" />
           <entry key="project.open.time.7" value="8" />
           <entry key="project.open.time.8" value="1" />
-          <entry key="project.opened" value="21" />
+          <entry key="project.opened" value="23" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="cpp" value="12" />
+          <entry key="cpp" value="13" />
           <entry key="h" value="2" />
           <entry key="launch" value="8" />
           <entry key="md" value="6" />
@@ -135,14 +158,14 @@
           <entry key="CMakeLists.txt" value="7" />
           <entry key="DTD" value="8" />
           <entry key="Markdown" value="6" />
-          <entry key="ObjectiveC" value="14" />
+          <entry key="ObjectiveC" value="15" />
           <entry key="PLAIN_TEXT" value="1" />
           <entry key="XML" value="1" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="cpp" value="2609" />
+          <entry key="cpp" value="2978" />
           <entry key="h" value="41" />
           <entry key="launch" value="462" />
           <entry key="md" value="2035" />
@@ -156,7 +179,7 @@
           <entry key="DTD" value="462" />
           <entry key="Doxygen file" value="3" />
           <entry key="Markdown" value="2035" />
-          <entry key="ObjectiveC" value="2647" />
+          <entry key="ObjectiveC" value="3016" />
           <entry key="XML" value="2" />
         </counts>
       </usages-collector>
@@ -169,7 +192,7 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/swarm_ws/src/swarm_center/launch/commander.launch">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="247">
@@ -179,30 +202,34 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/swarm_ws/src/swarm_robot/launch/one_robot.launch">
+        <entry file="file://$PROJECT_DIR$/swarm_ws/src/swarm_robot/src/robot_controller.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="38">
-              <caret line="2" column="4" selection-start-line="2" selection-start-column="4" selection-end-line="3" selection-end-column="32" />
+            <state relative-caret-position="703">
+              <caret line="41" selection-start-line="41" selection-end-line="41" />
+              <folding>
+                <element signature="e#0#20#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/swarm_ws/src/swarm_center/src/coverage_commander.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="637">
-              <caret line="719" selection-start-line="719" selection-end-line="719" />
+            <state relative-caret-position="211">
+              <caret line="724" lean-forward="true" selection-start-line="723" selection-start-column="12" selection-end-line="724" />
               <folding>
                 <element signature="e#187#207#0" expanded="true" />
-                <element signature="e#3848#5279#0" />
-                <element signature="e#5285#5814#0" />
-                <element signature="e#5820#12641#0" />
-                <element signature="e#12647#15756#0" />
-                <element signature="e#15899#19324#0" />
-                <element signature="e#19330#22917#0" />
-                <element signature="e#22923#23249#0" />
-                <element signature="e#23255#23652#0" />
-                <element signature="e#23658#24055#0" />
+                <element signature="e#3892#5323#0" />
+                <element signature="e#5329#5858#0" />
+                <element signature="e#5864#12685#0" />
+                <element signature="e#12691#15800#0" />
+                <element signature="e#15806#15936#0" />
+                <element signature="e#15943#19368#0" />
+                <element signature="e#19374#22961#0" />
+                <element signature="e#22967#23293#0" />
+                <element signature="e#23299#23696#0" />
+                <element signature="e#23702#24099#0" />
               </folding>
             </state>
           </provider>
@@ -211,8 +238,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/swarm_ws/src/swarm_center/src/formation_commander.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="125">
-              <caret line="12" column="23" lean-forward="true" selection-start-line="12" selection-start-column="23" selection-end-line="12" selection-end-column="23" />
+            <state relative-caret-position="-17">
+              <caret line="12" column="23" selection-start-line="12" selection-start-column="23" selection-end-line="12" selection-end-column="23" />
             </state>
           </provider>
         </entry>
@@ -246,7 +273,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/swarm_ws/src/swarm_center/CMakeLists.txt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1518">
+            <state relative-caret-position="3021">
               <caret line="159" column="30" selection-start-line="159" selection-start-column="30" selection-end-line="159" selection-end-column="30" />
             </state>
           </provider>
@@ -326,10 +353,10 @@
         <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/swarm_ws/src/swarm_center/src/formation_commander.cpp" />
         <option value="$PROJECT_DIR$/swarm_ws/src/swarm_center/package.xml" />
-        <option value="$PROJECT_DIR$/swarm_ws/src/swarm_center/src/coverage_commander.cpp" />
         <option value="$PROJECT_DIR$/swarm_ws/src/swarm_center/src/dispatch_center.cpp" />
         <option value="$PROJECT_DIR$/swarm_ws/src/swarm_center/CMakeLists.txt" />
         <option value="$PROJECT_DIR$/swarm_ws/src/swarm_center/launch/commander.launch" />
+        <option value="$PROJECT_DIR$/swarm_ws/src/swarm_center/src/coverage_commander.cpp" />
       </list>
     </option>
   </component>
@@ -339,17 +366,18 @@
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
-  <component name="ProjectFrameBounds" extendedState="1">
-    <option name="x" value="512" />
-    <option name="y" value="50" />
-    <option name="width" value="978" />
-    <option name="height" value="1020" />
+  <component name="ProjectFrameBounds" extendedState="4">
+    <option name="x" value="626" />
+    <option name="y" value="24" />
+    <option name="width" value="1294" />
+    <option name="height" value="1056" />
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -389,8 +417,7 @@
               <item name="SJTU-swarm" type="462c0819:PsiDirectoryNode" />
               <item name="swarm_ws" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="swarm_center" type="462c0819:PsiDirectoryNode" />
-              <item name="launch" type="462c0819:PsiDirectoryNode" />
+              <item name="swarm_robot" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="SJTU-swarm" type="b2602c69:ProjectViewProjectNode" />
@@ -398,14 +425,13 @@
               <item name="SJTU-swarm" type="462c0819:PsiDirectoryNode" />
               <item name="swarm_ws" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="swarm_center" type="462c0819:PsiDirectoryNode" />
+              <item name="swarm_robot" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -443,6 +469,11 @@
       </method>
     </configuration>
     <configuration name="coverage_commander" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="Project" TARGET_NAME="coverage_commander" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="Project" RUN_TARGET_NAME="coverage_commander">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="dispatch_center" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="Project" TARGET_NAME="dispatch_center" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="Project" RUN_TARGET_NAME="dispatch_center">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
@@ -842,6 +873,7 @@
       <item itemvalue="Application.gmock_main" />
       <item itemvalue="Application.gtest" />
       <item itemvalue="Application.gtest_main" />
+      <item itemvalue="Application.dispatch_center" />
     </list>
   </component>
   <component name="StructureViewFactory">
@@ -879,18 +911,20 @@
       <workItem from="1553953364526" duration="599000" />
       <workItem from="1554114939775" duration="6343000" />
       <workItem from="1554260276386" duration="433000" />
+      <workItem from="1554318645329" duration="3417000" />
+      <workItem from="1554294839882" duration="3767000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="53740000" />
+    <option name="totallyTimeSpent" value="60924000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="65" y="-4" width="1855" height="1084" extended-state="6" />
+    <frame x="626" y="24" width="1294" height="1056" extended-state="4" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.33472803" visible="true" weight="0.15588723" />
-      <window_info id="Structure" order="1" sideWeight="0.66527194" side_tool="true" visible="true" weight="0.15588723" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.33297414" visible="true" weight="0.20512821" />
+      <window_info id="Structure" order="1" sideWeight="0.66702586" side_tool="true" visible="true" weight="0.20512821" />
       <window_info id="Favorites" order="2" side_tool="true" weight="0.32991913" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" sideWeight="0.499375" weight="0.10175879" />
@@ -971,13 +1005,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/swarm_ws/src/swarm_center/src/swarm_commander.cpp" />
-    <entry file="file://$PROJECT_DIR$/swarm_ws/src/swarm_robot/src/robot_controller.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="57">
-          <caret line="3" column="31" selection-start-line="3" selection-start-column="31" selection-end-line="3" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/swarm_ws/src/swarm_robot/CMakeLists.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="101">
@@ -1016,6 +1043,23 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/swarm_ws/src/swarm_center/launch/commander.launch">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="247">
+          <caret line="13" column="73" selection-start-line="13" selection-start-column="73" selection-end-line="13" selection-end-column="73" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/swarm_ws/src/swarm_center/src/dispatch_center.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="608">
+          <caret line="32" column="26" selection-start-line="32" selection-start-column="26" selection-end-line="32" selection-end-column="26" />
+          <folding>
+            <element signature="e#100#120#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/swarm_ws/src/swarm_center/srv/mCPPReq.srv">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -1023,6 +1067,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="190">
           <caret line="10" column="9" selection-start-line="10" selection-start-column="9" selection-end-line="10" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/swarm_ws/src/swarm_center/CMakeLists.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3021">
+          <caret line="159" column="30" selection-start-line="159" selection-start-column="30" selection-end-line="159" selection-end-column="30" />
         </state>
       </provider>
     </entry>
@@ -1045,53 +1096,40 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/swarm_ws/src/swarm_center/src/coverage_commander.cpp">
+    <entry file="file://$PROJECT_DIR$/swarm_ws/src/swarm_robot/src/robot_controller.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="637">
-          <caret line="719" selection-start-line="719" selection-end-line="719" />
+        <state relative-caret-position="703">
+          <caret line="41" selection-start-line="41" selection-end-line="41" />
           <folding>
-            <element signature="e#187#207#0" expanded="true" />
-            <element signature="e#3848#5279#0" />
-            <element signature="e#5285#5814#0" />
-            <element signature="e#5820#12641#0" />
-            <element signature="e#12647#15756#0" />
-            <element signature="e#15899#19324#0" />
-            <element signature="e#19330#22917#0" />
-            <element signature="e#22923#23249#0" />
-            <element signature="e#23255#23652#0" />
-            <element signature="e#23658#24055#0" />
+            <element signature="e#0#20#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/swarm_ws/src/swarm_center/src/formation_commander.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="125">
-          <caret line="12" column="23" lean-forward="true" selection-start-line="12" selection-start-column="23" selection-end-line="12" selection-end-column="23" />
+        <state relative-caret-position="-17">
+          <caret line="12" column="23" selection-start-line="12" selection-start-column="23" selection-end-line="12" selection-end-column="23" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/swarm_ws/src/swarm_center/src/dispatch_center.cpp">
+    <entry file="file://$PROJECT_DIR$/swarm_ws/src/swarm_center/src/coverage_commander.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="608">
-          <caret line="32" column="26" selection-start-line="32" selection-start-column="26" selection-end-line="32" selection-end-column="26" />
+        <state relative-caret-position="211">
+          <caret line="724" lean-forward="true" selection-start-line="723" selection-start-column="12" selection-end-line="724" />
           <folding>
-            <element signature="e#100#120#0" expanded="true" />
+            <element signature="e#187#207#0" expanded="true" />
+            <element signature="e#3892#5323#0" />
+            <element signature="e#5329#5858#0" />
+            <element signature="e#5864#12685#0" />
+            <element signature="e#12691#15800#0" />
+            <element signature="e#15806#15936#0" />
+            <element signature="e#15943#19368#0" />
+            <element signature="e#19374#22961#0" />
+            <element signature="e#22967#23293#0" />
+            <element signature="e#23299#23696#0" />
+            <element signature="e#23702#24099#0" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/swarm_ws/src/swarm_center/CMakeLists.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1518">
-          <caret line="159" column="30" selection-start-line="159" selection-start-column="30" selection-end-line="159" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/swarm_ws/src/swarm_center/launch/commander.launch">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="247">
-          <caret line="13" column="73" selection-start-line="13" selection-start-column="73" selection-end-line="13" selection-end-column="73" />
         </state>
       </provider>
     </entry>

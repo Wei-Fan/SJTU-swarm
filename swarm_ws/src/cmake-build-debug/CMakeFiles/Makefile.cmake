@@ -276,6 +276,7 @@ set(CMAKE_DEPEND_INFO_FILES
   "swarm_config/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/DependInfo.cmake"
   "swarm_robot/CMakeFiles/robot_controller.dir/DependInfo.cmake"
   "swarm_robot/CMakeFiles/formation_controller.dir/DependInfo.cmake"
+  "swarm_center/CMakeFiles/dispatch_center.dir/DependInfo.cmake"
   "swarm_center/CMakeFiles/formation_commander.dir/DependInfo.cmake"
   "swarm_center/CMakeFiles/swarm_center_genlisp.dir/DependInfo.cmake"
   "swarm_center/CMakeFiles/swarm_center_generate_messages_lisp.dir/DependInfo.cmake"

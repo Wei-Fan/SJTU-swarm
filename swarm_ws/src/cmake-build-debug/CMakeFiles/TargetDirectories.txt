@@ -68,6 +68,7 @@
 /home/wade/SJTU-swarm/swarm_ws/src/cmake-build-debug/swarm_center/CMakeFiles/install/local.dir
 /home/wade/SJTU-swarm/swarm_ws/src/cmake-build-debug/swarm_center/CMakeFiles/install.dir
 /home/wade/SJTU-swarm/swarm_ws/src/cmake-build-debug/swarm_center/CMakeFiles/test.dir
+/home/wade/SJTU-swarm/swarm_ws/src/cmake-build-debug/swarm_center/CMakeFiles/dispatch_center.dir
 /home/wade/SJTU-swarm/swarm_ws/src/cmake-build-debug/swarm_center/CMakeFiles/formation_commander.dir
 /home/wade/SJTU-swarm/swarm_ws/src/cmake-build-debug/swarm_center/CMakeFiles/swarm_center_genlisp.dir
 /home/wade/SJTU-swarm/swarm_ws/src/cmake-build-debug/swarm_center/CMakeFiles/swarm_center_generate_messages_lisp.dir

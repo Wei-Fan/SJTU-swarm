@@ -168,6 +168,21 @@ depend:
 .PHONY : depend
 
 # Convenience name for target.
+swarm_center/CMakeFiles/dispatch_center.dir/rule:
+	cd /home/wade/SJTU-swarm/swarm_ws/src/cmake-build-debug && $(MAKE) -f CMakeFiles/Makefile2 swarm_center/CMakeFiles/dispatch_center.dir/rule
+.PHONY : swarm_center/CMakeFiles/dispatch_center.dir/rule
+
+# Convenience name for target.
+dispatch_center: swarm_center/CMakeFiles/dispatch_center.dir/rule
+
+.PHONY : dispatch_center
+
+# fast build rule for target.
+dispatch_center/fast:
+	cd /home/wade/SJTU-swarm/swarm_ws/src/cmake-build-debug && $(MAKE) -f swarm_center/CMakeFiles/dispatch_center.dir/build.make swarm_center/CMakeFiles/dispatch_center.dir/build
+.PHONY : dispatch_center/fast
+
+# Convenience name for target.
 swarm_center/CMakeFiles/formation_commander.dir/rule:
 	cd /home/wade/SJTU-swarm/swarm_ws/src/cmake-build-debug && $(MAKE) -f CMakeFiles/Makefile2 swarm_center/CMakeFiles/formation_commander.dir/rule
 .PHONY : swarm_center/CMakeFiles/formation_commander.dir/rule
@@ -734,6 +749,33 @@ src/coverage_commander.cpp.s:
 	cd /home/wade/SJTU-swarm/swarm_ws/src/cmake-build-debug && $(MAKE) -f swarm_center/CMakeFiles/coverage_commander.dir/build.make swarm_center/CMakeFiles/coverage_commander.dir/src/coverage_commander.cpp.s
 .PHONY : src/coverage_commander.cpp.s
 
+src/dispatch_center.o: src/dispatch_center.cpp.o
+
+.PHONY : src/dispatch_center.o
+
+# target to build an object file
+src/dispatch_center.cpp.o:
+	cd /home/wade/SJTU-swarm/swarm_ws/src/cmake-build-debug && $(MAKE) -f swarm_center/CMakeFiles/dispatch_center.dir/build.make swarm_center/CMakeFiles/dispatch_center.dir/src/dispatch_center.cpp.o
+.PHONY : src/dispatch_center.cpp.o
+
+src/dispatch_center.i: src/dispatch_center.cpp.i
+
+.PHONY : src/dispatch_center.i
+
+# target to preprocess a source file
+src/dispatch_center.cpp.i:
+	cd /home/wade/SJTU-swarm/swarm_ws/src/cmake-build-debug && $(MAKE) -f swarm_center/CMakeFiles/dispatch_center.dir/build.make swarm_center/CMakeFiles/dispatch_center.dir/src/dispatch_center.cpp.i
+.PHONY : src/dispatch_center.cpp.i
+
+src/dispatch_center.s: src/dispatch_center.cpp.s
+
+.PHONY : src/dispatch_center.s
+
+# target to generate assembly for a file
+src/dispatch_center.cpp.s:
+	cd /home/wade/SJTU-swarm/swarm_ws/src/cmake-build-debug && $(MAKE) -f swarm_center/CMakeFiles/dispatch_center.dir/build.make swarm_center/CMakeFiles/dispatch_center.dir/src/dispatch_center.cpp.s
+.PHONY : src/dispatch_center.cpp.s
+
 src/formation_commander.o: src/formation_commander.cpp.o
 
 .PHONY : src/formation_commander.o
@@ -770,6 +812,7 @@ help:
 	@echo "... install/local"
 	@echo "... install"
 	@echo "... test"
+	@echo "... dispatch_center"
 	@echo "... formation_commander"
 	@echo "... swarm_center_genlisp"
 	@echo "... swarm_center_generate_messages_lisp"
@@ -813,6 +856,9 @@ help:
 	@echo "... src/coverage_commander.o"
 	@echo "... src/coverage_commander.i"
 	@echo "... src/coverage_commander.s"
+	@echo "... src/dispatch_center.o"
+	@echo "... src/dispatch_center.i"
+	@echo "... src/dispatch_center.s"
 	@echo "... src/formation_commander.o"
 	@echo "... src/formation_commander.i"
 	@echo "... src/formation_commander.s"

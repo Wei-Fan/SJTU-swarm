@@ -19,6 +19,8 @@
 #include <vector>
 #include <cmath>
 #include <chrono>
+#include <sstream>
+#include <fstream>
 
 #include "swarm_center/mCPPReq.h"
 //#include <geometry_msgs/Pose.h>
@@ -33,6 +35,8 @@ using namespace std;
 using namespace Eigen;
 using namespace cv;
 
+string project_path = "/home/wade/SJTU-swarm/swarm_ws/src/swarm_center/";
+
 int robot_number = 0;
 vector<int> x_init;
 vector<int> y_init;
@@ -46,7 +50,6 @@ private:
     ros::NodeHandle global;
     ros::NodeHandle local;
 
-    bool lock;
     std::chrono::high_resolution_clock ::time_point recieve_time;
 
     Mat board = Mat(Size(900,900), CV_8UC3, Scalar(0));
@@ -70,8 +73,7 @@ public:
         ROS_INFO("SWARM COMMANDER is activated!");
         service = local.advertiseService("mCPP_req",&CoverageCommander::plan,this);
 
-        /* respond only one time per period */
-        lock = false;
+        /* respond only one time per 5s period */
         recieve_time = std::chrono::high_resolution_clock::now();
 
         /* initial matrix*/
@@ -82,15 +84,14 @@ public:
               swarm_center::mCPPReq::Response &res)
     {
         /* respond only one time per period */
-        res.b = true;
-        if (lock) {
-            auto cur_time = std::chrono::high_resolution_clock::now();
-            std::chrono::duration<double> lock_time = cur_time-recieve_time;
-            if (lock_time.count() > 5.0) {
-                lock = false;
-                recieve_time = cur_time;
-            } else
-                return false;
+        auto cur_time = std::chrono::high_resolution_clock::now();
+        std::chrono::duration<double> lock_time = cur_time-recieve_time;
+        if (lock_time.count() > 5.0) {
+            res.b = true;
+            recieve_time = cur_time;
+        } else {
+            res.b = false;
+            return false;
         }
 
         /*
@@ -717,6 +718,83 @@ public:
     }
 
     void generate_path(){
+        for (int k = 0; k < robot_number; ++k) {
+            /* path name */
+            vector<Vector2i> P_grid_t = P_grid[k];
+            string filename = project_path + "launch/cover_robot" + to_string(k) + ".csv";
+
+            /* velocity */
+            double vmax = 0.2;
+            double amax = 0.1;
+            double s_c = vmax*vmax/amax;
+            double dt = 0.05;//s
+            double turn_blank = 8;
+
+            /* write csv file */
+            ofstream outfile;
+            outfile.open(filename,ios::out);
+            for (int i = 0; i < P_grid.size()-1; ++i) {
+                for (int j = 0; j < turn_blank/2; ++j) {
+                    outfile << P_grid_t[i](0) << ',' << P_grid_t[i](1) << ',' << 1.0 << endl;
+                }
+
+                int xoy;
+                double s;
+                if (P_grid_t[i](0)==P_grid_t[i+1](0)) {
+                    xoy = 1;
+                    s = abs(P_grid_t[i](1)-P_grid_t[i+1](1));
+                } else {
+                    xoy = 0;
+                    s = abs(P_grid_t[i](0)-P_grid_t[i+1](0));
+                }
+                //        cout << P_grid[i](xoy) << endl;
+                if (s > s_c) {
+                    double x = 0;
+                    double dx = 0.5*amax*dt*dt;
+                    double line_time = 2*sqrt(s_c/amax)+(s-s_c)/vmax;
+                    int line_num = (int) (line_time / dt);
+                    for (int j = 0; j < line_num; ++j) {
+                        if (x<s_c/2)
+                        {
+                            dx += amax*dt*dt;
+                            x += dx;
+                        } else if (x<s-s_c/2) {
+                            x += vmax*dt;
+                        } else {
+                            dx -= amax*dt*dt;
+                            x += dx;
+                        }
+                        if (xoy==0)
+                            outfile << x+P_grid_t[i](0) << ',' << P_grid_t[i](1) << ',' << 1.0 << endl;
+                        else
+                            outfile << P_grid_t[i](0) << ',' << x+P_grid_t[i](1) << ',' << 1.0 << endl;
+                    }
+
+                } else {
+                    double line_time = 2*sqrt(s/amax);
+                    int line_num = (int) (line_time / dt);
+                    double x = 0;
+                    double dx = 0.5*amax*dt*dt;
+                    for (int j = 0; j < line_num; ++j) {
+                        if (j<line_num/2) {
+                            dx += amax*dt*dt;
+                            x += dx;
+                        } else {
+                            dx -= amax*dt*dt;
+                            x += dx;
+                        }
+                        if (xoy==0)
+                            outfile << x+P_grid_t[i](0) << ',' << P_grid_t[i](1) << ',' << 1.0 << endl;
+                        else
+                            outfile << P_grid_t[i](0) << ',' << x+P_grid_t[i](1) << ',' << 1.0 << endl;
+                    }
+                }
+
+                for (int j = 0; j < turn_blank/2; ++j) {
+                    outfile << P_grid_t[i+1](0) << ',' << P_grid_t[i+1](1) << ',' << 1.0 << endl;
+                }
+            }
+        }
 
     }
 };
