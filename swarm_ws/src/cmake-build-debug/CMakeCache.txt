@@ -323,6 +323,12 @@ _gtest_INCLUDES:FILEPATH=/usr/include/gtest/gtest.h
 //Path to a file.
 _gtest_SOURCES:FILEPATH=/usr/src/gtest/src/gtest.cc
 
+//The directory containing a CMake configuration file for actionlib.
+actionlib_DIR:PATH=/opt/ros/kinetic/share/actionlib/cmake
+
+//The directory containing a CMake configuration file for actionlib_msgs.
+actionlib_msgs_DIR:PATH=/opt/ros/kinetic/share/actionlib_msgs/cmake
+
 //The directory containing a CMake configuration file for catkin.
 catkin_DIR:PATH=/opt/ros/kinetic/share/catkin/cmake
 
@@ -335,8 +341,17 @@ cpp_common_DIR:PATH=/opt/ros/kinetic/share/cpp_common/cmake
 //The directory containing a CMake configuration file for cv_bridge.
 cv_bridge_DIR:PATH=/opt/ros/kinetic/share/cv_bridge/cmake
 
+//The directory containing a CMake configuration file for diagnostic_msgs.
+diagnostic_msgs_DIR:PATH=/opt/ros/kinetic/share/diagnostic_msgs/cmake
+
+//The directory containing a CMake configuration file for diagnostic_updater.
+diagnostic_updater_DIR:PATH=/opt/ros/kinetic/share/diagnostic_updater/cmake
+
 //The directory containing a CMake configuration file for dynamic_reconfigure.
 dynamic_reconfigure_DIR:PATH=/opt/ros/kinetic/share/dynamic_reconfigure/cmake
+
+//The directory containing a CMake configuration file for eigen_conversions.
+eigen_conversions_DIR:PATH=/opt/ros/kinetic/share/eigen_conversions/cmake
 
 //The directory containing a CMake configuration file for gencpp.
 gencpp_DIR:PATH=/opt/ros/kinetic/share/gencpp/cmake
@@ -355,6 +370,9 @@ gennodejs_DIR:PATH=/opt/ros/kinetic/share/gennodejs/cmake
 
 //The directory containing a CMake configuration file for genpy.
 genpy_DIR:PATH=/opt/ros/kinetic/share/genpy/cmake
+
+//The directory containing a CMake configuration file for geographic_msgs.
+geographic_msgs_DIR:PATH=/opt/ros/kinetic/share/geographic_msgs/cmake
 
 //The directory containing a CMake configuration file for geometry_msgs.
 geometry_msgs_DIR:PATH=/opt/ros/kinetic/share/geometry_msgs/cmake
@@ -403,7 +421,16 @@ gtest_main_LIB_DEPENDS:STATIC=general;-lpthread;general;gtest;
 image_transport_DIR:PATH=/opt/ros/kinetic/share/image_transport/cmake
 
 //Path to a library.
-lib:FILEPATH=/opt/ros/kinetic/lib/libdynamic_reconfigure_config_init_mutex.so
+lib:FILEPATH=/opt/ros/kinetic/lib/libeigen_conversions.so
+
+//The directory containing a CMake configuration file for libmavconn.
+libmavconn_DIR:PATH=/home/wade/catkin_ws/devel/share/libmavconn/cmake
+
+//The directory containing a CMake configuration file for mavros.
+mavros_DIR:PATH=/home/wade/catkin_ws/devel/share/mavros/cmake
+
+//The directory containing a CMake configuration file for mavros_msgs.
+mavros_msgs_DIR:PATH=/home/wade/catkin_ws/devel/share/mavros_msgs/cmake
 
 //The directory containing a CMake configuration file for message_filters.
 message_filters_DIR:PATH=/opt/ros/kinetic/share/message_filters/cmake
@@ -413,6 +440,9 @@ message_generation_DIR:PATH=/opt/ros/kinetic/share/message_generation/cmake
 
 //The directory containing a CMake configuration file for message_runtime.
 message_runtime_DIR:PATH=/opt/ros/kinetic/share/message_runtime/cmake
+
+//The directory containing a CMake configuration file for nav_msgs.
+nav_msgs_DIR:PATH=/opt/ros/kinetic/share/nav_msgs/cmake
 
 //The directory containing a CMake configuration file for pluginlib.
 pluginlib_DIR:PATH=/opt/ros/kinetic/share/pluginlib/cmake
@@ -428,6 +458,9 @@ roscpp_serialization_DIR:PATH=/opt/ros/kinetic/share/roscpp_serialization/cmake
 
 //The directory containing a CMake configuration file for roscpp_traits.
 roscpp_traits_DIR:PATH=/opt/ros/kinetic/share/roscpp_traits/cmake
+
+//The directory containing a CMake configuration file for rosgraph.
+rosgraph_DIR:PATH=/opt/ros/kinetic/share/rosgraph/cmake
 
 //The directory containing a CMake configuration file for rosgraph_msgs.
 rosgraph_msgs_DIR:PATH=/opt/ros/kinetic/share/rosgraph_msgs/cmake
@@ -446,6 +479,9 @@ rostime_DIR:PATH=/opt/ros/kinetic/share/rostime/cmake
 
 //The directory containing a CMake configuration file for sensor_msgs.
 sensor_msgs_DIR:PATH=/opt/ros/kinetic/share/sensor_msgs/cmake
+
+//The directory containing a CMake configuration file for serial.
+serial_DIR:PATH=/opt/ros/kinetic/share/serial/cmake
 
 //The directory containing a CMake configuration file for std_msgs.
 std_msgs_DIR:PATH=/opt/ros/kinetic/share/std_msgs/cmake
@@ -470,6 +506,21 @@ swarm_robot_BINARY_DIR:STATIC=/home/wade/SJTU-swarm/swarm_ws/src/cmake-build-deb
 
 //Value Computed by CMake
 swarm_robot_SOURCE_DIR:STATIC=/home/wade/SJTU-swarm/swarm_ws/src/swarm_robot
+
+//The directory containing a CMake configuration file for tf2.
+tf2_DIR:PATH=/opt/ros/kinetic/share/tf2/cmake
+
+//The directory containing a CMake configuration file for tf2_msgs.
+tf2_msgs_DIR:PATH=/opt/ros/kinetic/share/tf2_msgs/cmake
+
+//The directory containing a CMake configuration file for tf2_py.
+tf2_py_DIR:PATH=/opt/ros/kinetic/share/tf2_py/cmake
+
+//The directory containing a CMake configuration file for tf2_ros.
+tf2_ros_DIR:PATH=/opt/ros/kinetic/share/tf2_ros/cmake
+
+//The directory containing a CMake configuration file for uuid_msgs.
+uuid_msgs_DIR:PATH=/opt/ros/kinetic/share/uuid_msgs/cmake
 
 //The directory containing a CMake configuration file for vicon_bridge.
 vicon_bridge_DIR:PATH=/home/wade/catkin_ws/devel/share/vicon_bridge/cmake

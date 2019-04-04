@@ -5,7 +5,7 @@
 		<Option title="gmock"/>
 		<Option makefile_is_custom="1"/>
 		<Option compiler="gcc"/>
-		<Option virtualFolders="CMake Files\;CMake Files\..\;CMake Files\..\..\;CMake Files\..\..\..\;CMake Files\..\..\..\..\;CMake Files\..\..\..\..\..\;CMake Files\..\..\..\..\..\opt\;CMake Files\..\..\..\..\..\opt\ros\;CMake Files\..\..\..\..\..\opt\ros\kinetic\;CMake Files\..\..\..\..\..\opt\ros\kinetic\share\;CMake Files\..\..\..\..\..\opt\ros\kinetic\share\catkin\;CMake Files\..\..\..\..\..\opt\ros\kinetic\share\catkin\cmake\;CMake Files\..\..\..\..\..\opt\ros\kinetic\share\catkin\cmake\platform\;CMake Files\..\..\..\..\..\opt\ros\kinetic\share\catkin\cmake\test\;CMake Files\..\..\..\..\..\opt\ros\kinetic\share\catkin\cmake\tools\;CMake Files\..\..\..\..\..\opt\ros\kinetic\share\catkin\cmake\templates\;CMake Files\..\..\..\..\..\opt\ros\kinetic\share\catkin\cmake\em\;CMake Files\..\..\..\..\..\opt\ros\kinetic\share\geometry_msgs\;CMake Files\..\..\..\..\..\opt\ros\kinetic\share\geometry_msgs\cmake\;CMake Files\..\..\..\..\..\opt\ros\kinetic\share\message_runtime\;CMake Files\..\..\..\..\..\opt\ros\kinetic\share\message_runtime\cmake\;CMake Files\..\..\..\..\..\opt\ros\kinetic\share\cpp_common\;CMake Files\..\..\..\..\..\opt\ros\kinetic\share\cpp_common\cmake\;CMake Files\..\..\..\..\..\opt\ros\kinetic\share\roscpp_serialization\;CMake Files\..\..\..\..\..\opt\ros\kinetic\share\roscpp_serialization\cmake\;CMake Files\..\..\..\..\..\opt\ros\kinetic\share\roscpp_traits\;CMake Files\..\..\..\..\..\opt\ros\kinetic\share\roscpp_traits\cmake\;CMake Files\..\..\..\..\..\opt\ros\kinetic\share\rostime\;CMake Files\..\..\..\..\..\opt\ros\kinetic\share\rostime\cmake\;CMake Files\..\..\..\..\..\opt\ros\kinetic\share\std_msgs\;CMake Files\..\..\..\..\..\opt\ros\kinetic\share\std_msgs\cmake\;CMake Files\..\..\..\..\..\opt\ros\kinetic\share\roscpp\;CMake Files\..\..\..\..\..\opt\ros\kinetic\share\roscpp\cmake\;CMake Files\..\..\..\..\..\opt\ros\kinetic\share\rosconsole\;CMake Files\..\..\..\..\..\opt\ros\kinetic\share\rosconsole\cmake\;CMake Files\..\..\..\..\..\opt\ros\kinetic\share\rosgraph_msgs\;CMake Files\..\..\..\..\..\opt\ros\kinetic\share\rosgraph_msgs\cmake\;CMake Files\..\..\..\..\..\opt\ros\kinetic\share\xmlrpcpp\;CMake Files\..\..\..\..\..\opt\ros\kinetic\share\xmlrpcpp\cmake\;CMake Files\..\..\..\..\..\opt\ros\kinetic\share\rospy\;CMake Files\..\..\..\..\..\opt\ros\kinetic\share\rospy\cmake\;CMake Files\..\..\..\..\..\opt\ros\kinetic\share\std_srvs\;CMake Files\..\..\..\..\..\opt\ros\kinetic\share\std_srvs\cmake\;CMake Files\..\..\..\..\..\opt\ros\kinetic\share\message_generation\;CMake Files\..\..\..\..\..\opt\ros\kinetic\share\message_generation\cmake\;CMake Files\..\..\..\..\..\opt\ros\kinetic\share\gencpp\;CMake Files\..\..\..\..\..\opt\ros\kinetic\share\gencpp\cmake\;CMake Files\..\..\..\..\..\opt\ros\kinetic\share\genmsg\;CMake Files\..\..\..\..\..\opt\ros\kinetic\share\genmsg\cmake\;CMake Files\..\..\..\..\..\opt\ros\kinetic\share\geneus\;CMake Files\..\..\..\..\..\opt\ros\kinetic\share\geneus\cmake\;CMake Files\..\..\..\..\..\opt\ros\kinetic\share\genlisp\;CMake Files\..\..\..\..\..\opt\ros\kinetic\share\genlisp\cmake\;CMake Files\..\..\..\..\..\opt\ros\kinetic\share\gennodejs\;CMake Files\..\..\..\..\..\opt\ros\kinetic\share\gennodejs\cmake\;CMake Files\..\..\..\..\..\opt\ros\kinetic\share\genpy\;CMake Files\..\..\..\..\..\opt\ros\kinetic\share\genpy\cmake\;CMake Files\..\..\..\..\..\opt\ros\kinetic\share\cv_bridge\;CMake Files\..\..\..\..\..\opt\ros\kinetic\share\cv_bridge\cmake\;CMake Files\..\..\..\..\..\opt\ros\kinetic\share\sensor_msgs\;CMake Files\..\..\..\..\..\opt\ros\kinetic\share\sensor_msgs\cmake\;CMake Files\..\..\..\..\..\opt\ros\kinetic\share\image_transport\;CMake Files\..\..\..\..\..\opt\ros\kinetic\share\image_transport\cmake\;CMake Files\..\..\..\..\..\opt\ros\kinetic\share\message_filters\;CMake Files\..\..\..\..\..\opt\ros\kinetic\share\message_filters\cmake\;CMake Files\..\..\..\..\..\opt\ros\kinetic\share\pluginlib\;CMake Files\..\..\..\..\..\opt\ros\kinetic\share\pluginlib\cmake\;CMake Files\..\..\..\..\..\opt\ros\kinetic\share\class_loader\;CMake Files\..\..\..\..\..\opt\ros\kinetic\share\class_loader\cmake\;CMake Files\..\..\..\..\..\opt\ros\kinetic\share\roslib\;CMake Files\..\..\..\..\..\opt\ros\kinetic\share\roslib\cmake\;CMake Files\..\..\..\..\..\opt\ros\kinetic\share\rospack\;CMake Files\..\..\..\..\..\opt\ros\kinetic\share\rospack\cmake\;CMake Files\..\..\..\..\..\opt\ros\kinetic\share\dynamic_reconfigure\;CMake Files\..\..\..\..\..\opt\ros\kinetic\share\dynamic_reconfigure\cmake\;CMake Files\..\..\..\..\..\opt\ros\kinetic\share\OpenCV-3.3.1-dev\;CMake Files\..\..\..\..\..\usr\;CMake Files\..\..\..\..\..\usr\src\;CMake Files\..\..\..\..\..\usr\src\gmock\;CMake Files\..\..\..\..\..\usr\src\gtest\;CMake Files\..\..\..\..\..\usr\src\gtest\cmake\;CMake Files\..\..\..\catkin_ws\;CMake Files\..\..\..\catkin_ws\devel\;CMake Files\..\..\..\catkin_ws\devel\share\;CMake Files\..\..\..\catkin_ws\devel\share\vicon_bridge\;CMake Files\..\..\..\catkin_ws\devel\share\vicon_bridge\cmake\;CMake Files\cmake-build-debug\;CMake Files\cmake-build-debug\catkin\;CMake Files\cmake-build-debug\catkin\catkin_generated\;CMake Files\cmake-build-debug\catkin\catkin_generated\version\;CMake Files\cmake-build-debug\catkin_generated\;CMake Files\cmake-build-debug\catkin_generated\installspace\;CMake Files\cmake-build-debug\swarm_config\;CMake Files\cmake-build-debug\swarm_config\catkin_generated\;CMake Files\cmake-build-debug\swarm_robot\;CMake Files\cmake-build-debug\swarm_robot\catkin_generated\;CMake Files\cmake-build-debug\swarm_center\;CMake Files\cmake-build-debug\swarm_center\catkin_generated\;CMake Files\cmake-build-debug\swarm_center\cmake\;CMake Files\cmake-build-debug\devel\;CMake Files\cmake-build-debug\devel\share\;CMake Files\cmake-build-debug\devel\share\swarm_center\;CMake Files\cmake-build-debug\devel\share\swarm_center\cmake\;CMake Files\swarm_config\;CMake Files\swarm_robot\;CMake Files\swarm_center\;"/>
+		<Option virtualFolders="CMake Files\;CMake Files\..\;CMake Files\..\..\;CMake Files\..\..\..\;CMake Files\..\..\..\..\;CMake Files\..\..\..\..\..\;CMake Files\..\..\..\..\..\opt\;CMake Files\..\..\..\..\..\opt\ros\;CMake Files\..\..\..\..\..\opt\ros\kinetic\;CMake Files\..\..\..\..\..\opt\ros\kinetic\share\;CMake Files\..\..\..\..\..\opt\ros\kinetic\share\catkin\;CMake Files\..\..\..\..\..\opt\ros\kinetic\share\catkin\cmake\;CMake Files\..\..\..\..\..\opt\ros\kinetic\share\catkin\cmake\platform\;CMake Files\..\..\..\..\..\opt\ros\kinetic\share\catkin\cmake\test\;CMake Files\..\..\..\..\..\opt\ros\kinetic\share\catkin\cmake\tools\;CMake Files\..\..\..\..\..\opt\ros\kinetic\share\catkin\cmake\templates\;CMake Files\..\..\..\..\..\opt\ros\kinetic\share\catkin\cmake\em\;CMake Files\..\..\..\..\..\opt\ros\kinetic\share\geometry_msgs\;CMake Files\..\..\..\..\..\opt\ros\kinetic\share\geometry_msgs\cmake\;CMake Files\..\..\..\..\..\opt\ros\kinetic\share\message_runtime\;CMake Files\..\..\..\..\..\opt\ros\kinetic\share\message_runtime\cmake\;CMake Files\..\..\..\..\..\opt\ros\kinetic\share\cpp_common\;CMake Files\..\..\..\..\..\opt\ros\kinetic\share\cpp_common\cmake\;CMake Files\..\..\..\..\..\opt\ros\kinetic\share\roscpp_serialization\;CMake Files\..\..\..\..\..\opt\ros\kinetic\share\roscpp_serialization\cmake\;CMake Files\..\..\..\..\..\opt\ros\kinetic\share\roscpp_traits\;CMake Files\..\..\..\..\..\opt\ros\kinetic\share\roscpp_traits\cmake\;CMake Files\..\..\..\..\..\opt\ros\kinetic\share\rostime\;CMake Files\..\..\..\..\..\opt\ros\kinetic\share\rostime\cmake\;CMake Files\..\..\..\..\..\opt\ros\kinetic\share\std_msgs\;CMake Files\..\..\..\..\..\opt\ros\kinetic\share\std_msgs\cmake\;CMake Files\..\..\..\..\..\opt\ros\kinetic\share\roscpp\;CMake Files\..\..\..\..\..\opt\ros\kinetic\share\roscpp\cmake\;CMake Files\..\..\..\..\..\opt\ros\kinetic\share\rosconsole\;CMake Files\..\..\..\..\..\opt\ros\kinetic\share\rosconsole\cmake\;CMake Files\..\..\..\..\..\opt\ros\kinetic\share\rosgraph_msgs\;CMake Files\..\..\..\..\..\opt\ros\kinetic\share\rosgraph_msgs\cmake\;CMake Files\..\..\..\..\..\opt\ros\kinetic\share\xmlrpcpp\;CMake Files\..\..\..\..\..\opt\ros\kinetic\share\xmlrpcpp\cmake\;CMake Files\..\..\..\..\..\opt\ros\kinetic\share\rospy\;CMake Files\..\..\..\..\..\opt\ros\kinetic\share\rospy\cmake\;CMake Files\..\..\..\..\..\opt\ros\kinetic\share\std_srvs\;CMake Files\..\..\..\..\..\opt\ros\kinetic\share\std_srvs\cmake\;CMake Files\..\..\..\..\..\opt\ros\kinetic\share\message_generation\;CMake Files\..\..\..\..\..\opt\ros\kinetic\share\message_generation\cmake\;CMake Files\..\..\..\..\..\opt\ros\kinetic\share\gencpp\;CMake Files\..\..\..\..\..\opt\ros\kinetic\share\gencpp\cmake\;CMake Files\..\..\..\..\..\opt\ros\kinetic\share\genmsg\;CMake Files\..\..\..\..\..\opt\ros\kinetic\share\genmsg\cmake\;CMake Files\..\..\..\..\..\opt\ros\kinetic\share\geneus\;CMake Files\..\..\..\..\..\opt\ros\kinetic\share\geneus\cmake\;CMake Files\..\..\..\..\..\opt\ros\kinetic\share\genlisp\;CMake Files\..\..\..\..\..\opt\ros\kinetic\share\genlisp\cmake\;CMake Files\..\..\..\..\..\opt\ros\kinetic\share\gennodejs\;CMake Files\..\..\..\..\..\opt\ros\kinetic\share\gennodejs\cmake\;CMake Files\..\..\..\..\..\opt\ros\kinetic\share\genpy\;CMake Files\..\..\..\..\..\opt\ros\kinetic\share\genpy\cmake\;CMake Files\..\..\..\..\..\opt\ros\kinetic\share\cv_bridge\;CMake Files\..\..\..\..\..\opt\ros\kinetic\share\cv_bridge\cmake\;CMake Files\..\..\..\..\..\opt\ros\kinetic\share\sensor_msgs\;CMake Files\..\..\..\..\..\opt\ros\kinetic\share\sensor_msgs\cmake\;CMake Files\..\..\..\..\..\opt\ros\kinetic\share\image_transport\;CMake Files\..\..\..\..\..\opt\ros\kinetic\share\image_transport\cmake\;CMake Files\..\..\..\..\..\opt\ros\kinetic\share\message_filters\;CMake Files\..\..\..\..\..\opt\ros\kinetic\share\message_filters\cmake\;CMake Files\..\..\..\..\..\opt\ros\kinetic\share\pluginlib\;CMake Files\..\..\..\..\..\opt\ros\kinetic\share\pluginlib\cmake\;CMake Files\..\..\..\..\..\opt\ros\kinetic\share\class_loader\;CMake Files\..\..\..\..\..\opt\ros\kinetic\share\class_loader\cmake\;CMake Files\..\..\..\..\..\opt\ros\kinetic\share\roslib\;CMake Files\..\..\..\..\..\opt\ros\kinetic\share\roslib\cmake\;CMake Files\..\..\..\..\..\opt\ros\kinetic\share\rospack\;CMake Files\..\..\..\..\..\opt\ros\kinetic\share\rospack\cmake\;CMake Files\..\..\..\..\..\opt\ros\kinetic\share\dynamic_reconfigure\;CMake Files\..\..\..\..\..\opt\ros\kinetic\share\dynamic_reconfigure\cmake\;CMake Files\..\..\..\..\..\opt\ros\kinetic\share\serial\;CMake Files\..\..\..\..\..\opt\ros\kinetic\share\serial\cmake\;CMake Files\..\..\..\..\..\opt\ros\kinetic\share\diagnostic_msgs\;CMake Files\..\..\..\..\..\opt\ros\kinetic\share\diagnostic_msgs\cmake\;CMake Files\..\..\..\..\..\opt\ros\kinetic\share\diagnostic_updater\;CMake Files\..\..\..\..\..\opt\ros\kinetic\share\diagnostic_updater\cmake\;CMake Files\..\..\..\..\..\opt\ros\kinetic\share\nav_msgs\;CMake Files\..\..\..\..\..\opt\ros\kinetic\share\nav_msgs\cmake\;CMake Files\..\..\..\..\..\opt\ros\kinetic\share\actionlib_msgs\;CMake Files\..\..\..\..\..\opt\ros\kinetic\share\actionlib_msgs\cmake\;CMake Files\..\..\..\..\..\opt\ros\kinetic\share\geographic_msgs\;CMake Files\..\..\..\..\..\opt\ros\kinetic\share\geographic_msgs\cmake\;CMake Files\..\..\..\..\..\opt\ros\kinetic\share\uuid_msgs\;CMake Files\..\..\..\..\..\opt\ros\kinetic\share\uuid_msgs\cmake\;CMake Files\..\..\..\..\..\opt\ros\kinetic\share\tf2_ros\;CMake Files\..\..\..\..\..\opt\ros\kinetic\share\tf2_ros\cmake\;CMake Files\..\..\..\..\..\opt\ros\kinetic\share\actionlib\;CMake Files\..\..\..\..\..\opt\ros\kinetic\share\actionlib\cmake\;CMake Files\..\..\..\..\..\opt\ros\kinetic\share\rosgraph\;CMake Files\..\..\..\..\..\opt\ros\kinetic\share\rosgraph\cmake\;CMake Files\..\..\..\..\..\opt\ros\kinetic\share\tf2\;CMake Files\..\..\..\..\..\opt\ros\kinetic\share\tf2\cmake\;CMake Files\..\..\..\..\..\opt\ros\kinetic\share\tf2_msgs\;CMake Files\..\..\..\..\..\opt\ros\kinetic\share\tf2_msgs\cmake\;CMake Files\..\..\..\..\..\opt\ros\kinetic\share\tf2_py\;CMake Files\..\..\..\..\..\opt\ros\kinetic\share\tf2_py\cmake\;CMake Files\..\..\..\..\..\opt\ros\kinetic\share\eigen_conversions\;CMake Files\..\..\..\..\..\opt\ros\kinetic\share\eigen_conversions\cmake\;CMake Files\..\..\..\..\..\opt\ros\kinetic\share\OpenCV-3.3.1-dev\;CMake Files\..\..\..\..\..\usr\;CMake Files\..\..\..\..\..\usr\src\;CMake Files\..\..\..\..\..\usr\src\gmock\;CMake Files\..\..\..\..\..\usr\src\gtest\;CMake Files\..\..\..\..\..\usr\src\gtest\cmake\;CMake Files\..\..\..\catkin_ws\;CMake Files\..\..\..\catkin_ws\devel\;CMake Files\..\..\..\catkin_ws\devel\share\;CMake Files\..\..\..\catkin_ws\devel\share\vicon_bridge\;CMake Files\..\..\..\catkin_ws\devel\share\vicon_bridge\cmake\;CMake Files\..\..\..\catkin_ws\devel\share\mavros\;CMake Files\..\..\..\catkin_ws\devel\share\mavros\cmake\;CMake Files\..\..\..\catkin_ws\devel\share\libmavconn\;CMake Files\..\..\..\catkin_ws\devel\share\libmavconn\cmake\;CMake Files\..\..\..\catkin_ws\devel\share\mavros_msgs\;CMake Files\..\..\..\catkin_ws\devel\share\mavros_msgs\cmake\;CMake Files\cmake-build-debug\;CMake Files\cmake-build-debug\catkin\;CMake Files\cmake-build-debug\catkin\catkin_generated\;CMake Files\cmake-build-debug\catkin\catkin_generated\version\;CMake Files\cmake-build-debug\catkin_generated\;CMake Files\cmake-build-debug\catkin_generated\installspace\;CMake Files\cmake-build-debug\swarm_config\;CMake Files\cmake-build-debug\swarm_config\catkin_generated\;CMake Files\cmake-build-debug\swarm_robot\;CMake Files\cmake-build-debug\swarm_robot\catkin_generated\;CMake Files\cmake-build-debug\swarm_center\;CMake Files\cmake-build-debug\swarm_center\catkin_generated\;CMake Files\cmake-build-debug\swarm_center\cmake\;CMake Files\cmake-build-debug\devel\;CMake Files\cmake-build-debug\devel\share\;CMake Files\cmake-build-debug\devel\share\swarm_center\;CMake Files\cmake-build-debug\devel\share\swarm_center\cmake\;CMake Files\swarm_config\;CMake Files\swarm_robot\;CMake Files\swarm_center\;"/>
 		<Build>
 			<Target title="all">
 				<Option working_dir="/home/wade/SJTU-swarm/swarm_ws/src/cmake-build-debug/gtest"/>
@@ -672,6 +672,114 @@
 		<Unit filename="/home/wade/SJTU-swarm/swarm_ws/src/../../../../../opt/ros/kinetic/share/dynamic_reconfigure/cmake/dynamic_reconfigureConfig.cmake">
 			<Option virtualFolder="CMake Files\..\..\..\..\..\opt\ros\kinetic\share\dynamic_reconfigure\cmake\"/>
 		</Unit>
+		<Unit filename="/home/wade/SJTU-swarm/swarm_ws/src/../../../../../opt/ros/kinetic/share/serial/cmake/serialConfig-version.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\opt\ros\kinetic\share\serial\cmake\"/>
+		</Unit>
+		<Unit filename="/home/wade/SJTU-swarm/swarm_ws/src/../../../../../opt/ros/kinetic/share/serial/cmake/serialConfig.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\opt\ros\kinetic\share\serial\cmake\"/>
+		</Unit>
+		<Unit filename="/home/wade/SJTU-swarm/swarm_ws/src/../../../../../opt/ros/kinetic/share/diagnostic_msgs/cmake/diagnostic_msgs-msg-extras.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\opt\ros\kinetic\share\diagnostic_msgs\cmake\"/>
+		</Unit>
+		<Unit filename="/home/wade/SJTU-swarm/swarm_ws/src/../../../../../opt/ros/kinetic/share/diagnostic_msgs/cmake/diagnostic_msgsConfig-version.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\opt\ros\kinetic\share\diagnostic_msgs\cmake\"/>
+		</Unit>
+		<Unit filename="/home/wade/SJTU-swarm/swarm_ws/src/../../../../../opt/ros/kinetic/share/diagnostic_msgs/cmake/diagnostic_msgsConfig.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\opt\ros\kinetic\share\diagnostic_msgs\cmake\"/>
+		</Unit>
+		<Unit filename="/home/wade/SJTU-swarm/swarm_ws/src/../../../../../opt/ros/kinetic/share/diagnostic_updater/cmake/diagnostic_updaterConfig-version.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\opt\ros\kinetic\share\diagnostic_updater\cmake\"/>
+		</Unit>
+		<Unit filename="/home/wade/SJTU-swarm/swarm_ws/src/../../../../../opt/ros/kinetic/share/diagnostic_updater/cmake/diagnostic_updaterConfig.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\opt\ros\kinetic\share\diagnostic_updater\cmake\"/>
+		</Unit>
+		<Unit filename="/home/wade/SJTU-swarm/swarm_ws/src/../../../../../opt/ros/kinetic/share/nav_msgs/cmake/nav_msgs-msg-extras.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\opt\ros\kinetic\share\nav_msgs\cmake\"/>
+		</Unit>
+		<Unit filename="/home/wade/SJTU-swarm/swarm_ws/src/../../../../../opt/ros/kinetic/share/nav_msgs/cmake/nav_msgsConfig-version.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\opt\ros\kinetic\share\nav_msgs\cmake\"/>
+		</Unit>
+		<Unit filename="/home/wade/SJTU-swarm/swarm_ws/src/../../../../../opt/ros/kinetic/share/nav_msgs/cmake/nav_msgsConfig.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\opt\ros\kinetic\share\nav_msgs\cmake\"/>
+		</Unit>
+		<Unit filename="/home/wade/SJTU-swarm/swarm_ws/src/../../../../../opt/ros/kinetic/share/actionlib_msgs/cmake/actionlib_msgs-extras.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\opt\ros\kinetic\share\actionlib_msgs\cmake\"/>
+		</Unit>
+		<Unit filename="/home/wade/SJTU-swarm/swarm_ws/src/../../../../../opt/ros/kinetic/share/actionlib_msgs/cmake/actionlib_msgs-msg-extras.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\opt\ros\kinetic\share\actionlib_msgs\cmake\"/>
+		</Unit>
+		<Unit filename="/home/wade/SJTU-swarm/swarm_ws/src/../../../../../opt/ros/kinetic/share/actionlib_msgs/cmake/actionlib_msgsConfig-version.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\opt\ros\kinetic\share\actionlib_msgs\cmake\"/>
+		</Unit>
+		<Unit filename="/home/wade/SJTU-swarm/swarm_ws/src/../../../../../opt/ros/kinetic/share/actionlib_msgs/cmake/actionlib_msgsConfig.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\opt\ros\kinetic\share\actionlib_msgs\cmake\"/>
+		</Unit>
+		<Unit filename="/home/wade/SJTU-swarm/swarm_ws/src/../../../../../opt/ros/kinetic/share/geographic_msgs/cmake/geographic_msgs-msg-extras.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\opt\ros\kinetic\share\geographic_msgs\cmake\"/>
+		</Unit>
+		<Unit filename="/home/wade/SJTU-swarm/swarm_ws/src/../../../../../opt/ros/kinetic/share/geographic_msgs/cmake/geographic_msgsConfig-version.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\opt\ros\kinetic\share\geographic_msgs\cmake\"/>
+		</Unit>
+		<Unit filename="/home/wade/SJTU-swarm/swarm_ws/src/../../../../../opt/ros/kinetic/share/geographic_msgs/cmake/geographic_msgsConfig.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\opt\ros\kinetic\share\geographic_msgs\cmake\"/>
+		</Unit>
+		<Unit filename="/home/wade/SJTU-swarm/swarm_ws/src/../../../../../opt/ros/kinetic/share/uuid_msgs/cmake/uuid_msgs-msg-extras.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\opt\ros\kinetic\share\uuid_msgs\cmake\"/>
+		</Unit>
+		<Unit filename="/home/wade/SJTU-swarm/swarm_ws/src/../../../../../opt/ros/kinetic/share/uuid_msgs/cmake/uuid_msgsConfig-version.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\opt\ros\kinetic\share\uuid_msgs\cmake\"/>
+		</Unit>
+		<Unit filename="/home/wade/SJTU-swarm/swarm_ws/src/../../../../../opt/ros/kinetic/share/uuid_msgs/cmake/uuid_msgsConfig.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\opt\ros\kinetic\share\uuid_msgs\cmake\"/>
+		</Unit>
+		<Unit filename="/home/wade/SJTU-swarm/swarm_ws/src/../../../../../opt/ros/kinetic/share/tf2_ros/cmake/tf2_rosConfig-version.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\opt\ros\kinetic\share\tf2_ros\cmake\"/>
+		</Unit>
+		<Unit filename="/home/wade/SJTU-swarm/swarm_ws/src/../../../../../opt/ros/kinetic/share/tf2_ros/cmake/tf2_rosConfig.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\opt\ros\kinetic\share\tf2_ros\cmake\"/>
+		</Unit>
+		<Unit filename="/home/wade/SJTU-swarm/swarm_ws/src/../../../../../opt/ros/kinetic/share/actionlib/cmake/actionlib-msg-extras.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\opt\ros\kinetic\share\actionlib\cmake\"/>
+		</Unit>
+		<Unit filename="/home/wade/SJTU-swarm/swarm_ws/src/../../../../../opt/ros/kinetic/share/actionlib/cmake/actionlibConfig-version.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\opt\ros\kinetic\share\actionlib\cmake\"/>
+		</Unit>
+		<Unit filename="/home/wade/SJTU-swarm/swarm_ws/src/../../../../../opt/ros/kinetic/share/actionlib/cmake/actionlibConfig.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\opt\ros\kinetic\share\actionlib\cmake\"/>
+		</Unit>
+		<Unit filename="/home/wade/SJTU-swarm/swarm_ws/src/../../../../../opt/ros/kinetic/share/rosgraph/cmake/rosgraphConfig-version.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\opt\ros\kinetic\share\rosgraph\cmake\"/>
+		</Unit>
+		<Unit filename="/home/wade/SJTU-swarm/swarm_ws/src/../../../../../opt/ros/kinetic/share/rosgraph/cmake/rosgraphConfig.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\opt\ros\kinetic\share\rosgraph\cmake\"/>
+		</Unit>
+		<Unit filename="/home/wade/SJTU-swarm/swarm_ws/src/../../../../../opt/ros/kinetic/share/tf2/cmake/tf2Config-version.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\opt\ros\kinetic\share\tf2\cmake\"/>
+		</Unit>
+		<Unit filename="/home/wade/SJTU-swarm/swarm_ws/src/../../../../../opt/ros/kinetic/share/tf2/cmake/tf2Config.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\opt\ros\kinetic\share\tf2\cmake\"/>
+		</Unit>
+		<Unit filename="/home/wade/SJTU-swarm/swarm_ws/src/../../../../../opt/ros/kinetic/share/tf2_msgs/cmake/tf2_msgs-msg-extras.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\opt\ros\kinetic\share\tf2_msgs\cmake\"/>
+		</Unit>
+		<Unit filename="/home/wade/SJTU-swarm/swarm_ws/src/../../../../../opt/ros/kinetic/share/tf2_msgs/cmake/tf2_msgsConfig-version.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\opt\ros\kinetic\share\tf2_msgs\cmake\"/>
+		</Unit>
+		<Unit filename="/home/wade/SJTU-swarm/swarm_ws/src/../../../../../opt/ros/kinetic/share/tf2_msgs/cmake/tf2_msgsConfig.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\opt\ros\kinetic\share\tf2_msgs\cmake\"/>
+		</Unit>
+		<Unit filename="/home/wade/SJTU-swarm/swarm_ws/src/../../../../../opt/ros/kinetic/share/tf2_py/cmake/tf2_pyConfig-version.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\opt\ros\kinetic\share\tf2_py\cmake\"/>
+		</Unit>
+		<Unit filename="/home/wade/SJTU-swarm/swarm_ws/src/../../../../../opt/ros/kinetic/share/tf2_py/cmake/tf2_pyConfig.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\opt\ros\kinetic\share\tf2_py\cmake\"/>
+		</Unit>
+		<Unit filename="/home/wade/SJTU-swarm/swarm_ws/src/../../../../../opt/ros/kinetic/share/eigen_conversions/cmake/eigen_conversionsConfig-version.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\opt\ros\kinetic\share\eigen_conversions\cmake\"/>
+		</Unit>
+		<Unit filename="/home/wade/SJTU-swarm/swarm_ws/src/../../../../../opt/ros/kinetic/share/eigen_conversions/cmake/eigen_conversionsConfig.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\opt\ros\kinetic\share\eigen_conversions\cmake\"/>
+		</Unit>
 		<Unit filename="/home/wade/SJTU-swarm/swarm_ws/src/../../../../../opt/ros/kinetic/share/OpenCV-3.3.1-dev/OpenCVConfig-version.cmake">
 			<Option virtualFolder="CMake Files\..\..\..\..\..\opt\ros\kinetic\share\OpenCV-3.3.1-dev\"/>
 		</Unit>
@@ -701,6 +809,30 @@
 		</Unit>
 		<Unit filename="/home/wade/SJTU-swarm/swarm_ws/src/../../../catkin_ws/devel/share/vicon_bridge/cmake/vicon_bridgeConfig.cmake">
 			<Option virtualFolder="CMake Files\..\..\..\catkin_ws\devel\share\vicon_bridge\cmake\"/>
+		</Unit>
+		<Unit filename="/home/wade/SJTU-swarm/swarm_ws/src/../../../catkin_ws/devel/share/mavros/cmake/mavrosConfig-version.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\catkin_ws\devel\share\mavros\cmake\"/>
+		</Unit>
+		<Unit filename="/home/wade/SJTU-swarm/swarm_ws/src/../../../catkin_ws/devel/share/mavros/cmake/mavrosConfig.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\catkin_ws\devel\share\mavros\cmake\"/>
+		</Unit>
+		<Unit filename="/home/wade/SJTU-swarm/swarm_ws/src/../../../catkin_ws/devel/share/libmavconn/cmake/libmavconn-extras.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\catkin_ws\devel\share\libmavconn\cmake\"/>
+		</Unit>
+		<Unit filename="/home/wade/SJTU-swarm/swarm_ws/src/../../../catkin_ws/devel/share/libmavconn/cmake/libmavconnConfig-version.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\catkin_ws\devel\share\libmavconn\cmake\"/>
+		</Unit>
+		<Unit filename="/home/wade/SJTU-swarm/swarm_ws/src/../../../catkin_ws/devel/share/libmavconn/cmake/libmavconnConfig.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\catkin_ws\devel\share\libmavconn\cmake\"/>
+		</Unit>
+		<Unit filename="/home/wade/SJTU-swarm/swarm_ws/src/../../../catkin_ws/devel/share/mavros_msgs/cmake/mavros_msgs-msg-extras.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\catkin_ws\devel\share\mavros_msgs\cmake\"/>
+		</Unit>
+		<Unit filename="/home/wade/SJTU-swarm/swarm_ws/src/../../../catkin_ws/devel/share/mavros_msgs/cmake/mavros_msgsConfig-version.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\catkin_ws\devel\share\mavros_msgs\cmake\"/>
+		</Unit>
+		<Unit filename="/home/wade/SJTU-swarm/swarm_ws/src/../../../catkin_ws/devel/share/mavros_msgs/cmake/mavros_msgsConfig.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\catkin_ws\devel\share\mavros_msgs\cmake\"/>
 		</Unit>
 		<Unit filename="/home/wade/SJTU-swarm/swarm_ws/src/cmake-build-debug/catkin/catkin_generated/version/package.cmake">
 			<Option virtualFolder="CMake Files\cmake-build-debug\catkin\catkin_generated\version\"/>

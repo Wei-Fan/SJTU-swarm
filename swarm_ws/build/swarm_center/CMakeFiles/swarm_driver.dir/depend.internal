@@ -72,6 +72,7 @@ swarm_center/CMakeFiles/swarm_driver.dir/src/swarm_driver.cpp.o
  /opt/ros/kinetic/include/rosconsole/macros_generated.h
  /opt/ros/kinetic/include/serial/serial.h
  /opt/ros/kinetic/include/serial/v8stdint.h
+ /opt/ros/kinetic/include/std_msgs/Bool.h
  /opt/ros/kinetic/include/std_msgs/Empty.h
  /opt/ros/kinetic/include/std_msgs/Float64.h
  /opt/ros/kinetic/include/std_msgs/Header.h

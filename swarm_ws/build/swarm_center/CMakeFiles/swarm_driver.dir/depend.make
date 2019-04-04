@@ -71,6 +71,7 @@ swarm_center/CMakeFiles/swarm_driver.dir/src/swarm_driver.cpp.o: /opt/ros/kineti
 swarm_center/CMakeFiles/swarm_driver.dir/src/swarm_driver.cpp.o: /opt/ros/kinetic/include/rosconsole/macros_generated.h
 swarm_center/CMakeFiles/swarm_driver.dir/src/swarm_driver.cpp.o: /opt/ros/kinetic/include/serial/serial.h
 swarm_center/CMakeFiles/swarm_driver.dir/src/swarm_driver.cpp.o: /opt/ros/kinetic/include/serial/v8stdint.h
+swarm_center/CMakeFiles/swarm_driver.dir/src/swarm_driver.cpp.o: /opt/ros/kinetic/include/std_msgs/Bool.h
 swarm_center/CMakeFiles/swarm_driver.dir/src/swarm_driver.cpp.o: /opt/ros/kinetic/include/std_msgs/Empty.h
 swarm_center/CMakeFiles/swarm_driver.dir/src/swarm_driver.cpp.o: /opt/ros/kinetic/include/std_msgs/Float64.h
 swarm_center/CMakeFiles/swarm_driver.dir/src/swarm_driver.cpp.o: /opt/ros/kinetic/include/std_msgs/Header.h

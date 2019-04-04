@@ -20,8 +20,13 @@ set(CMAKE_CXX_TARGET_INCLUDE_PATH
   "devel/include"
   "../swarm_center/./include"
   "/home/wade/catkin_ws/devel/include"
+  "/home/wade/catkin_ws/src/mavros/mavros/include"
+  "/home/wade/catkin_ws/src/mavros/libmavconn/include"
+  "/home/wade/catkin_ws/src/mavros/mavros_msgs/include"
   "/opt/ros/kinetic/include"
   "/opt/ros/kinetic/share/xmlrpcpp/cmake/../../../include/xmlrpcpp"
+  "/usr/include/eigen3"
+  "/usr/lib/../include"
   "/opt/ros/kinetic/include/opencv-3.3.1-dev"
   "/opt/ros/kinetic/include/opencv-3.3.1-dev/opencv"
   )

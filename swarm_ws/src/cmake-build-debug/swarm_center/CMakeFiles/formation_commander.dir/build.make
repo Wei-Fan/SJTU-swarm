@@ -84,7 +84,10 @@ devel/lib/swarm_center/formation_commander: /opt/ros/kinetic/lib/x86_64-linux-gn
 devel/lib/swarm_center/formation_commander: /opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_imgproc3.so.3.3.1
 devel/lib/swarm_center/formation_commander: /opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_imgcodecs3.so.3.3.1
 devel/lib/swarm_center/formation_commander: /opt/ros/kinetic/lib/libimage_transport.so
-devel/lib/swarm_center/formation_commander: /opt/ros/kinetic/lib/libmessage_filters.so
+devel/lib/swarm_center/formation_commander: /opt/ros/kinetic/lib/libdynamic_reconfigure_config_init_mutex.so
+devel/lib/swarm_center/formation_commander: /opt/ros/kinetic/lib/libserial.so
+devel/lib/swarm_center/formation_commander: /home/wade/catkin_ws/devel/lib/libmavros.so
+devel/lib/swarm_center/formation_commander: /usr/lib/x86_64-linux-gnu/libGeographic.so
 devel/lib/swarm_center/formation_commander: /usr/lib/x86_64-linux-gnu/libtinyxml2.so
 devel/lib/swarm_center/formation_commander: /opt/ros/kinetic/lib/libclass_loader.so
 devel/lib/swarm_center/formation_commander: /usr/lib/libPocoFoundation.so
@@ -94,7 +97,9 @@ devel/lib/swarm_center/formation_commander: /opt/ros/kinetic/lib/librospack.so
 devel/lib/swarm_center/formation_commander: /usr/lib/x86_64-linux-gnu/libpython2.7.so
 devel/lib/swarm_center/formation_commander: /usr/lib/x86_64-linux-gnu/libboost_program_options.so
 devel/lib/swarm_center/formation_commander: /usr/lib/x86_64-linux-gnu/libtinyxml.so
-devel/lib/swarm_center/formation_commander: /opt/ros/kinetic/lib/libdynamic_reconfigure_config_init_mutex.so
+devel/lib/swarm_center/formation_commander: /opt/ros/kinetic/lib/libtf2_ros.so
+devel/lib/swarm_center/formation_commander: /opt/ros/kinetic/lib/libactionlib.so
+devel/lib/swarm_center/formation_commander: /opt/ros/kinetic/lib/libmessage_filters.so
 devel/lib/swarm_center/formation_commander: /opt/ros/kinetic/lib/libroscpp.so
 devel/lib/swarm_center/formation_commander: /usr/lib/x86_64-linux-gnu/libboost_filesystem.so
 devel/lib/swarm_center/formation_commander: /usr/lib/x86_64-linux-gnu/libboost_signals.so
@@ -103,8 +108,12 @@ devel/lib/swarm_center/formation_commander: /opt/ros/kinetic/lib/librosconsole_l
 devel/lib/swarm_center/formation_commander: /opt/ros/kinetic/lib/librosconsole_backend_interface.so
 devel/lib/swarm_center/formation_commander: /usr/lib/x86_64-linux-gnu/liblog4cxx.so
 devel/lib/swarm_center/formation_commander: /usr/lib/x86_64-linux-gnu/libboost_regex.so
-devel/lib/swarm_center/formation_commander: /opt/ros/kinetic/lib/libroscpp_serialization.so
 devel/lib/swarm_center/formation_commander: /opt/ros/kinetic/lib/libxmlrpcpp.so
+devel/lib/swarm_center/formation_commander: /opt/ros/kinetic/lib/libtf2.so
+devel/lib/swarm_center/formation_commander: /home/wade/catkin_ws/devel/lib/libmavconn.so
+devel/lib/swarm_center/formation_commander: /opt/ros/kinetic/lib/libeigen_conversions.so
+devel/lib/swarm_center/formation_commander: /opt/ros/kinetic/lib/liborocos-kdl.so.1.3.0
+devel/lib/swarm_center/formation_commander: /opt/ros/kinetic/lib/libroscpp_serialization.so
 devel/lib/swarm_center/formation_commander: /opt/ros/kinetic/lib/librostime.so
 devel/lib/swarm_center/formation_commander: /opt/ros/kinetic/lib/libcpp_common.so
 devel/lib/swarm_center/formation_commander: /usr/lib/x86_64-linux-gnu/libboost_system.so
