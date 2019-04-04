@@ -62,9 +62,10 @@
 /home/wade/SJTU-swarm/swarm_ws/build/swarm_robot/CMakeFiles/edit_cache.dir
 /home/wade/SJTU-swarm/swarm_ws/build/swarm_robot/CMakeFiles/test.dir
 /home/wade/SJTU-swarm/swarm_ws/build/swarm_robot/CMakeFiles/robot_controller.dir
+/home/wade/SJTU-swarm/swarm_ws/build/swarm_robot/CMakeFiles/coverage_controller.dir
 /home/wade/SJTU-swarm/swarm_ws/build/swarm_robot/CMakeFiles/formation_controller.dir
-/home/wade/SJTU-swarm/swarm_ws/build/swarm_robot/CMakeFiles/install/strip.dir
 /home/wade/SJTU-swarm/swarm_ws/build/swarm_robot/CMakeFiles/install/local.dir
+/home/wade/SJTU-swarm/swarm_ws/build/swarm_robot/CMakeFiles/install/strip.dir
 /home/wade/SJTU-swarm/swarm_ws/build/swarm_center/CMakeFiles/install.dir
 /home/wade/SJTU-swarm/swarm_ws/build/swarm_center/CMakeFiles/test.dir
 /home/wade/SJTU-swarm/swarm_ws/build/swarm_center/CMakeFiles/install/local.dir

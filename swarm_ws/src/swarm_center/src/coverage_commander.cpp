@@ -70,7 +70,7 @@ private:
 
 public:
     CoverageCommander(){
-        ROS_INFO("SWARM COMMANDER is activated!");
+        ROS_INFO("COVERAGE COMMANDER is activated!");
         service = local.advertiseService("mCPP_req",&CoverageCommander::plan,this);
 
         /* respond only one time per 5s period */
@@ -723,7 +723,7 @@ public:
             vector<Vector2i> P_grid_t = P_grid[k];
             string filename = project_path + "launch/cover_robot" + to_string(k) + ".csv";
 
-            /* velocity */
+            /* velocity condition*/
             double vmax = 0.2;
             double amax = 0.1;
             double s_c = vmax*vmax/amax;
@@ -801,6 +801,7 @@ public:
 
 int main(int argc, char ** argv) {
     ros::init(argc, argv, "coverage_commander");
+    ros::Time::init();
     ros::Rate r(1);
 
     CoverageCommander node;

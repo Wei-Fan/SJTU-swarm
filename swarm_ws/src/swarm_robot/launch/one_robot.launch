@@ -9,7 +9,7 @@
             <arg name="robot_name" value="$(arg robot_name)"/>
         </include>
         <!-- CONNECT WITH LOW-LEVEL CONTROLLER-->
-        <node pkg="swarm_robot" type="robot_controller" name="robot_controller" args="$(arg robot_name)">
-        </node>
+        <!--<node pkg="swarm_robot" type="robot_controller" name="robot_controller" args="$(arg robot_name)">-->
+        <!--</node>-->
     </group>
 </launch>

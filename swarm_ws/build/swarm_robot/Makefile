@@ -111,17 +111,6 @@ test/fast: test
 
 .PHONY : test/fast
 
-# Special rule for the target install/strip
-install/strip: preinstall
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing the project stripped..."
-	/usr/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
-.PHONY : install/strip
-
-# Special rule for the target install/strip
-install/strip/fast: install/strip
-
-.PHONY : install/strip/fast
-
 # Special rule for the target install/local
 install/local: preinstall
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
@@ -132,6 +121,17 @@ install/local: preinstall
 install/local/fast: install/local
 
 .PHONY : install/local/fast
+
+# Special rule for the target install/strip
+install/strip: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing the project stripped..."
+	/usr/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
+.PHONY : install/strip
+
+# Special rule for the target install/strip
+install/strip/fast: install/strip
+
+.PHONY : install/strip/fast
 
 # The main all target
 all: cmake_check_build_system
@@ -181,6 +181,21 @@ robot_controller/fast:
 .PHONY : robot_controller/fast
 
 # Convenience name for target.
+swarm_robot/CMakeFiles/coverage_controller.dir/rule:
+	cd /home/wade/SJTU-swarm/swarm_ws/build && $(MAKE) -f CMakeFiles/Makefile2 swarm_robot/CMakeFiles/coverage_controller.dir/rule
+.PHONY : swarm_robot/CMakeFiles/coverage_controller.dir/rule
+
+# Convenience name for target.
+coverage_controller: swarm_robot/CMakeFiles/coverage_controller.dir/rule
+
+.PHONY : coverage_controller
+
+# fast build rule for target.
+coverage_controller/fast:
+	cd /home/wade/SJTU-swarm/swarm_ws/build && $(MAKE) -f swarm_robot/CMakeFiles/coverage_controller.dir/build.make swarm_robot/CMakeFiles/coverage_controller.dir/build
+.PHONY : coverage_controller/fast
+
+# Convenience name for target.
 swarm_robot/CMakeFiles/formation_controller.dir/rule:
 	cd /home/wade/SJTU-swarm/swarm_ws/build && $(MAKE) -f CMakeFiles/Makefile2 swarm_robot/CMakeFiles/formation_controller.dir/rule
 .PHONY : swarm_robot/CMakeFiles/formation_controller.dir/rule
@@ -194,6 +209,33 @@ formation_controller: swarm_robot/CMakeFiles/formation_controller.dir/rule
 formation_controller/fast:
 	cd /home/wade/SJTU-swarm/swarm_ws/build && $(MAKE) -f swarm_robot/CMakeFiles/formation_controller.dir/build.make swarm_robot/CMakeFiles/formation_controller.dir/build
 .PHONY : formation_controller/fast
+
+src/coverage_controller.o: src/coverage_controller.cpp.o
+
+.PHONY : src/coverage_controller.o
+
+# target to build an object file
+src/coverage_controller.cpp.o:
+	cd /home/wade/SJTU-swarm/swarm_ws/build && $(MAKE) -f swarm_robot/CMakeFiles/coverage_controller.dir/build.make swarm_robot/CMakeFiles/coverage_controller.dir/src/coverage_controller.cpp.o
+.PHONY : src/coverage_controller.cpp.o
+
+src/coverage_controller.i: src/coverage_controller.cpp.i
+
+.PHONY : src/coverage_controller.i
+
+# target to preprocess a source file
+src/coverage_controller.cpp.i:
+	cd /home/wade/SJTU-swarm/swarm_ws/build && $(MAKE) -f swarm_robot/CMakeFiles/coverage_controller.dir/build.make swarm_robot/CMakeFiles/coverage_controller.dir/src/coverage_controller.cpp.i
+.PHONY : src/coverage_controller.cpp.i
+
+src/coverage_controller.s: src/coverage_controller.cpp.s
+
+.PHONY : src/coverage_controller.s
+
+# target to generate assembly for a file
+src/coverage_controller.cpp.s:
+	cd /home/wade/SJTU-swarm/swarm_ws/build && $(MAKE) -f swarm_robot/CMakeFiles/coverage_controller.dir/build.make swarm_robot/CMakeFiles/coverage_controller.dir/src/coverage_controller.cpp.s
+.PHONY : src/coverage_controller.cpp.s
 
 src/formation_controller.o: src/formation_controller.cpp.o
 
@@ -261,9 +303,13 @@ help:
 	@echo "... edit_cache"
 	@echo "... test"
 	@echo "... robot_controller"
+	@echo "... coverage_controller"
 	@echo "... formation_controller"
-	@echo "... install/strip"
 	@echo "... install/local"
+	@echo "... install/strip"
+	@echo "... src/coverage_controller.o"
+	@echo "... src/coverage_controller.i"
+	@echo "... src/coverage_controller.s"
 	@echo "... src/formation_controller.o"
 	@echo "... src/formation_controller.i"
 	@echo "... src/formation_controller.s"

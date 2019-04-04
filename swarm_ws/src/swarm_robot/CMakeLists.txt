@@ -138,6 +138,7 @@ include_directories(
 ## The recommended prefix ensures that target names across packages don't collide
 # add_executable(${PROJECT_NAME}_node src/swarm_robot_node.cpp)
 add_executable(robot_controller src/robot_controller.cpp)
+add_executable(coverage_controller src/coverage_controller.cpp)
 add_executable(formation_controller src/formation_controller.cpp include/swarm_robot/formation_controller.h)
 
 ## Rename C++ executable without prefix
@@ -155,6 +156,7 @@ add_executable(formation_controller src/formation_controller.cpp include/swarm_r
 #   ${catkin_LIBRARIES}
 # )
 target_link_libraries(robot_controller ${catkin_LIBRARIES})
+target_link_libraries(coverage_controller ${catkin_LIBRARIES})
 target_link_libraries(formation_controller ${catkin_LIBRARIES})
 
 #############
