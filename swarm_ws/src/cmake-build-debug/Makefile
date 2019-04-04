@@ -571,6 +571,19 @@ robot_controller/fast:
 .PHONY : robot_controller/fast
 
 #=============================================================================
+# Target rules for targets named coverage_controller
+
+# Build rule for target.
+coverage_controller: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 coverage_controller
+.PHONY : coverage_controller
+
+# fast build rule for target.
+coverage_controller/fast:
+	$(MAKE) -f swarm_robot/CMakeFiles/coverage_controller.dir/build.make swarm_robot/CMakeFiles/coverage_controller.dir/build
+.PHONY : coverage_controller/fast
+
+#=============================================================================
 # Target rules for targets named formation_controller
 
 # Build rule for target.
@@ -1108,6 +1121,7 @@ help:
 	@echo "... roscpp_generate_messages_nodejs"
 	@echo "... rosgraph_msgs_generate_messages_lisp"
 	@echo "... robot_controller"
+	@echo "... coverage_controller"
 	@echo "... formation_controller"
 	@echo "... dispatch_center"
 	@echo "... formation_commander"

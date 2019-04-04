@@ -74,6 +74,15 @@ find_package(catkin REQUIRED COMPONENTS
 #   geometry_msgs#   std_msgs
 # )
 
+# Enable C++11
+SET(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11")
+
+## System dependencies are found with CMake's conventions
+find_package(Boost REQUIRED COMPONENTS
+        program_options
+        #  bind
+        REQUIRED)
+
 ################################################
 ## Declare ROS dynamic reconfigure parameters ##
 ################################################

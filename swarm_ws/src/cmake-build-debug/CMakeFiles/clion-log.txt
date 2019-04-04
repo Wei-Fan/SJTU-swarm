@@ -23,6 +23,9 @@
 -- ==> add_subdirectory(swarm_config)
 -- +++ processing catkin package: 'swarm_robot'
 -- ==> add_subdirectory(swarm_robot)
+-- Boost version: 1.58.0
+-- Found the following Boost libraries:
+--   program_options
 -- +++ processing catkin package: 'swarm_center'
 -- ==> add_subdirectory(swarm_center)
 -- Using these message generators: gencpp;geneus;genlisp;gennodejs;genpy

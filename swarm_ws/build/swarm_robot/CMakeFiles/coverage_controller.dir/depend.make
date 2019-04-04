@@ -63,6 +63,7 @@ swarm_robot/CMakeFiles/coverage_controller.dir/src/coverage_controller.cpp.o: /o
 swarm_robot/CMakeFiles/coverage_controller.dir/src/coverage_controller.cpp.o: /opt/ros/kinetic/include/ros/wall_timer.h
 swarm_robot/CMakeFiles/coverage_controller.dir/src/coverage_controller.cpp.o: /opt/ros/kinetic/include/ros/wall_timer_options.h
 swarm_robot/CMakeFiles/coverage_controller.dir/src/coverage_controller.cpp.o: /opt/ros/kinetic/include/rosconsole/macros_generated.h
+swarm_robot/CMakeFiles/coverage_controller.dir/src/coverage_controller.cpp.o: /opt/ros/kinetic/include/std_msgs/UInt8.h
 swarm_robot/CMakeFiles/coverage_controller.dir/src/coverage_controller.cpp.o: /opt/ros/kinetic/include/xmlrpcpp/XmlRpcDecl.h
 swarm_robot/CMakeFiles/coverage_controller.dir/src/coverage_controller.cpp.o: /opt/ros/kinetic/include/xmlrpcpp/XmlRpcValue.h
 

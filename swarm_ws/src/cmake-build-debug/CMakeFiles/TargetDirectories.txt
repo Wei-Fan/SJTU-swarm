@@ -61,10 +61,11 @@
 /home/wade/SJTU-swarm/swarm_ws/src/cmake-build-debug/swarm_robot/CMakeFiles/install.dir
 /home/wade/SJTU-swarm/swarm_ws/src/cmake-build-debug/swarm_robot/CMakeFiles/list_install_components.dir
 /home/wade/SJTU-swarm/swarm_ws/src/cmake-build-debug/swarm_robot/CMakeFiles/rebuild_cache.dir
-/home/wade/SJTU-swarm/swarm_ws/src/cmake-build-debug/swarm_robot/CMakeFiles/robot_controller.dir
-/home/wade/SJTU-swarm/swarm_ws/src/cmake-build-debug/swarm_robot/CMakeFiles/formation_controller.dir
-/home/wade/SJTU-swarm/swarm_ws/src/cmake-build-debug/swarm_robot/CMakeFiles/test.dir
 /home/wade/SJTU-swarm/swarm_ws/src/cmake-build-debug/swarm_robot/CMakeFiles/edit_cache.dir
+/home/wade/SJTU-swarm/swarm_ws/src/cmake-build-debug/swarm_robot/CMakeFiles/robot_controller.dir
+/home/wade/SJTU-swarm/swarm_ws/src/cmake-build-debug/swarm_robot/CMakeFiles/coverage_controller.dir
+/home/wade/SJTU-swarm/swarm_ws/src/cmake-build-debug/swarm_robot/CMakeFiles/test.dir
+/home/wade/SJTU-swarm/swarm_ws/src/cmake-build-debug/swarm_robot/CMakeFiles/formation_controller.dir
 /home/wade/SJTU-swarm/swarm_ws/src/cmake-build-debug/swarm_center/CMakeFiles/install/local.dir
 /home/wade/SJTU-swarm/swarm_ws/src/cmake-build-debug/swarm_center/CMakeFiles/install.dir
 /home/wade/SJTU-swarm/swarm_ws/src/cmake-build-debug/swarm_center/CMakeFiles/test.dir
