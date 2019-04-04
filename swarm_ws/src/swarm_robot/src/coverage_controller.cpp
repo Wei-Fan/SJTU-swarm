@@ -7,14 +7,14 @@
 #include <geometry_msgs/Twist.h>
 #include <std_msgs/UInt8.h>
 
-#define DEFAULT_RATE 50
+#define DEFAULT_RATE 20
 
 using namespace std;
 
 string traj_path = "/home/wade/SJTU-swarm/swarm_ws/src/swarm_center/launch/";
 
 enum FlightState{
-    Hovering=1, Takeoff=2, Commanding=3, Landing=4,
+    None=0, Hovering=1, Takeoff=2, Commanding=3, Landing=4,
 };
 
 class csvdata{
@@ -29,6 +29,8 @@ private:
     string swarm_prefix = "swarmbot";
     string robot_name;
     FlightState m_flight_state;
+    bool state_prepare;
+    bool pos_prepare;
     geometry_msgs::Pose curr_pos;
     geometry_msgs::Twist cmd_sp, cmd_vel;
 
@@ -45,12 +47,16 @@ private:
     ros::Publisher cmd_pos_pub;
 
     vector<csvdata> cmd_incsv;
+    int cmd_cnt;
+    int cmd_limit;
 
 public:
     CoverageController(const string &robot_name, bool debug = false){
         this->robot_name = robot_name;
         ROS_INFO("ROBOT CONTROLLER for %s is activated!",this->robot_name.c_str());
-        m_flight_state = Takeoff;
+        m_flight_state = None;
+        state_prepare = false;
+        pos_prepare = false;
 
         /* publisher and subscriber */
         char msg_name0[50];
@@ -71,16 +77,20 @@ public:
         string index = this->robot_name.substr(swarm_prefix_size,robot_name_size);
         this->robot_id = atoi(index.c_str());
         read_Pos_traj();
+        cmd_cnt = 0;
+        cmd_limit = cmd_incsv.size();
     }
 
     void flightStateCallback(const std_msgs::UInt8::ConstPtr& msg)
     {
         m_flight_state = FlightState(int(msg->data));
+        state_prepare = true;
     }
 
     void positionCallback(const geometry_msgs::Pose::ConstPtr& msg)
     {
         curr_pos = *msg;
+        pos_prepare = true;
     }
 
     void read_Pos_traj()
@@ -100,12 +110,80 @@ public:
     }
 
     void run(){
-        ros::Rate r(DEFAULT_RATE);
+        int cnt = 0;
+        ros::Rate loop_rate(DEFAULT_RATE);
         while(ros::ok()){
             /*update curr_pos and cmd_sp. Publish them.*/
+            if (!state_prepare||!pos_prepare)
+            {
+                continue;
+            }
+
+            geometry_msgs::Pose pos_sp;
+            if (cnt == cmd_limit)
+                m_flight_state = Landing;
+
+            switch (m_flight_state) {
+                case Hovering: {
+                    pos_sp.position.x = cmd_incsv[cmd_cnt].xyz[0];
+                    pos_sp.position.y = cmd_incsv[cmd_cnt].xyz[1];
+                    pos_sp.position.z = cmd_incsv[cmd_cnt].xyz[2];
+                    cmd_pos_pub.publish(pos_sp);
+                    break;
+                }
+                case Takeoff: {
+                    pos_sp.position.x = cmd_incsv[0].xyz[0];
+                    pos_sp.position.y = cmd_incsv[0].xyz[1];
+                    pos_sp.position.z = 0;
+                    for (int i = 1; i <= 40; ++i) {
+                        pos_sp.position.z += cmd_incsv[0].xyz[2]*i/40;
+
+                        cmd_pos_pub.publish(pos_sp);
+                        ros::spinOnce();
+                        loop_rate.sleep();
+                    }
+
+                    for (int i = 1; i <= 40; ++i) {
+                        cmd_pos_pub.publish(pos_sp);
+                        ros::spinOnce();
+                        loop_rate.sleep();
+                    }
+                    m_flight_state = Commanding;
+                    break;
+                }
+                case Commanding:{
+                    pos_sp.position.x = cmd_incsv[cmd_cnt].xyz[0];
+                    pos_sp.position.y = cmd_incsv[cmd_cnt].xyz[1];
+                    pos_sp.position.z = cmd_incsv[cmd_cnt].xyz[2];
+                    cmd_pos_pub.publish(pos_sp);
+                    cmd_cnt++;
+                    ros::spinOnce();
+                    loop_rate.sleep();
+                    break;
+                }
+                case Landing:{
+                    pos_sp.position.x = cmd_incsv[cmd_cnt].xyz[0];
+                    pos_sp.position.y = cmd_incsv[cmd_cnt].xyz[1];
+                    pos_sp.position.z = cmd_incsv[cmd_cnt].xyz[2];
+                    for (int i = 1; i <= 80; ++i) {
+                        pos_sp.position.z -= cmd_incsv[cmd_cnt].xyz[2]*(1-i/80);
+                        cmd_pos_pub.publish(pos_sp);
+                        ros::spinOnce();
+                        loop_rate.sleep();
+                    }
+                    break;
+                }
+                default:{
+                    pos_sp.position.x = curr_pos.position.x;
+                    pos_sp.position.y = curr_pos.position.y;
+                    pos_sp.position.z = curr_pos.position.z;
+                    cmd_pos_pub.publish(pos_sp);
+                    ros::spinOnce();
+                    loop_rate.sleep();
+                    break;
+                }
+            }
         }
-        ros::spinOnce();
-        r.sleep();
     }
 };
 
