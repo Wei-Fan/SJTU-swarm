@@ -6,5 +6,5 @@ CXX_FLAGS =  -std=c++11
 
 CXX_DEFINES = -DROSCONSOLE_BACKEND_LOG4CXX -DROS_BUILD_SHARED_LIBS=1 -DROS_PACKAGE_NAME=\"swarm_center\"
 
-CXX_INCLUDES = -I/home/wade/SJTU-swarm/swarm_ws/devel/include -I/home/wade/SJTU-swarm/swarm_ws/src/swarm_center/./include -I/home/wade/catkin_ws/devel/include -I/opt/ros/kinetic/include -I/opt/ros/kinetic/share/xmlrpcpp/cmake/../../../include/xmlrpcpp -isystem /opt/ros/kinetic/include/opencv-3.3.1-dev -isystem /opt/ros/kinetic/include/opencv-3.3.1-dev/opencv 
+CXX_INCLUDES = -I/home/wade/SJTU-swarm/swarm_ws/devel/include -I/home/wade/SJTU-swarm/swarm_ws/src/swarm_center/./include -I/home/wade/catkin_ws/devel/include -I/home/wade/catkin_ws/src/mavros/mavros/include -I/home/wade/catkin_ws/src/mavros/libmavconn/include -I/home/wade/catkin_ws/src/mavros/mavros_msgs/include -I/opt/ros/kinetic/include -I/opt/ros/kinetic/share/xmlrpcpp/cmake/../../../include/xmlrpcpp -isystem /opt/ros/kinetic/include/opencv-3.3.1-dev -isystem /opt/ros/kinetic/include/opencv-3.3.1-dev/opencv -I/usr/include/eigen3 -I/usr/lib/../include 
 

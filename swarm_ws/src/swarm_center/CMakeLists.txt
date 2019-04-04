@@ -18,6 +18,8 @@ find_package(catkin REQUIRED COMPONENTS
   cv_bridge
   image_transport
   vicon_bridge
+        serial
+        mavros
 )
 
 ## System dependencies are found with CMake's conventions
@@ -127,6 +129,8 @@ catkin_package(
   message_runtime
   vicon_bridge
   visualization_msgs
+        serial
+        mavros
 #  DEPENDS system_lib
 )
 
@@ -141,10 +145,13 @@ include_directories(
   ${catkin_INCLUDE_DIRS}
 )
 
-## Declare a C++ library
-# add_library(${PROJECT_NAME}
-#   src/${PROJECT_NAME}/swarm_center.cpp
-# )
+# Declare a C++ library
+ add_library(swarm_tools
+         include/swarm_center/Parameter.cpp
+         include/swarm_center/Parameter.h
+         include/swarm_center/PID.cpp
+         include/swarm_center/PID.h
+ )
 
 ## Add cmake target dependencies of the library
 ## as an example, code may need to be generated before libraries
@@ -158,6 +165,7 @@ include_directories(
 add_executable(coverage_commander src/coverage_commander.cpp)
 add_executable(formation_commander src/formation_commander.cpp)
 add_executable(dispatch_center src/dispatch_center.cpp)
+add_executable(swarm_driver src/swarm_driver.cpp)
 
 ## Rename C++ executable without prefix
 ## The above recommended prefix causes long target names, the following renames the
@@ -177,6 +185,7 @@ add_dependencies(coverage_commander swarm_center_gencpp)
 target_link_libraries(coverage_commander ${catkin_LIBRARIES} ${Boost_LIBRARIES} ${OpenCV_LIBS})
 target_link_libraries(formation_commander ${catkin_LIBRARIES})
 target_link_libraries(dispatch_center ${catkin_LIBRARIES})
+target_link_libraries(swarm_driver ${catkin_LIBRARIES} swarm_tools)
 
 #############
 ## Install ##
