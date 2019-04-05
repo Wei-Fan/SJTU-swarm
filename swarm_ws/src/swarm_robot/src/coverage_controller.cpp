@@ -59,14 +59,17 @@ public:
         pos_prepare = false;
 
         /* publisher and subscriber */
+        // wait for dispatch_center's signal to alter flight state
         char msg_name0[50];
         sprintf(msg_name0,"/%s/flight_state",this->robot_name.c_str());
         state_sub = global.subscribe<std_msgs::UInt8>(msg_name0,1,&CoverageController::flightStateCallback,this);
 
+        // get raw_pos from swarm_driver
         char msg_name1[50];
         sprintf(msg_name1,"/%s/raw_position",this->robot_name.c_str());
         pos_sub = global.subscribe<geometry_msgs::Pose>(msg_name1,1,&CoverageController::positionCallback,this);
 
+        // publish sp to swarm_driver
         char msg_name2[50];
         sprintf(msg_name2,"/%s/set_position",this->robot_name.c_str());
         cmd_pos_pub = global.advertise<geometry_msgs::Pose>(msg_name2,1);

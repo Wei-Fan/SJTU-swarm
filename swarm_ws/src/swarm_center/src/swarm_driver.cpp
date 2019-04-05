@@ -21,7 +21,7 @@
 //#define USING_OPTFLOW
 //#define USING_OFFLINE_TRAJECTORY
 
-#define NUM_OF_AGENTS	6
+#define NUM_OF_AGENTS	2
 
 #define  BYTE0(dwTemp)       ( *( (uint8_t *)(&dwTemp)	)  )
 #define  BYTE1(dwTemp)       ( *( (uint8_t *)(&dwTemp) + 1) )
@@ -80,6 +80,8 @@ public:
 //	void vel_cb(const geometry_msgs::TwistStamped::ConstPtr &msg);
 	void offb_pos_ctrl(float cur_time);
 
+	ros::Publisher raw_pub;
+
 	ros::Subscriber pos_sub;
 	void spCallback(const geometry_msgs::Pose::ConstPtr &msg);
 
@@ -104,9 +106,15 @@ MiniflyRos::MiniflyRos(uint8_t id_input, float *init_pos)://const std::string &p
     init_position[0] = init_pos[0];
     init_position[1] = init_pos[1];
 
-    char msg_name[50];
-    sprintf(msg_name,"/%s/set_position",prefix.c_str());
-    pos_sub = n.subscribe<geometry_msgs::Pose>(msg_name,1,&MiniflyRos::spCallback,this);
+    // get sp from coverage_controllers
+    char msg_name0[50];
+    sprintf(msg_name0,"/%s/set_position",prefix.c_str());
+    pos_sub = n.subscribe<geometry_msgs::Pose>(msg_name0,1,&MiniflyRos::spCallback,this);
+
+    // publish raw pos for coverage_controllers and coverage_commander
+    char msg_name1[50];
+    sprintf(msg_name1,"/%s/raw_position",prefix.c_str());
+    raw_pub = n.advertise<geometry_msgs::Pose>(msg_name1,1);
 
     /* read PID parameter from file */
 	Parameter param;
@@ -247,7 +255,8 @@ public:
 //
 MiniSwarm::MiniSwarm(const std::string &dev_name, uint8_t num_of_agents, int baudrate)
 {
-    ros::NodeHandle node;
+    ros::NodeHandle node("");
+    // tell dispatch_center that all vehecles armed
     ready_pub = node.advertise<std_msgs::Bool>("/setup_ready",1);
 
     try
@@ -272,8 +281,8 @@ MiniSwarm::MiniSwarm(const std::string &dev_name, uint8_t num_of_agents, int bau
 
     vector<float> init_x;
     vector<float> init_y;
-    init_x = {0, 1, 2, 3, 4, 5};
-    init_y = {0, 1, 2, 3, 4, 5};
+    init_x = {0, 1};
+    init_y = {0, 1};
 
     for(uint8_t i=0; i < num_of_agents; ++i)
     {

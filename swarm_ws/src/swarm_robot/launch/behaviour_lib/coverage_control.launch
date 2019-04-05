@@ -4,7 +4,6 @@
     <!--<rosparam param="/behaviours">[{'name':'formation_control','centralized':false,'bandwidth':8}]-->
     <!--</rosparam>-->
 
-    <!-- formation control with role assignment -->
     <node pkg="swarm_robot" type="coverage_controller" name="coverage_controller" args="$(arg robot_name)" output="screen">
         <!--<remap from="cmd_vel" to="robot_controller/cmd_vel"/>-->
     </node>
