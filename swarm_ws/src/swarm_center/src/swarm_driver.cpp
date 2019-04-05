@@ -257,7 +257,7 @@ MiniSwarm::MiniSwarm(const std::string &dev_name, uint8_t num_of_agents, int bau
 {
     ros::NodeHandle node("");
     // tell dispatch_center that all vehecles armed
-    ready_pub = node.advertise<std_msgs::Bool>("/setup_ready",1);
+    ready_pub = node.advertise<std_msgs::Bool>("/setup_ready",100);
 
     try
     {

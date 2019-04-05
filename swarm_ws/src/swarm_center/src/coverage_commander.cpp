@@ -21,6 +21,7 @@
 #include <chrono>
 #include <sstream>
 #include <fstream>
+#include <std_msgs/Bool.h>
 
 #include "swarm_center/mCPPReq.h"
 //#include <geometry_msgs/Pose.h>
@@ -47,9 +48,11 @@ private:
 //    int robot_number;
     int robot_number;
 
-    ros::ServiceServer service;
     ros::NodeHandle global;
     ros::NodeHandle local;
+
+    ros::ServiceServer service;
+    ros::Publisher ready_pub;
 
     std::chrono::high_resolution_clock ::time_point recieve_time;
 
@@ -81,10 +84,13 @@ public:
         }
         ROS_INFO("COVERAGE COMMANDER is activated! COMMANDER has %d robots to dispose", this->robot_number);
 
-        service = global.advertiseService("mCPP_req",&CoverageCommander::plan,this);
+        service = global.advertiseService("/mCPP_req",&CoverageCommander::plan,this);
 
         /* respond only one time per 5s period */
         recieve_time = std::chrono::high_resolution_clock::now();
+
+        /* tell dispatch center that plan ready */
+        ready_pub = global.advertise<std_msgs::Bool>("/plan_ready",1);
 
         /* initial matrix*/
         K.setZero(); //set zeros
@@ -93,6 +99,7 @@ public:
     bool plan(swarm_center::mCPPReq::Request &req,
               swarm_center::mCPPReq::Response &res)
     {
+        ROS_INFO("request recieved!");
         /* respond only one time per period */
         auto cur_time = std::chrono::high_resolution_clock::now();
         std::chrono::duration<double> lock_time = cur_time-recieve_time;
@@ -100,6 +107,7 @@ public:
             res.b = true;
             recieve_time = cur_time;
         } else {
+            ROS_WARN("not now");
             res.b = false;
             return false;
         }
@@ -144,6 +152,10 @@ public:
          * generate planning document
          * */
         generate_path();
+
+        std_msgs::Bool ready_msg;
+        ready_msg.data = true;
+        ready_pub.publish(ready_msg);
 
         return true;
     }

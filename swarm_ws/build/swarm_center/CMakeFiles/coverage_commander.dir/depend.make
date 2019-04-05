@@ -478,6 +478,7 @@ swarm_center/CMakeFiles/coverage_commander.dir/src/coverage_commander.cpp.o: /op
 swarm_center/CMakeFiles/coverage_commander.dir/src/coverage_commander.cpp.o: /opt/ros/kinetic/include/sensor_msgs/CompressedImage.h
 swarm_center/CMakeFiles/coverage_commander.dir/src/coverage_commander.cpp.o: /opt/ros/kinetic/include/sensor_msgs/Image.h
 swarm_center/CMakeFiles/coverage_commander.dir/src/coverage_commander.cpp.o: /opt/ros/kinetic/include/sensor_msgs/image_encodings.h
+swarm_center/CMakeFiles/coverage_commander.dir/src/coverage_commander.cpp.o: /opt/ros/kinetic/include/std_msgs/Bool.h
 swarm_center/CMakeFiles/coverage_commander.dir/src/coverage_commander.cpp.o: /opt/ros/kinetic/include/std_msgs/Header.h
 swarm_center/CMakeFiles/coverage_commander.dir/src/coverage_commander.cpp.o: /opt/ros/kinetic/include/xmlrpcpp/XmlRpcDecl.h
 swarm_center/CMakeFiles/coverage_commander.dir/src/coverage_commander.cpp.o: /opt/ros/kinetic/include/xmlrpcpp/XmlRpcValue.h

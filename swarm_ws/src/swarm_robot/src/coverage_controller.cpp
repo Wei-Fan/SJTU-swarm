@@ -29,6 +29,7 @@ private:
     string swarm_prefix = "swarmbot";
     string robot_name;
     FlightState m_flight_state;
+    bool plan_ready;
     bool state_prepare;
     bool pos_prepare;
     geometry_msgs::Pose curr_pos;
@@ -57,6 +58,7 @@ public:
         m_flight_state = None;
         state_prepare = false;
         pos_prepare = false;
+        plan_ready = false;
 
         /* publisher and subscriber */
         // wait for dispatch_center's signal to alter flight state
@@ -74,7 +76,7 @@ public:
         sprintf(msg_name2,"/%s/set_position",this->robot_name.c_str());
         cmd_pos_pub = global.advertise<geometry_msgs::Pose>(msg_name2,1);
 
-        /* read file */
+        /* read file (how to respond to replanning???)*/
         int swarm_prefix_size = this->swarm_prefix.size();
         int robot_name_size = this->robot_name.size();
         string index = this->robot_name.substr(swarm_prefix_size,robot_name_size);

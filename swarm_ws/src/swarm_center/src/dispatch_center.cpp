@@ -15,7 +15,7 @@
 //#include <geometry_msgs/Pose.h>
 //#include <geometry_msgs/Twist.h>
 
-#define DEFAULT_RATE 50
+#define DEFAULT_RATE 1
 
 using namespace std;
 
@@ -37,8 +37,9 @@ private:
     /* client for coverage planning request */
     ros::ServiceClient plan_client;
 
-
     bool all_ready;
+    bool plan_ready;
+    bool first_run;
 
 public:
     DispatchCenter(){
@@ -53,9 +54,13 @@ public:
             this->robot_number = 1;
         }
         ROS_INFO("DISPATCH CENTER is activated! CENTER has %d robots to dispose", this->robot_number);
-        
+
+        this->first_run = true;
+
         this->all_ready = false;
-        ready_sub = global.subscribe<std_msgs::Bool>("/setup_ready",1,&DispatchCenter::readyCallback,this);
+        ready_sub = global.subscribe<std_msgs::Bool>("/setup_ready",100,&DispatchCenter::armedReadyCallback,this);
+        this->plan_ready = false;
+        ready_sub = global.subscribe<std_msgs::Bool>("/plan_ready",100,&DispatchCenter::planReadyCallback,this);
 
         flight_state_pub.resize(this->robot_number);
         for (int i = 0; i < this->robot_number; ++i) {
@@ -64,20 +69,53 @@ public:
             flight_state_pub[i] = global.advertise<std_msgs::UInt8>(msg_name,1);
         }
 
-        plan_client = global.serviceClient<swarm_center::mCPPReq>("mCPP_req");
+        plan_client = global.serviceClient<swarm_center::mCPPReq>("/mCPP_req");
     }
 
-    void readyCallback(const std_msgs::Bool::ConstPtr &msg) {
-        this->all_ready = msg->data;
+    void armedReadyCallback(const std_msgs::Bool::ConstPtr &msg) {
+        if(!this->all_ready) {
+            this->all_ready = msg->data;
+            ROS_INFO("vehicles are all armed");
+        }
+    }
+
+    void planReadyCallback(const std_msgs::Bool::ConstPtr &msg) {
+        this->plan_ready = msg->data;
+        if (this->plan_ready) {
+            ROS_INFO("plan ready!");
+        }
     }
 
     void run(){
         ros::Rate r(DEFAULT_RATE);
-        while(ros::ok()){
-            /*update curr_pos and cmd_sp. Publish them.*/
+
+        swarm_center::mCPPReq srv;
+        srv.request.a = true;
+        srv.response.b = false;
+        while (ros::ok()&&!srv.response.b) {
+            plan_client.call(srv);
+            ros::spinOnce();
+            r.sleep();
+            ROS_INFO("request for first plan, return %d",srv.response.b);
         }
-        ros::spinOnce();
-        r.sleep();
+
+        while(ros::ok()){
+            if (!this->plan_ready)//||!this->all_ready) //undo this once we add swarm_driver
+                continue;
+            ROS_INFO("armed ready and plan ready");
+            if (first_run) {
+                std_msgs::UInt8 flight_state;
+                flight_state.data = 2;
+                for (int i = 0; i < this->robot_number; ++i) {
+                    flight_state_pub[i].publish(flight_state);
+                }
+                first_run = false;
+            }
+
+
+            ros::spinOnce();
+            r.sleep();
+        }
     }
 };
 

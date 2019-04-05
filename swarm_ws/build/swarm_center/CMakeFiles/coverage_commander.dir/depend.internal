@@ -479,6 +479,7 @@ swarm_center/CMakeFiles/coverage_commander.dir/src/coverage_commander.cpp.o
  /opt/ros/kinetic/include/sensor_msgs/CompressedImage.h
  /opt/ros/kinetic/include/sensor_msgs/Image.h
  /opt/ros/kinetic/include/sensor_msgs/image_encodings.h
+ /opt/ros/kinetic/include/std_msgs/Bool.h
  /opt/ros/kinetic/include/std_msgs/Header.h
  /opt/ros/kinetic/include/xmlrpcpp/XmlRpcDecl.h
  /opt/ros/kinetic/include/xmlrpcpp/XmlRpcValue.h
