@@ -21,9 +21,9 @@
         <!--<remap from="cmd_vel" to="robot_controller/cmd_vel"/>-->
     </node>
 
-    <!--<node pkg="swarm_center" type="swarm_driver" name="swarm_driver" output="screen">-->
-        <!--&lt;!&ndash;<param name="arg robot_number" value="$(arg robot_number)"></param>&ndash;&gt;-->
-        <!--&lt;!&ndash;<remap from="cmd_vel" to="robot_controller/cmd_vel"/>&ndash;&gt;-->
-    <!--</node>-->
+    <node pkg="swarm_center" type="swarm_driver" name="swarm_driver" output="screen">
+        <!--<param name="arg robot_number" value="$(arg robot_number)"></param>-->
+        <!--<remap from="cmd_vel" to="robot_controller/cmd_vel"/>-->
+    </node>
 
 </launch>

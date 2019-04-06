@@ -186,7 +186,7 @@ void MiniflyRos::offb_pos_ctrl(float cur_time) // current_pos not finish!!!!!!
 	PxPid.add_error(pos_cmd[0]-current_pos[0],cur_time);PxPid.pid_output();
 	PyPid.add_error(pos_cmd[1]-current_pos[1],cur_time);PyPid.pid_output();
 	PzPid.add_error(pos_cmd[2]-current_pos[2],cur_time);PzPid.pid_output();
-	cout<<"errP_xyz\t"<<pos_cmd[0]-current_pos[0]<<" "<<pos_cmd[1]-current_pos[1]<<" "<<pos_cmd[2]-current_pos[2]<<endl;
+//	cout<<"errP_xyz\t"<<pos_cmd[0]-current_pos[0]<<" "<<pos_cmd[1]-current_pos[1]<<" "<<pos_cmd[2]-current_pos[2]<<endl;
 	VxPid.add_error(0.1*PxPid.Output - current_vel[0],cur_time);VxPid.pid_output();
 	VyPid.add_error(0.1*PyPid.Output - current_vel[1],cur_time);VyPid.pid_output();
 	VzPid.add_error(PzPid.Output - current_vel[2],cur_time);VzPid.pid_output();
@@ -432,7 +432,7 @@ void MiniSwarm::send_pos_sp(uint8_t id, float *xyz)
         // printf("%02hhX %02hhX %02hhX %02hhX ", BYTE0(tmp), BYTE1(tmp), BYTE2(tmp), BYTE3(tmp));
     }
     cmd[cnt] = cksum;
-    printf("msgid: %02hhX, xyz: %5.5f %5.5f %5.5f \n",cmd[2],xyz[0],xyz[1],xyz[2]);
+//    printf("msgid: %02hhX, xyz: %5.5f %5.5f %5.5f \n",cmd[2],xyz[0],xyz[1],xyz[2]);
     ros_ser.write(cmd,18);
 }
 
@@ -532,6 +532,7 @@ void MiniSwarm::run()
 //			memcpy(mf->pos_cmd,mf->cmd_incsv[cnt].xyz,12);
 			mf->offb_pos_ctrl(cur_time);
 			send_att_sp(mf->id,mf->rpyt_cmd);
+//			ROS_INFO("robot %d send out sp: %f,%f",mf->id,mf->current_pos[0],mf->current_pos[1]);
 		}
 //#else
 //        for(auto mf:Mfs){
