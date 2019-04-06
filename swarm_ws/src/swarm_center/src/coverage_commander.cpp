@@ -156,6 +156,7 @@ public:
         std_msgs::Bool ready_msg;
         ready_msg.data = true;
         ready_pub.publish(ready_msg);
+        ROS_INFO("send ready signal from coverage center");
 
         return true;
     }
@@ -679,7 +680,7 @@ public:
                 if (next_grid(0)==robot_grid_y[k]&&next_grid(1)==robot_grid_x[k])
                     stop = true;
 
-                cout << "curr_core : "<< curr_core(0) << "," << curr_core(1) << " ---- curr_grid : " << curr_grid(0) << "," << curr_grid(1) << endl;
+//                cout << "curr_core : "<< curr_core(0) << "," << curr_core(1) << " ---- curr_grid : " << curr_grid(0) << "," << curr_grid(1) << endl;
 
             }
 
@@ -755,7 +756,7 @@ public:
             /* write csv file */
             ofstream outfile;
             outfile.open(filename,ios::out);
-            for (int i = 0; i < P_grid.size()-1; ++i) {
+            for (int i = 0; i < P_grid_t.size()-1; ++i) {
                 for (int j = 0; j < turn_blank/2; ++j) {
                     outfile << P_grid_t[i](0) << ',' << P_grid_t[i](1) << ',' << 1.0 << endl;
                 }

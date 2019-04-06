@@ -58,15 +58,20 @@ public:
         this->first_run = true;
 
         this->all_ready = false;
-        ready_sub = global.subscribe<std_msgs::Bool>("/setup_ready",100,&DispatchCenter::armedReadyCallback,this);
+        ready_sub = global.subscribe<std_msgs::Bool>("/setup_ready",1,&DispatchCenter::armedReadyCallback,this);
         this->plan_ready = false;
-        ready_sub = global.subscribe<std_msgs::Bool>("/plan_ready",100,&DispatchCenter::planReadyCallback,this);
+        ready_sub = global.subscribe<std_msgs::Bool>("/plan_ready",1,&DispatchCenter::planReadyCallback,this);
 
         flight_state_pub.resize(this->robot_number);
         for (int i = 0; i < this->robot_number; ++i) {
             char msg_name[50];
             sprintf(msg_name,"/%s%d/flight_state",this->prefix.c_str(),i);
             flight_state_pub[i] = global.advertise<std_msgs::UInt8>(msg_name,1);
+            std_msgs::UInt8 test;
+            test.data = 0;
+            for (int j = 0; j < 10; ++j) {
+                flight_state_pub[i].publish(test);
+            }
         }
 
         plan_client = global.serviceClient<swarm_center::mCPPReq>("/mCPP_req");
@@ -96,18 +101,21 @@ public:
             plan_client.call(srv);
             ros::spinOnce();
             r.sleep();
-            ROS_INFO("request for first plan, return %d",srv.response.b);
+            ROS_INFO("request for first plan, response %d", srv.response.b);
         }
 
         while(ros::ok()){
             if (!this->plan_ready)//||!this->all_ready) //undo this once we add swarm_driver
                 continue;
-            ROS_INFO("armed ready and plan ready");
+//            ROS_INFO("armed ready and plan ready");
             if (first_run) {
+                ROS_INFO("send takeoff signal");
                 std_msgs::UInt8 flight_state;
                 flight_state.data = 2;
                 for (int i = 0; i < this->robot_number; ++i) {
-                    flight_state_pub[i].publish(flight_state);
+                    for (int j = 0; j < 10; ++j) {
+                        flight_state_pub[i].publish(flight_state);
+                    }
                 }
                 first_run = false;
             }

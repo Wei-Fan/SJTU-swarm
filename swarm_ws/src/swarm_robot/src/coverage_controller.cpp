@@ -88,8 +88,14 @@ public:
 
     void flightStateCallback(const std_msgs::UInt8::ConstPtr& msg)
     {
+        if (msg->data == 0) {
+            ROS_WARN("state not set!");
+            return;
+        }
+
         m_flight_state = FlightState(int(msg->data));
         state_prepare = true;
+        ROS_INFO("flight state set!");
     }
 
     void positionCallback(const geometry_msgs::Pose::ConstPtr& msg)
@@ -119,8 +125,10 @@ public:
         ros::Rate loop_rate(DEFAULT_RATE);
         while(ros::ok()){
             /*update curr_pos and cmd_sp. Publish them.*/
-            if (!state_prepare||!pos_prepare)
+            if (!state_prepare)//||!pos_prepare)//undo this once we add swarm_driver
             {
+                ros::spinOnce();
+                loop_rate.sleep();
                 continue;
             }
 
@@ -162,6 +170,7 @@ public:
                     pos_sp.position.z = cmd_incsv[cmd_cnt].xyz[2];
                     cmd_pos_pub.publish(pos_sp);
                     cmd_cnt++;
+                    ROS_INFO("robot%d count : %d",this->robot_id,cmd_cnt);
                     ros::spinOnce();
                     loop_rate.sleep();
                     break;
@@ -188,6 +197,7 @@ public:
                     break;
                 }
             }
+            ROS_INFO("set_position for robot%d : %d, %d",this->robot_id,pos_sp.position.x,pos_sp.position.y);
         }
     }
 };
