@@ -4,6 +4,7 @@
 swarm_robot/CMakeFiles/coverage_controller.dir/src/coverage_controller.cpp.o: /home/wade/SJTU-swarm/swarm_ws/src/swarm_robot/src/coverage_controller.cpp
 swarm_robot/CMakeFiles/coverage_controller.dir/src/coverage_controller.cpp.o: /opt/ros/kinetic/include/geometry_msgs/Point.h
 swarm_robot/CMakeFiles/coverage_controller.dir/src/coverage_controller.cpp.o: /opt/ros/kinetic/include/geometry_msgs/Pose.h
+swarm_robot/CMakeFiles/coverage_controller.dir/src/coverage_controller.cpp.o: /opt/ros/kinetic/include/geometry_msgs/PoseStamped.h
 swarm_robot/CMakeFiles/coverage_controller.dir/src/coverage_controller.cpp.o: /opt/ros/kinetic/include/geometry_msgs/Quaternion.h
 swarm_robot/CMakeFiles/coverage_controller.dir/src/coverage_controller.cpp.o: /opt/ros/kinetic/include/geometry_msgs/Twist.h
 swarm_robot/CMakeFiles/coverage_controller.dir/src/coverage_controller.cpp.o: /opt/ros/kinetic/include/geometry_msgs/Vector3.h
@@ -63,6 +64,7 @@ swarm_robot/CMakeFiles/coverage_controller.dir/src/coverage_controller.cpp.o: /o
 swarm_robot/CMakeFiles/coverage_controller.dir/src/coverage_controller.cpp.o: /opt/ros/kinetic/include/ros/wall_timer.h
 swarm_robot/CMakeFiles/coverage_controller.dir/src/coverage_controller.cpp.o: /opt/ros/kinetic/include/ros/wall_timer_options.h
 swarm_robot/CMakeFiles/coverage_controller.dir/src/coverage_controller.cpp.o: /opt/ros/kinetic/include/rosconsole/macros_generated.h
+swarm_robot/CMakeFiles/coverage_controller.dir/src/coverage_controller.cpp.o: /opt/ros/kinetic/include/std_msgs/Header.h
 swarm_robot/CMakeFiles/coverage_controller.dir/src/coverage_controller.cpp.o: /opt/ros/kinetic/include/std_msgs/UInt8.h
 swarm_robot/CMakeFiles/coverage_controller.dir/src/coverage_controller.cpp.o: /opt/ros/kinetic/include/xmlrpcpp/XmlRpcDecl.h
 swarm_robot/CMakeFiles/coverage_controller.dir/src/coverage_controller.cpp.o: /opt/ros/kinetic/include/xmlrpcpp/XmlRpcValue.h

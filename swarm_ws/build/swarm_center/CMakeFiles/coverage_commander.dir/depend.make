@@ -287,6 +287,10 @@ swarm_center/CMakeFiles/coverage_commander.dir/src/coverage_commander.cpp.o: /ho
 swarm_center/CMakeFiles/coverage_commander.dir/src/coverage_commander.cpp.o: /home/wade/SJTU-swarm/swarm_ws/src/swarm_center/./include/Eigen/Eigen/src/plugins/MatrixCwiseUnaryOps.h
 swarm_center/CMakeFiles/coverage_commander.dir/src/coverage_commander.cpp.o: /home/wade/SJTU-swarm/swarm_ws/src/swarm_center/src/coverage_commander.cpp
 swarm_center/CMakeFiles/coverage_commander.dir/src/coverage_commander.cpp.o: /opt/ros/kinetic/include/cv_bridge/cv_bridge.h
+swarm_center/CMakeFiles/coverage_commander.dir/src/coverage_commander.cpp.o: /opt/ros/kinetic/include/geometry_msgs/Point.h
+swarm_center/CMakeFiles/coverage_commander.dir/src/coverage_commander.cpp.o: /opt/ros/kinetic/include/geometry_msgs/Pose.h
+swarm_center/CMakeFiles/coverage_commander.dir/src/coverage_commander.cpp.o: /opt/ros/kinetic/include/geometry_msgs/PoseStamped.h
+swarm_center/CMakeFiles/coverage_commander.dir/src/coverage_commander.cpp.o: /opt/ros/kinetic/include/geometry_msgs/Quaternion.h
 swarm_center/CMakeFiles/coverage_commander.dir/src/coverage_commander.cpp.o: /opt/ros/kinetic/include/opencv-3.3.1-dev/opencv/cxcore.h
 swarm_center/CMakeFiles/coverage_commander.dir/src/coverage_commander.cpp.o: /opt/ros/kinetic/include/opencv-3.3.1-dev/opencv2/calib3d.hpp
 swarm_center/CMakeFiles/coverage_commander.dir/src/coverage_commander.cpp.o: /opt/ros/kinetic/include/opencv-3.3.1-dev/opencv2/calib3d/calib3d_c.h

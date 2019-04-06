@@ -43,6 +43,9 @@
 using namespace std;
 
 string parameter_file = "/home/wade/SJTU-swarm/swarm_ws/src/swarm_config/include/swarm_config/Minifly";
+/* pre-defined position */
+float position_bias_x[4] = {0.5, -0.5, -0.5, 0.5};
+float position_bias_y[4] = {0.5, 0.5, -0.5, -0.5};
 
 class MiniflyRos
 {
@@ -53,6 +56,7 @@ public:
     float rpyt_cmd[4] = {0.0,0.0,0.0,10.0};
     float current_pos[3] = {0.0,0.0,0.0};
     float current_vel[3] = {0.0,0.0,0.0};
+    float current_acc[3] = {0.0,0.0,0.0};
     float u_i[2];
     PID PxPid,PyPid,PzPid;
     PID VxPid,VyPid,VzPid;
@@ -79,8 +83,6 @@ public:
 //	void pos_cb(const geometry_msgs::PoseStamped::ConstPtr &msg);
 //	void vel_cb(const geometry_msgs::TwistStamped::ConstPtr &msg);
 	void offb_pos_ctrl(float cur_time);
-
-	ros::Publisher raw_pub;
 
 	ros::Subscriber pos_sub;
 	void spCallback(const geometry_msgs::Pose::ConstPtr &msg);
@@ -110,11 +112,6 @@ MiniflyRos::MiniflyRos(uint8_t id_input, float *init_pos)://const std::string &p
     char msg_name0[50];
     sprintf(msg_name0,"/%s/set_position",prefix.c_str());
     pos_sub = n.subscribe<geometry_msgs::Pose>(msg_name0,1,&MiniflyRos::spCallback,this);
-
-    // publish raw pos for coverage_controllers and coverage_commander
-    char msg_name1[50];
-    sprintf(msg_name1,"/%s/raw_position",prefix.c_str());
-    raw_pub = n.advertise<geometry_msgs::Pose>(msg_name1,1);
 
     /* read PID parameter from file */
 	Parameter param;
@@ -237,6 +234,10 @@ class MiniSwarm
 {
 private:
     ros::Publisher ready_pub;
+    vector<ros::Publisher> raw_pub;
+    string prefix = "swarmbot";
+//    vector<float> position_bias_x;
+//    vector<float> position_bias_y;
 
 public:
     std::vector<MiniflyRos*> Mfs;
@@ -244,7 +245,8 @@ public:
     MiniSwarm(const std::string &dev_name, uint8_t num_of_agents, int baudrate);
     ~MiniSwarm();
     void addMf(uint8_t id, float *init_pos);//const std::string &parampath, uint8_t id);
-//    void update_power(std::string &pkg_tmp);
+    void update_power(std::string &pkg_tmp);
+    void update_state(std::string &pkg_tmp);
     void raw_data_decoding();
     void take_off(uint8_t id);
     void send_pos_sp(uint8_t id, float *xyz);
@@ -258,6 +260,14 @@ MiniSwarm::MiniSwarm(const std::string &dev_name, uint8_t num_of_agents, int bau
     ros::NodeHandle node("");
     // tell dispatch_center that all vehecles armed
     ready_pub = node.advertise<std_msgs::Bool>("/setup_ready",100);
+
+    // publish raw pos for coverage_controllers and coverage_commander
+    raw_pub.resize(NUM_OF_AGENTS);
+    for (int i = 0; i < NUM_OF_AGENTS; ++i) {
+        char msg_name[50];
+        sprintf(msg_name,"/%s%d/raw_position",prefix.c_str(),i);
+        raw_pub[i] = node.advertise<geometry_msgs::PoseStamped>(msg_name,1);
+    }
 
     try
     {
@@ -279,16 +289,11 @@ MiniSwarm::MiniSwarm(const std::string &dev_name, uint8_t num_of_agents, int bau
         ROS_ERROR_STREAM("No port opened");
     }
 
-    vector<float> init_x;
-    vector<float> init_y;
-    init_x = {0, 1};
-    init_y = {0, 1};
-
     for(uint8_t i=0; i < num_of_agents; ++i)
     {
         float init_p[2];
-        init_p[0] = init_x[i];
-        init_p[1] = init_y[i];
+        init_p[0] = position_bias_x[i];
+        init_p[1] = position_bias_y[i];
         addMf(i,init_p);
     }
 }
@@ -306,18 +311,52 @@ void MiniSwarm::addMf(uint8_t id, float *init_pos)//const std::string &parampath
     Mfs.push_back(mf);
 }
 
-//void MiniSwarm::update_power(std::string &pkg_tmp)
-//{
-//    uint16_t tmp;
-//    uint8_t id = pkg_tmp[1];
-//    for (int i=0; i<2; ++i){
-//        tmp = uint16_t((unsigned char)pkg_tmp[2*i+2]*256+ (unsigned char)pkg_tmp[2*i+3]);
-//        Mfs[id]->u_i[i] = float(tmp)/100;
-//    }
-//
-//    printf("MF%02X: U = %2.2f, I = %2.2f\n",id,Mfs[id]->u_i[0],Mfs[id]->u_i[1]);
-//    // std::cout<<"MF"<<id<<": U = "<<Mfs[id]->u_i[0]<<"V, I = "<<Mfs[id]->u_i[1]<<"A"<<std::endl;
-//}
+void MiniSwarm::update_power(std::string &pkg_tmp)
+{
+    uint16_t tmp;
+    uint8_t id = pkg_tmp[1];
+    for (int i=0; i<2; ++i){
+        tmp = uint16_t((unsigned char)pkg_tmp[2*i+2]*256+ (unsigned char)pkg_tmp[2*i+3]);
+        Mfs[id]->u_i[i] = float(tmp)/100;
+    }
+
+    printf("MF%02X: U = %2.2f, I = %2.2f\n",id,Mfs[id]->u_i[0],Mfs[id]->u_i[1]);
+    // std::cout<<"MF"<<id<<": U = "<<Mfs[id]->u_i[0]<<"V, I = "<<Mfs[id]->u_i[1]<<"A"<<std::endl;
+}
+
+void MiniSwarm::update_state(std::string &pkg_tmp)
+{
+    uint16_t tmp;
+    uint8_t id = pkg_tmp[1];
+    for (int i=0; i<3; ++i){
+        tmp = uint16_t((unsigned char)pkg_tmp[2*i+2]*256+ (unsigned char)pkg_tmp[2*i+3]);
+        Mfs[id]->current_acc[i] = float(tmp)/100;
+    }
+    for (int i=3; i<6; ++i){
+        tmp = uint16_t((unsigned char)pkg_tmp[2*i+2]*256+ (unsigned char)pkg_tmp[2*i+3]);
+        Mfs[id]->current_vel[i-3] = float(tmp)/100;
+    }
+    for (int i=6; i<9; ++i){
+        tmp = uint16_t((unsigned char)pkg_tmp[2*i+2]*256+ (unsigned char)pkg_tmp[2*i+3]);
+        Mfs[id]->current_pos[i-6] = float(tmp)/100;
+    }
+    Mfs[id]->current_pos[0] += position_bias_x[id];
+    Mfs[id]->current_pos[1] += position_bias_y[id];
+
+    /* publish optflow's position estimation */
+    geometry_msgs::PoseStamped msg;
+    msg.header.seq = id;
+    msg.pose.position.x = Mfs[id]->current_pos[0];
+    msg.pose.position.y = Mfs[id]->current_pos[1];
+    msg.pose.position.z = Mfs[id]->current_pos[2];
+    char msg_name[50];
+    sprintf(msg_name,"/%s%d/raw_position",this->prefix.c_str(),id);
+    raw_pub[id].publish(msg);
+
+    printf("MF_cp%02X: x = %2.2f, y = %2.2f, z = %2.2f\n",id,Mfs[id]->current_pos[0],Mfs[id]->current_pos[1],Mfs[id]->current_pos[2]);
+
+}
+
 void MiniSwarm::raw_data_decoding()
 {
     if(ros_ser.available()){
@@ -333,7 +372,8 @@ void MiniSwarm::raw_data_decoding()
                 msg_type = buffer[i+2];
                 msg_len = buffer[i+3];
                 //check the pkg
-                if (msg_type ==1 || msg_type ==2 || msg_type ==3 || msg_type ==5){
+                std::cout<<"msg_type:"<<msg_type<<std::endl;
+                if (msg_type ==1 || msg_type ==2 || msg_type ==3 || msg_type ==5 ||msg_type ==-15){
                     uint8_t sum = 0;
                     for (int j = 0; j < msg_len+4; ++j){
                         sum = sum + buffer[i+j];
@@ -351,8 +391,10 @@ void MiniSwarm::raw_data_decoding()
                             //     update_ctrl_cmd(pkg_tmp);
                             //     break;
                             case 5 :
-//                                update_power(pkg_tmp);
+                                update_power(pkg_tmp);
                                 break;
+                            case -15 :
+                                update_state(pkg_tmp);
                             default :
                                 break;
                         }

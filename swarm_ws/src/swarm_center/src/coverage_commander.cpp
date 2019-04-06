@@ -22,37 +22,43 @@
 #include <sstream>
 #include <fstream>
 #include <std_msgs/Bool.h>
+#include <geometry_msgs/Pose.h>
+#include <geometry_msgs/PoseStamped.h>
 
 #include "swarm_center/mCPPReq.h"
 //#include <geometry_msgs/Pose.h>
 //#include <geometry_msgs/Twist.h>
 
-#define DEFAULT_RATE 50
+//#define DEFAULT_RATE 50
 #define GRID_SIZE 40
 #define CORE_SIZE 20 //CORE_SIZE = GRID_SIZE / 2
 #define AREA_SIZE 800
+#define LEN_COF 10 // real world length * LEN_COF = Grid length
 
 using namespace std;
 using namespace Eigen;
 using namespace cv;
 
 string project_path = "/home/wade/SJTU-swarm/swarm_ws/src/swarm_center/";
-
-int agents_number = 0;
-vector<int> x_init;
-vector<int> y_init;
+//float position_bias_x[4] = {0.5, -0.5, -0.5, 0.5};
+//float position_bias_y[4] = {0.5, 0.5, -0.5, -0.5};
+//int agents_number = 0;
+//vector<int> x_init;
+//vector<int> y_init;
 
 class CoverageCommander
 {
 private:
 //    int robot_number;
     int robot_number;
+    string prefix = "swarmbot";
 
     ros::NodeHandle global;
     ros::NodeHandle local;
 
     ros::ServiceServer service;
     ros::Publisher ready_pub;
+    vector<ros::Subscriber> raw_sub;
 
     std::chrono::high_resolution_clock ::time_point recieve_time;
 
@@ -71,6 +77,11 @@ private:
     vector<int> robot_core_y;
     vector<int> robot_grid_x;
     vector<int> robot_grid_y;
+//    bool get_init_pos;
+    int get_init_cnt;
+    vector<bool> get_init_bool;
+    vector<int> robot_init_x;
+    vector<int> robot_init_y;
 
 public:
     CoverageCommander(){
@@ -83,6 +94,8 @@ public:
             this->robot_number = 1;
         }
         ROS_INFO("COVERAGE COMMANDER is activated! COMMANDER has %d robots to dispose", this->robot_number);
+        robot_init_x.resize(this->robot_number);
+        robot_init_y.resize(this->robot_number);
 
         service = global.advertiseService("/mCPP_req",&CoverageCommander::plan,this);
 
@@ -92,8 +105,26 @@ public:
         /* tell dispatch center that plan ready */
         ready_pub = global.advertise<std_msgs::Bool>("/plan_ready",1);
 
+        /* obtain raw position for each time planning */
+        raw_sub.resize(this->robot_number);
+        for (int i = 0; i < this->robot_number; ++i) {
+            char msg_name[50];
+            sprintf(msg_name, "/%s%d/raw_position", this->prefix.c_str(), i);
+            raw_sub[i] = global.subscribe<geometry_msgs::PoseStamped>(msg_name, 1, &CoverageCommander::rawPosCallback, this);
+        }
+//        this->get_init_pos = false;
+        get_init_bool.resize(this->robot_number, false);
+        get_init_cnt = 0;
+
         /* initial matrix*/
         K.setZero(); //set zeros
+    }
+
+    void rawPosCallback(const geometry_msgs::PoseStamped::ConstPtr &msg) {
+        int id = (int)msg->header.seq;
+        robot_init_x[id] = msg->pose.position.x;
+        robot_init_y[id] = msg->pose.position.y;
+        get_init_bool[id] = true;
     }
 
     bool plan(swarm_center::mCPPReq::Request &req,
@@ -112,30 +143,49 @@ public:
             return false;
         }
 
+        while (get_init_cnt != this->robot_number) {
+            get_init_cnt = 0;
+            for (int i = 0; i < get_init_bool.size(); ++i) {
+                if (get_init_bool[i]) {
+                    get_init_cnt++;
+                }
+            }
+            ros::spinOnce();
+        }
+        ROS_INFO("finish init_position collection");
+
         /*
         * initial phase
         * Area size: 40*40
         * */
-        display_area();
+//        display_area();
 
         /*initialize robot positions by clicking (testing code)*/
-        namedWindow("monitor");
-        imshow("monitor",board);
-        setMouseCallback("monitor", onMouse, &board);
-        waitKey();
-        ROS_INFO("robot number : %d", agents_number);
-        destroyWindow("monitor");
-        for (int i = 0; i < x_init.size(); ++i) {
-            robot_core_x.push_back((x_init[i] - 50)*CORE_SIZE/AREA_SIZE);
-            robot_core_y.push_back((y_init[i] - 50)*CORE_SIZE/AREA_SIZE);
-            robot_grid_x.push_back((x_init[i] - 50)*GRID_SIZE/AREA_SIZE);
-            robot_grid_y.push_back((y_init[i] - 50)*GRID_SIZE/AREA_SIZE);
-            ROS_INFO("robot : %d,%d",robot_core_x[i],robot_core_y[i]);
+//        namedWindow("monitor");
+//        imshow("monitor",board);
+//        setMouseCallback("monitor", onMouse, &board);
+//        waitKey();
+//        ROS_INFO("robot number : %d", agents_number);
+//        destroyWindow("monitor");
+//        for (int i = 0; i < this->robot_number; ++i) {
+//            robot_core_x.push_back((x_init[i] - 50)*CORE_SIZE/AREA_SIZE);
+//            robot_core_y.push_back((y_init[i] - 50)*CORE_SIZE/AREA_SIZE);
+//            robot_grid_x.push_back((x_init[i] - 50)*GRID_SIZE/AREA_SIZE);
+//            robot_grid_y.push_back((y_init[i] - 50)*GRID_SIZE/AREA_SIZE);
+//            ROS_INFO("robot : %d,%d",robot_core_x[i],robot_core_y[i]);
+//        }
+        for (int i = 0; i < this->robot_number; ++i) {
+            robot_core_x.push_back((robot_init_x[i]*LEN_COF - 50)*CORE_SIZE/AREA_SIZE);
+            robot_core_y.push_back((robot_init_y[i]*LEN_COF - 50)*CORE_SIZE/AREA_SIZE);
+            robot_grid_x.push_back((robot_init_x[i]*LEN_COF - 50)*GRID_SIZE/AREA_SIZE);
+            robot_grid_y.push_back((robot_init_y[i]*LEN_COF - 50)*GRID_SIZE/AREA_SIZE);
+            ROS_INFO("robot : %d,%d (dm)",robot_core_x[i],robot_core_y[i]);
         }
 
+
         /*these codes need to be moved if the robot number comes from elsewhere*/
-        C.setOnes(agents_number*CORE_SIZE,CORE_SIZE);
-        m.setOnes(agents_number); //size : (agents_number,1)
+        C.setOnes(this->robot_number*CORE_SIZE,CORE_SIZE);
+        m.setOnes(this->robot_number); //size : (agents_number,1)
 
         /*
          * divide area
@@ -156,77 +206,78 @@ public:
         std_msgs::Bool ready_msg;
         ready_msg.data = true;
         ready_pub.publish(ready_msg);
+//        this->get_init_pos = false;
         ROS_INFO("send ready signal from coverage center");
 
         return true;
     }
 
-    void display_area(){
-        /*draw an empty area*/
-//        ROS_INFO("debug 2");
-        namedWindow("monitor");
-        Point p1 = Point(50,50);
-        Point p2 = Point(AREA_SIZE+50,AREA_SIZE+50);
-        rectangle(board, p1, p2, CV_RGB(245, 245, 245), -1);
+//    void display_area(){
+//        /*draw an empty area*/
+////        ROS_INFO("debug 2");
+//        namedWindow("monitor");
+//        Point p1 = Point(50,50);
+//        Point p2 = Point(AREA_SIZE+50,AREA_SIZE+50);
+//        rectangle(board, p1, p2, CV_RGB(245, 245, 245), -1);
+////        imshow("monitor", board);
+//
+//        /*draw grids*/
+////        ROS_INFO("debug 3");
+//        int stepSize = (int)800/GRID_SIZE;
+//        for (int i = stepSize; i < AREA_SIZE; i += stepSize) {
+//            line(board, Point(50,50+i),Point(AREA_SIZE+50,50+i),Scalar(0,0,0));
+//        }
+//
+//        for (int i = stepSize; i < AREA_SIZE; i += stepSize) {
+//            line(board, Point(50+i,50),Point(50+i,AREA_SIZE+50),Scalar(0,0,0));
+//        }
+////        ROS_INFO("draw grids complete");
+//
+//        /*draw result*/
+//        for (int i = 0; i < CORE_SIZE; i += 1) { //cols
+//            for (int j = 0; j < CORE_SIZE; j += 1) { //rows
+//                if (K(j,i)==0)
+//                    continue;
+//                Point t1 = Point(j*stepSize*2+50,i*stepSize*2+50);
+//                Point t2 = Point((j+1)*stepSize*2+50,(i+1)*stepSize*2+50);
+//                rectangle(board, t1, t2, CV_RGB(0,0,255), -1);
+//            }
+//        }
+////        ROS_INFO("draw K complete");
+//
+//
+////        ROS_INFO("debug 4");
+////        ROS_INFO("size of board : %d, %d", board.size().height, board.size().width);
 //        imshow("monitor", board);
+//        waitKey();
+//
+////        destroyWindow("monitor");
+//    }
 
-        /*draw grids*/
-//        ROS_INFO("debug 3");
-        int stepSize = (int)800/GRID_SIZE;
-        for (int i = stepSize; i < AREA_SIZE; i += stepSize) {
-            line(board, Point(50,50+i),Point(AREA_SIZE+50,50+i),Scalar(0,0,0));
-        }
-
-        for (int i = stepSize; i < AREA_SIZE; i += stepSize) {
-            line(board, Point(50+i,50),Point(50+i,AREA_SIZE+50),Scalar(0,0,0));
-        }
-//        ROS_INFO("draw grids complete");
-
-        /*draw result*/
-        for (int i = 0; i < CORE_SIZE; i += 1) { //cols
-            for (int j = 0; j < CORE_SIZE; j += 1) { //rows
-                if (K(j,i)==0)
-                    continue;
-                Point t1 = Point(j*stepSize*2+50,i*stepSize*2+50);
-                Point t2 = Point((j+1)*stepSize*2+50,(i+1)*stepSize*2+50);
-                rectangle(board, t1, t2, CV_RGB(0,0,255), -1);
-            }
-        }
-//        ROS_INFO("draw K complete");
-
-
-//        ROS_INFO("debug 4");
-//        ROS_INFO("size of board : %d, %d", board.size().height, board.size().width);
-        imshow("monitor", board);
-        waitKey();
-
-//        destroyWindow("monitor");
-    }
-
-    static void onMouse(int event, int x, int y, int, void* userInput)
-    {
-        if (event != EVENT_LBUTTONDOWN) return;
-//        printf("###########onMouse x : %d\n", x);
-//        printf("###########onMouse y : %d\n", y);
-        int x_world = x - 500;
-        int y_world = 500 - y;
-        Mat *img = (Mat*)userInput;
-
-        circle(*img, Point(x, y), 6, Scalar(255, 0, 255), 2);
-        imshow("monitor", *img);
-        x_init.push_back(x);//x_world);
-        y_init.push_back(y);//y_world);
-        agents_number++;
-
-    }
+//    static void onMouse(int event, int x, int y, int, void* userInput)
+//    {
+//        if (event != EVENT_LBUTTONDOWN) return;
+////        printf("###########onMouse x : %d\n", x);
+////        printf("###########onMouse y : %d\n", y);
+//        int x_world = x - 500;
+//        int y_world = 500 - y;
+//        Mat *img = (Mat*)userInput;
+//
+//        circle(*img, Point(x, y), 6, Scalar(255, 0, 255), 2);
+//        imshow("monitor", *img);
+//        x_init.push_back(x);//x_world);
+//        y_init.push_back(y);//y_world);
+//        agents_number++;
+//
+//    }
 
     bool divide_area(){
         /*Generate the first matrix*/
-        S.setZero(agents_number);
+        S.setZero(this->robot_number);
         for (int i = 0; i < CORE_SIZE; ++i) {
             for (int j = 0; j < CORE_SIZE; ++j) {
                 double tmp = -1;
-                for (int k = 0; k < agents_number; ++k) {
+                for (int k = 0; k < this->robot_number; ++k) {
 //                        MatrixXi E_t = E.block<CORE_SIZE,CORE_SIZE>(k*CORE_SIZE,0);
 //                        MatrixXi C_t = C.block<CORE_SIZE,CORE_SIZE>(k*CORE_SIZE,0);
                     double Ekji = C(j+k*CORE_SIZE,i) * m(k) * sqrt((i-robot_core_x[k])*(i-robot_core_x[k])+(j-robot_core_y[k])*(j-robot_core_y[k]));
@@ -249,7 +300,7 @@ public:
         {
             iteration_count++;
 
-            S.setZero(agents_number); // size : (agents_number,1)
+            S.setZero(this->robot_number); // size : (agents_number,1)
             int count = 0;
 
             /*check every grid*/
@@ -257,7 +308,7 @@ public:
             for (int i = 0; i < CORE_SIZE; ++i) { //cols
                 for (int j = 0; j < CORE_SIZE; ++j) { //rows
                     double tmp = -1;
-                    for (int k = 0; k < agents_number; ++k) {
+                    for (int k = 0; k < this->robot_number; ++k) {
 //                        MatrixXi E_t = E.block<CORE_SIZE,CORE_SIZE>(k*CORE_SIZE,0);
 //                        MatrixXi C_t = C.block<CORE_SIZE,CORE_SIZE>(k*CORE_SIZE,0);
                         double Ekji = C(j+k*CORE_SIZE,i) * m(k) * sqrt((i-robot_core_x[k])*(i-robot_core_x[k])+(j-robot_core_y[k])*(j-robot_core_y[k]));
@@ -277,8 +328,8 @@ public:
             /*update C*/
             // obtain the assignment matrix for every robot
             Matrix<int,Dynamic,CORE_SIZE> Kd;
-            Kd.resize(agents_number*CORE_SIZE,CORE_SIZE);
-            for (int k = 0; k < agents_number; ++k) {
+            Kd.resize(this->robot_number*CORE_SIZE,CORE_SIZE);
+            for (int k = 0; k < this->robot_number; ++k) {
                 for (int i = 0; i < CORE_SIZE; ++i) {
                     for (int j = 0; j < CORE_SIZE; ++j) {
                         if (K(j,i)==k)
@@ -293,7 +344,7 @@ public:
 //            cout << isConnect(1,1,K,1,2) << endl;
             vector<vector<Vector2i>> con_set;
             vector<vector<Vector2i>> dcon_set;
-            for (int k = 0; k < agents_number; ++k) {
+            for (int k = 0; k < this->robot_number; ++k) {
                 vector<Vector2i> con_t;
                 vector<Vector2i> dcon_t;
                 MatrixXi K_t = Kd.block<CORE_SIZE,CORE_SIZE>(k*CORE_SIZE,0);
@@ -318,7 +369,7 @@ public:
                 dcon_set.push_back(dcon_t);
             }
 
-            for (int k = 0; k < agents_number; ++k) {
+            for (int k = 0; k < this->robot_number; ++k) {
                 vector<Vector2i> con_t = con_set[k];
                 vector<Vector2i> dcon_t = dcon_set[k];
                 MatrixXd C_t;
@@ -353,7 +404,7 @@ public:
             }
 
             /*recalcuate S*/
-            for (int k = 0; k < agents_number; ++k) {
+            for (int k = 0; k < this->robot_number; ++k) {
                 S(k) -= dcon_set[k].size();
             }
 
@@ -361,8 +412,8 @@ public:
             double threshold = CORE_SIZE*CORE_SIZE/30.0;
             if (iteration_count>100)
                 threshold = threshold * (iteration_count/50.0)*(iteration_count/50.0);
-            for (int k = 0; k < agents_number; ++k) {
-                double dm = S(k) - CORE_SIZE*CORE_SIZE/agents_number;
+            for (int k = 0; k < this->robot_number; ++k) {
+                double dm = S(k) - CORE_SIZE*CORE_SIZE/this->robot_number;
                 if (dm>threshold || dm<(-1)*threshold)
                     m(k) += 0.002*dm;
                 else
@@ -371,11 +422,11 @@ public:
 
             /*stop condition check*/
             bool stop1 = false;
-            if (count==agents_number)
+            if (count==this->robot_number)
                 stop1 = true;
 
             bool stop2 = true;
-            for (int k = 0; k < agents_number; ++k) {
+            for (int k = 0; k < this->robot_number; ++k) {
                 if (dcon_set[k].size()!=0)
                 {
                     stop2 = false;
@@ -497,8 +548,8 @@ public:
         /*prepare input*/
         // obtain the assignment matrix for every robot
         Matrix<int,Dynamic,CORE_SIZE> Kd;
-        Kd.resize(agents_number*CORE_SIZE,CORE_SIZE);
-        for (int k = 0; k < agents_number; ++k) {
+        Kd.resize(this->robot_number*CORE_SIZE,CORE_SIZE);
+        for (int k = 0; k < this->robot_number; ++k) {
             for (int i = 0; i < CORE_SIZE; ++i) {
                 for (int j = 0; j < CORE_SIZE; ++j) {
                     if (K(j,i)==k)
@@ -524,7 +575,7 @@ public:
         direction.push_back(dir_t);
 
         /*main proccess*/
-        for (int k = 0; k < agents_number; ++k) {
+        for (int k = 0; k < this->robot_number; ++k) {
 
 
             /*neccessary preparation*/
@@ -596,7 +647,7 @@ public:
     }
 
     void path_planning(){
-        for (int k = 0; k < agents_number; ++k) {
+        for (int k = 0; k < this->robot_number; ++k) {
             /*clockwise planning method*/
             Matrix<int,CORE_SIZE,CORE_SIZE> T_t = T[k]; // load spanning tree
 
@@ -741,7 +792,7 @@ public:
     }
 
     void generate_path(){
-        for (int k = 0; k < agents_number; ++k) {
+        for (int k = 0; k < this->robot_number; ++k) {
             /* path name */
             vector<Vector2i> P_grid_t = P_grid[k];
             string filename = project_path + "launch/cover_robot" + to_string(k) + ".csv";
@@ -788,9 +839,9 @@ public:
                             x += dx;
                         }
                         if (xoy==0)
-                            outfile << x+P_grid_t[i](0) << ',' << P_grid_t[i](1) << ',' << 1.0 << endl;
+                            outfile << (x+P_grid_t[i](0))/LEN_COF << ',' << P_grid_t[i](1)/LEN_COF << ',' << 1.0 << endl;
                         else
-                            outfile << P_grid_t[i](0) << ',' << x+P_grid_t[i](1) << ',' << 1.0 << endl;
+                            outfile << P_grid_t[i](0)/LEN_COF << ',' << (x+P_grid_t[i](1))/LEN_COF << ',' << 1.0 << endl;
                     }
 
                 } else {
@@ -807,14 +858,14 @@ public:
                             x += dx;
                         }
                         if (xoy==0)
-                            outfile << x+P_grid_t[i](0) << ',' << P_grid_t[i](1) << ',' << 1.0 << endl;
+                            outfile << (x+P_grid_t[i](0))/LEN_COF << ',' << P_grid_t[i](1)/LEN_COF << ',' << 1.0 << endl;
                         else
-                            outfile << P_grid_t[i](0) << ',' << x+P_grid_t[i](1) << ',' << 1.0 << endl;
+                            outfile << P_grid_t[i](0)/LEN_COF << ',' << (x+P_grid_t[i](1))/LEN_COF << ',' << 1.0 << endl;
                     }
                 }
 
                 for (int j = 0; j < turn_blank/2; ++j) {
-                    outfile << P_grid_t[i+1](0) << ',' << P_grid_t[i+1](1) << ',' << 1.0 << endl;
+                    outfile << P_grid_t[i+1](0)/LEN_COF << ',' << P_grid_t[i+1](1)/LEN_COF << ',' << 1.0 << endl;
                 }
             }
         }

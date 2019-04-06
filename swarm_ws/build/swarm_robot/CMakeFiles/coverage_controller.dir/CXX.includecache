@@ -23,6 +23,8 @@ geometry_msgs/Twist.h
 -
 std_msgs/UInt8.h
 -
+geometry_msgs/PoseStamped.h
+-
 
 /opt/ros/kinetic/include/geometry_msgs/Point.h
 string
@@ -58,6 +60,26 @@ ros/message_operations.h
 geometry_msgs/Point.h
 -
 geometry_msgs/Quaternion.h
+-
+
+/opt/ros/kinetic/include/geometry_msgs/PoseStamped.h
+string
+-
+vector
+-
+map
+-
+ros/types.h
+-
+ros/serialization.h
+-
+ros/builtin_message_traits.h
+-
+ros/message_operations.h
+-
+std_msgs/Header.h
+-
+geometry_msgs/Pose.h
 -
 
 /opt/ros/kinetic/include/geometry_msgs/Quaternion.h
@@ -757,6 +779,22 @@ ros/forwards.h
 /opt/ros/kinetic/include/ros/ros/forwards.h
 
 /opt/ros/kinetic/include/rosconsole/macros_generated.h
+
+/opt/ros/kinetic/include/std_msgs/Header.h
+string
+-
+vector
+-
+map
+-
+ros/types.h
+-
+ros/serialization.h
+-
+ros/builtin_message_traits.h
+-
+ros/message_operations.h
+-
 
 /opt/ros/kinetic/include/std_msgs/UInt8.h
 string
