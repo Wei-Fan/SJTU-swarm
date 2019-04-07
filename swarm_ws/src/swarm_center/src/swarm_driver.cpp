@@ -326,20 +326,29 @@ void MiniSwarm::update_power(std::string &pkg_tmp)
 
 void MiniSwarm::update_state(std::string &pkg_tmp)
 {
-    uint16_t tmp;
+    int16_t tmp;
     uint8_t id = pkg_tmp[1];
     for (int i=0; i<3; ++i){
-        tmp = uint16_t((unsigned char)pkg_tmp[2*i+2]*256+ (unsigned char)pkg_tmp[2*i+3]);
-        Mfs[id]->current_acc[i] = float(tmp)/100;
+//        tmp = int16_t((unsigned char)pkg_tmp[2*i+2]*256+ (unsigned char)pkg_tmp[2*i+3]);
+//        Mfs[id]->current_acc[i] = float(tmp)/100;
+        tmp = int16_t(pkg_tmp[2*i+2]<<8 | pkg_tmp[2*i+3]);
+        Mfs[id]->current_acc[i] = tmp/1000.0;
     }
     for (int i=3; i<6; ++i){
-        tmp = uint16_t((unsigned char)pkg_tmp[2*i+2]*256+ (unsigned char)pkg_tmp[2*i+3]);
-        Mfs[id]->current_vel[i-3] = float(tmp)/100;
+//        tmp = int16_t((unsigned char)pkg_tmp[2*i+2]*256+ (unsigned char)pkg_tmp[2*i+3]);
+        tmp = int16_t(pkg_tmp[2*i+2]<<8 | pkg_tmp[2*i+3]);
+//        Mfs[id]->current_vel[i-3] = float(tmp)/100;
+        Mfs[id]->current_vel[i-3] = tmp/1000.0;
     }
     for (int i=6; i<9; ++i){
-        tmp = uint16_t((unsigned char)pkg_tmp[2*i+2]*256+ (unsigned char)pkg_tmp[2*i+3]);
-        Mfs[id]->current_pos[i-6] = float(tmp)/100;
+//        tmp = int16_t((unsigned char)pkg_tmp[2*i+2]*256+ (unsigned char)pkg_tmp[2*i+3]);
+        tmp = int16_t(pkg_tmp[2*i+2]<<8 | pkg_tmp[2*i+3]);
+//        Mfs[id]->current_pos[i-6] = float(tmp)/100;
+        Mfs[id]->current_pos[i-6] = tmp/1000.0;
+        std::cout<<tmp<<std::endl;
     }
+    std::cout<<"xyz = "<<Mfs[id]->current_pos[0]<<" "<<Mfs[id]->current_pos[1]<<" "<<Mfs[id]->current_pos[2]<<std::endl;
+    printf("MF_cp%02X: x = %2.3f, y = %2.3f, z = %2.3f\n",id,Mfs[id]->current_pos[0],Mfs[id]->current_pos[1],Mfs[id]->current_pos[2]);
     Mfs[id]->current_pos[0] += position_bias_x[id];
     Mfs[id]->current_pos[1] += position_bias_y[id];
 
@@ -353,7 +362,7 @@ void MiniSwarm::update_state(std::string &pkg_tmp)
     sprintf(msg_name,"/%s%d/raw_position",this->prefix.c_str(),id);
     raw_pub[id].publish(msg);
 
-    printf("MF_cp%02X: x = %2.2f, y = %2.2f, z = %2.2f\n",id,Mfs[id]->current_pos[0],Mfs[id]->current_pos[1],Mfs[id]->current_pos[2]);
+//    printf("MF_cp%02X: x = %2.2f, y = %2.2f, z = %2.2f\n",id,Mfs[id]->current_pos[0],Mfs[id]->current_pos[1],Mfs[id]->current_pos[2]);
 
 }
 
@@ -372,7 +381,7 @@ void MiniSwarm::raw_data_decoding()
                 msg_type = buffer[i+2];
                 msg_len = buffer[i+3];
                 //check the pkg
-                std::cout<<"msg_type:"<<msg_type<<std::endl;
+//                std::cout<<"msg_type:"<<msg_type<<std::endl;
                 if (msg_type ==1 || msg_type ==2 || msg_type ==3 || msg_type ==5 ||msg_type ==-15){
                     uint8_t sum = 0;
                     for (int j = 0; j < msg_len+4; ++j){
