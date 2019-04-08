@@ -69,15 +69,11 @@ public:
     // MiniflyRos(const std::string &dev_name, const std::string &parampath, int baudrate);
     MiniflyRos(uint8_t id_input, float *init_pos);//const std::string &parampath, uint8_t id_input);
     ~MiniflyRos();
-//
-//#ifdef USING_OFFLINE_TRAJECTORY
 //    void read_Pos_traj(const std::string &filename);
-//#endif
 //
 //private:
     std::string prefix;
     bool recieve_sp;
-//#ifndef USING_OPTFLOW
     // ros::Subscriber Mf_pos_sub;
 	// ros::Subscriber Mf_vel_sub;
 //	ros::Publisher thrust_pub;
@@ -90,7 +86,6 @@ public:
 	ros::Subscriber pos_sub;
 	void spCallback(const geometry_msgs::Pose::ConstPtr &msg);
 
-//#endif
 };
 //
 // MiniflyRos::MiniflyRos(const std::string &dev_name, const std::string &parampath, int baudrate):
@@ -101,7 +96,6 @@ MiniflyRos::MiniflyRos(uint8_t id_input, float *init_pos)://const std::string &p
     prefix = "swarmbot" + std::to_string(id);
     ros::NodeHandle n(prefix);
     // n.setCallbackQueue(&queue);
-//#ifndef USING_OPTFLOW
 	// Mf_pos_sub = n.subscribe<geometry_msgs::PoseStamped>("/mocap/pose", 10, &MiniflyRos::pos_cb,this);
 	// Mf_vel_sub = n.subscribe<geometry_msgs::TwistStamped>("/mocap/vel", 10, &MiniflyRos::vel_cb,this);
 //	thrust_pub=n.advertise<std_msgs::Float64>(prefix + "/thrust",100);
@@ -141,14 +135,14 @@ MiniflyRos::MiniflyRos(uint8_t id_input, float *init_pos)://const std::string &p
 	rpyt_cmd[0] = 0.0 + rpy_trim[0];
 	rpyt_cmd[1] = 0.0 + rpy_trim[1];
 	rpyt_cmd[2] = 0.0 + rpy_trim[2];
-	cout<<"MF id : "<<id<<endl;
-	cout<<"X_pid: "<<param.x_p<<" "<<param.x_i<<" "<<param.x_d<<endl;
-	cout<<"VX_pid: "<<param.vx_p<<" "<<param.vx_i<<" "<<param.vx_d<<endl;
-	cout<<"Y_pid: "<<param.y_p<<" "<<param.y_i<<" "<<param.y_d<<endl;
-	cout<<"VY_pid: "<<param.vy_p<<" "<<param.vy_i<<" "<<param.vy_d<<endl;
-	cout<<"Z_pid: "<<param.z_p<<" "<<param.z_i<<" "<<param.z_d<<endl;
-	cout<<"VZ_pid: "<<param.vz_p<<" "<<param.vz_i<<" "<<param.vz_d<<endl;
-//#endif
+//	cout<<"MF id : "<<id<<endl;
+//	cout<<"X_pid: "<<param.x_p<<" "<<param.x_i<<" "<<param.x_d<<endl;
+//	cout<<"VX_pid: "<<param.vx_p<<" "<<param.vx_i<<" "<<param.vx_d<<endl;
+//	cout<<"Y_pid: "<<param.y_p<<" "<<param.y_i<<" "<<param.y_d<<endl;
+//	cout<<"VY_pid: "<<param.vy_p<<" "<<param.vy_i<<" "<<param.vy_d<<endl;
+//	cout<<"Z_pid: "<<param.z_p<<" "<<param.z_i<<" "<<param.z_d<<endl;
+//	cout<<"VZ_pid: "<<param.vz_p<<" "<<param.vz_i<<" "<<param.vz_d<<endl;
+
     // float tmp[] = {0.0,0.0,1.0};
     // memcpy(pos_cmd,tmp,3);
     // float tmp1[] = {0.0,0.0,0.0,1000.0};
@@ -165,12 +159,9 @@ void MiniflyRos::spCallback(const geometry_msgs::Pose::ConstPtr &msg) {
 
 MiniflyRos::~MiniflyRos()
 {
-//#ifdef USING_OFFLINE_TRAJECTORY
 //    cmd_incsv.clear();
-//#endif
 }
 
-//#ifndef USING_OPTFLOW
 //void MiniflyRos::pos_cb(const geometry_msgs::PoseStamped::ConstPtr &msg)
 //{
 //	geometry_msgs::PoseStamped tmp = *msg;
@@ -211,9 +202,7 @@ void MiniflyRos::offb_pos_ctrl(float cur_time) // current_pos not finish!!!!!!
 //	cout<<"pid z vz:"<<PzPid.Output<<" "<<VzPid.Output<<endl;
 	// cout<<"rpyt = "<<rpyt_cmd[0] <<" "<<rpyt_cmd[1] <<" "<<rpyt_cmd[2] <<" "<<rpyt_cmd[3] <<endl;
 }
-//#endif
 //
-//#ifdef USING_OFFLINE_TRAJECTORY
 //// void MiniflyRos::read_Pos_traj(const std::string &filename)
 //void MiniflyRos::read_Pos_traj(const std::string &filename)
 //{
@@ -234,8 +223,7 @@ void MiniflyRos::offb_pos_ctrl(float cur_time) // current_pos not finish!!!!!!
 //    //     std::cout<<incsv[i].xyz[0]<<" "<<incsv[i].xyz[1]<<" "<<incsv[i].xyz[2]<<std::endl;
 //    // }
 //}
-//#endif
-//
+
 class MiniSwarm
 {
 private:
@@ -385,11 +373,12 @@ void MiniSwarm::update_state(std::string &pkg_tmp)
         Mfs[id]->current_pos[0] = position_bias_x[id];
         Mfs[id]->current_pos[1] = position_bias_y[id];
         first_update[id] = false;
+        ROS_INFO("robot %d error : %f, %f, %f",id,position_err_x[id],position_err_y[id],position_err_z[id]);
     } else {
 
         Mfs[id]->current_pos[0] = Mfs[id]->current_pos[0] + position_bias_x[id] - position_err_x[id];
         Mfs[id]->current_pos[1] = Mfs[id]->current_pos[1] + position_bias_y[id] - position_err_y[id];
-        Mfs[id]->current_pos[2] = Mfs[id]->current_pos[2] - position_err_z[id];
+        Mfs[id]->current_pos[2] = Mfs[id]->current_pos[2];
 
         /* publish optflow's position estimation */
         geometry_msgs::PoseStamped msg;
@@ -509,12 +498,31 @@ void MiniSwarm::run()
 {
     ros::Rate loop_rate(20);
 
+    /*  stay put until recieve setpoint signal*/
+    bool waiting = true;
+    while (waiting&&ros::ok()) {
+//        ROS_INFO("waiting");
+        raw_data_decoding();
+        int cnt_tmp = 0;
+        for (int i = 0; i < this->robot_number; ++i) {
+            if (Mfs[i]->recieve_sp)
+                cnt_tmp++;
+        }
+        if (cnt_tmp == this->robot_number)
+            waiting = false;
+        ros::spinOnce();
+        loop_rate.sleep();
+    }
+    cout<<"~~~~~~take off!"<<endl;
 
     for(int i = 0; i<20; ++i)
     {
         for(auto mf:Mfs){
-            mf->pos_cmd[2] = -1;
-            send_pos_sp(mf->id,mf->pos_cmd);
+            float cmd[3];
+            cmd[0] = mf->pos_cmd[0] - position_bias_x[mf->id];
+            cmd[1] = mf->pos_cmd[1] - position_bias_y[mf->id];
+            cmd[2] = -1;
+            send_pos_sp(mf->id,cmd);
             // cout<<mf->id<<endl;
             // printf("%02X\n",mf->id);
 //            ROS_INFO("send link test");
@@ -534,26 +542,8 @@ void MiniSwarm::run()
 //    ros::spinOnce();
 //    loop_rate.sleep();
 
-    /*  stay put until recieve setpoint signal*/
-    bool waiting = true;
-    while (waiting&&ros::ok()) {
-//        ROS_INFO("waiting");
-        raw_data_decoding();
-        int cnt_tmp = 0;
-        for (int i = 0; i < this->robot_number; ++i) {
-            if (Mfs[i]->recieve_sp)
-                cnt_tmp++;
-        }
-        if (cnt_tmp == this->robot_number)
-            waiting = false;
-        ros::spinOnce();
-        loop_rate.sleep();
-    }
-    cout<<"~~~~~~take off!"<<endl;
-
     while(ros::ok())
     {
-        ros::spinOnce();
         raw_data_decoding();
 //#ifdef USING_OFFLINE_TRAJECTORY
 //#ifndef USING_OPTFLOW
@@ -562,10 +552,15 @@ void MiniSwarm::run()
 //			memcpy(mf->pos_cmd,mf->cmd_incsv[cnt].xyz,12);
 //			mf->offb_pos_ctrl(cur_time);
 //			send_att_sp(mf->id,mf->rpyt_cmd);
-            send_pos_sp(mf->id,mf->pos_cmd);
-			ROS_INFO("robot %d send out sp: %f, %f, %f",mf->id,mf->pos_cmd[0],mf->pos_cmd[1],mf->pos_cmd[2]);
+            float cmd[3];
+            cmd[0] = mf->pos_cmd[0] - position_bias_x[mf->id];
+            cmd[1] = mf->pos_cmd[1] - position_bias_y[mf->id];
+            cmd[2] = mf->pos_cmd[2];
+            send_pos_sp(mf->id,cmd);
+			ROS_INFO("robot %d send out sp: %f, %f, %f",mf->id,cmd[0],cmd[1],cmd[2]);
 		}
 
+        ros::spinOnce();
         loop_rate.sleep();
     }
 }
@@ -586,8 +581,8 @@ int main(int argc, char **argv)
     ros::init(argc, argv, "swarm_driver");
     ros::NodeHandle Global;
     MiniSwarm Miniflys("/dev/ttyACM0",500000);
-    // std::cout<<"fuck you!"<<std::endl;
-    // aMinifly.read_Pos_traj("test8.csv");
+//    // std::cout<<"fuck you!"<<std::endl;
+//    // aMinifly.read_Pos_traj("test8.csv");
     Miniflys.run();
     return 0;
 }

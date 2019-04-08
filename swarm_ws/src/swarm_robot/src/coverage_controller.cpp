@@ -161,8 +161,8 @@ public:
                     }
 
                     pos_sp.position.z = 0;
-                    for (int i = 1; i <= 40; ++i) {
-                        pos_sp.position.z = float(i)/40.0;
+                    for (int i = 1; i <= 100; ++i) {
+                        pos_sp.position.z = float(i)/100.0;
 
                         cmd_pos_pub.publish(pos_sp);
                         ros::spinOnce();
