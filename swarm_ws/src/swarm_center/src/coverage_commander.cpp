@@ -82,8 +82,14 @@ private:
     vector<bool> get_init_bool;
     vector<float> robot_init_x;
     vector<float> robot_init_y;
+    vector<float> robot_curr_x;
+    vector<float> robot_curr_y;
+    bool first_draw;
+
 
 public:
+    bool plan_ready;
+
     CoverageCommander(){
         ros::NodeHandle local("/coverage_commander");
         ros::NodeHandle global("");
@@ -119,7 +125,10 @@ public:
         robot_grid_y.resize(this->robot_number);
         get_init_bool.resize(this->robot_number, false);
 
-
+        robot_curr_x.resize(this->robot_number);
+        robot_curr_y.resize(this->robot_number);
+        first_draw = true;
+        plan_ready = false;
         /* initial matrix*/
         K.setZero(); //set zeros
     }
@@ -134,6 +143,9 @@ public:
             robot_init_y[id] = msg->pose.position.y;
             get_init_bool[id] = true;
             ROS_INFO("get robot %d 's init_pos : %f, %f",id,robot_init_x[id],robot_init_y[id]);
+        } else {
+            robot_curr_x[id] = msg->pose.position.x;
+            robot_curr_y[id] = msg->pose.position.y;
         }
     }
 
@@ -223,6 +235,7 @@ public:
         ready_msg.data = true;
         for (int i = 0; i < 10; ++i) {
             ready_pub.publish(ready_msg);
+            plan_ready = true;
         }
 //        this->get_init_pos = false;
         ROS_INFO("send ready signal from coverage center");
@@ -235,40 +248,47 @@ public:
         /*draw an empty area*/
 //        ROS_INFO("debug 2");
         namedWindow("monitor");
-        Point p1 = Point(50,50);
-        Point p2 = Point(AREA_SIZE+50,AREA_SIZE+50);
-        rectangle(board, p1, p2, CV_RGB(245, 245, 245), -1);
-//        imshow("monitor", board);
-
-        /*draw grids*/
-//        ROS_INFO("debug 3");
         int stepSize = (int)800/GRID_SIZE;
-        for (int i = stepSize; i < AREA_SIZE; i += stepSize) {
-            line(board, Point(50,50+i),Point(AREA_SIZE+50,50+i),Scalar(0,0,0));
-        }
+        if (first_draw)
+        {
+            Point p1 = Point(50,50);
+            Point p2 = Point(AREA_SIZE+50,AREA_SIZE+50);
+            rectangle(board, p1, p2, CV_RGB(245, 245, 245), -1);
+//            imshow("monitor", board);
 
-        for (int i = stepSize; i < AREA_SIZE; i += stepSize) {
-            line(board, Point(50+i,50),Point(50+i,AREA_SIZE+50),Scalar(0,0,0));
-        }
-//        ROS_INFO("draw grids complete");
+            /*draw grids*/
+            ROS_INFO("debug 3");
 
-        /*draw result*/
-        for (int i = 0; i < CORE_SIZE; i += 1) { //cols
-            for (int j = 0; j < CORE_SIZE; j += 1) { //rows
-                if (K(j,i)==0)
-                    continue;
-                Point t1 = Point(j*stepSize*2+50,i*stepSize*2+50);
-                Point t2 = Point((j+1)*stepSize*2+50,(i+1)*stepSize*2+50);
-                rectangle(board, t1, t2, CV_RGB(0,0,255), -1);
+            for (int i = stepSize; i < AREA_SIZE; i += stepSize) {
+                line(board, Point(50,50+i),Point(AREA_SIZE+50,50+i),Scalar(0,0,0));
             }
+
+            for (int i = stepSize; i < AREA_SIZE; i += stepSize) {
+                line(board, Point(50+i,50),Point(50+i,AREA_SIZE+50),Scalar(0,0,0));
+            }
+//            ROS_INFO("draw grids complete");
+            /*draw result*/
+            for (int i = 0; i < CORE_SIZE; i += 1) { //cols
+                for (int j = 0; j < CORE_SIZE; j += 1) { //rows
+                    if (K(j,i)==0)
+                        continue;
+                    Point t1 = Point(j*stepSize*2+50,i*stepSize*2+50);
+                    Point t2 = Point((j+1)*stepSize*2+50,(i+1)*stepSize*2+50);
+                    rectangle(board, t1, t2, CV_RGB(0,0,255), -1);
+                }
+            }
+//            ROS_INFO("draw K complete");
         }
-//        ROS_INFO("draw K complete");
 
+        for (int k = 0; k < this->robot_number; ++k) {
+            int x_t = AREA_SIZE/2 - robot_curr_y[k]*LEN_COF + 50;
+            int y_t = AREA_SIZE/2 + robot_curr_x[k]*LEN_COF + 50;
+            circle(board,Point(x_t,y_t),10,CV_RGB(10*k,20*k,30*k),-1);
+        }
 
-//        ROS_INFO("debug 4");
 //        ROS_INFO("size of board : %d, %d", board.size().height, board.size().width);
         imshow("monitor", board);
-        waitKey();
+//        waitKey();
 
 //        destroyWindow("monitor");
     }
@@ -903,13 +923,15 @@ public:
 int main(int argc, char ** argv) {
     ros::init(argc, argv, "coverage_commander");
     ros::Time::init();
-    ros::Rate r(1);
+    ros::Rate r(5);
 
     CoverageCommander node;
 //    node.run();
-
     while (ros::ok()) {
-        ros::spinOnce();
+        if (node.plan_ready) {
+            node.display_area();
+        }
+        ros::spin();
         r.sleep();
     }
     return 0;
