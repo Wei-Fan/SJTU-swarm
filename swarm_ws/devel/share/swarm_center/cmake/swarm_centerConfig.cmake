@@ -160,7 +160,7 @@ foreach(t ${swarm_center_EXPORTED_TARGETS})
   endif()
 endforeach()
 
-set(depends "geometery_msgs;roscpp;rospy;std_msgs;message_runtime;message_runtime;vicon_bridge;visualization_msgs;serial;mavros")
+set(depends "geometry_msgs;roscpp;rospy;std_msgs;message_runtime;message_runtime;vicon_bridge;visualization_msgs;serial;mavros")
 foreach(depend ${depends})
   string(REPLACE " " ";" depend_list ${depend})
   # the package name of the dependency must be kept in a unique variable so that it is not overwritten in recursive calls

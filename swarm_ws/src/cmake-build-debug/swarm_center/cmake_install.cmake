@@ -38,6 +38,10 @@ if(NOT DEFINED CMAKE_CROSSCOMPILING)
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/swarm_center/msg" TYPE FILE FILES "/home/wade/SJTU-swarm/swarm_ws/src/swarm_center/msg/pos_info.msg")
+endif()
+
+if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
   file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/swarm_center/srv" TYPE FILE FILES "/home/wade/SJTU-swarm/swarm_ws/src/swarm_center/srv/mCPPReq.srv")
 endif()
 

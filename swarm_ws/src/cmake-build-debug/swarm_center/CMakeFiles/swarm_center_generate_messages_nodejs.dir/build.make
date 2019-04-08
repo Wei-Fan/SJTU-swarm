@@ -53,15 +53,27 @@ CMAKE_BINARY_DIR = /home/wade/SJTU-swarm/swarm_ws/src/cmake-build-debug
 # Include the progress variables for this target.
 include swarm_center/CMakeFiles/swarm_center_generate_messages_nodejs.dir/progress.make
 
+swarm_center/CMakeFiles/swarm_center_generate_messages_nodejs: devel/share/gennodejs/ros/swarm_center/msg/pos_info.js
 swarm_center/CMakeFiles/swarm_center_generate_messages_nodejs: devel/share/gennodejs/ros/swarm_center/srv/mCPPReq.js
 
 
+devel/share/gennodejs/ros/swarm_center/msg/pos_info.js: /opt/ros/kinetic/lib/gennodejs/gen_nodejs.py
+devel/share/gennodejs/ros/swarm_center/msg/pos_info.js: ../swarm_center/msg/pos_info.msg
+devel/share/gennodejs/ros/swarm_center/msg/pos_info.js: /opt/ros/kinetic/share/geometry_msgs/msg/Quaternion.msg
+devel/share/gennodejs/ros/swarm_center/msg/pos_info.js: /opt/ros/kinetic/share/geometry_msgs/msg/PoseStamped.msg
+devel/share/gennodejs/ros/swarm_center/msg/pos_info.js: /opt/ros/kinetic/share/geometry_msgs/msg/Pose.msg
+devel/share/gennodejs/ros/swarm_center/msg/pos_info.js: /opt/ros/kinetic/share/std_msgs/msg/Header.msg
+devel/share/gennodejs/ros/swarm_center/msg/pos_info.js: /opt/ros/kinetic/share/geometry_msgs/msg/Point.msg
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/wade/SJTU-swarm/swarm_ws/src/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating Javascript code from swarm_center/pos_info.msg"
+	cd /home/wade/SJTU-swarm/swarm_ws/src/cmake-build-debug/swarm_center && ../catkin_generated/env_cached.sh /usr/bin/python /opt/ros/kinetic/share/gennodejs/cmake/../../../lib/gennodejs/gen_nodejs.py /home/wade/SJTU-swarm/swarm_ws/src/swarm_center/msg/pos_info.msg -Iswarm_center:/home/wade/SJTU-swarm/swarm_ws/src/swarm_center/msg -Igeometry_msgs:/opt/ros/kinetic/share/geometry_msgs/cmake/../msg -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -p swarm_center -o /home/wade/SJTU-swarm/swarm_ws/src/cmake-build-debug/devel/share/gennodejs/ros/swarm_center/msg
+
 devel/share/gennodejs/ros/swarm_center/srv/mCPPReq.js: /opt/ros/kinetic/lib/gennodejs/gen_nodejs.py
 devel/share/gennodejs/ros/swarm_center/srv/mCPPReq.js: ../swarm_center/srv/mCPPReq.srv
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/wade/SJTU-swarm/swarm_ws/src/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating Javascript code from swarm_center/mCPPReq.srv"
-	cd /home/wade/SJTU-swarm/swarm_ws/src/cmake-build-debug/swarm_center && ../catkin_generated/env_cached.sh /usr/bin/python /opt/ros/kinetic/share/gennodejs/cmake/../../../lib/gennodejs/gen_nodejs.py /home/wade/SJTU-swarm/swarm_ws/src/swarm_center/srv/mCPPReq.srv -Igeometry_msgs:/opt/ros/kinetic/share/geometry_msgs/cmake/../msg -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -p swarm_center -o /home/wade/SJTU-swarm/swarm_ws/src/cmake-build-debug/devel/share/gennodejs/ros/swarm_center/srv
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/wade/SJTU-swarm/swarm_ws/src/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Generating Javascript code from swarm_center/mCPPReq.srv"
+	cd /home/wade/SJTU-swarm/swarm_ws/src/cmake-build-debug/swarm_center && ../catkin_generated/env_cached.sh /usr/bin/python /opt/ros/kinetic/share/gennodejs/cmake/../../../lib/gennodejs/gen_nodejs.py /home/wade/SJTU-swarm/swarm_ws/src/swarm_center/srv/mCPPReq.srv -Iswarm_center:/home/wade/SJTU-swarm/swarm_ws/src/swarm_center/msg -Igeometry_msgs:/opt/ros/kinetic/share/geometry_msgs/cmake/../msg -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -p swarm_center -o /home/wade/SJTU-swarm/swarm_ws/src/cmake-build-debug/devel/share/gennodejs/ros/swarm_center/srv
 
 swarm_center_generate_messages_nodejs: swarm_center/CMakeFiles/swarm_center_generate_messages_nodejs
+swarm_center_generate_messages_nodejs: devel/share/gennodejs/ros/swarm_center/msg/pos_info.js
 swarm_center_generate_messages_nodejs: devel/share/gennodejs/ros/swarm_center/srv/mCPPReq.js
 swarm_center_generate_messages_nodejs: swarm_center/CMakeFiles/swarm_center_generate_messages_nodejs.dir/build.make
 

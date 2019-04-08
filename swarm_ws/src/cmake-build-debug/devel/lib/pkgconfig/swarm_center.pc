@@ -5,4 +5,4 @@ Description: Description of swarm_center
 Version: 0.0.0
 Cflags: -I/home/wade/SJTU-swarm/swarm_ws/src/cmake-build-debug/devel/include -I/home/wade/SJTU-swarm/swarm_ws/src/swarm_center/include
 Libs: -L/home/wade/SJTU-swarm/swarm_ws/src/cmake-build-debug/devel/lib -lswarm_center
-Requires: geometery_msgs roscpp rospy std_msgs message_runtime message_runtime vicon_bridge visualization_msgs serial mavros
+Requires: geometry_msgs roscpp rospy std_msgs message_runtime message_runtime vicon_bridge visualization_msgs serial mavros

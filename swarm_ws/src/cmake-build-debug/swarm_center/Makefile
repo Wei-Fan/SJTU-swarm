@@ -348,6 +348,21 @@ swarm_driver/fast:
 .PHONY : swarm_driver/fast
 
 # Convenience name for target.
+swarm_center/CMakeFiles/_swarm_center_generate_messages_check_deps_pos_info.dir/rule:
+	cd /home/wade/SJTU-swarm/swarm_ws/src/cmake-build-debug && $(MAKE) -f CMakeFiles/Makefile2 swarm_center/CMakeFiles/_swarm_center_generate_messages_check_deps_pos_info.dir/rule
+.PHONY : swarm_center/CMakeFiles/_swarm_center_generate_messages_check_deps_pos_info.dir/rule
+
+# Convenience name for target.
+_swarm_center_generate_messages_check_deps_pos_info: swarm_center/CMakeFiles/_swarm_center_generate_messages_check_deps_pos_info.dir/rule
+
+.PHONY : _swarm_center_generate_messages_check_deps_pos_info
+
+# fast build rule for target.
+_swarm_center_generate_messages_check_deps_pos_info/fast:
+	cd /home/wade/SJTU-swarm/swarm_ws/src/cmake-build-debug && $(MAKE) -f swarm_center/CMakeFiles/_swarm_center_generate_messages_check_deps_pos_info.dir/build.make swarm_center/CMakeFiles/_swarm_center_generate_messages_check_deps_pos_info.dir/build
+.PHONY : _swarm_center_generate_messages_check_deps_pos_info/fast
+
+# Convenience name for target.
 swarm_center/CMakeFiles/_swarm_center_generate_messages_check_deps_mCPPReq.dir/rule:
 	cd /home/wade/SJTU-swarm/swarm_ws/src/cmake-build-debug && $(MAKE) -f CMakeFiles/Makefile2 swarm_center/CMakeFiles/_swarm_center_generate_messages_check_deps_mCPPReq.dir/rule
 .PHONY : swarm_center/CMakeFiles/_swarm_center_generate_messages_check_deps_mCPPReq.dir/rule
@@ -1537,6 +1552,7 @@ help:
 	@echo "... mavros_msgs_generate_messages_nodejs"
 	@echo "... mavros_msgs_generate_messages_eus"
 	@echo "... swarm_driver"
+	@echo "... _swarm_center_generate_messages_check_deps_pos_info"
 	@echo "... _swarm_center_generate_messages_check_deps_mCPPReq"
 	@echo "... mavros_msgs_generate_messages_cpp"
 	@echo "... tf2_msgs_generate_messages_nodejs"

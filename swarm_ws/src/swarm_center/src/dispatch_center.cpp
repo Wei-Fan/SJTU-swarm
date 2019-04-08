@@ -105,8 +105,11 @@ public:
         }
 
         while(ros::ok()){
-            if (!this->plan_ready)//||!this->all_ready) //undo this once we add swarm_driver
+            if (!this->plan_ready)//||!this->all_ready)
+            {
+//                ROS_INFO("wait");
                 continue;
+            }
 //            ROS_INFO("armed ready and plan ready");
             if (first_run) {
                 ROS_INFO("send takeoff signal");

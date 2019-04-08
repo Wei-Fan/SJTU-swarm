@@ -18,10 +18,12 @@
 #include <geometry_msgs/Pose.h>
 #include <geometry_msgs/PoseWithCovarianceStamped.h>
 
+#include <swarm_center/pos_info.h>
+
 //#define USING_OPTFLOW
 //#define USING_OFFLINE_TRAJECTORY
 
-#define NUM_OF_AGENTS	2
+//#define NUM_OF_AGENTS	2
 
 #define  BYTE0(dwTemp)       ( *( (uint8_t *)(&dwTemp)	)  )
 #define  BYTE1(dwTemp)       ( *( (uint8_t *)(&dwTemp) + 1) )
@@ -74,6 +76,7 @@ public:
 //
 //private:
     std::string prefix;
+    bool recieve_sp;
 //#ifndef USING_OPTFLOW
     // ros::Subscriber Mf_pos_sub;
 	// ros::Subscriber Mf_vel_sub;
@@ -107,6 +110,7 @@ MiniflyRos::MiniflyRos(uint8_t id_input, float *init_pos)://const std::string &p
 
     init_position[0] = init_pos[0];
     init_position[1] = init_pos[1];
+    recieve_sp = false;
 
     // get sp from coverage_controllers
     char msg_name0[50];
@@ -155,6 +159,8 @@ void MiniflyRos::spCallback(const geometry_msgs::Pose::ConstPtr &msg) {
     pos_cmd[0] = msg->position.x;
     pos_cmd[1] = msg->position.y;
     pos_cmd[2] = msg->position.z;
+    recieve_sp = true;
+//    ROS_INFO("robot %d recieve sp : %f, %f, %f", this->id, pos_cmd[0], pos_cmd[1], pos_cmd[2]);
 }
 
 MiniflyRos::~MiniflyRos()
@@ -236,13 +242,17 @@ private:
     ros::Publisher ready_pub;
     vector<ros::Publisher> raw_pub;
     string prefix = "swarmbot";
-//    vector<float> position_bias_x;
-//    vector<float> position_bias_y;
+    int robot_number;
+    vector<float> position_err_x;
+    vector<float> position_err_y;
+    vector<float> position_err_z;
+    vector<bool> first_update;
+//    bool plan_ready;
 
 public:
     std::vector<MiniflyRos*> Mfs;
     serial::Serial ros_ser;
-    MiniSwarm(const std::string &dev_name, uint8_t num_of_agents, int baudrate);
+    MiniSwarm(const std::string &dev_name, int baudrate);
     ~MiniSwarm();
     void addMf(uint8_t id, float *init_pos);//const std::string &parampath, uint8_t id);
     void update_power(std::string &pkg_tmp);
@@ -255,15 +265,22 @@ public:
     float get_ros_time(ros::Time time_begin);
 };
 //
-MiniSwarm::MiniSwarm(const std::string &dev_name, uint8_t num_of_agents, int baudrate)
+MiniSwarm::MiniSwarm(const std::string &dev_name, int baudrate)
 {
     ros::NodeHandle node("");
+    ros::NodeHandle local("/swarm_driver");
+    if(!local.getParam("robot_number", this->robot_number)){
+        ROS_WARN("Did not set up robot number, using default 1");
+        this->robot_number = 1;
+    }
+    ROS_INFO("SWARM DRIVER is activated! DRIVER has %d robots to dispose", this->robot_number);
+
     // tell dispatch_center that all vehecles armed
     ready_pub = node.advertise<std_msgs::Bool>("/setup_ready",100);
 
     // publish raw pos for coverage_controllers and coverage_commander
-    raw_pub.resize(NUM_OF_AGENTS);
-    for (int i = 0; i < NUM_OF_AGENTS; ++i) {
+    raw_pub.resize(this->robot_number);
+    for (int i = 0; i < this->robot_number; ++i) {
         char msg_name[50];
         sprintf(msg_name,"/%s%d/raw_position",prefix.c_str(),i);
         raw_pub[i] = node.advertise<geometry_msgs::PoseStamped>(msg_name,1);
@@ -289,13 +306,21 @@ MiniSwarm::MiniSwarm(const std::string &dev_name, uint8_t num_of_agents, int bau
         ROS_ERROR_STREAM("No port opened");
     }
 
-    for(uint8_t i=0; i < num_of_agents; ++i)
+    for(uint8_t i=0; i < this->robot_number; ++i)
     {
         float init_p[2];
         init_p[0] = position_bias_x[i];
         init_p[1] = position_bias_y[i];
         addMf(i,init_p);
     }
+
+    /* position error deminized */
+    position_err_x.resize(this->robot_number,0);
+    position_err_y.resize(this->robot_number,0);
+    position_err_z.resize(this->robot_number,0);
+    first_update.resize(this->robot_number,true);
+
+//    plan_ready = false;
 }
 MiniSwarm::~MiniSwarm()
 {
@@ -320,14 +345,17 @@ void MiniSwarm::update_power(std::string &pkg_tmp)
         Mfs[id]->u_i[i] = float(tmp)/100;
     }
 
-    printf("MF%02X: U = %2.2f, I = %2.2f\n",id,Mfs[id]->u_i[0],Mfs[id]->u_i[1]);
+//    printf("MF%02X: U = %2.2f, I = %2.2f\n",id,Mfs[id]->u_i[0],Mfs[id]->u_i[1]);
     // std::cout<<"MF"<<id<<": U = "<<Mfs[id]->u_i[0]<<"V, I = "<<Mfs[id]->u_i[1]<<"A"<<std::endl;
 }
 
 void MiniSwarm::update_state(std::string &pkg_tmp)
 {
     int16_t tmp;
-    uint8_t id = pkg_tmp[1];
+    int id = pkg_tmp[1];
+//    uint8_t id_X = pkg_tmp[1];
+//    printf("id: %d %X \n",id_X,id);
+//    cout << id << endl;
     for (int i=0; i<3; ++i){
 //        tmp = int16_t((unsigned char)pkg_tmp[2*i+2]*256+ (unsigned char)pkg_tmp[2*i+3]);
 //        Mfs[id]->current_acc[i] = float(tmp)/100;
@@ -345,25 +373,36 @@ void MiniSwarm::update_state(std::string &pkg_tmp)
         tmp = int16_t(pkg_tmp[2*i+2]<<8 | pkg_tmp[2*i+3]);
 //        Mfs[id]->current_pos[i-6] = float(tmp)/100;
         Mfs[id]->current_pos[i-6] = tmp/1000.0;
-        std::cout<<tmp<<std::endl;
+//        std::cout<<tmp<<std::endl;
     }
-    std::cout<<"xyz = "<<Mfs[id]->current_pos[0]<<" "<<Mfs[id]->current_pos[1]<<" "<<Mfs[id]->current_pos[2]<<std::endl;
-    printf("MF_cp%02X: x = %2.3f, y = %2.3f, z = %2.3f\n",id,Mfs[id]->current_pos[0],Mfs[id]->current_pos[1],Mfs[id]->current_pos[2]);
-    Mfs[id]->current_pos[0] += position_bias_x[id];
-    Mfs[id]->current_pos[1] += position_bias_y[id];
+//    std::cout<<"xyz = "<<Mfs[id]->current_pos[0]<<" "<<Mfs[id]->current_pos[1]<<" "<<Mfs[id]->current_pos[2]<<std::endl;
+//    printf("MF_cp%02X: x = %2.3f, y = %2.3f, z = %2.3f\n",id,Mfs[id]->current_pos[0],Mfs[id]->current_pos[1],Mfs[id]->current_pos[2]);
+    if (first_update[id])
+    {
+        position_err_x[id] = Mfs[id]->current_pos[0];
+        position_err_y[id] = Mfs[id]->current_pos[1];
+        position_err_z[id] = Mfs[id]->current_pos[2];
+        Mfs[id]->current_pos[0] = position_bias_x[id];
+        Mfs[id]->current_pos[1] = position_bias_y[id];
+        first_update[id] = false;
+    } else {
 
-    /* publish optflow's position estimation */
-    geometry_msgs::PoseStamped msg;
-    msg.header.seq = id;
-    msg.pose.position.x = Mfs[id]->current_pos[0];
-    msg.pose.position.y = Mfs[id]->current_pos[1];
-    msg.pose.position.z = Mfs[id]->current_pos[2];
-    char msg_name[50];
-    sprintf(msg_name,"/%s%d/raw_position",this->prefix.c_str(),id);
-    raw_pub[id].publish(msg);
+        Mfs[id]->current_pos[0] = Mfs[id]->current_pos[0] + position_bias_x[id] - position_err_x[id];
+        Mfs[id]->current_pos[1] = Mfs[id]->current_pos[1] + position_bias_y[id] - position_err_y[id];
+        Mfs[id]->current_pos[2] = Mfs[id]->current_pos[2] - position_err_z[id];
 
-//    printf("MF_cp%02X: x = %2.2f, y = %2.2f, z = %2.2f\n",id,Mfs[id]->current_pos[0],Mfs[id]->current_pos[1],Mfs[id]->current_pos[2]);
+        /* publish optflow's position estimation */
+        geometry_msgs::PoseStamped msg;
+        msg.header.frame_id = to_string(id);
+        msg.pose.position.x = Mfs[id]->current_pos[0];
+        msg.pose.position.y = Mfs[id]->current_pos[1];
+        msg.pose.position.z = Mfs[id]->current_pos[2];
+        char msg_name[50];
+        sprintf(msg_name,"/%s%d/raw_position",this->prefix.c_str(),id);
+        raw_pub[id].publish(msg);
+//        printf("MF_cp%02X: x = %2.2f, y = %2.2f, z = %2.2f\n",id,Mfs[id]->current_pos[0],Mfs[id]->current_pos[1],Mfs[id]->current_pos[2]);
 
+    }
 }
 
 void MiniSwarm::raw_data_decoding()
@@ -469,115 +508,66 @@ void MiniSwarm::send_att_sp(uint8_t id, float *rpyt)
 void MiniSwarm::run()
 {
     ros::Rate loop_rate(20);
-//#ifdef USING_OFFLINE_TRAJECTORY
-//    int cnt = 0;
-//    int limit = 0;
-//    for(auto mf:Mfs)
-//    {
-//        if(mf->cmd_incsv.size()>limit){limit = mf->cmd_incsv.size();}
-//    }
-//#endif
-//#ifdef USING_OPTFLOW
-    for(int i = 0; i<50; ++i)
+
+
+    for(int i = 0; i<20; ++i)
     {
         for(auto mf:Mfs){
+            mf->pos_cmd[2] = -1;
             send_pos_sp(mf->id,mf->pos_cmd);
             // cout<<mf->id<<endl;
             // printf("%02X\n",mf->id);
+//            ROS_INFO("send link test");
         }
+        ros::spinOnce();
         loop_rate.sleep();
     }
+
+    ROS_INFO("prepare to call armed");
     for(auto mf:Mfs){
         take_off(mf->id);
     }
     /* armed */
-    std_msgs::Bool ready;
-    ready.data = true;
-    ready_pub.publish(ready);
-    loop_rate.sleep();
+//    std_msgs::Bool ready;
+//    ready.data = true;
+//    ready_pub.publish(ready);
+//    ros::spinOnce();
+//    loop_rate.sleep();
 
+    /*  stay put until recieve setpoint signal*/
+    bool waiting = true;
+    while (waiting&&ros::ok()) {
+//        ROS_INFO("waiting");
+        raw_data_decoding();
+        int cnt_tmp = 0;
+        for (int i = 0; i < this->robot_number; ++i) {
+            if (Mfs[i]->recieve_sp)
+                cnt_tmp++;
+        }
+        if (cnt_tmp == this->robot_number)
+            waiting = false;
+        ros::spinOnce();
+        loop_rate.sleep();
+    }
+    cout<<"~~~~~~take off!"<<endl;
 
-//    cout<<"take off!"<<endl;
-//    for(int i = 0; i<50; ++i)
-//    {
-//        for(auto mf:Mfs){
-//            send_pos_sp(mf->id,mf->pos_cmd);
-//        }
-//        loop_rate.sleep();
-//    }
-//#else
-    float cur_time;
-	ros::Time begin_time = ros::Time::now();
-//	for(int i = 0; i<50; ++i)
-//	{
-//		for(auto mf:Mfs){
-//			send_att_sp(mf->id,mf->rpyt_cmd);
-//		}
-//		loop_rate.sleep();
-//	}
-//	for(auto mf:Mfs){
-//		take_off(mf->id);
-//	}
-//	loop_rate.sleep();
-//	for(int i = 0; i<50; ++i)
-//	{
-//		ros::spinOnce();
-//		for(auto mf:Mfs){
-//			cur_time = get_ros_time(begin_time);
-//			mf->offb_pos_ctrl(cur_time);
-//			send_pos_sp(mf->id,mf->rpyt_cmd);
-//		}
-//		loop_rate.sleep();
-//	}
-//#endif
-//    std::cout<<ros::ok()<<std::endl;
     while(ros::ok())
     {
+        ros::spinOnce();
         raw_data_decoding();
 //#ifdef USING_OFFLINE_TRAJECTORY
 //#ifndef USING_OPTFLOW
         for(auto mf:Mfs){
-			cur_time = get_ros_time(begin_time);
+//			cur_time = get_ros_time(begin_time);
 //			memcpy(mf->pos_cmd,mf->cmd_incsv[cnt].xyz,12);
-			mf->offb_pos_ctrl(cur_time);
-			send_att_sp(mf->id,mf->rpyt_cmd);
-//			ROS_INFO("robot %d send out sp: %f,%f",mf->id,mf->current_pos[0],mf->current_pos[1]);
+//			mf->offb_pos_ctrl(cur_time);
+//			send_att_sp(mf->id,mf->rpyt_cmd);
+            send_pos_sp(mf->id,mf->pos_cmd);
+			ROS_INFO("robot %d send out sp: %f, %f, %f",mf->id,mf->pos_cmd[0],mf->pos_cmd[1],mf->pos_cmd[2]);
 		}
-//#else
-//        for(auto mf:Mfs){
-//            // send_pos_sp(mf->id,mf->pos_cmd);
-//            send_pos_sp(mf->id,mf->cmd_incsv[cnt].xyz);
-//        }
-//#endif
-//        cnt++;
-//        if(cnt == limit){break;}
-//#endif
-        ros::spinOnce();
+
         loop_rate.sleep();
     }
-//#ifndef USING_OPTFLOW
-//    float det_alt_tmp[6];
-//	float x_tmp[6];
-//	float y_tmp[6];
-//	for(int i=0; i< Mfs.size();++i)
-//	{
-//		x_tmp[i] = Mfs[i]->current_pos[0];
-//		y_tmp[i] = Mfs[i]->current_pos[1];
-//		det_alt_tmp[i] = Mfs[i]->current_pos[2];
-//	}
-//	for(int i = 0; i < 100; +i)
-//	{
-//		for(int j=0; j< Mfs.size(); ++j){
-//			cur_time = get_ros_time(begin_time);
-//			Mfs[j]->pos_cmd[0] = x_tmp[j];
-//			Mfs[j]->pos_cmd[1] = y_tmp[j];
-//			Mfs[j]->pos_cmd[2] = det_alt_tmp[j]*(1-i/100);
-//			Mfs[j]->offb_pos_ctrl(cur_time);
-//			send_att_sp(Mfs[j]->id,Mfs[j]->pos_cmd);
-//		}
-//		loop_rate.sleep();
-//	}
-//#endif
 }
 
 float MiniSwarm::get_ros_time(ros::Time time_begin)
@@ -595,9 +585,9 @@ int main(int argc, char **argv)
     // raise(SIGSTOP);
     ros::init(argc, argv, "swarm_driver");
     ros::NodeHandle Global;
-    MiniSwarm Miniflys("/dev/ttyACM0",NUM_OF_AGENTS,500000);
-//    // std::cout<<"fuck you!"<<std::endl;
-//    // aMinifly.read_Pos_traj("test8.csv");
+    MiniSwarm Miniflys("/dev/ttyACM0",500000);
+    // std::cout<<"fuck you!"<<std::endl;
+    // aMinifly.read_Pos_traj("test8.csv");
     Miniflys.run();
     return 0;
 }

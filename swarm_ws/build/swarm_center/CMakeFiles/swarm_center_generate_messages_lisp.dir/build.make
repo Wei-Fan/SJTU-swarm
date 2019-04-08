@@ -53,15 +53,27 @@ CMAKE_BINARY_DIR = /home/wade/SJTU-swarm/swarm_ws/build
 # Include the progress variables for this target.
 include swarm_center/CMakeFiles/swarm_center_generate_messages_lisp.dir/progress.make
 
+swarm_center/CMakeFiles/swarm_center_generate_messages_lisp: /home/wade/SJTU-swarm/swarm_ws/devel/share/common-lisp/ros/swarm_center/msg/pos_info.lisp
 swarm_center/CMakeFiles/swarm_center_generate_messages_lisp: /home/wade/SJTU-swarm/swarm_ws/devel/share/common-lisp/ros/swarm_center/srv/mCPPReq.lisp
 
 
+/home/wade/SJTU-swarm/swarm_ws/devel/share/common-lisp/ros/swarm_center/msg/pos_info.lisp: /opt/ros/kinetic/lib/genlisp/gen_lisp.py
+/home/wade/SJTU-swarm/swarm_ws/devel/share/common-lisp/ros/swarm_center/msg/pos_info.lisp: /home/wade/SJTU-swarm/swarm_ws/src/swarm_center/msg/pos_info.msg
+/home/wade/SJTU-swarm/swarm_ws/devel/share/common-lisp/ros/swarm_center/msg/pos_info.lisp: /opt/ros/kinetic/share/geometry_msgs/msg/Quaternion.msg
+/home/wade/SJTU-swarm/swarm_ws/devel/share/common-lisp/ros/swarm_center/msg/pos_info.lisp: /opt/ros/kinetic/share/geometry_msgs/msg/PoseStamped.msg
+/home/wade/SJTU-swarm/swarm_ws/devel/share/common-lisp/ros/swarm_center/msg/pos_info.lisp: /opt/ros/kinetic/share/geometry_msgs/msg/Pose.msg
+/home/wade/SJTU-swarm/swarm_ws/devel/share/common-lisp/ros/swarm_center/msg/pos_info.lisp: /opt/ros/kinetic/share/std_msgs/msg/Header.msg
+/home/wade/SJTU-swarm/swarm_ws/devel/share/common-lisp/ros/swarm_center/msg/pos_info.lisp: /opt/ros/kinetic/share/geometry_msgs/msg/Point.msg
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/wade/SJTU-swarm/swarm_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating Lisp code from swarm_center/pos_info.msg"
+	cd /home/wade/SJTU-swarm/swarm_ws/build/swarm_center && ../catkin_generated/env_cached.sh /usr/bin/python /opt/ros/kinetic/share/genlisp/cmake/../../../lib/genlisp/gen_lisp.py /home/wade/SJTU-swarm/swarm_ws/src/swarm_center/msg/pos_info.msg -Iswarm_center:/home/wade/SJTU-swarm/swarm_ws/src/swarm_center/msg -Igeometry_msgs:/opt/ros/kinetic/share/geometry_msgs/cmake/../msg -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -p swarm_center -o /home/wade/SJTU-swarm/swarm_ws/devel/share/common-lisp/ros/swarm_center/msg
+
 /home/wade/SJTU-swarm/swarm_ws/devel/share/common-lisp/ros/swarm_center/srv/mCPPReq.lisp: /opt/ros/kinetic/lib/genlisp/gen_lisp.py
 /home/wade/SJTU-swarm/swarm_ws/devel/share/common-lisp/ros/swarm_center/srv/mCPPReq.lisp: /home/wade/SJTU-swarm/swarm_ws/src/swarm_center/srv/mCPPReq.srv
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/wade/SJTU-swarm/swarm_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating Lisp code from swarm_center/mCPPReq.srv"
-	cd /home/wade/SJTU-swarm/swarm_ws/build/swarm_center && ../catkin_generated/env_cached.sh /usr/bin/python /opt/ros/kinetic/share/genlisp/cmake/../../../lib/genlisp/gen_lisp.py /home/wade/SJTU-swarm/swarm_ws/src/swarm_center/srv/mCPPReq.srv -Igeometry_msgs:/opt/ros/kinetic/share/geometry_msgs/cmake/../msg -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -p swarm_center -o /home/wade/SJTU-swarm/swarm_ws/devel/share/common-lisp/ros/swarm_center/srv
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/wade/SJTU-swarm/swarm_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Generating Lisp code from swarm_center/mCPPReq.srv"
+	cd /home/wade/SJTU-swarm/swarm_ws/build/swarm_center && ../catkin_generated/env_cached.sh /usr/bin/python /opt/ros/kinetic/share/genlisp/cmake/../../../lib/genlisp/gen_lisp.py /home/wade/SJTU-swarm/swarm_ws/src/swarm_center/srv/mCPPReq.srv -Iswarm_center:/home/wade/SJTU-swarm/swarm_ws/src/swarm_center/msg -Igeometry_msgs:/opt/ros/kinetic/share/geometry_msgs/cmake/../msg -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -p swarm_center -o /home/wade/SJTU-swarm/swarm_ws/devel/share/common-lisp/ros/swarm_center/srv
 
 swarm_center_generate_messages_lisp: swarm_center/CMakeFiles/swarm_center_generate_messages_lisp
+swarm_center_generate_messages_lisp: /home/wade/SJTU-swarm/swarm_ws/devel/share/common-lisp/ros/swarm_center/msg/pos_info.lisp
 swarm_center_generate_messages_lisp: /home/wade/SJTU-swarm/swarm_ws/devel/share/common-lisp/ros/swarm_center/srv/mCPPReq.lisp
 swarm_center_generate_messages_lisp: swarm_center/CMakeFiles/swarm_center_generate_messages_lisp.dir/build.make
 

@@ -53,17 +53,30 @@ CMAKE_BINARY_DIR = /home/wade/SJTU-swarm/swarm_ws/src/cmake-build-debug
 # Include the progress variables for this target.
 include swarm_center/CMakeFiles/swarm_center_generate_messages_cpp.dir/progress.make
 
+swarm_center/CMakeFiles/swarm_center_generate_messages_cpp: devel/include/swarm_center/pos_info.h
 swarm_center/CMakeFiles/swarm_center_generate_messages_cpp: devel/include/swarm_center/mCPPReq.h
 
+
+devel/include/swarm_center/pos_info.h: /opt/ros/kinetic/lib/gencpp/gen_cpp.py
+devel/include/swarm_center/pos_info.h: ../swarm_center/msg/pos_info.msg
+devel/include/swarm_center/pos_info.h: /opt/ros/kinetic/share/geometry_msgs/msg/Quaternion.msg
+devel/include/swarm_center/pos_info.h: /opt/ros/kinetic/share/geometry_msgs/msg/PoseStamped.msg
+devel/include/swarm_center/pos_info.h: /opt/ros/kinetic/share/geometry_msgs/msg/Pose.msg
+devel/include/swarm_center/pos_info.h: /opt/ros/kinetic/share/std_msgs/msg/Header.msg
+devel/include/swarm_center/pos_info.h: /opt/ros/kinetic/share/geometry_msgs/msg/Point.msg
+devel/include/swarm_center/pos_info.h: /opt/ros/kinetic/share/gencpp/msg.h.template
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/wade/SJTU-swarm/swarm_ws/src/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating C++ code from swarm_center/pos_info.msg"
+	cd /home/wade/SJTU-swarm/swarm_ws/src/swarm_center && /home/wade/SJTU-swarm/swarm_ws/src/cmake-build-debug/catkin_generated/env_cached.sh /usr/bin/python /opt/ros/kinetic/share/gencpp/cmake/../../../lib/gencpp/gen_cpp.py /home/wade/SJTU-swarm/swarm_ws/src/swarm_center/msg/pos_info.msg -Iswarm_center:/home/wade/SJTU-swarm/swarm_ws/src/swarm_center/msg -Igeometry_msgs:/opt/ros/kinetic/share/geometry_msgs/cmake/../msg -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -p swarm_center -o /home/wade/SJTU-swarm/swarm_ws/src/cmake-build-debug/devel/include/swarm_center -e /opt/ros/kinetic/share/gencpp/cmake/..
 
 devel/include/swarm_center/mCPPReq.h: /opt/ros/kinetic/lib/gencpp/gen_cpp.py
 devel/include/swarm_center/mCPPReq.h: ../swarm_center/srv/mCPPReq.srv
 devel/include/swarm_center/mCPPReq.h: /opt/ros/kinetic/share/gencpp/msg.h.template
 devel/include/swarm_center/mCPPReq.h: /opt/ros/kinetic/share/gencpp/srv.h.template
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/wade/SJTU-swarm/swarm_ws/src/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating C++ code from swarm_center/mCPPReq.srv"
-	cd /home/wade/SJTU-swarm/swarm_ws/src/swarm_center && /home/wade/SJTU-swarm/swarm_ws/src/cmake-build-debug/catkin_generated/env_cached.sh /usr/bin/python /opt/ros/kinetic/share/gencpp/cmake/../../../lib/gencpp/gen_cpp.py /home/wade/SJTU-swarm/swarm_ws/src/swarm_center/srv/mCPPReq.srv -Igeometry_msgs:/opt/ros/kinetic/share/geometry_msgs/cmake/../msg -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -p swarm_center -o /home/wade/SJTU-swarm/swarm_ws/src/cmake-build-debug/devel/include/swarm_center -e /opt/ros/kinetic/share/gencpp/cmake/..
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/wade/SJTU-swarm/swarm_ws/src/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Generating C++ code from swarm_center/mCPPReq.srv"
+	cd /home/wade/SJTU-swarm/swarm_ws/src/swarm_center && /home/wade/SJTU-swarm/swarm_ws/src/cmake-build-debug/catkin_generated/env_cached.sh /usr/bin/python /opt/ros/kinetic/share/gencpp/cmake/../../../lib/gencpp/gen_cpp.py /home/wade/SJTU-swarm/swarm_ws/src/swarm_center/srv/mCPPReq.srv -Iswarm_center:/home/wade/SJTU-swarm/swarm_ws/src/swarm_center/msg -Igeometry_msgs:/opt/ros/kinetic/share/geometry_msgs/cmake/../msg -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -p swarm_center -o /home/wade/SJTU-swarm/swarm_ws/src/cmake-build-debug/devel/include/swarm_center -e /opt/ros/kinetic/share/gencpp/cmake/..
 
 swarm_center_generate_messages_cpp: swarm_center/CMakeFiles/swarm_center_generate_messages_cpp
+swarm_center_generate_messages_cpp: devel/include/swarm_center/pos_info.h
 swarm_center_generate_messages_cpp: devel/include/swarm_center/mCPPReq.h
 swarm_center_generate_messages_cpp: swarm_center/CMakeFiles/swarm_center_generate_messages_cpp.dir/build.make
 

@@ -1,5 +1,6 @@
 file(REMOVE_RECURSE
   "CMakeFiles/swarm_center_generate_messages_cpp"
+  "/home/wade/SJTU-swarm/swarm_ws/devel/include/swarm_center/pos_info.h"
   "/home/wade/SJTU-swarm/swarm_ws/devel/include/swarm_center/mCPPReq.h"
 )
 

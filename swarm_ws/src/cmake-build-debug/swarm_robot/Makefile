@@ -68,30 +68,6 @@ install/strip/fast: preinstall/fast
 	/home/wade/clion-2018.2.5/bin/cmake/linux/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
 .PHONY : install/strip/fast
 
-# Special rule for the target install/local
-install/local: preinstall
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
-	/home/wade/clion-2018.2.5/bin/cmake/linux/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
-.PHONY : install/local
-
-# Special rule for the target install/local
-install/local/fast: preinstall/fast
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
-	/home/wade/clion-2018.2.5/bin/cmake/linux/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
-.PHONY : install/local/fast
-
-# Special rule for the target install
-install: preinstall
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
-	/home/wade/clion-2018.2.5/bin/cmake/linux/bin/cmake -P cmake_install.cmake
-.PHONY : install
-
-# Special rule for the target install
-install/fast: preinstall/fast
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
-	/home/wade/clion-2018.2.5/bin/cmake/linux/bin/cmake -P cmake_install.cmake
-.PHONY : install/fast
-
 # Special rule for the target list_install_components
 list_install_components:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Available install components are: \"Unspecified\""
@@ -135,6 +111,30 @@ test/fast: test
 
 .PHONY : test/fast
 
+# Special rule for the target install/local
+install/local: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
+	/home/wade/clion-2018.2.5/bin/cmake/linux/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
+.PHONY : install/local
+
+# Special rule for the target install/local
+install/local/fast: preinstall/fast
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
+	/home/wade/clion-2018.2.5/bin/cmake/linux/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
+.PHONY : install/local/fast
+
+# Special rule for the target install
+install: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
+	/home/wade/clion-2018.2.5/bin/cmake/linux/bin/cmake -P cmake_install.cmake
+.PHONY : install
+
+# Special rule for the target install
+install/fast: preinstall/fast
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
+	/home/wade/clion-2018.2.5/bin/cmake/linux/bin/cmake -P cmake_install.cmake
+.PHONY : install/fast
+
 # The main all target
 all: cmake_check_build_system
 	cd /home/wade/SJTU-swarm/swarm_ws/src/cmake-build-debug && $(CMAKE_COMMAND) -E cmake_progress_start /home/wade/SJTU-swarm/swarm_ws/src/cmake-build-debug/CMakeFiles /home/wade/SJTU-swarm/swarm_ws/src/cmake-build-debug/swarm_robot/CMakeFiles/progress.marks
@@ -168,21 +168,6 @@ depend:
 .PHONY : depend
 
 # Convenience name for target.
-swarm_robot/CMakeFiles/robot_controller.dir/rule:
-	cd /home/wade/SJTU-swarm/swarm_ws/src/cmake-build-debug && $(MAKE) -f CMakeFiles/Makefile2 swarm_robot/CMakeFiles/robot_controller.dir/rule
-.PHONY : swarm_robot/CMakeFiles/robot_controller.dir/rule
-
-# Convenience name for target.
-robot_controller: swarm_robot/CMakeFiles/robot_controller.dir/rule
-
-.PHONY : robot_controller
-
-# fast build rule for target.
-robot_controller/fast:
-	cd /home/wade/SJTU-swarm/swarm_ws/src/cmake-build-debug && $(MAKE) -f swarm_robot/CMakeFiles/robot_controller.dir/build.make swarm_robot/CMakeFiles/robot_controller.dir/build
-.PHONY : robot_controller/fast
-
-# Convenience name for target.
 swarm_robot/CMakeFiles/coverage_controller.dir/rule:
 	cd /home/wade/SJTU-swarm/swarm_ws/src/cmake-build-debug && $(MAKE) -f CMakeFiles/Makefile2 swarm_robot/CMakeFiles/coverage_controller.dir/rule
 .PHONY : swarm_robot/CMakeFiles/coverage_controller.dir/rule
@@ -198,6 +183,171 @@ coverage_controller/fast:
 .PHONY : coverage_controller/fast
 
 # Convenience name for target.
+swarm_robot/CMakeFiles/swarm_robot_genpy.dir/rule:
+	cd /home/wade/SJTU-swarm/swarm_ws/src/cmake-build-debug && $(MAKE) -f CMakeFiles/Makefile2 swarm_robot/CMakeFiles/swarm_robot_genpy.dir/rule
+.PHONY : swarm_robot/CMakeFiles/swarm_robot_genpy.dir/rule
+
+# Convenience name for target.
+swarm_robot_genpy: swarm_robot/CMakeFiles/swarm_robot_genpy.dir/rule
+
+.PHONY : swarm_robot_genpy
+
+# fast build rule for target.
+swarm_robot_genpy/fast:
+	cd /home/wade/SJTU-swarm/swarm_ws/src/cmake-build-debug && $(MAKE) -f swarm_robot/CMakeFiles/swarm_robot_genpy.dir/build.make swarm_robot/CMakeFiles/swarm_robot_genpy.dir/build
+.PHONY : swarm_robot_genpy/fast
+
+# Convenience name for target.
+swarm_robot/CMakeFiles/swarm_robot_generate_messages_py.dir/rule:
+	cd /home/wade/SJTU-swarm/swarm_ws/src/cmake-build-debug && $(MAKE) -f CMakeFiles/Makefile2 swarm_robot/CMakeFiles/swarm_robot_generate_messages_py.dir/rule
+.PHONY : swarm_robot/CMakeFiles/swarm_robot_generate_messages_py.dir/rule
+
+# Convenience name for target.
+swarm_robot_generate_messages_py: swarm_robot/CMakeFiles/swarm_robot_generate_messages_py.dir/rule
+
+.PHONY : swarm_robot_generate_messages_py
+
+# fast build rule for target.
+swarm_robot_generate_messages_py/fast:
+	cd /home/wade/SJTU-swarm/swarm_ws/src/cmake-build-debug && $(MAKE) -f swarm_robot/CMakeFiles/swarm_robot_generate_messages_py.dir/build.make swarm_robot/CMakeFiles/swarm_robot_generate_messages_py.dir/build
+.PHONY : swarm_robot_generate_messages_py/fast
+
+# Convenience name for target.
+swarm_robot/CMakeFiles/swarm_robot_generate_messages_cpp.dir/rule:
+	cd /home/wade/SJTU-swarm/swarm_ws/src/cmake-build-debug && $(MAKE) -f CMakeFiles/Makefile2 swarm_robot/CMakeFiles/swarm_robot_generate_messages_cpp.dir/rule
+.PHONY : swarm_robot/CMakeFiles/swarm_robot_generate_messages_cpp.dir/rule
+
+# Convenience name for target.
+swarm_robot_generate_messages_cpp: swarm_robot/CMakeFiles/swarm_robot_generate_messages_cpp.dir/rule
+
+.PHONY : swarm_robot_generate_messages_cpp
+
+# fast build rule for target.
+swarm_robot_generate_messages_cpp/fast:
+	cd /home/wade/SJTU-swarm/swarm_ws/src/cmake-build-debug && $(MAKE) -f swarm_robot/CMakeFiles/swarm_robot_generate_messages_cpp.dir/build.make swarm_robot/CMakeFiles/swarm_robot_generate_messages_cpp.dir/build
+.PHONY : swarm_robot_generate_messages_cpp/fast
+
+# Convenience name for target.
+swarm_robot/CMakeFiles/swarm_robot_gencpp.dir/rule:
+	cd /home/wade/SJTU-swarm/swarm_ws/src/cmake-build-debug && $(MAKE) -f CMakeFiles/Makefile2 swarm_robot/CMakeFiles/swarm_robot_gencpp.dir/rule
+.PHONY : swarm_robot/CMakeFiles/swarm_robot_gencpp.dir/rule
+
+# Convenience name for target.
+swarm_robot_gencpp: swarm_robot/CMakeFiles/swarm_robot_gencpp.dir/rule
+
+.PHONY : swarm_robot_gencpp
+
+# fast build rule for target.
+swarm_robot_gencpp/fast:
+	cd /home/wade/SJTU-swarm/swarm_ws/src/cmake-build-debug && $(MAKE) -f swarm_robot/CMakeFiles/swarm_robot_gencpp.dir/build.make swarm_robot/CMakeFiles/swarm_robot_gencpp.dir/build
+.PHONY : swarm_robot_gencpp/fast
+
+# Convenience name for target.
+swarm_robot/CMakeFiles/_swarm_robot_generate_messages_check_deps_pos_info.dir/rule:
+	cd /home/wade/SJTU-swarm/swarm_ws/src/cmake-build-debug && $(MAKE) -f CMakeFiles/Makefile2 swarm_robot/CMakeFiles/_swarm_robot_generate_messages_check_deps_pos_info.dir/rule
+.PHONY : swarm_robot/CMakeFiles/_swarm_robot_generate_messages_check_deps_pos_info.dir/rule
+
+# Convenience name for target.
+_swarm_robot_generate_messages_check_deps_pos_info: swarm_robot/CMakeFiles/_swarm_robot_generate_messages_check_deps_pos_info.dir/rule
+
+.PHONY : _swarm_robot_generate_messages_check_deps_pos_info
+
+# fast build rule for target.
+_swarm_robot_generate_messages_check_deps_pos_info/fast:
+	cd /home/wade/SJTU-swarm/swarm_ws/src/cmake-build-debug && $(MAKE) -f swarm_robot/CMakeFiles/_swarm_robot_generate_messages_check_deps_pos_info.dir/build.make swarm_robot/CMakeFiles/_swarm_robot_generate_messages_check_deps_pos_info.dir/build
+.PHONY : _swarm_robot_generate_messages_check_deps_pos_info/fast
+
+# Convenience name for target.
+swarm_robot/CMakeFiles/swarm_robot_genlisp.dir/rule:
+	cd /home/wade/SJTU-swarm/swarm_ws/src/cmake-build-debug && $(MAKE) -f CMakeFiles/Makefile2 swarm_robot/CMakeFiles/swarm_robot_genlisp.dir/rule
+.PHONY : swarm_robot/CMakeFiles/swarm_robot_genlisp.dir/rule
+
+# Convenience name for target.
+swarm_robot_genlisp: swarm_robot/CMakeFiles/swarm_robot_genlisp.dir/rule
+
+.PHONY : swarm_robot_genlisp
+
+# fast build rule for target.
+swarm_robot_genlisp/fast:
+	cd /home/wade/SJTU-swarm/swarm_ws/src/cmake-build-debug && $(MAKE) -f swarm_robot/CMakeFiles/swarm_robot_genlisp.dir/build.make swarm_robot/CMakeFiles/swarm_robot_genlisp.dir/build
+.PHONY : swarm_robot_genlisp/fast
+
+# Convenience name for target.
+swarm_robot/CMakeFiles/swarm_robot_generate_messages.dir/rule:
+	cd /home/wade/SJTU-swarm/swarm_ws/src/cmake-build-debug && $(MAKE) -f CMakeFiles/Makefile2 swarm_robot/CMakeFiles/swarm_robot_generate_messages.dir/rule
+.PHONY : swarm_robot/CMakeFiles/swarm_robot_generate_messages.dir/rule
+
+# Convenience name for target.
+swarm_robot_generate_messages: swarm_robot/CMakeFiles/swarm_robot_generate_messages.dir/rule
+
+.PHONY : swarm_robot_generate_messages
+
+# fast build rule for target.
+swarm_robot_generate_messages/fast:
+	cd /home/wade/SJTU-swarm/swarm_ws/src/cmake-build-debug && $(MAKE) -f swarm_robot/CMakeFiles/swarm_robot_generate_messages.dir/build.make swarm_robot/CMakeFiles/swarm_robot_generate_messages.dir/build
+.PHONY : swarm_robot_generate_messages/fast
+
+# Convenience name for target.
+swarm_robot/CMakeFiles/swarm_robot_geneus.dir/rule:
+	cd /home/wade/SJTU-swarm/swarm_ws/src/cmake-build-debug && $(MAKE) -f CMakeFiles/Makefile2 swarm_robot/CMakeFiles/swarm_robot_geneus.dir/rule
+.PHONY : swarm_robot/CMakeFiles/swarm_robot_geneus.dir/rule
+
+# Convenience name for target.
+swarm_robot_geneus: swarm_robot/CMakeFiles/swarm_robot_geneus.dir/rule
+
+.PHONY : swarm_robot_geneus
+
+# fast build rule for target.
+swarm_robot_geneus/fast:
+	cd /home/wade/SJTU-swarm/swarm_ws/src/cmake-build-debug && $(MAKE) -f swarm_robot/CMakeFiles/swarm_robot_geneus.dir/build.make swarm_robot/CMakeFiles/swarm_robot_geneus.dir/build
+.PHONY : swarm_robot_geneus/fast
+
+# Convenience name for target.
+swarm_robot/CMakeFiles/robot_controller.dir/rule:
+	cd /home/wade/SJTU-swarm/swarm_ws/src/cmake-build-debug && $(MAKE) -f CMakeFiles/Makefile2 swarm_robot/CMakeFiles/robot_controller.dir/rule
+.PHONY : swarm_robot/CMakeFiles/robot_controller.dir/rule
+
+# Convenience name for target.
+robot_controller: swarm_robot/CMakeFiles/robot_controller.dir/rule
+
+.PHONY : robot_controller
+
+# fast build rule for target.
+robot_controller/fast:
+	cd /home/wade/SJTU-swarm/swarm_ws/src/cmake-build-debug && $(MAKE) -f swarm_robot/CMakeFiles/robot_controller.dir/build.make swarm_robot/CMakeFiles/robot_controller.dir/build
+.PHONY : robot_controller/fast
+
+# Convenience name for target.
+swarm_robot/CMakeFiles/swarm_robot_generate_messages_lisp.dir/rule:
+	cd /home/wade/SJTU-swarm/swarm_ws/src/cmake-build-debug && $(MAKE) -f CMakeFiles/Makefile2 swarm_robot/CMakeFiles/swarm_robot_generate_messages_lisp.dir/rule
+.PHONY : swarm_robot/CMakeFiles/swarm_robot_generate_messages_lisp.dir/rule
+
+# Convenience name for target.
+swarm_robot_generate_messages_lisp: swarm_robot/CMakeFiles/swarm_robot_generate_messages_lisp.dir/rule
+
+.PHONY : swarm_robot_generate_messages_lisp
+
+# fast build rule for target.
+swarm_robot_generate_messages_lisp/fast:
+	cd /home/wade/SJTU-swarm/swarm_ws/src/cmake-build-debug && $(MAKE) -f swarm_robot/CMakeFiles/swarm_robot_generate_messages_lisp.dir/build.make swarm_robot/CMakeFiles/swarm_robot_generate_messages_lisp.dir/build
+.PHONY : swarm_robot_generate_messages_lisp/fast
+
+# Convenience name for target.
+swarm_robot/CMakeFiles/swarm_robot_gennodejs.dir/rule:
+	cd /home/wade/SJTU-swarm/swarm_ws/src/cmake-build-debug && $(MAKE) -f CMakeFiles/Makefile2 swarm_robot/CMakeFiles/swarm_robot_gennodejs.dir/rule
+.PHONY : swarm_robot/CMakeFiles/swarm_robot_gennodejs.dir/rule
+
+# Convenience name for target.
+swarm_robot_gennodejs: swarm_robot/CMakeFiles/swarm_robot_gennodejs.dir/rule
+
+.PHONY : swarm_robot_gennodejs
+
+# fast build rule for target.
+swarm_robot_gennodejs/fast:
+	cd /home/wade/SJTU-swarm/swarm_ws/src/cmake-build-debug && $(MAKE) -f swarm_robot/CMakeFiles/swarm_robot_gennodejs.dir/build.make swarm_robot/CMakeFiles/swarm_robot_gennodejs.dir/build
+.PHONY : swarm_robot_gennodejs/fast
+
+# Convenience name for target.
 swarm_robot/CMakeFiles/formation_controller.dir/rule:
 	cd /home/wade/SJTU-swarm/swarm_ws/src/cmake-build-debug && $(MAKE) -f CMakeFiles/Makefile2 swarm_robot/CMakeFiles/formation_controller.dir/rule
 .PHONY : swarm_robot/CMakeFiles/formation_controller.dir/rule
@@ -211,6 +361,36 @@ formation_controller: swarm_robot/CMakeFiles/formation_controller.dir/rule
 formation_controller/fast:
 	cd /home/wade/SJTU-swarm/swarm_ws/src/cmake-build-debug && $(MAKE) -f swarm_robot/CMakeFiles/formation_controller.dir/build.make swarm_robot/CMakeFiles/formation_controller.dir/build
 .PHONY : formation_controller/fast
+
+# Convenience name for target.
+swarm_robot/CMakeFiles/swarm_robot_generate_messages_eus.dir/rule:
+	cd /home/wade/SJTU-swarm/swarm_ws/src/cmake-build-debug && $(MAKE) -f CMakeFiles/Makefile2 swarm_robot/CMakeFiles/swarm_robot_generate_messages_eus.dir/rule
+.PHONY : swarm_robot/CMakeFiles/swarm_robot_generate_messages_eus.dir/rule
+
+# Convenience name for target.
+swarm_robot_generate_messages_eus: swarm_robot/CMakeFiles/swarm_robot_generate_messages_eus.dir/rule
+
+.PHONY : swarm_robot_generate_messages_eus
+
+# fast build rule for target.
+swarm_robot_generate_messages_eus/fast:
+	cd /home/wade/SJTU-swarm/swarm_ws/src/cmake-build-debug && $(MAKE) -f swarm_robot/CMakeFiles/swarm_robot_generate_messages_eus.dir/build.make swarm_robot/CMakeFiles/swarm_robot_generate_messages_eus.dir/build
+.PHONY : swarm_robot_generate_messages_eus/fast
+
+# Convenience name for target.
+swarm_robot/CMakeFiles/swarm_robot_generate_messages_nodejs.dir/rule:
+	cd /home/wade/SJTU-swarm/swarm_ws/src/cmake-build-debug && $(MAKE) -f CMakeFiles/Makefile2 swarm_robot/CMakeFiles/swarm_robot_generate_messages_nodejs.dir/rule
+.PHONY : swarm_robot/CMakeFiles/swarm_robot_generate_messages_nodejs.dir/rule
+
+# Convenience name for target.
+swarm_robot_generate_messages_nodejs: swarm_robot/CMakeFiles/swarm_robot_generate_messages_nodejs.dir/rule
+
+.PHONY : swarm_robot_generate_messages_nodejs
+
+# fast build rule for target.
+swarm_robot_generate_messages_nodejs/fast:
+	cd /home/wade/SJTU-swarm/swarm_ws/src/cmake-build-debug && $(MAKE) -f swarm_robot/CMakeFiles/swarm_robot_generate_messages_nodejs.dir/build.make swarm_robot/CMakeFiles/swarm_robot_generate_messages_nodejs.dir/build
+.PHONY : swarm_robot_generate_messages_nodejs/fast
 
 src/coverage_controller.o: src/coverage_controller.cpp.o
 
@@ -300,15 +480,27 @@ help:
 	@echo "... clean"
 	@echo "... depend"
 	@echo "... install/strip"
-	@echo "... install/local"
-	@echo "... install"
 	@echo "... list_install_components"
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
-	@echo "... robot_controller"
-	@echo "... coverage_controller"
 	@echo "... test"
+	@echo "... install/local"
+	@echo "... coverage_controller"
+	@echo "... swarm_robot_genpy"
+	@echo "... swarm_robot_generate_messages_py"
+	@echo "... install"
+	@echo "... swarm_robot_generate_messages_cpp"
+	@echo "... swarm_robot_gencpp"
+	@echo "... _swarm_robot_generate_messages_check_deps_pos_info"
+	@echo "... swarm_robot_genlisp"
+	@echo "... swarm_robot_generate_messages"
+	@echo "... swarm_robot_geneus"
+	@echo "... robot_controller"
+	@echo "... swarm_robot_generate_messages_lisp"
+	@echo "... swarm_robot_gennodejs"
 	@echo "... formation_controller"
+	@echo "... swarm_robot_generate_messages_eus"
+	@echo "... swarm_robot_generate_messages_nodejs"
 	@echo "... src/coverage_controller.o"
 	@echo "... src/coverage_controller.i"
 	@echo "... src/coverage_controller.s"

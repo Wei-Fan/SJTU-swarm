@@ -33,7 +33,7 @@
 #define GRID_SIZE 40
 #define CORE_SIZE 20 //CORE_SIZE = GRID_SIZE / 2
 #define AREA_SIZE 800
-#define LEN_COF 10 // real world length * LEN_COF = Grid length
+#define LEN_COF 200 // real world length * LEN_COF = Grid length
 
 using namespace std;
 using namespace Eigen;
@@ -60,7 +60,7 @@ private:
     ros::Publisher ready_pub;
     vector<ros::Subscriber> raw_sub;
 
-    std::chrono::high_resolution_clock ::time_point recieve_time;
+//    std::chrono::high_resolution_clock ::time_point recieve_time;
 
     Mat board = Mat(Size(900,900), CV_8UC3, Scalar(0));
 
@@ -78,10 +78,10 @@ private:
     vector<int> robot_grid_x;
     vector<int> robot_grid_y;
 //    bool get_init_pos;
-    int get_init_cnt;
+//    int get_init_cnt;
     vector<bool> get_init_bool;
-    vector<int> robot_init_x;
-    vector<int> robot_init_y;
+    vector<float> robot_init_x;
+    vector<float> robot_init_y;
 
 public:
     CoverageCommander(){
@@ -90,8 +90,8 @@ public:
         this->local = local;
         this->global = global;
         if(!this->local.getParam("robot_number", this->robot_number)){
-            ROS_WARN("Did not set up robot number, using default 1");
-            this->robot_number = 1;
+            ROS_WARN("Did not set up robot number, using default 2");
+            this->robot_number = 2;
         }
         ROS_INFO("COVERAGE COMMANDER is activated! COMMANDER has %d robots to dispose", this->robot_number);
         robot_init_x.resize(this->robot_number);
@@ -100,7 +100,7 @@ public:
         service = global.advertiseService("/mCPP_req",&CoverageCommander::plan,this);
 
         /* respond only one time per 5s period */
-        recieve_time = std::chrono::high_resolution_clock::now();
+//        recieve_time = std::chrono::high_resolution_clock::now();
 
         /* tell dispatch center that plan ready */
         ready_pub = global.advertise<std_msgs::Bool>("/plan_ready",1);
@@ -113,46 +113,62 @@ public:
             raw_sub[i] = global.subscribe<geometry_msgs::PoseStamped>(msg_name, 1, &CoverageCommander::rawPosCallback, this);
         }
 //        this->get_init_pos = false;
+        robot_core_x.resize(this->robot_number);
+        robot_core_y.resize(this->robot_number);
+        robot_grid_x.resize(this->robot_number);
+        robot_grid_y.resize(this->robot_number);
         get_init_bool.resize(this->robot_number, false);
-        get_init_cnt = 0;
+
 
         /* initial matrix*/
         K.setZero(); //set zeros
     }
 
     void rawPosCallback(const geometry_msgs::PoseStamped::ConstPtr &msg) {
-        int id = (int)msg->header.seq;
-        robot_init_x[id] = msg->pose.position.x;
-        robot_init_y[id] = msg->pose.position.y;
-        get_init_bool[id] = true;
+
+        int id = stoi(msg->header.frame_id);
+
+        if (!get_init_bool[id])
+        {
+            robot_init_x[id] = msg->pose.position.x;
+            robot_init_y[id] = msg->pose.position.y;
+            get_init_bool[id] = true;
+            ROS_INFO("get robot %d 's init_pos : %f, %f",id,robot_init_x[id],robot_init_y[id]);
+        }
     }
 
     bool plan(swarm_center::mCPPReq::Request &req,
               swarm_center::mCPPReq::Response &res)
+//    void run()
     {
         ROS_INFO("request recieved!");
         /* respond only one time per period */
-        auto cur_time = std::chrono::high_resolution_clock::now();
-        std::chrono::duration<double> lock_time = cur_time-recieve_time;
-        if (lock_time.count() > 5.0) {
-            res.b = true;
-            recieve_time = cur_time;
-        } else {
-            ROS_WARN("not now");
-            res.b = false;
-            return false;
-        }
+//        auto cur_time = std::chrono::high_resolution_clock::now();
+//        std::chrono::duration<double> lock_time = cur_time-recieve_time;
+//        if (lock_time.count() > 5.0) {
+//            res.b = true;
+//            recieve_time = cur_time;
+//        } else {
+//            ROS_WARN("not now");
+//            res.b = false;
+//            return false;
+//        }
 
+        /* check if init positions are obtained */
+        int get_init_cnt = 1;
         while (get_init_cnt != this->robot_number) {
-            get_init_cnt = 0;
-            for (int i = 0; i < get_init_bool.size(); ++i) {
+            get_init_cnt = 1;
+            for (int i = 0; i < this->robot_number; ++i) {
                 if (get_init_bool[i]) {
                     get_init_cnt++;
                 }
             }
+//            ROS_INFO("check init_position");
             ros::spinOnce();
         }
         ROS_INFO("finish init_position collection");
+//        robot_init_x = {0.5, -0.5, -0.5, 0.5};
+//        robot_init_y = {0.5, 0.5, -0.5, -0.5};
 
         /*
         * initial phase
@@ -175,11 +191,11 @@ public:
 //            ROS_INFO("robot : %d,%d",robot_core_x[i],robot_core_y[i]);
 //        }
         for (int i = 0; i < this->robot_number; ++i) {
-            robot_core_x.push_back((robot_init_x[i]*LEN_COF - 50)*CORE_SIZE/AREA_SIZE);
-            robot_core_y.push_back((robot_init_y[i]*LEN_COF - 50)*CORE_SIZE/AREA_SIZE);
-            robot_grid_x.push_back((robot_init_x[i]*LEN_COF - 50)*GRID_SIZE/AREA_SIZE);
-            robot_grid_y.push_back((robot_init_y[i]*LEN_COF - 50)*GRID_SIZE/AREA_SIZE);
-            ROS_INFO("robot : %d,%d (dm)",robot_core_x[i],robot_core_y[i]);
+            robot_core_x[i] = (robot_init_x[i]*LEN_COF+AREA_SIZE/2)*CORE_SIZE/AREA_SIZE;
+            robot_core_y[i] = (-robot_init_y[i]*LEN_COF+AREA_SIZE/2)*CORE_SIZE/AREA_SIZE;
+            robot_grid_x[i] = (robot_init_x[i]*LEN_COF+AREA_SIZE/2)*GRID_SIZE/AREA_SIZE;
+            robot_grid_y[i] = (-robot_init_y[i]*LEN_COF+AREA_SIZE/2)*GRID_SIZE/AREA_SIZE;
+            ROS_INFO("robot : %d,%d (core)",robot_core_x[i],robot_core_y[i]);
         }
 
 
@@ -205,54 +221,57 @@ public:
 
         std_msgs::Bool ready_msg;
         ready_msg.data = true;
-        ready_pub.publish(ready_msg);
+        for (int i = 0; i < 10; ++i) {
+            ready_pub.publish(ready_msg);
+        }
 //        this->get_init_pos = false;
         ROS_INFO("send ready signal from coverage center");
 
+        res.b = true;
         return true;
     }
 
-//    void display_area(){
-//        /*draw an empty area*/
-////        ROS_INFO("debug 2");
-//        namedWindow("monitor");
-//        Point p1 = Point(50,50);
-//        Point p2 = Point(AREA_SIZE+50,AREA_SIZE+50);
-//        rectangle(board, p1, p2, CV_RGB(245, 245, 245), -1);
-////        imshow("monitor", board);
-//
-//        /*draw grids*/
-////        ROS_INFO("debug 3");
-//        int stepSize = (int)800/GRID_SIZE;
-//        for (int i = stepSize; i < AREA_SIZE; i += stepSize) {
-//            line(board, Point(50,50+i),Point(AREA_SIZE+50,50+i),Scalar(0,0,0));
-//        }
-//
-//        for (int i = stepSize; i < AREA_SIZE; i += stepSize) {
-//            line(board, Point(50+i,50),Point(50+i,AREA_SIZE+50),Scalar(0,0,0));
-//        }
-////        ROS_INFO("draw grids complete");
-//
-//        /*draw result*/
-//        for (int i = 0; i < CORE_SIZE; i += 1) { //cols
-//            for (int j = 0; j < CORE_SIZE; j += 1) { //rows
-//                if (K(j,i)==0)
-//                    continue;
-//                Point t1 = Point(j*stepSize*2+50,i*stepSize*2+50);
-//                Point t2 = Point((j+1)*stepSize*2+50,(i+1)*stepSize*2+50);
-//                rectangle(board, t1, t2, CV_RGB(0,0,255), -1);
-//            }
-//        }
-////        ROS_INFO("draw K complete");
-//
-//
-////        ROS_INFO("debug 4");
-////        ROS_INFO("size of board : %d, %d", board.size().height, board.size().width);
+    void display_area(){
+        /*draw an empty area*/
+//        ROS_INFO("debug 2");
+        namedWindow("monitor");
+        Point p1 = Point(50,50);
+        Point p2 = Point(AREA_SIZE+50,AREA_SIZE+50);
+        rectangle(board, p1, p2, CV_RGB(245, 245, 245), -1);
 //        imshow("monitor", board);
-//        waitKey();
-//
-////        destroyWindow("monitor");
-//    }
+
+        /*draw grids*/
+//        ROS_INFO("debug 3");
+        int stepSize = (int)800/GRID_SIZE;
+        for (int i = stepSize; i < AREA_SIZE; i += stepSize) {
+            line(board, Point(50,50+i),Point(AREA_SIZE+50,50+i),Scalar(0,0,0));
+        }
+
+        for (int i = stepSize; i < AREA_SIZE; i += stepSize) {
+            line(board, Point(50+i,50),Point(50+i,AREA_SIZE+50),Scalar(0,0,0));
+        }
+//        ROS_INFO("draw grids complete");
+
+        /*draw result*/
+        for (int i = 0; i < CORE_SIZE; i += 1) { //cols
+            for (int j = 0; j < CORE_SIZE; j += 1) { //rows
+                if (K(j,i)==0)
+                    continue;
+                Point t1 = Point(j*stepSize*2+50,i*stepSize*2+50);
+                Point t2 = Point((j+1)*stepSize*2+50,(i+1)*stepSize*2+50);
+                rectangle(board, t1, t2, CV_RGB(0,0,255), -1);
+            }
+        }
+//        ROS_INFO("draw K complete");
+
+
+//        ROS_INFO("debug 4");
+//        ROS_INFO("size of board : %d, %d", board.size().height, board.size().width);
+        imshow("monitor", board);
+        waitKey();
+
+//        destroyWindow("monitor");
+    }
 
 //    static void onMouse(int event, int x, int y, int, void* userInput)
 //    {
@@ -435,7 +454,7 @@ public:
             }
 
             if ((stop1 && stop2) || iteration_count==300){
-                cout << "S : /n" << endl << S << endl;
+                cout << "S : \n" << S << endl;
                 stop = true;
             }
         }
@@ -807,18 +826,26 @@ public:
             /* write csv file */
             ofstream outfile;
             outfile.open(filename,ios::out);
+
+            /* init pos to first grid center */
+            float len_x = (P_grid_t[0](1)-GRID_SIZE/2+0.5)*AREA_SIZE/GRID_SIZE/LEN_COF - robot_init_x[k];
+            float len_y = (GRID_SIZE/2-P_grid_t[0](0)-0.5)*AREA_SIZE/GRID_SIZE/LEN_COF - robot_init_y[k];
+            for (int i = 1; i <= 10; ++i) {
+                outfile << robot_init_x[k]+len_x*i/10 << ',' << robot_init_y[k]+len_y*i/10 << ',' << 1.0 << endl;
+            }
+
             for (int i = 0; i < P_grid_t.size()-1; ++i) {
                 for (int j = 0; j < turn_blank/2; ++j) {
-                    outfile << P_grid_t[i](0) << ',' << P_grid_t[i](1) << ',' << 1.0 << endl;
+                    outfile << (P_grid_t[i](1)-GRID_SIZE/2+0.5)*AREA_SIZE/GRID_SIZE/LEN_COF << ',' << (GRID_SIZE/2-P_grid_t[i](0)-0.5)*AREA_SIZE/GRID_SIZE/LEN_COF << ',' << 1.0 << endl;
                 }
 
                 int xoy;
                 double s;
                 if (P_grid_t[i](0)==P_grid_t[i+1](0)) {
-                    xoy = 1;
+                    xoy = 0;
                     s = abs(P_grid_t[i](1)-P_grid_t[i+1](1));
                 } else {
-                    xoy = 0;
+                    xoy = 1;
                     s = abs(P_grid_t[i](0)-P_grid_t[i+1](0));
                 }
                 //        cout << P_grid[i](xoy) << endl;
@@ -839,9 +866,9 @@ public:
                             x += dx;
                         }
                         if (xoy==0)
-                            outfile << (x+P_grid_t[i](0))/LEN_COF << ',' << P_grid_t[i](1)/LEN_COF << ',' << 1.0 << endl;
+                            outfile << (x+P_grid_t[i](1)-GRID_SIZE/2+0.5)*AREA_SIZE/GRID_SIZE/LEN_COF << ',' << (GRID_SIZE/2-P_grid_t[i](0)-0.5)*AREA_SIZE/GRID_SIZE/LEN_COF << ',' << 1.0 << endl;
                         else
-                            outfile << P_grid_t[i](0)/LEN_COF << ',' << (x+P_grid_t[i](1))/LEN_COF << ',' << 1.0 << endl;
+                            outfile << (P_grid_t[i](1)-GRID_SIZE/2+0.5)*AREA_SIZE/GRID_SIZE/LEN_COF << ',' << (GRID_SIZE/2-x-P_grid_t[i](0)-0.5)*AREA_SIZE/GRID_SIZE/LEN_COF << ',' << 1.0 << endl;
                     }
 
                 } else {
@@ -858,14 +885,14 @@ public:
                             x += dx;
                         }
                         if (xoy==0)
-                            outfile << (x+P_grid_t[i](0))/LEN_COF << ',' << P_grid_t[i](1)/LEN_COF << ',' << 1.0 << endl;
+                            outfile << (x+P_grid_t[i](1)-GRID_SIZE/2+0.5)*AREA_SIZE/GRID_SIZE/LEN_COF << ',' << (GRID_SIZE/2-P_grid_t[i](0)-0.5)*AREA_SIZE/GRID_SIZE/LEN_COF << ',' << 1.0 << endl;
                         else
-                            outfile << P_grid_t[i](0)/LEN_COF << ',' << (x+P_grid_t[i](1))/LEN_COF << ',' << 1.0 << endl;
+                            outfile << (P_grid_t[i](1)-GRID_SIZE/2+0.5)*AREA_SIZE/GRID_SIZE/LEN_COF << ',' << (GRID_SIZE/2-x-P_grid_t[i](0)-0.5)*AREA_SIZE/GRID_SIZE/LEN_COF << ',' << 1.0 << endl;
                     }
                 }
 
                 for (int j = 0; j < turn_blank/2; ++j) {
-                    outfile << P_grid_t[i+1](0)/LEN_COF << ',' << P_grid_t[i+1](1)/LEN_COF << ',' << 1.0 << endl;
+                    outfile << (P_grid_t[i+1](1)-GRID_SIZE/2+0.5)*AREA_SIZE/GRID_SIZE/LEN_COF << ',' << (GRID_SIZE/2-P_grid_t[i+1](0)-0.5)*AREA_SIZE/GRID_SIZE/LEN_COF << ',' << 1.0 << endl;
                 }
             }
         }

@@ -1,8 +1,8 @@
 # generated from genmsg/cmake/pkg-genmsg.cmake.em
 
-message(STATUS "swarm_center: 0 messages, 1 services")
+message(STATUS "swarm_center: 1 messages, 1 services")
 
-set(MSG_I_FLAGS "-Igeometry_msgs:/opt/ros/kinetic/share/geometry_msgs/cmake/../msg;-Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg")
+set(MSG_I_FLAGS "-Iswarm_center:/home/wade/SJTU-swarm/swarm_ws/src/swarm_center/msg;-Igeometry_msgs:/opt/ros/kinetic/share/geometry_msgs/cmake/../msg;-Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg")
 
 # Find all generators
 find_package(gencpp REQUIRED)
@@ -22,12 +22,23 @@ add_custom_target(_swarm_center_generate_messages_check_deps_${_filename}
   COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "swarm_center" "/home/wade/SJTU-swarm/swarm_ws/src/swarm_center/srv/mCPPReq.srv" ""
 )
 
+get_filename_component(_filename "/home/wade/SJTU-swarm/swarm_ws/src/swarm_center/msg/pos_info.msg" NAME_WE)
+add_custom_target(_swarm_center_generate_messages_check_deps_${_filename}
+  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "swarm_center" "/home/wade/SJTU-swarm/swarm_ws/src/swarm_center/msg/pos_info.msg" "geometry_msgs/Quaternion:geometry_msgs/PoseStamped:geometry_msgs/Pose:std_msgs/Header:geometry_msgs/Point"
+)
+
 #
 #  langs = gencpp;geneus;genlisp;gennodejs;genpy
 #
 
 ### Section generating for lang: gencpp
 ### Generating Messages
+_generate_msg_cpp(swarm_center
+  "/home/wade/SJTU-swarm/swarm_ws/src/swarm_center/msg/pos_info.msg"
+  "${MSG_I_FLAGS}"
+  "/opt/ros/kinetic/share/geometry_msgs/cmake/../msg/Quaternion.msg;/opt/ros/kinetic/share/geometry_msgs/cmake/../msg/PoseStamped.msg;/opt/ros/kinetic/share/geometry_msgs/cmake/../msg/Pose.msg;/opt/ros/kinetic/share/std_msgs/cmake/../msg/Header.msg;/opt/ros/kinetic/share/geometry_msgs/cmake/../msg/Point.msg"
+  ${CATKIN_DEVEL_PREFIX}/${gencpp_INSTALL_DIR}/swarm_center
+)
 
 ### Generating Services
 _generate_srv_cpp(swarm_center
@@ -51,6 +62,8 @@ add_dependencies(swarm_center_generate_messages swarm_center_generate_messages_c
 # add dependencies to all check dependencies targets
 get_filename_component(_filename "/home/wade/SJTU-swarm/swarm_ws/src/swarm_center/srv/mCPPReq.srv" NAME_WE)
 add_dependencies(swarm_center_generate_messages_cpp _swarm_center_generate_messages_check_deps_${_filename})
+get_filename_component(_filename "/home/wade/SJTU-swarm/swarm_ws/src/swarm_center/msg/pos_info.msg" NAME_WE)
+add_dependencies(swarm_center_generate_messages_cpp _swarm_center_generate_messages_check_deps_${_filename})
 
 # target for backward compatibility
 add_custom_target(swarm_center_gencpp)
@@ -61,6 +74,12 @@ list(APPEND ${PROJECT_NAME}_EXPORTED_TARGETS swarm_center_generate_messages_cpp)
 
 ### Section generating for lang: geneus
 ### Generating Messages
+_generate_msg_eus(swarm_center
+  "/home/wade/SJTU-swarm/swarm_ws/src/swarm_center/msg/pos_info.msg"
+  "${MSG_I_FLAGS}"
+  "/opt/ros/kinetic/share/geometry_msgs/cmake/../msg/Quaternion.msg;/opt/ros/kinetic/share/geometry_msgs/cmake/../msg/PoseStamped.msg;/opt/ros/kinetic/share/geometry_msgs/cmake/../msg/Pose.msg;/opt/ros/kinetic/share/std_msgs/cmake/../msg/Header.msg;/opt/ros/kinetic/share/geometry_msgs/cmake/../msg/Point.msg"
+  ${CATKIN_DEVEL_PREFIX}/${geneus_INSTALL_DIR}/swarm_center
+)
 
 ### Generating Services
 _generate_srv_eus(swarm_center
@@ -84,6 +103,8 @@ add_dependencies(swarm_center_generate_messages swarm_center_generate_messages_e
 # add dependencies to all check dependencies targets
 get_filename_component(_filename "/home/wade/SJTU-swarm/swarm_ws/src/swarm_center/srv/mCPPReq.srv" NAME_WE)
 add_dependencies(swarm_center_generate_messages_eus _swarm_center_generate_messages_check_deps_${_filename})
+get_filename_component(_filename "/home/wade/SJTU-swarm/swarm_ws/src/swarm_center/msg/pos_info.msg" NAME_WE)
+add_dependencies(swarm_center_generate_messages_eus _swarm_center_generate_messages_check_deps_${_filename})
 
 # target for backward compatibility
 add_custom_target(swarm_center_geneus)
@@ -94,6 +115,12 @@ list(APPEND ${PROJECT_NAME}_EXPORTED_TARGETS swarm_center_generate_messages_eus)
 
 ### Section generating for lang: genlisp
 ### Generating Messages
+_generate_msg_lisp(swarm_center
+  "/home/wade/SJTU-swarm/swarm_ws/src/swarm_center/msg/pos_info.msg"
+  "${MSG_I_FLAGS}"
+  "/opt/ros/kinetic/share/geometry_msgs/cmake/../msg/Quaternion.msg;/opt/ros/kinetic/share/geometry_msgs/cmake/../msg/PoseStamped.msg;/opt/ros/kinetic/share/geometry_msgs/cmake/../msg/Pose.msg;/opt/ros/kinetic/share/std_msgs/cmake/../msg/Header.msg;/opt/ros/kinetic/share/geometry_msgs/cmake/../msg/Point.msg"
+  ${CATKIN_DEVEL_PREFIX}/${genlisp_INSTALL_DIR}/swarm_center
+)
 
 ### Generating Services
 _generate_srv_lisp(swarm_center
@@ -117,6 +144,8 @@ add_dependencies(swarm_center_generate_messages swarm_center_generate_messages_l
 # add dependencies to all check dependencies targets
 get_filename_component(_filename "/home/wade/SJTU-swarm/swarm_ws/src/swarm_center/srv/mCPPReq.srv" NAME_WE)
 add_dependencies(swarm_center_generate_messages_lisp _swarm_center_generate_messages_check_deps_${_filename})
+get_filename_component(_filename "/home/wade/SJTU-swarm/swarm_ws/src/swarm_center/msg/pos_info.msg" NAME_WE)
+add_dependencies(swarm_center_generate_messages_lisp _swarm_center_generate_messages_check_deps_${_filename})
 
 # target for backward compatibility
 add_custom_target(swarm_center_genlisp)
@@ -127,6 +156,12 @@ list(APPEND ${PROJECT_NAME}_EXPORTED_TARGETS swarm_center_generate_messages_lisp
 
 ### Section generating for lang: gennodejs
 ### Generating Messages
+_generate_msg_nodejs(swarm_center
+  "/home/wade/SJTU-swarm/swarm_ws/src/swarm_center/msg/pos_info.msg"
+  "${MSG_I_FLAGS}"
+  "/opt/ros/kinetic/share/geometry_msgs/cmake/../msg/Quaternion.msg;/opt/ros/kinetic/share/geometry_msgs/cmake/../msg/PoseStamped.msg;/opt/ros/kinetic/share/geometry_msgs/cmake/../msg/Pose.msg;/opt/ros/kinetic/share/std_msgs/cmake/../msg/Header.msg;/opt/ros/kinetic/share/geometry_msgs/cmake/../msg/Point.msg"
+  ${CATKIN_DEVEL_PREFIX}/${gennodejs_INSTALL_DIR}/swarm_center
+)
 
 ### Generating Services
 _generate_srv_nodejs(swarm_center
@@ -150,6 +185,8 @@ add_dependencies(swarm_center_generate_messages swarm_center_generate_messages_n
 # add dependencies to all check dependencies targets
 get_filename_component(_filename "/home/wade/SJTU-swarm/swarm_ws/src/swarm_center/srv/mCPPReq.srv" NAME_WE)
 add_dependencies(swarm_center_generate_messages_nodejs _swarm_center_generate_messages_check_deps_${_filename})
+get_filename_component(_filename "/home/wade/SJTU-swarm/swarm_ws/src/swarm_center/msg/pos_info.msg" NAME_WE)
+add_dependencies(swarm_center_generate_messages_nodejs _swarm_center_generate_messages_check_deps_${_filename})
 
 # target for backward compatibility
 add_custom_target(swarm_center_gennodejs)
@@ -160,6 +197,12 @@ list(APPEND ${PROJECT_NAME}_EXPORTED_TARGETS swarm_center_generate_messages_node
 
 ### Section generating for lang: genpy
 ### Generating Messages
+_generate_msg_py(swarm_center
+  "/home/wade/SJTU-swarm/swarm_ws/src/swarm_center/msg/pos_info.msg"
+  "${MSG_I_FLAGS}"
+  "/opt/ros/kinetic/share/geometry_msgs/cmake/../msg/Quaternion.msg;/opt/ros/kinetic/share/geometry_msgs/cmake/../msg/PoseStamped.msg;/opt/ros/kinetic/share/geometry_msgs/cmake/../msg/Pose.msg;/opt/ros/kinetic/share/std_msgs/cmake/../msg/Header.msg;/opt/ros/kinetic/share/geometry_msgs/cmake/../msg/Point.msg"
+  ${CATKIN_DEVEL_PREFIX}/${genpy_INSTALL_DIR}/swarm_center
+)
 
 ### Generating Services
 _generate_srv_py(swarm_center
@@ -182,6 +225,8 @@ add_dependencies(swarm_center_generate_messages swarm_center_generate_messages_p
 
 # add dependencies to all check dependencies targets
 get_filename_component(_filename "/home/wade/SJTU-swarm/swarm_ws/src/swarm_center/srv/mCPPReq.srv" NAME_WE)
+add_dependencies(swarm_center_generate_messages_py _swarm_center_generate_messages_check_deps_${_filename})
+get_filename_component(_filename "/home/wade/SJTU-swarm/swarm_ws/src/swarm_center/msg/pos_info.msg" NAME_WE)
 add_dependencies(swarm_center_generate_messages_py _swarm_center_generate_messages_check_deps_${_filename})
 
 # target for backward compatibility

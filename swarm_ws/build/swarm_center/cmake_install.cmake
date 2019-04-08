@@ -33,6 +33,10 @@ if(NOT DEFINED CMAKE_INSTALL_SO_NO_EXE)
 endif()
 
 if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/swarm_center/msg" TYPE FILE FILES "/home/wade/SJTU-swarm/swarm_ws/src/swarm_center/msg/pos_info.msg")
+endif()
+
+if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
   file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/swarm_center/srv" TYPE FILE FILES "/home/wade/SJTU-swarm/swarm_ws/src/swarm_center/srv/mCPPReq.srv")
 endif()
 

@@ -6,7 +6,7 @@
 
 #IncludeRegexTransform: 
 
-/home/wade/SJTU-swarm/swarm_ws/src/swarm_robot/include/Hungarian.h
+/home/wade/SJTU-swarm/swarm_ws/src/swarm_robot/./include/Hungarian.h
 iostream
 -
 vector
@@ -18,15 +18,15 @@ cfloat
 cmath
 -
 Hungarian.h
-/home/wade/SJTU-swarm/swarm_ws/src/swarm_robot/include/Hungarian.h
+/home/wade/SJTU-swarm/swarm_ws/src/swarm_robot/./include/Hungarian.h
 
-/home/wade/SJTU-swarm/swarm_ws/src/swarm_robot/include/eiquadprog.h
+/home/wade/SJTU-swarm/swarm_ws/src/swarm_robot/./include/eiquadprog.h
 Eigen/Dense
 -
 cmath
 -
 
-/home/wade/SJTU-swarm/swarm_ws/src/swarm_robot/include/swarm_robot/formation_controller.h
+/home/wade/SJTU-swarm/swarm_ws/src/swarm_robot/./include/swarm_robot/formation_controller.h
 ros/ros.h
 -
 vector

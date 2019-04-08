@@ -452,6 +452,8 @@ std_srvs_DIR:PATH=/opt/ros/kinetic/share/std_srvs/cmake
 //Value Computed by CMake
 swarm_center_BINARY_DIR:STATIC=/home/wade/SJTU-swarm/swarm_ws/build/swarm_center
 
+swarm_center_DIR:PATH=
+
 //Value Computed by CMake
 swarm_center_SOURCE_DIR:STATIC=/home/wade/SJTU-swarm/swarm_ws/src/swarm_center
 

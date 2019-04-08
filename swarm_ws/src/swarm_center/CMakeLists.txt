@@ -56,11 +56,11 @@ find_package(catkin REQUIRED COMPONENTS
 ##   * add every package in MSG_DEP_SET to generate_messages(DEPENDENCIES ...)
 
 ## Generate messages in the 'msg' folder
-# add_message_files(
-#   FILES
+ add_message_files(
+   FILES
 #   Message1.msg
-#   Message2.msg
-# )
+   pos_info.msg
+ )
 
 ## Generate services in the 'srv' folder
  add_service_files(
@@ -125,7 +125,7 @@ FIND_PACKAGE(OpenCV REQUIRED)
 catkin_package(
   INCLUDE_DIRS include
   LIBRARIES ${PROJECT_NAME}
-  CATKIN_DEPENDS geometery_msgs roscpp rospy std_msgs message_runtime
+  CATKIN_DEPENDS geometry_msgs roscpp rospy std_msgs message_runtime
   message_runtime
   vicon_bridge
   visualization_msgs

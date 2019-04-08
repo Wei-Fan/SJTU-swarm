@@ -8,6 +8,8 @@
 #include <std_msgs/UInt8.h>
 #include <geometry_msgs/PoseStamped.h>
 
+//#include <swarm_robot/p>
+
 #define DEFAULT_RATE 20
 
 using namespace std;
@@ -126,7 +128,7 @@ public:
         ros::Rate loop_rate(DEFAULT_RATE);
         while(ros::ok()){
             /*update curr_pos and cmd_sp. Publish them.*/
-            if (!state_prepare||!pos_prepare)//undo this once we add swarm_driver
+            if (!state_prepare||!pos_prepare)
             {
                 ros::spinOnce();
                 loop_rate.sleep();
@@ -146,11 +148,21 @@ public:
                     break;
                 }
                 case Takeoff: {
+                    ROS_INFO("taking off");
                     pos_sp.position.x = cmd_incsv[0].xyz[0];
                     pos_sp.position.y = cmd_incsv[0].xyz[1];
+                    pos_sp.position.z = -1;
+
+                    /* test link */
+                    for (int i = 1; i <= 40; ++i) {
+                        cmd_pos_pub.publish(pos_sp);
+                        ros::spinOnce();
+                        loop_rate.sleep();
+                    }
+
                     pos_sp.position.z = 0;
                     for (int i = 1; i <= 40; ++i) {
-                        pos_sp.position.z += cmd_incsv[0].xyz[2]*i/40;
+                        pos_sp.position.z = float(i)/40.0;
 
                         cmd_pos_pub.publish(pos_sp);
                         ros::spinOnce();
@@ -162,16 +174,18 @@ public:
                         ros::spinOnce();
                         loop_rate.sleep();
                     }
+                    ROS_INFO("switch to commanding");
                     m_flight_state = Commanding;
                     break;
                 }
                 case Commanding:{
+//                    ROS_INFO("commanding");
                     pos_sp.position.x = cmd_incsv[cmd_cnt].xyz[0];
                     pos_sp.position.y = cmd_incsv[cmd_cnt].xyz[1];
                     pos_sp.position.z = cmd_incsv[cmd_cnt].xyz[2];
                     cmd_pos_pub.publish(pos_sp);
                     cmd_cnt++;
-                    ROS_INFO("robot%d count : %d",this->robot_id,cmd_cnt);
+//                    ROS_INFO("robot%d count : %d",this->robot_id,cmd_cnt);
                     ros::spinOnce();
                     loop_rate.sleep();
                     break;
@@ -189,10 +203,10 @@ public:
                     break;
                 }
                 default:{
-                    pos_sp.position.x = curr_pos.position.x;
-                    pos_sp.position.y = curr_pos.position.y;
-                    pos_sp.position.z = curr_pos.position.z;
-                    cmd_pos_pub.publish(pos_sp);
+//                    pos_sp.position.x = curr_pos.position.x;
+//                    pos_sp.position.y = curr_pos.position.y;
+//                    pos_sp.position.z = curr_pos.position.z;
+//                    cmd_pos_pub.publish(pos_sp);
                     ros::spinOnce();
                     loop_rate.sleep();
                     break;
