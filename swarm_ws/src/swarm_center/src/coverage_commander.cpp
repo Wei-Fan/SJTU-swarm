@@ -862,10 +862,10 @@ public:
                 int xoy;
                 double s;
                 if (P_grid_t[i](0)==P_grid_t[i+1](0)) {
-                    xoy = 0;
+                    xoy = 1;
                     s = abs(P_grid_t[i](1)-P_grid_t[i+1](1));
                 } else {
-                    xoy = 1;
+                    xoy = 0;
                     s = abs(P_grid_t[i](0)-P_grid_t[i+1](0));
                 }
                 //        cout << P_grid[i](xoy) << endl;
@@ -885,10 +885,17 @@ public:
                             dx -= amax*dt*dt;
                             x += dx;
                         }
-                        if (xoy==0)
-                            outfile << (x+P_grid_t[i](1)-GRID_SIZE/2+0.5)*AREA_SIZE/GRID_SIZE/LEN_COF << ',' << (P_grid_t[i](0)-GRID_SIZE/2+0.5)*AREA_SIZE/GRID_SIZE/LEN_COF << ',' << 1.0 << endl;
-                        else
-                            outfile << (P_grid_t[i](1)-GRID_SIZE/2+0.5)*AREA_SIZE/GRID_SIZE/LEN_COF << ',' << (P_grid_t[i](0)-GRID_SIZE/2+0.5)*AREA_SIZE/GRID_SIZE/LEN_COF << ',' << 1.0 << endl;
+                        if (xoy==1){
+                            if (P_grid_t[i](1)<P_grid_t[i+1](1))
+                                outfile << (x+P_grid_t[i](1)-GRID_SIZE/2+0.5)*AREA_SIZE/GRID_SIZE/LEN_COF << ',' << (P_grid_t[i](0)-GRID_SIZE/2+0.5)*AREA_SIZE/GRID_SIZE/LEN_COF << ',' << 1.0 << endl;
+                            else
+                                outfile << (-x+P_grid_t[i](1)-GRID_SIZE/2+0.5)*AREA_SIZE/GRID_SIZE/LEN_COF << ',' << (P_grid_t[i](0)-GRID_SIZE/2+0.5)*AREA_SIZE/GRID_SIZE/LEN_COF << ',' << 1.0 << endl;
+                        } else{
+                            if (P_grid_t[i](0)<P_grid_t[i+1](0))
+                                outfile << (P_grid_t[i](1)-GRID_SIZE/2+0.5)*AREA_SIZE/GRID_SIZE/LEN_COF << ',' << (x+P_grid_t[i](0)-GRID_SIZE/2+0.5)*AREA_SIZE/GRID_SIZE/LEN_COF << ',' << 1.0 << endl;
+                            else
+                                outfile << (P_grid_t[i](1)-GRID_SIZE/2+0.5)*AREA_SIZE/GRID_SIZE/LEN_COF << ',' << (-x+P_grid_t[i](0)-GRID_SIZE/2+0.5)*AREA_SIZE/GRID_SIZE/LEN_COF << ',' << 1.0 << endl;
+                        }
                     }
 
                 } else {
@@ -904,10 +911,17 @@ public:
                             dx -= amax*dt*dt;
                             x += dx;
                         }
-                        if (xoy==0)
-                            outfile << (x+P_grid_t[i](1)-GRID_SIZE/2+0.5)*AREA_SIZE/GRID_SIZE/LEN_COF << ',' << (P_grid_t[i](0)-GRID_SIZE/2+0.5)*AREA_SIZE/GRID_SIZE/LEN_COF << ',' << 1.0 << endl;
-                        else
-                            outfile << (P_grid_t[i](1)-GRID_SIZE/2+0.5)*AREA_SIZE/GRID_SIZE/LEN_COF << ',' << (P_grid_t[i](0)-GRID_SIZE/2+0.5)*AREA_SIZE/GRID_SIZE/LEN_COF << ',' << 1.0 << endl;
+                        if (xoy==1) {
+                            if (P_grid_t[i](1)<P_grid_t[i+1](1))
+                                outfile << (x+P_grid_t[i](1)-GRID_SIZE/2+0.5)*AREA_SIZE/GRID_SIZE/LEN_COF << ',' << (P_grid_t[i](0)-GRID_SIZE/2+0.5)*AREA_SIZE/GRID_SIZE/LEN_COF << ',' << 1.0 << endl;
+                            else
+                                outfile << (-x+P_grid_t[i](1)-GRID_SIZE/2+0.5)*AREA_SIZE/GRID_SIZE/LEN_COF << ',' << (P_grid_t[i](0)-GRID_SIZE/2+0.5)*AREA_SIZE/GRID_SIZE/LEN_COF << ',' << 1.0 << endl;
+                        } else {
+                            if (P_grid_t[i](0)<P_grid_t[i+1](0))
+                                outfile << (P_grid_t[i](1)-GRID_SIZE/2+0.5)*AREA_SIZE/GRID_SIZE/LEN_COF << ',' << (x+P_grid_t[i](0)-GRID_SIZE/2+0.5)*AREA_SIZE/GRID_SIZE/LEN_COF << ',' << 1.0 << endl;
+                            else
+                                outfile << (P_grid_t[i](1)-GRID_SIZE/2+0.5)*AREA_SIZE/GRID_SIZE/LEN_COF << ',' << (-x+P_grid_t[i](0)-GRID_SIZE/2+0.5)*AREA_SIZE/GRID_SIZE/LEN_COF << ',' << 1.0 << endl;
+                        }
                     }
                 }
 
