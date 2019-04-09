@@ -154,7 +154,7 @@ public:
                     pos_sp.position.z = -1;
 
                     /* test link */
-                    for (int i = 1; i <= 40; ++i) {
+                    for (int i = 1; i <= 80; ++i) {
                         cmd_pos_pub.publish(pos_sp);
                         ros::spinOnce();
                         loop_rate.sleep();
@@ -169,7 +169,7 @@ public:
                         loop_rate.sleep();
                     }
 
-                    for (int i = 1; i <= 40; ++i) {
+                    for (int i = 1; i <= 80; ++i) {
                         cmd_pos_pub.publish(pos_sp);
                         ros::spinOnce();
                         loop_rate.sleep();

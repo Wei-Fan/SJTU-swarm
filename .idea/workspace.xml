@@ -136,9 +136,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5b582add-7293-46c9-8cb2-5d9a77dfa8df" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/swarm_ws/build/swarm_center/CMakeFiles/coverage_commander.dir/src/coverage_commander.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/swarm_ws/build/swarm_center/CMakeFiles/coverage_commander.dir/src/coverage_commander.cpp.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/swarm_ws/build/swarm_robot/CMakeFiles/coverage_controller.dir/src/coverage_controller.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/swarm_ws/build/swarm_robot/CMakeFiles/coverage_controller.dir/src/coverage_controller.cpp.o" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/swarm_ws/devel/lib/swarm_center/coverage_commander" beforeDir="false" afterPath="$PROJECT_DIR$/swarm_ws/devel/lib/swarm_center/coverage_commander" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/swarm_ws/devel/lib/swarm_robot/coverage_controller" beforeDir="false" afterPath="$PROJECT_DIR$/swarm_ws/devel/lib/swarm_robot/coverage_controller" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/swarm_ws/src/swarm_center/launch/cover_robot0.csv" beforeDir="false" afterPath="$PROJECT_DIR$/swarm_ws/src/swarm_center/launch/cover_robot0.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/swarm_ws/src/swarm_center/launch/cover_robot1.csv" beforeDir="false" afterPath="$PROJECT_DIR$/swarm_ws/src/swarm_center/launch/cover_robot1.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/swarm_ws/src/swarm_center/launch/cover_robot2.csv" beforeDir="false" afterPath="$PROJECT_DIR$/swarm_ws/src/swarm_center/launch/cover_robot2.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/swarm_ws/src/swarm_center/launch/cover_robot3.csv" beforeDir="false" afterPath="$PROJECT_DIR$/swarm_ws/src/swarm_center/launch/cover_robot3.csv" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/swarm_ws/src/swarm_center/src/coverage_commander.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/swarm_ws/src/swarm_center/src/coverage_commander.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/swarm_ws/src/swarm_center/src/swarm_driver.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/swarm_ws/src/swarm_center/src/swarm_driver.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/swarm_ws/src/swarm_robot/src/coverage_controller.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/swarm_ws/src/swarm_robot/src/coverage_controller.cpp" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/swarm_ws/src/cmake-build-debug/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -200,7 +209,7 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="cpp" value="14546" />
+          <entry key="cpp" value="14832" />
           <entry key="h" value="41" />
           <entry key="launch" value="517" />
           <entry key="md" value="2035" />
@@ -214,7 +223,7 @@
           <entry key="DTD" value="517" />
           <entry key="Doxygen file" value="3" />
           <entry key="Markdown" value="2035" />
-          <entry key="ObjectiveC" value="14584" />
+          <entry key="ObjectiveC" value="14870" />
           <entry key="XML" value="20" />
         </counts>
       </usages-collector>
@@ -226,14 +235,14 @@
     </session>
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.83179724">
+    <splitter split-orientation="horizontal" split-proportion="0.4407277">
       <split-first>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-          <file pinned="false" current-in-tab="true">
+          <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/swarm_ws/src/swarm_config/launch/test_one.launch">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="1463">
-                  <caret line="83" column="28" selection-start-line="83" selection-start-column="28" selection-end-line="83" selection-end-column="28" />
+                <state relative-caret-position="190">
+                  <caret line="16" column="13" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="13" />
                 </state>
               </provider>
             </entry>
@@ -265,11 +274,11 @@
               </provider>
             </entry>
           </file>
-          <file pinned="false" current-in-tab="false">
+          <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/swarm_ws/src/swarm_center/src/coverage_commander.cpp">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="1042">
-                  <caret line="897" column="25" selection-start-line="897" selection-start-column="25" selection-end-line="897" selection-end-column="25" />
+                <state relative-caret-position="1227">
+                  <caret line="867" column="36" selection-start-line="867" selection-start-column="36" selection-end-line="867" selection-end-column="36" />
                   <folding>
                     <element signature="e#187#207#0" expanded="true" />
                   </folding>
@@ -305,8 +314,8 @@
           <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/swarm_ws/src/swarm_robot/src/coverage_controller.cpp">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="3116">
-                  <caret line="164" column="55" selection-start-line="164" selection-start-column="55" selection-end-line="164" selection-end-column="55" />
+                <state relative-caret-position="771">
+                  <caret line="168" column="34" selection-start-line="168" selection-start-column="34" selection-end-line="168" selection-end-column="34" />
                   <folding>
                     <element signature="e#0#20#0" expanded="true" />
                   </folding>
@@ -317,8 +326,8 @@
           <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/swarm_ws/src/swarm_center/src/swarm_driver.cpp">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="19">
-                  <caret line="46" column="21" selection-start-line="46" selection-start-column="7" selection-end-line="46" selection-end-column="21" />
+                <state relative-caret-position="304">
+                  <caret line="553" column="41" lean-forward="true" selection-start-line="553" selection-start-column="41" selection-end-line="553" selection-end-column="41" />
                   <folding>
                     <element signature="e#0#20#0" expanded="true" />
                   </folding>
@@ -406,10 +415,10 @@
         <option value="$PROJECT_DIR$/swarm_ws/src/swarm_center/CMakeLists.txt" />
         <option value="$PROJECT_DIR$/swarm_ws/src/swarm_robot/CMakeLists.txt" />
         <option value="$PROJECT_DIR$/swarm_ws/src/swarm_center/src/dispatch_center.cpp" />
-        <option value="$PROJECT_DIR$/swarm_ws/src/swarm_center/src/swarm_driver.cpp" />
-        <option value="$PROJECT_DIR$/swarm_ws/src/swarm_robot/src/coverage_controller.cpp" />
         <option value="$PROJECT_DIR$/swarm_ws/src/swarm_config/launch/test_one.launch" />
         <option value="$PROJECT_DIR$/swarm_ws/src/swarm_center/src/coverage_commander.cpp" />
+        <option value="$PROJECT_DIR$/swarm_ws/src/swarm_robot/src/coverage_controller.cpp" />
+        <option value="$PROJECT_DIR$/swarm_ws/src/swarm_center/src/swarm_driver.cpp" />
       </list>
     </option>
   </component>
@@ -1283,19 +1292,19 @@
       <workItem from="1554685095725" duration="21179000" />
       <workItem from="1554711080888" duration="9664000" />
       <workItem from="1554725773259" duration="10342000" />
-      <workItem from="1554771118404" duration="1258000" />
+      <workItem from="1554771118404" duration="4823000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="158378000" />
+    <option name="totallyTimeSpent" value="161943000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="64" y="-11" width="1857" height="1092" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.31903765" visible="true" weight="0.040353786" />
-      <window_info active="true" id="Structure" order="1" sideWeight="0.6809623" side_tool="true" visible="true" weight="0.040353786" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.31903765" visible="true" weight="0.05804312" />
+      <window_info active="true" id="Structure" order="1" sideWeight="0.6809623" side_tool="true" visible="true" weight="0.05804312" />
       <window_info id="Favorites" order="2" side_tool="true" weight="0.32991913" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" sideWeight="0.499375" weight="0.10175879" />
@@ -1481,16 +1490,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/swarm_ws/src/swarm_robot/src/coverage_controller.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3116">
-          <caret line="164" column="55" selection-start-line="164" selection-start-column="55" selection-end-line="164" selection-end-column="55" />
-          <folding>
-            <element signature="e#0#20#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/swarm_ws/src/swarm_robot/CMakeLists.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2774">
@@ -1498,30 +1497,40 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/swarm_ws/src/swarm_center/src/swarm_driver.cpp">
+    <entry file="file://$PROJECT_DIR$/swarm_ws/src/swarm_config/launch/test_one.launch">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="19">
-          <caret line="46" column="21" selection-start-line="46" selection-start-column="7" selection-end-line="46" selection-end-column="21" />
-          <folding>
-            <element signature="e#0#20#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="190">
+          <caret line="16" column="13" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="13" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/swarm_ws/src/swarm_center/src/coverage_commander.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1042">
-          <caret line="897" column="25" selection-start-line="897" selection-start-column="25" selection-end-line="897" selection-end-column="25" />
+        <state relative-caret-position="1227">
+          <caret line="867" column="36" selection-start-line="867" selection-start-column="36" selection-end-line="867" selection-end-column="36" />
           <folding>
             <element signature="e#187#207#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/swarm_ws/src/swarm_config/launch/test_one.launch">
+    <entry file="file://$PROJECT_DIR$/swarm_ws/src/swarm_robot/src/coverage_controller.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1463">
-          <caret line="83" column="28" selection-start-line="83" selection-start-column="28" selection-end-line="83" selection-end-column="28" />
+        <state relative-caret-position="771">
+          <caret line="168" column="34" selection-start-line="168" selection-start-column="34" selection-end-line="168" selection-end-column="34" />
+          <folding>
+            <element signature="e#0#20#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/swarm_ws/src/swarm_center/src/swarm_driver.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="304">
+          <caret line="553" column="41" lean-forward="true" selection-start-line="553" selection-start-column="41" selection-end-line="553" selection-end-column="41" />
+          <folding>
+            <element signature="e#0#20#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

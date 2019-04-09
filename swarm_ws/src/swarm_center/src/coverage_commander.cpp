@@ -837,9 +837,9 @@ public:
             string filename = project_path + "launch/cover_robot" + to_string(k) + ".csv";
 
             /* velocity condition*/
-            double vmax = 0.8;
-            double amax = 1.0;
-            double s_c = vmax*vmax/amax;
+            double vmax = 0.4;
+            double amax = 1;
+            double s_c = vmax*vmax/amax*LEN_COF*GRID_SIZE/AREA_SIZE;
             double dt = 0.05;//s
             double turn_blank = 8;
 
@@ -855,20 +855,41 @@ public:
             }
 
             for (int i = 0; i < P_grid_t.size()-1; ++i) {
-                for (int j = 0; j < turn_blank/2; ++j) {
-                    outfile << (P_grid_t[i](1)-GRID_SIZE/2+0.5)*AREA_SIZE/GRID_SIZE/LEN_COF << ',' << (P_grid_t[i](0)-GRID_SIZE/2+0.5)*AREA_SIZE/GRID_SIZE/LEN_COF << ',' << 1.0 << endl;
-                }
-
+                /* FIND NEXT TURN POINT*/
                 int xoy;
                 double s;
                 if (P_grid_t[i](0)==P_grid_t[i+1](0)) {
                     xoy = 1;
-                    s = abs(P_grid_t[i](1)-P_grid_t[i+1](1));
                 } else {
                     xoy = 0;
-                    s = abs(P_grid_t[i](0)-P_grid_t[i+1](0));
                 }
-                //        cout << P_grid[i](xoy) << endl;
+                bool find_next = false;
+                int ind = i+2;
+                while (!find_next) {
+                    if (xoy==1) {
+                        if (P_grid_t[ind](0)==P_grid_t[i](0))
+                            ind++;
+                        else {
+                            ind--;
+                            find_next = true;
+                        }
+                    } else {
+                        if (P_grid_t[ind](1)==P_grid_t[i](1))
+                            ind++;
+                        else {
+                            ind--;
+                            find_next = true;
+                        }
+                    }
+                }
+
+                s = ind - i;
+
+
+                for (int j = 0; j < turn_blank/2; ++j) {
+                    outfile << (P_grid_t[i](1)-GRID_SIZE/2+0.5)*AREA_SIZE/GRID_SIZE/LEN_COF << ',' << (P_grid_t[i](0)-GRID_SIZE/2+0.5)*AREA_SIZE/GRID_SIZE/LEN_COF << ',' << 1.0 << endl;
+                }
+
                 if (s > s_c) {
                     double x = 0;
                     double dx = 0.5*amax*dt*dt;
@@ -925,6 +946,7 @@ public:
                     }
                 }
 
+                i = ind - 1;
                 for (int j = 0; j < turn_blank/2; ++j) {
                     outfile << (P_grid_t[i+1](1)-GRID_SIZE/2+0.5)*AREA_SIZE/GRID_SIZE/LEN_COF << ',' << (P_grid_t[i+1](0)-GRID_SIZE/2+0.5)*AREA_SIZE/GRID_SIZE/LEN_COF << ',' << 1.0 << endl;
                 }

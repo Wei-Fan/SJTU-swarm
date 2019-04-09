@@ -541,6 +541,21 @@ void MiniSwarm::run()
 //    ready_pub.publish(ready);
 //    ros::spinOnce();
 //    loop_rate.sleep();
+    for(int i = 0; i<20; ++i)
+    {
+        for(auto mf:Mfs){
+            float cmd[3];
+            cmd[0] = mf->pos_cmd[0] - position_bias_x[mf->id];
+            cmd[1] = mf->pos_cmd[1] - position_bias_y[mf->id];
+            cmd[2] = -1;
+            send_pos_sp(mf->id,cmd);
+            // cout<<mf->id<<endl;
+            // printf("%02X\n",mf->id);
+//            ROS_INFO("send link test");
+        }
+        ros::spinOnce();
+        loop_rate.sleep();
+    }
 
     while(ros::ok())
     {
