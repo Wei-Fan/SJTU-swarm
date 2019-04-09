@@ -30,8 +30,8 @@
 //#include <geometry_msgs/Twist.h>
 
 //#define DEFAULT_RATE 50
-#define GRID_SIZE 40
-#define CORE_SIZE 20 //CORE_SIZE = GRID_SIZE / 2
+#define GRID_SIZE 32
+#define CORE_SIZE 16 //CORE_SIZE = GRID_SIZE / 2
 #define AREA_SIZE 800
 #define LEN_COF 200 // real world length * LEN_COF = Grid length
 
@@ -837,7 +837,7 @@ public:
             string filename = project_path + "launch/cover_robot" + to_string(k) + ".csv";
 
             /* velocity condition*/
-            double vmax = 0.4;
+            double vmax = 1;
             double amax = 1;
             double s_c = vmax*vmax/amax*LEN_COF*GRID_SIZE/AREA_SIZE;
             double dt = 0.05;//s

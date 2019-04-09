@@ -46,8 +46,8 @@ using namespace std;
 
 string parameter_file = "/home/wade/SJTU-swarm/swarm_ws/src/swarm_config/include/swarm_config/Minifly";
 /* pre-defined position */
-float position_bias_x[4] = {0.5, -0.5, -0.5, 0.5};
-float position_bias_y[4] = {0.5, 0.5, -0.5, -0.5};
+float position_bias_x[4] = {0.23, -0.115, -0.115, 0.5};
+float position_bias_y[4] = {0.0, 0.2, -0.2, -0.5};
 
 class MiniflyRos
 {
@@ -333,8 +333,8 @@ void MiniSwarm::update_power(std::string &pkg_tmp)
         Mfs[id]->u_i[i] = float(tmp)/100;
     }
 
-//    printf("MF%02X: U = %2.2f, I = %2.2f\n",id,Mfs[id]->u_i[0],Mfs[id]->u_i[1]);
-    // std::cout<<"MF"<<id<<": U = "<<Mfs[id]->u_i[0]<<"V, I = "<<Mfs[id]->u_i[1]<<"A"<<std::endl;
+//    printf("MF%02X: U = %2.2f\n",id,Mfs[id]->u_i[0]);
+//     std::cout<<"MF"<<id<<": U = "<<Mfs[id]->u_i[0]<<"V, I = "<<Mfs[id]->u_i[1]<<"A"<<std::endl;
 }
 
 void MiniSwarm::update_state(std::string &pkg_tmp)
@@ -389,7 +389,7 @@ void MiniSwarm::update_state(std::string &pkg_tmp)
         char msg_name[50];
         sprintf(msg_name,"/%s%d/raw_position",this->prefix.c_str(),id);
         raw_pub[id].publish(msg);
-//        printf("MF_cp%02X: x = %2.2f, y = %2.2f, z = %2.2f\n",id,Mfs[id]->current_pos[0],Mfs[id]->current_pos[1],Mfs[id]->current_pos[2]);
+//        printf("MF_cp%d: x = %2.2f, y = %2.2f, z = %2.2f\n",id,Mfs[id]->current_pos[0],Mfs[id]->current_pos[1],Mfs[id]->current_pos[2]);
 
     }
 }
