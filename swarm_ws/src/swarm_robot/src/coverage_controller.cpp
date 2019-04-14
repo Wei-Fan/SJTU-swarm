@@ -154,15 +154,15 @@ public:
                     pos_sp.position.z = -1;
 
                     /* test link */
-                    for (int i = 1; i <= 80*(this->robot_id+1); ++i) {
+                    for (int i = 1; i <= 80; ++i) {//*(this->robot_id+1); ++i) {
                         cmd_pos_pub.publish(pos_sp);
                         ros::spinOnce();
                         loop_rate.sleep();
                     }
 
                     pos_sp.position.z = 0;
-                    for (int i = 1; i <= 150; ++i) {
-                        pos_sp.position.z = float(i)/100.0;
+                    for (int i = 1; i <= 200; ++i) {
+                        pos_sp.position.z = float(i)/200.0;
 
                         cmd_pos_pub.publish(pos_sp);
                         ros::spinOnce();

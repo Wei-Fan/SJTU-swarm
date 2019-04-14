@@ -36,7 +36,7 @@
     <!--</node>-->
 
     <include file="$(find swarm_center)/launch/commander.launch">
-        <arg name="robot_number" value="3"/>
+        <arg name="robot_number" value="4"/>
         <!--<arg name="init_pose" value="-x -1.531748 -y 2.067988 -z 0"/>-->
         <!--<arg name="behaviour_lib" value="formation_control"/>-->
         <!--<arg name="calculator_lib" value="default_calculators"/>-->
@@ -109,13 +109,13 @@
         <!--<arg name="driver_lib" value="ugv"/>-->
     </include>
 
-    <!--<include file="$(find swarm_robot)/launch/one_robot.launch">-->
-        <!--<arg name="robot_name" value="swarmbot3"/>-->
-        <!--&lt;!&ndash;<arg name="init_pose" value="-x -1.531748 -y 2.067988 -z 0"/>&ndash;&gt;-->
-        <!--<arg name="behaviour_lib" value="coverage_control"/>-->
-        <!--&lt;!&ndash;<arg name="calculator_lib" value="default_calculators"/>&ndash;&gt;-->
-        <!--&lt;!&ndash;<arg name="driver_lib" value="ugv"/>&ndash;&gt;-->
-    <!--</include>-->
+    <include file="$(find swarm_robot)/launch/one_robot.launch">
+        <arg name="robot_name" value="swarmbot3"/>
+        <!--<arg name="init_pose" value="-x -1.531748 -y 2.067988 -z 0"/>-->
+        <arg name="behaviour_lib" value="coverage_control"/>
+        <!--<arg name="calculator_lib" value="default_calculators"/>-->
+        <!--<arg name="driver_lib" value="ugv"/>-->
+    </include>
 
     ==================== TOPIC LOGGERS ==================
 

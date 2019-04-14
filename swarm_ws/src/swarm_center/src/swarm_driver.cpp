@@ -46,8 +46,8 @@ using namespace std;
 
 string parameter_file = "/home/wade/SJTU-swarm/swarm_ws/src/swarm_config/include/swarm_config/Minifly";
 /* pre-defined position */
-float position_bias_x[4] = {0.23, -0.115, -0.115, 0.5};
-float position_bias_y[4] = {0.0, 0.2, -0.2, -0.5};
+float position_bias_x[4] = {0.5,-0.5,-0.5,0.5};//{0.23, -0.115, -0.115, 0.5};
+float position_bias_y[4] = {0.5,0.5,-0.5,-0.5};//{0.0, 0.2, -0.2, -0.5};
 
 class MiniflyRos
 {
@@ -74,6 +74,7 @@ public:
 //private:
     std::string prefix;
     bool recieve_sp;
+//    bool update_raw;
     // ros::Subscriber Mf_pos_sub;
 	// ros::Subscriber Mf_vel_sub;
 //	ros::Publisher thrust_pub;
@@ -105,6 +106,7 @@ MiniflyRos::MiniflyRos(uint8_t id_input, float *init_pos)://const std::string &p
     init_position[0] = init_pos[0];
     init_position[1] = init_pos[1];
     recieve_sp = false;
+//    update_raw = false;
 
     // get sp from coverage_controllers
     char msg_name0[50];
@@ -375,7 +377,6 @@ void MiniSwarm::update_state(std::string &pkg_tmp)
         first_update[id] = false;
         ROS_INFO("robot %d error : %f, %f, %f",id,position_err_x[id],position_err_y[id],position_err_z[id]);
     } else {
-
         Mfs[id]->current_pos[0] = Mfs[id]->current_pos[0] + position_bias_x[id] - position_err_x[id];
         Mfs[id]->current_pos[1] = Mfs[id]->current_pos[1] + position_bias_y[id] - position_err_y[id];
         Mfs[id]->current_pos[2] = Mfs[id]->current_pos[2];
