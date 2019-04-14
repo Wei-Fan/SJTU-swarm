@@ -1011,6 +1011,19 @@ actionlib_generate_messages_py/fast:
 .PHONY : actionlib_generate_messages_py/fast
 
 #=============================================================================
+# Target rules for targets named record_center
+
+# Build rule for target.
+record_center: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 record_center
+.PHONY : record_center
+
+# fast build rule for target.
+record_center/fast:
+	$(MAKE) -f swarm_center/CMakeFiles/record_center.dir/build.make swarm_center/CMakeFiles/record_center.dir/build
+.PHONY : record_center/fast
+
+#=============================================================================
 # Target rules for targets named dynamic_reconfigure_generate_messages_py
 
 # Build rule for target.
@@ -1868,6 +1881,7 @@ help:
 	@echo "... tf2_msgs_generate_messages_eus"
 	@echo "... tf2_msgs_generate_messages_cpp"
 	@echo "... actionlib_generate_messages_py"
+	@echo "... record_center"
 	@echo "... dynamic_reconfigure_generate_messages_py"
 	@echo "... dynamic_reconfigure_generate_messages_lisp"
 	@echo "... std_srvs_generate_messages_lisp"

@@ -154,14 +154,14 @@ public:
                     pos_sp.position.z = -1;
 
                     /* test link */
-                    for (int i = 1; i <= 80; ++i) {
+                    for (int i = 1; i <= 80*(this->robot_id+1); ++i) {
                         cmd_pos_pub.publish(pos_sp);
                         ros::spinOnce();
                         loop_rate.sleep();
                     }
 
                     pos_sp.position.z = 0;
-                    for (int i = 1; i <= 100; ++i) {
+                    for (int i = 1; i <= 150; ++i) {
                         pos_sp.position.z = float(i)/100.0;
 
                         cmd_pos_pub.publish(pos_sp);
@@ -188,6 +188,8 @@ public:
 //                    ROS_INFO("robot%d count : %d",this->robot_id,cmd_cnt);
                     ros::spinOnce();
                     loop_rate.sleep();
+//                    if (cmd_cnt==600)
+//                        m_flight_state = Landing;
                     break;
                 }
                 case Landing:{
@@ -195,7 +197,7 @@ public:
                     pos_sp.position.y = cmd_incsv[cmd_cnt].xyz[1];
                     pos_sp.position.z = cmd_incsv[cmd_cnt].xyz[2];
                     for (int i = 1; i <= 80; ++i) {
-                        pos_sp.position.z -= cmd_incsv[cmd_cnt].xyz[2]*(1-i/80);
+                        pos_sp.position.z -= 1.0*(1-i/80);
                         cmd_pos_pub.publish(pos_sp);
                         ros::spinOnce();
                         loop_rate.sleep();

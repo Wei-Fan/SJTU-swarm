@@ -468,6 +468,21 @@ actionlib_generate_messages_py/fast:
 .PHONY : actionlib_generate_messages_py/fast
 
 # Convenience name for target.
+swarm_center/CMakeFiles/record_center.dir/rule:
+	cd /home/wade/SJTU-swarm/swarm_ws/src/cmake-build-debug && $(MAKE) -f CMakeFiles/Makefile2 swarm_center/CMakeFiles/record_center.dir/rule
+.PHONY : swarm_center/CMakeFiles/record_center.dir/rule
+
+# Convenience name for target.
+record_center: swarm_center/CMakeFiles/record_center.dir/rule
+
+.PHONY : record_center
+
+# fast build rule for target.
+record_center/fast:
+	cd /home/wade/SJTU-swarm/swarm_ws/src/cmake-build-debug && $(MAKE) -f swarm_center/CMakeFiles/record_center.dir/build.make swarm_center/CMakeFiles/record_center.dir/build
+.PHONY : record_center/fast
+
+# Convenience name for target.
 swarm_center/CMakeFiles/dynamic_reconfigure_generate_messages_py.dir/rule:
 	cd /home/wade/SJTU-swarm/swarm_ws/src/cmake-build-debug && $(MAKE) -f CMakeFiles/Makefile2 swarm_center/CMakeFiles/dynamic_reconfigure_generate_messages_py.dir/rule
 .PHONY : swarm_center/CMakeFiles/dynamic_reconfigure_generate_messages_py.dir/rule
@@ -1502,6 +1517,33 @@ src/formation_commander.cpp.s:
 	cd /home/wade/SJTU-swarm/swarm_ws/src/cmake-build-debug && $(MAKE) -f swarm_center/CMakeFiles/formation_commander.dir/build.make swarm_center/CMakeFiles/formation_commander.dir/src/formation_commander.cpp.s
 .PHONY : src/formation_commander.cpp.s
 
+src/record_center.o: src/record_center.cpp.o
+
+.PHONY : src/record_center.o
+
+# target to build an object file
+src/record_center.cpp.o:
+	cd /home/wade/SJTU-swarm/swarm_ws/src/cmake-build-debug && $(MAKE) -f swarm_center/CMakeFiles/record_center.dir/build.make swarm_center/CMakeFiles/record_center.dir/src/record_center.cpp.o
+.PHONY : src/record_center.cpp.o
+
+src/record_center.i: src/record_center.cpp.i
+
+.PHONY : src/record_center.i
+
+# target to preprocess a source file
+src/record_center.cpp.i:
+	cd /home/wade/SJTU-swarm/swarm_ws/src/cmake-build-debug && $(MAKE) -f swarm_center/CMakeFiles/record_center.dir/build.make swarm_center/CMakeFiles/record_center.dir/src/record_center.cpp.i
+.PHONY : src/record_center.cpp.i
+
+src/record_center.s: src/record_center.cpp.s
+
+.PHONY : src/record_center.s
+
+# target to generate assembly for a file
+src/record_center.cpp.s:
+	cd /home/wade/SJTU-swarm/swarm_ws/src/cmake-build-debug && $(MAKE) -f swarm_center/CMakeFiles/record_center.dir/build.make swarm_center/CMakeFiles/record_center.dir/src/record_center.cpp.s
+.PHONY : src/record_center.cpp.s
+
 src/swarm_driver.o: src/swarm_driver.cpp.o
 
 .PHONY : src/swarm_driver.o
@@ -1560,6 +1602,7 @@ help:
 	@echo "... tf2_msgs_generate_messages_eus"
 	@echo "... tf2_msgs_generate_messages_cpp"
 	@echo "... actionlib_generate_messages_py"
+	@echo "... record_center"
 	@echo "... dynamic_reconfigure_generate_messages_py"
 	@echo "... dynamic_reconfigure_generate_messages_lisp"
 	@echo "... std_srvs_generate_messages_lisp"
@@ -1637,6 +1680,9 @@ help:
 	@echo "... src/formation_commander.o"
 	@echo "... src/formation_commander.i"
 	@echo "... src/formation_commander.s"
+	@echo "... src/record_center.o"
+	@echo "... src/record_center.i"
+	@echo "... src/record_center.s"
 	@echo "... src/swarm_driver.o"
 	@echo "... src/swarm_driver.i"
 	@echo "... src/swarm_driver.s"
