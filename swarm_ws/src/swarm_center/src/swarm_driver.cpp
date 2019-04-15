@@ -383,7 +383,7 @@ void MiniSwarm::update_state(std::string &pkg_tmp)
         first_update[id] = false;
         ROS_INFO("robot %d error : %f, %f, %f",id,position_err_x[id],position_err_y[id],position_err_z[id]);
     } else {
-        if (abs(tmp_pos[0]-Mfs[id]->current_pos[0]-position_bias_x[id]+position_err_x[id]) < 0.2)
+        if (abs(tmp_pos[0]-Mfs[id]->current_pos[0]+position_bias_x[id]-position_err_x[id]) < 0.25)
         {
             Mfs[id]->current_pos[0] = tmp_pos[0] + position_bias_x[id] - position_err_x[id];
             Mfs[id]->current_pos[1] = tmp_pos[1] + position_bias_y[id] - position_err_y[id];
