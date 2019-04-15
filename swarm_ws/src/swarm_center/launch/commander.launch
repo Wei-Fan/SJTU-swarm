@@ -26,4 +26,8 @@
         <!--<remap from="cmd_vel" to="robot_controller/cmd_vel"/>-->
     </node>
 
+    <node pkg="swarm_center" type="swarm_visualization" name="swarm_visualization" output="screen">
+        <param name="robot_number" value="$(arg robot_number)"></param>
+    </node>
+
 </launch>

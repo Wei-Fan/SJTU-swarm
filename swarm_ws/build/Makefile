@@ -751,6 +751,19 @@ swarm_robot_generate_messages_nodejs/fast:
 .PHONY : swarm_robot_generate_messages_nodejs/fast
 
 #=============================================================================
+# Target rules for targets named swarm_visualization
+
+# Build rule for target.
+swarm_visualization: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 swarm_visualization
+.PHONY : swarm_visualization
+
+# fast build rule for target.
+swarm_visualization/fast:
+	$(MAKE) -f swarm_center/CMakeFiles/swarm_visualization.dir/build.make swarm_center/CMakeFiles/swarm_visualization.dir/build
+.PHONY : swarm_visualization/fast
+
+#=============================================================================
 # Target rules for targets named coverage_commander
 
 # Build rule for target.
@@ -1861,6 +1874,7 @@ help:
 	@echo "... formation_controller"
 	@echo "... swarm_robot_generate_messages_eus"
 	@echo "... swarm_robot_generate_messages_nodejs"
+	@echo "... swarm_visualization"
 	@echo "... coverage_commander"
 	@echo "... swarm_center_genlisp"
 	@echo "... swarm_center_generate_messages_lisp"

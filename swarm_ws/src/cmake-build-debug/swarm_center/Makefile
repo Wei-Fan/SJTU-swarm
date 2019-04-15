@@ -168,6 +168,21 @@ depend:
 .PHONY : depend
 
 # Convenience name for target.
+swarm_center/CMakeFiles/swarm_visualization.dir/rule:
+	cd /home/wade/SJTU-swarm/swarm_ws/src/cmake-build-debug && $(MAKE) -f CMakeFiles/Makefile2 swarm_center/CMakeFiles/swarm_visualization.dir/rule
+.PHONY : swarm_center/CMakeFiles/swarm_visualization.dir/rule
+
+# Convenience name for target.
+swarm_visualization: swarm_center/CMakeFiles/swarm_visualization.dir/rule
+
+.PHONY : swarm_visualization
+
+# fast build rule for target.
+swarm_visualization/fast:
+	cd /home/wade/SJTU-swarm/swarm_ws/src/cmake-build-debug && $(MAKE) -f swarm_center/CMakeFiles/swarm_visualization.dir/build.make swarm_center/CMakeFiles/swarm_visualization.dir/build
+.PHONY : swarm_visualization/fast
+
+# Convenience name for target.
 swarm_center/CMakeFiles/coverage_commander.dir/rule:
 	cd /home/wade/SJTU-swarm/swarm_ws/src/cmake-build-debug && $(MAKE) -f CMakeFiles/Makefile2 swarm_center/CMakeFiles/coverage_commander.dir/rule
 .PHONY : swarm_center/CMakeFiles/coverage_commander.dir/rule
@@ -1571,6 +1586,33 @@ src/swarm_driver.cpp.s:
 	cd /home/wade/SJTU-swarm/swarm_ws/src/cmake-build-debug && $(MAKE) -f swarm_center/CMakeFiles/swarm_driver.dir/build.make swarm_center/CMakeFiles/swarm_driver.dir/src/swarm_driver.cpp.s
 .PHONY : src/swarm_driver.cpp.s
 
+src/swarm_visualization.o: src/swarm_visualization.cpp.o
+
+.PHONY : src/swarm_visualization.o
+
+# target to build an object file
+src/swarm_visualization.cpp.o:
+	cd /home/wade/SJTU-swarm/swarm_ws/src/cmake-build-debug && $(MAKE) -f swarm_center/CMakeFiles/swarm_visualization.dir/build.make swarm_center/CMakeFiles/swarm_visualization.dir/src/swarm_visualization.cpp.o
+.PHONY : src/swarm_visualization.cpp.o
+
+src/swarm_visualization.i: src/swarm_visualization.cpp.i
+
+.PHONY : src/swarm_visualization.i
+
+# target to preprocess a source file
+src/swarm_visualization.cpp.i:
+	cd /home/wade/SJTU-swarm/swarm_ws/src/cmake-build-debug && $(MAKE) -f swarm_center/CMakeFiles/swarm_visualization.dir/build.make swarm_center/CMakeFiles/swarm_visualization.dir/src/swarm_visualization.cpp.i
+.PHONY : src/swarm_visualization.cpp.i
+
+src/swarm_visualization.s: src/swarm_visualization.cpp.s
+
+.PHONY : src/swarm_visualization.s
+
+# target to generate assembly for a file
+src/swarm_visualization.cpp.s:
+	cd /home/wade/SJTU-swarm/swarm_ws/src/cmake-build-debug && $(MAKE) -f swarm_center/CMakeFiles/swarm_visualization.dir/build.make swarm_center/CMakeFiles/swarm_visualization.dir/src/swarm_visualization.cpp.s
+.PHONY : src/swarm_visualization.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -1581,6 +1623,7 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
 	@echo "... test"
+	@echo "... swarm_visualization"
 	@echo "... coverage_commander"
 	@echo "... swarm_center_genlisp"
 	@echo "... swarm_center_generate_messages_lisp"
@@ -1686,6 +1729,9 @@ help:
 	@echo "... src/swarm_driver.o"
 	@echo "... src/swarm_driver.i"
 	@echo "... src/swarm_driver.s"
+	@echo "... src/swarm_visualization.o"
+	@echo "... src/swarm_visualization.i"
+	@echo "... src/swarm_visualization.s"
 .PHONY : help
 
 

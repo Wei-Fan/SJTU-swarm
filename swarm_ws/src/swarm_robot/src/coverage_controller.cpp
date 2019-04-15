@@ -77,7 +77,7 @@ public:
         // publish sp to swarm_driver
         char msg_name2[50];
         sprintf(msg_name2,"/%s/set_position",this->robot_name.c_str());
-        cmd_pos_pub = global.advertise<geometry_msgs::Pose>(msg_name2,1);
+        cmd_pos_pub = global.advertise<geometry_msgs::PoseStamped>(msg_name2,1);
 
         /* read file (how to respond to replanning???)*/
         int swarm_prefix_size = this->swarm_prefix.size();
@@ -135,23 +135,24 @@ public:
                 continue;
             }
 
-            geometry_msgs::Pose pos_sp;
+            geometry_msgs::PoseStamped pos_sp;
+            pos_sp.header.frame_id = to_string(this->robot_id);
             if (cnt == cmd_limit)
                 m_flight_state = Landing;
 
             switch (m_flight_state) {
                 case Hovering: {
-                    pos_sp.position.x = cmd_incsv[cmd_cnt].xyz[0];
-                    pos_sp.position.y = cmd_incsv[cmd_cnt].xyz[1];
-                    pos_sp.position.z = cmd_incsv[cmd_cnt].xyz[2];
+                    pos_sp.pose.position.x = cmd_incsv[cmd_cnt].xyz[0];
+                    pos_sp.pose.position.y = cmd_incsv[cmd_cnt].xyz[1];
+                    pos_sp.pose.position.z = cmd_incsv[cmd_cnt].xyz[2];
                     cmd_pos_pub.publish(pos_sp);
                     break;
                 }
                 case Takeoff: {
                     ROS_INFO("taking off");
-                    pos_sp.position.x = cmd_incsv[0].xyz[0];
-                    pos_sp.position.y = cmd_incsv[0].xyz[1];
-                    pos_sp.position.z = -1;
+                    pos_sp.pose.position.x = cmd_incsv[0].xyz[0];
+                    pos_sp.pose.position.y = cmd_incsv[0].xyz[1];
+                    pos_sp.pose.position.z = -1;
 
                     /* test link */
                     for (int i = 1; i <= 80; ++i) {//*(this->robot_id+1); ++i) {
@@ -160,9 +161,9 @@ public:
                         loop_rate.sleep();
                     }
 
-                    pos_sp.position.z = 0;
+                    pos_sp.pose.position.z = 0;
                     for (int i = 1; i <= 200; ++i) {
-                        pos_sp.position.z = float(i)/200.0;
+                        pos_sp.pose.position.z = float(i)/200.0;
 
                         cmd_pos_pub.publish(pos_sp);
                         ros::spinOnce();
@@ -180,9 +181,9 @@ public:
                 }
                 case Commanding:{
 //                    ROS_INFO("commanding");
-                    pos_sp.position.x = cmd_incsv[cmd_cnt].xyz[0];
-                    pos_sp.position.y = cmd_incsv[cmd_cnt].xyz[1];
-                    pos_sp.position.z = cmd_incsv[cmd_cnt].xyz[2];
+                    pos_sp.pose.position.x = cmd_incsv[cmd_cnt].xyz[0];
+                    pos_sp.pose.position.y = cmd_incsv[cmd_cnt].xyz[1];
+                    pos_sp.pose.position.z = cmd_incsv[cmd_cnt].xyz[2];
                     cmd_pos_pub.publish(pos_sp);
                     cmd_cnt++;
 //                    ROS_INFO("robot%d count : %d",this->robot_id,cmd_cnt);
@@ -193,11 +194,11 @@ public:
                     break;
                 }
                 case Landing:{
-                    pos_sp.position.x = cmd_incsv[cmd_cnt].xyz[0];
-                    pos_sp.position.y = cmd_incsv[cmd_cnt].xyz[1];
-                    pos_sp.position.z = cmd_incsv[cmd_cnt].xyz[2];
+                    pos_sp.pose.position.x = cmd_incsv[cmd_cnt].xyz[0];
+                    pos_sp.pose.position.y = cmd_incsv[cmd_cnt].xyz[1];
+                    pos_sp.pose.position.z = cmd_incsv[cmd_cnt].xyz[2];
                     for (int i = 1; i <= 80; ++i) {
-                        pos_sp.position.z -= 1.0*(1-i/80);
+                        pos_sp.pose.position.z -= 1.0*(1-i/80);
                         cmd_pos_pub.publish(pos_sp);
                         ros::spinOnce();
                         loop_rate.sleep();
