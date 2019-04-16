@@ -2,36 +2,34 @@
 <project version="4">
   <component name="CMakeRunConfigurationManager" shouldGenerate="true" shouldDeleteObsolete="true" buildAllGenerated="true">
     <generated>
-      <config projectName="Project" targetName="swarm_robot_geneus" />
+      <config projectName="Project" targetName="gmock" />
       <config projectName="Project" targetName="std_srvs_generate_messages_lisp" />
       <config projectName="Project" targetName="nav_msgs_generate_messages_cpp" />
-      <config projectName="Project" targetName="geometry_msgs_generate_messages_lisp" />
-      <config projectName="Project" targetName="actionlib_generate_messages_lisp" />
+      <config projectName="Project" targetName="record_center" />
+      <config projectName="Project" targetName="nav_msgs_generate_messages_py" />
+      <config projectName="Project" targetName="swarm_center_generate_messages_py" />
       <config projectName="Project" targetName="run_tests" />
-      <config projectName="Project" targetName="swarm_center_geneus" />
+      <config projectName="Project" targetName="swarm_robot_generate_messages_py" />
       <config projectName="Project" targetName="uuid_msgs_generate_messages_nodejs" />
       <config projectName="Project" targetName="actionlib_msgs_generate_messages_nodejs" />
-      <config projectName="Project" targetName="std_msgs_generate_messages_nodejs" />
+      <config projectName="Project" targetName="mavros_msgs_generate_messages_py" />
       <config projectName="Project" targetName="std_msgs_generate_messages_lisp" />
       <config projectName="Project" targetName="std_srvs_generate_messages_cpp" />
       <config projectName="Project" targetName="rosgraph_msgs_generate_messages_eus" />
-      <config projectName="Project" targetName="swarm_center_genlisp" />
       <config projectName="Project" targetName="formation_controller" />
-      <config projectName="Project" targetName="mavros_msgs_generate_messages_lisp" />
       <config projectName="Project" targetName="actionlib_generate_messages_cpp" />
-      <config projectName="Project" targetName="sensor_msgs_generate_messages_lisp" />
       <config projectName="Project" targetName="swarm_center_gennodejs" />
       <config projectName="Project" targetName="download_extra_data" />
-      <config projectName="Project" targetName="nav_msgs_generate_messages_py" />
-      <config projectName="Project" targetName="swarm_robot_genlisp" />
+      <config projectName="Project" targetName="coverage_commander" />
+      <config projectName="Project" targetName="doxygen" />
       <config projectName="Project" targetName="actionlib_msgs_generate_messages_eus" />
       <config projectName="Project" targetName="gtest_main" />
+      <config projectName="Project" targetName="dynamic_reconfigure_gencfg" />
       <config projectName="Project" targetName="tests" />
       <config projectName="Project" targetName="vicon_bridge_generate_messages_cpp" />
-      <config projectName="Project" targetName="swarm_robot_generate_messages_py" />
+      <config projectName="Project" targetName="geometry_msgs_generate_messages_py" />
+      <config projectName="Project" targetName="roscpp_generate_messages_lisp" />
       <config projectName="Project" targetName="nav_msgs_generate_messages_eus" />
-      <config projectName="Project" targetName="std_srvs_generate_messages_eus" />
-      <config projectName="Project" targetName="swarm_center_genpy" />
       <config projectName="Project" targetName="actionlib_msgs_generate_messages_py" />
       <config projectName="Project" targetName="clean_test_results" />
       <config projectName="Project" targetName="formation_commander" />
@@ -39,96 +37,98 @@
       <config projectName="Project" targetName="rosgraph_msgs_generate_messages_nodejs" />
       <config projectName="Project" targetName="tf2_msgs_generate_messages_py" />
       <config projectName="Project" targetName="roscpp_generate_messages_py" />
-      <config projectName="Project" targetName="coverage_controller" />
+      <config projectName="Project" targetName="sensor_msgs_generate_messages_eus" />
       <config projectName="Project" targetName="uuid_msgs_generate_messages_lisp" />
-      <config projectName="Project" targetName="coverage_commander" />
+      <config projectName="Project" targetName="dynamic_reconfigure_generate_messages_nodejs" />
       <config projectName="Project" targetName="swarm_robot_gennodejs" />
+      <config projectName="Project" targetName="swarm_center_gencpp" />
       <config projectName="Project" targetName="diagnostic_msgs_generate_messages_cpp" />
-      <config projectName="Project" targetName="nav_msgs_generate_messages_nodejs" />
       <config projectName="Project" targetName="actionlib_generate_messages_eus" />
       <config projectName="Project" targetName="geographic_msgs_generate_messages_nodejs" />
       <config projectName="Project" targetName="_swarm_center_generate_messages_check_deps_pos_info" />
       <config projectName="Project" targetName="swarm_robot_generate_messages_cpp" />
       <config projectName="Project" targetName="dynamic_reconfigure_generate_messages_lisp" />
-      <config projectName="Project" targetName="swarm_robot_generate_messages" />
       <config projectName="Project" targetName="actionlib_msgs_generate_messages_lisp" />
       <config projectName="Project" targetName="vicon_bridge_generate_messages_lisp" />
-      <config projectName="Project" targetName="roscpp_generate_messages_cpp" />
-      <config projectName="Project" targetName="uuid_msgs_generate_messages_cpp" />
+      <config projectName="Project" targetName="sensor_msgs_generate_messages_lisp" />
       <config projectName="Project" targetName="rosgraph_msgs_generate_messages_lisp" />
-      <config projectName="Project" targetName="swarm_center_generate_messages_nodejs" />
-      <config projectName="Project" targetName="actionlib_msgs_generate_messages_cpp" />
+      <config projectName="Project" targetName="coverage_controller" />
       <config projectName="Project" targetName="hey_swarm" />
       <config projectName="Project" targetName="swarm_tools" />
       <config projectName="Project" targetName="geometry_msgs_generate_messages_cpp" />
       <config projectName="Project" targetName="vicon_bridge_generate_messages_eus" />
-      <config projectName="Project" targetName="roscpp_generate_messages_lisp" />
       <config projectName="Project" targetName="tf2_msgs_generate_messages_cpp" />
-      <config projectName="Project" targetName="gmock" />
+      <config projectName="Project" targetName="swarm_center_genpy" />
       <config projectName="Project" targetName="vicon_bridge_generate_messages_py" />
       <config projectName="Project" targetName="gmock_main" />
       <config projectName="Project" targetName="swarm_driver" />
+      <config projectName="Project" targetName="swarm_center_geneus" />
       <config projectName="Project" targetName="diagnostic_msgs_generate_messages_eus" />
       <config projectName="Project" targetName="geographic_msgs_generate_messages_cpp" />
       <config projectName="Project" targetName="dynamic_reconfigure_generate_messages_eus" />
       <config projectName="Project" targetName="vicon_bridge_gencfg" />
       <config projectName="Project" targetName="swarm_center_generate_messages" />
       <config projectName="Project" targetName="actionlib_generate_messages_py" />
-      <config projectName="Project" targetName="diagnostic_msgs_generate_messages_nodejs" />
+      <config projectName="Project" targetName="roscpp_generate_messages_cpp" />
+      <config projectName="Project" targetName="swarm_center_genlisp" />
+      <config projectName="Project" targetName="std_msgs_generate_messages_eus" />
+      <config projectName="Project" targetName="actionlib_generate_messages_lisp" />
       <config projectName="Project" targetName="geographic_msgs_generate_messages_lisp" />
       <config projectName="Project" targetName="swarm_robot_gencpp" />
-      <config projectName="Project" targetName="rosgraph_msgs_generate_messages_py" />
-      <config projectName="Project" targetName="dynamic_reconfigure_gencfg" />
-      <config projectName="Project" targetName="swarm_center_generate_messages_lisp" />
       <config projectName="Project" targetName="robot_controller" />
       <config projectName="Project" targetName="sensor_msgs_generate_messages_nodejs" />
       <config projectName="Project" targetName="actionlib_generate_messages_nodejs" />
       <config projectName="Project" targetName="mavros_msgs_generate_messages_eus" />
-      <config projectName="Project" targetName="swarm_robot_generate_messages_eus" />
+      <config projectName="Project" targetName="std_msgs_generate_messages_nodejs" />
       <config projectName="Project" targetName="_swarm_robot_generate_messages_check_deps_pos_info" />
-      <config projectName="Project" targetName="std_msgs_generate_messages_cpp" />
+      <config projectName="Project" targetName="swarm_center_generate_messages_nodejs" />
       <config projectName="Project" targetName="sensor_msgs_generate_messages_py" />
-      <config projectName="Project" targetName="doxygen" />
+      <config projectName="Project" targetName="swarm_robot_genlisp" />
       <config projectName="Project" targetName="roscpp_generate_messages_eus" />
       <config projectName="Project" targetName="std_msgs_generate_messages_py" />
-      <config projectName="Project" targetName="geographic_msgs_generate_messages_py" />
-      <config projectName="Project" targetName="_swarm_center_generate_messages_check_deps_mCPPReq" />
+      <config projectName="Project" targetName="mavros_msgs_generate_messages_cpp" />
       <config projectName="Project" targetName="dynamic_reconfigure_generate_messages_py" />
       <config projectName="Project" targetName="geographic_msgs_generate_messages_eus" />
       <config projectName="Project" targetName="std_srvs_generate_messages_py" />
-      <config projectName="Project" targetName="swarm_center_generate_messages_py" />
+      <config projectName="Project" targetName="nav_msgs_generate_messages_nodejs" />
       <config projectName="Project" targetName="tf2_msgs_generate_messages_eus" />
-      <config projectName="Project" targetName="diagnostic_msgs_generate_messages_lisp" />
-      <config projectName="Project" targetName="sensor_msgs_generate_messages_eus" />
+      <config projectName="Project" targetName="swarm_robot_generate_messages_lisp" />
+      <config projectName="Project" targetName="roscpp_generate_messages_nodejs" />
+      <config projectName="Project" targetName="geographic_msgs_generate_messages_py" />
+      <config projectName="Project" targetName="uuid_msgs_generate_messages_cpp" />
       <config projectName="Project" targetName="std_srvs_generate_messages_nodejs" />
+      <config projectName="Project" targetName="dispatch_center" />
       <config projectName="Project" targetName="uuid_msgs_generate_messages_py" />
       <config projectName="Project" targetName="mavros_msgs_generate_messages_nodejs" />
       <config projectName="Project" targetName="sensor_msgs_generate_messages_cpp" />
+      <config projectName="Project" targetName="nav_msgs_generate_messages_lisp" />
       <config projectName="Project" targetName="tf2_msgs_generate_messages_nodejs" />
-      <config projectName="Project" targetName="swarm_center_generate_messages_cpp" />
-      <config projectName="Project" targetName="swarm_center_gencpp" />
+      <config projectName="Project" targetName="_swarm_center_generate_messages_check_deps_mCPPReq" />
+      <config projectName="Project" targetName="diagnostic_msgs_generate_messages_lisp" />
+      <config projectName="Project" targetName="std_srvs_generate_messages_eus" />
       <config projectName="Project" targetName="swarm_visualization" />
-      <config projectName="Project" targetName="swarm_robot_generate_messages_lisp" />
+      <config projectName="Project" targetName="diagnostic_msgs_generate_messages_nodejs" />
       <config projectName="Project" targetName="swarm_robot_genpy" />
-      <config projectName="Project" targetName="dynamic_reconfigure_generate_messages_nodejs" />
+      <config projectName="Project" targetName="swarm_robot_geneus" />
       <config projectName="Project" targetName="geometry_msgs_generate_messages_nodejs" />
       <config projectName="Project" targetName="swarm_robot_generate_messages_nodejs" />
-      <config projectName="Project" targetName="gtest" />
+      <config projectName="Project" targetName="swarm_robot_generate_messages_eus" />
       <config projectName="Project" targetName="swarm_center_generate_messages_eus" />
-      <config projectName="Project" targetName="rosgraph_msgs_generate_messages_cpp" />
-      <config projectName="Project" targetName="tf2_msgs_generate_messages_lisp" />
-      <config projectName="Project" targetName="std_msgs_generate_messages_eus" />
+      <config projectName="Project" targetName="geometry_msgs_generate_messages_lisp" />
+      <config projectName="Project" targetName="rosgraph_msgs_generate_messages_py" />
+      <config projectName="Project" targetName="swarm_center_generate_messages_lisp" />
       <config projectName="Project" targetName="vicon_bridge_generate_messages_nodejs" />
       <config projectName="Project" targetName="geometry_msgs_generate_messages_eus" />
-      <config projectName="Project" targetName="mavros_msgs_generate_messages_cpp" />
-      <config projectName="Project" targetName="nav_msgs_generate_messages_lisp" />
-      <config projectName="Project" targetName="dispatch_center" />
+      <config projectName="Project" targetName="mavros_msgs_generate_messages_lisp" />
+      <config projectName="Project" targetName="std_msgs_generate_messages_cpp" />
+      <config projectName="Project" targetName="actionlib_msgs_generate_messages_cpp" />
+      <config projectName="Project" targetName="gtest" />
+      <config projectName="Project" targetName="rosgraph_msgs_generate_messages_cpp" />
+      <config projectName="Project" targetName="tf2_msgs_generate_messages_lisp" />
       <config projectName="Project" targetName="diagnostic_msgs_generate_messages_py" />
-      <config projectName="Project" targetName="roscpp_generate_messages_nodejs" />
-      <config projectName="Project" targetName="record_center" />
-      <config projectName="Project" targetName="geometry_msgs_generate_messages_py" />
+      <config projectName="Project" targetName="swarm_robot_generate_messages" />
+      <config projectName="Project" targetName="swarm_center_generate_messages_cpp" />
       <config projectName="Project" targetName="uuid_msgs_generate_messages_eus" />
-      <config projectName="Project" targetName="mavros_msgs_generate_messages_py" />
     </generated>
   </component>
   <component name="CMakeSettings">
@@ -139,6 +139,8 @@
   <component name="ChangeListManager">
     <list default="true" id="5b582add-7293-46c9-8cb2-5d9a77dfa8df" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/swarm_ws/build/swarm_center/CMakeFiles/swarm_driver.dir/src/swarm_driver.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/swarm_ws/build/swarm_center/CMakeFiles/swarm_driver.dir/src/swarm_driver.cpp.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/swarm_ws/devel/lib/swarm_center/swarm_driver" beforeDir="false" afterPath="$PROJECT_DIR$/swarm_ws/devel/lib/swarm_center/swarm_driver" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/swarm_ws/src/swarm_center/src/swarm_driver.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/swarm_ws/src/swarm_center/src/swarm_driver.cpp" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/swarm_ws/src/cmake-build-debug/" />
@@ -172,10 +174,10 @@
           <entry key="project.open.time.1" value="1" />
           <entry key="project.open.time.4" value="1" />
           <entry key="project.open.time.5" value="9" />
-          <entry key="project.open.time.6" value="21" />
+          <entry key="project.open.time.6" value="22" />
           <entry key="project.open.time.7" value="9" />
           <entry key="project.open.time.8" value="2" />
-          <entry key="project.opened" value="44" />
+          <entry key="project.opened" value="45" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
@@ -251,8 +253,8 @@
           <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/swarm_ws/src/swarm_center/launch/commander.launch">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="95">
-                  <caret line="5" column="17" selection-start-line="5" selection-start-column="17" selection-end-line="5" selection-end-column="17" />
+                <state relative-caret-position="456">
+                  <caret line="24" column="11" selection-start-line="24" selection-start-column="11" selection-end-line="24" selection-end-column="11" />
                 </state>
               </provider>
             </entry>
@@ -278,7 +280,7 @@
           <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/swarm_ws/src/swarm_center/src/dispatch_center.cpp">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="551">
+                <state relative-caret-position="1292">
                   <caret line="68" column="12" selection-start-line="67" selection-start-column="12" selection-end-line="68" selection-end-column="12" />
                   <folding>
                     <element signature="e#105#125#0" expanded="true" />
@@ -306,7 +308,7 @@
           <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/swarm_ws/src/swarm_center/src/coverage_commander.cpp">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="339">
+                <state relative-caret-position="2603">
                   <caret line="137" column="44" selection-start-line="137" selection-start-column="8" selection-end-line="137" selection-end-column="44" />
                   <folding>
                     <element signature="e#187#207#0" expanded="true" />
@@ -318,7 +320,7 @@
           <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/swarm_ws/src/swarm_center/src/swarm_visualization.cpp">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="309">
+                <state relative-caret-position="1425">
                   <caret line="75" column="53" selection-start-line="75" selection-start-column="53" selection-end-line="75" selection-end-column="53" />
                   <folding>
                     <element signature="e#83#103#0" expanded="true" />
@@ -330,7 +332,7 @@
           <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/swarm_ws/src/swarm_robot/src/coverage_controller.cpp">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="435">
+                <state relative-caret-position="1482">
                   <caret line="78" column="43" selection-start-line="78" selection-start-column="31" selection-end-line="78" selection-end-column="43" />
                   <folding>
                     <element signature="e#0#20#0" expanded="true" />
@@ -342,8 +344,8 @@
           <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/swarm_ws/src/swarm_center/src/swarm_driver.cpp">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="291">
-                  <caret line="385" column="71" selection-start-line="385" selection-start-column="71" selection-end-line="385" selection-end-column="71" />
+                <state relative-caret-position="399">
+                  <caret line="21" lean-forward="true" selection-start-line="21" selection-end-line="21" />
                   <folding>
                     <element signature="e#0#20#0" expanded="true" />
                   </folding>
@@ -448,7 +450,7 @@
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="871" />
     <option name="y" value="-4" />
     <option name="width" value="1049" />
@@ -459,7 +461,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -506,6 +507,7 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -1356,18 +1358,19 @@
       <workItem from="1555251331116" duration="3448000" />
       <workItem from="1555292059980" duration="61000" />
       <workItem from="1555326354428" duration="5466000" />
+      <workItem from="1555375513736" duration="1184000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="184029000" />
+    <option name="totallyTimeSpent" value="185213000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="64" y="-11" width="1857" height="1092" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.31171548" visible="true" weight="0.11608624" />
-      <window_info active="true" id="Structure" order="1" sideWeight="0.6882845" side_tool="true" visible="true" weight="0.11608624" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.31066945" visible="true" weight="0.11719182" />
+      <window_info active="true" id="Structure" order="1" sideWeight="0.6893305" side_tool="true" visible="true" weight="0.11719182" />
       <window_info id="Favorites" order="2" side_tool="true" weight="0.32991913" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" sideWeight="0.499375" weight="0.10175879" />
@@ -1529,10 +1532,27 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/swarm_ws/src/swarm_robot/launch/behaviour_lib/coverage_control.launch">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="171">
+          <caret line="9" column="9" selection-start-line="9" selection-start-column="9" selection-end-line="9" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/swarm_ws/src/swarm_center/CMakeLists.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="3629">
           <caret line="191" column="61" selection-start-line="191" selection-start-column="61" selection-end-line="191" selection-end-column="61" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/swarm_ws/src/swarm_center/src/dispatch_center.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1292">
+          <caret line="68" column="12" selection-start-line="67" selection-start-column="12" selection-end-line="68" selection-end-column="12" />
+          <folding>
+            <element signature="e#105#125#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1546,36 +1566,16 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/swarm_ws/src/swarm_robot/CMakeLists.txt">
+    <entry file="file://$PROJECT_DIR$/swarm_ws/src/swarm_center/launch/commander.launch">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2774">
-          <caret line="146" column="23" selection-start-line="146" selection-start-column="23" selection-end-line="146" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/swarm_ws/src/swarm_center/src/dispatch_center.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="551">
-          <caret line="68" column="12" selection-start-line="67" selection-start-column="12" selection-end-line="68" selection-end-column="12" />
-          <folding>
-            <element signature="e#105#125#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/swarm_ws/src/swarm_robot/src/coverage_controller.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="435">
-          <caret line="78" column="43" selection-start-line="78" selection-start-column="31" selection-end-line="78" selection-end-column="43" />
-          <folding>
-            <element signature="e#0#20#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="456">
+          <caret line="24" column="11" selection-start-line="24" selection-start-column="11" selection-end-line="24" selection-end-column="11" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/swarm_ws/src/swarm_center/src/coverage_commander.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="339">
+        <state relative-caret-position="2603">
           <caret line="137" column="44" selection-start-line="137" selection-start-column="8" selection-end-line="137" selection-end-column="44" />
           <folding>
             <element signature="e#187#207#0" expanded="true" />
@@ -1583,23 +1583,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/swarm_ws/src/swarm_robot/launch/behaviour_lib/coverage_control.launch">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="171">
-          <caret line="9" column="9" selection-start-line="9" selection-start-column="9" selection-end-line="9" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/swarm_ws/src/swarm_center/launch/commander.launch">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="95">
-          <caret line="5" column="17" selection-start-line="5" selection-start-column="17" selection-end-line="5" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/swarm_ws/src/swarm_center/src/swarm_visualization.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="309">
+        <state relative-caret-position="1425">
           <caret line="75" column="53" selection-start-line="75" selection-start-column="53" selection-end-line="75" selection-end-column="53" />
           <folding>
             <element signature="e#83#103#0" expanded="true" />
@@ -1607,10 +1593,27 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/swarm_ws/src/swarm_robot/src/coverage_controller.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1482">
+          <caret line="78" column="43" selection-start-line="78" selection-start-column="31" selection-end-line="78" selection-end-column="43" />
+          <folding>
+            <element signature="e#0#20#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/swarm_ws/src/swarm_robot/CMakeLists.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2774">
+          <caret line="146" column="23" selection-start-line="146" selection-start-column="23" selection-end-line="146" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/swarm_ws/src/swarm_center/src/swarm_driver.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="291">
-          <caret line="385" column="71" selection-start-line="385" selection-start-column="71" selection-end-line="385" selection-end-column="71" />
+        <state relative-caret-position="399">
+          <caret line="21" lean-forward="true" selection-start-line="21" selection-end-line="21" />
           <folding>
             <element signature="e#0#20#0" expanded="true" />
           </folding>
