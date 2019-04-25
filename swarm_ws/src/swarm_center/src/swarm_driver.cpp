@@ -1,3 +1,9 @@
+/**
+ * This is the swarm_driver
+ * Function: 1)recieve raw data from robots; 2)recieve setpoint message from robot controller
+ * Date: 2019.4 Author: Weifan Zhang
+ */
+
 #include "ros/ros.h"
 #include <swarm_center/PID.h>
 #include <swarm_center/Parameter.h>

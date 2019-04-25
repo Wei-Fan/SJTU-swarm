@@ -1,3 +1,9 @@
+/**
+ * This is the robot controller for coverage trials
+ * Function: 1)individual robot controller containing multiple action choices
+ * Date: 2019.4 Author: Weifan Zhang
+ */
+
 #include <ros/ros.h>
 #include <iostream>
 #include <fstream>
@@ -16,9 +22,27 @@ using namespace std;
 
 string traj_path = "/home/wade/SJTU-swarm/swarm_ws/src/swarm_center/launch/";
 
+/* action-behavior declaration */
 enum FlightState{
     None=0, Hovering=1, Takeoff=2, Commanding=3, Landing=4,
 };
+
+class FlightAction{
+public:
+    FlightState action_state;
+    int duration;
+    FlightAction(FlightState state, int dur = 1) {
+        action_state = state;
+        duration = dur;
+    }
+    ~FlightAction(){}
+};
+
+struct FlightBehavior{
+//    string behavior_name;
+    vector<FlightAction> action_seq;
+}EXEC_COVERAGE, DISENGAGE, ENGAGE;
+
 
 class csvdata{
 public:
@@ -223,6 +247,10 @@ public:
 int main(int argc, char ** argv) {
     ros::init(argc, argv, "coverage_controller");
 
+    /* define behavior */
+    EXEC_COVERAGE.action_seq = {FlightAction(None),FlightAction(Takeoff),FlightAction(Hovering),FlightAction(Commanding),FlightAction(Landing)}; //None->Takeoff->Hovering->Commanding->Landing
+    DISENGAGE.action_seq = {FlightAction(Hovering,2),FlightAction(Commanding),FlightAction(Landing)};
+    ENGAGE.action_seq = {FlightAction(None),FlightAction(Takeoff),FlightAction(Commanding)};
 
     if(argc<2) {
         ROS_WARN("No robot name has been specified. Shutting down robot controller.");

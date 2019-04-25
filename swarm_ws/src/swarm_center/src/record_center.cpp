@@ -1,5 +1,5 @@
 /**
- * This is the commander for formation control trial
+ * This is the record center for formation control trial
  * Date: 2019.3 Author: Weifan Zhang
  */
 

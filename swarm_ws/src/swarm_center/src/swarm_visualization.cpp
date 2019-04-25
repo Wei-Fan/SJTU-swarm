@@ -1,5 +1,8 @@
-//this program is used to visualize the trajectory with msg type Marker
-// by zph
+/**
+ * This is the recording center
+ * Function: 1)visualization
+ * Date: 2019.4 Author: Weifan Zhang
+ */
 
 #include <ros/ros.h>
 #include <visualization_msgs/Marker.h>
@@ -144,7 +147,7 @@ int main(int argc, char** argv)
   ros::NodeHandle nh;
 
   Visual v;
-  std::cout << "Start visualize swarm !" << std::endl;
+  std::cout << "Start to visualize swarm !" << std::endl;
   ros::spin();
 
   return 0;
