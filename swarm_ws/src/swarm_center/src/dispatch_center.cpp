@@ -105,6 +105,8 @@ public:
         }
 
         while(ros::ok()){
+            ros::spinOnce();
+            r.sleep();
             if (!this->plan_ready)//||!this->all_ready)
             {
 //                ROS_INFO("wait");
@@ -122,10 +124,6 @@ public:
                 }
                 first_run = false;
             }
-
-
-            ros::spinOnce();
-            r.sleep();
         }
     }
 };
