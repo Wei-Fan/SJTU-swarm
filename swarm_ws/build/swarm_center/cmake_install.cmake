@@ -37,7 +37,10 @@ if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspeci
 endif()
 
 if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/swarm_center/srv" TYPE FILE FILES "/home/wade/SJTU-swarm/swarm_ws/src/swarm_center/srv/mCPPReq.srv")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/swarm_center/srv" TYPE FILE FILES
+    "/home/wade/SJTU-swarm/swarm_ws/src/swarm_center/srv/mCPPReq.srv"
+    "/home/wade/SJTU-swarm/swarm_ws/src/swarm_center/srv/mArmReq.srv"
+    )
 endif()
 
 if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")

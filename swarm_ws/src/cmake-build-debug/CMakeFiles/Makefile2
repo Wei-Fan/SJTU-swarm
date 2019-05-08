@@ -1219,7 +1219,7 @@ swarm_robot/CMakeFiles/swarm_robot_generate_messages_py.dir/all: swarm_config/CM
 swarm_robot/CMakeFiles/swarm_robot_generate_messages_py.dir/all: swarm_robot/CMakeFiles/_swarm_robot_generate_messages_check_deps_pos_info.dir/all
 	$(MAKE) -f swarm_robot/CMakeFiles/swarm_robot_generate_messages_py.dir/build.make swarm_robot/CMakeFiles/swarm_robot_generate_messages_py.dir/depend
 	$(MAKE) -f swarm_robot/CMakeFiles/swarm_robot_generate_messages_py.dir/build.make swarm_robot/CMakeFiles/swarm_robot_generate_messages_py.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/wade/SJTU-swarm/swarm_ws/src/cmake-build-debug/CMakeFiles --progress-num=48,49 "Built target swarm_robot_generate_messages_py"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/wade/SJTU-swarm/swarm_ws/src/cmake-build-debug/CMakeFiles --progress-num=53,54 "Built target swarm_robot_generate_messages_py"
 .PHONY : swarm_robot/CMakeFiles/swarm_robot_generate_messages_py.dir/all
 
 # Build rule for subdir invocation for target.
@@ -1253,7 +1253,7 @@ swarm_robot/CMakeFiles/swarm_robot_generate_messages_cpp.dir/all: swarm_config/C
 swarm_robot/CMakeFiles/swarm_robot_generate_messages_cpp.dir/all: swarm_robot/CMakeFiles/_swarm_robot_generate_messages_check_deps_pos_info.dir/all
 	$(MAKE) -f swarm_robot/CMakeFiles/swarm_robot_generate_messages_cpp.dir/build.make swarm_robot/CMakeFiles/swarm_robot_generate_messages_cpp.dir/depend
 	$(MAKE) -f swarm_robot/CMakeFiles/swarm_robot_generate_messages_cpp.dir/build.make swarm_robot/CMakeFiles/swarm_robot_generate_messages_cpp.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/wade/SJTU-swarm/swarm_ws/src/cmake-build-debug/CMakeFiles --progress-num=43 "Built target swarm_robot_generate_messages_cpp"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/wade/SJTU-swarm/swarm_ws/src/cmake-build-debug/CMakeFiles --progress-num=48 "Built target swarm_robot_generate_messages_cpp"
 .PHONY : swarm_robot/CMakeFiles/swarm_robot_generate_messages_cpp.dir/all
 
 # Build rule for subdir invocation for target.
@@ -1493,7 +1493,7 @@ swarm_robot/CMakeFiles/swarm_robot_generate_messages_lisp.dir/all: swarm_config/
 swarm_robot/CMakeFiles/swarm_robot_generate_messages_lisp.dir/all: swarm_robot/CMakeFiles/_swarm_robot_generate_messages_check_deps_pos_info.dir/all
 	$(MAKE) -f swarm_robot/CMakeFiles/swarm_robot_generate_messages_lisp.dir/build.make swarm_robot/CMakeFiles/swarm_robot_generate_messages_lisp.dir/depend
 	$(MAKE) -f swarm_robot/CMakeFiles/swarm_robot_generate_messages_lisp.dir/build.make swarm_robot/CMakeFiles/swarm_robot_generate_messages_lisp.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/wade/SJTU-swarm/swarm_ws/src/cmake-build-debug/CMakeFiles --progress-num=46 "Built target swarm_robot_generate_messages_lisp"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/wade/SJTU-swarm/swarm_ws/src/cmake-build-debug/CMakeFiles --progress-num=51 "Built target swarm_robot_generate_messages_lisp"
 .PHONY : swarm_robot/CMakeFiles/swarm_robot_generate_messages_lisp.dir/all
 
 # Build rule for subdir invocation for target.
@@ -1596,7 +1596,7 @@ swarm_robot/CMakeFiles/swarm_robot_generate_messages_eus.dir/all: swarm_config/C
 swarm_robot/CMakeFiles/swarm_robot_generate_messages_eus.dir/all: swarm_robot/CMakeFiles/_swarm_robot_generate_messages_check_deps_pos_info.dir/all
 	$(MAKE) -f swarm_robot/CMakeFiles/swarm_robot_generate_messages_eus.dir/build.make swarm_robot/CMakeFiles/swarm_robot_generate_messages_eus.dir/depend
 	$(MAKE) -f swarm_robot/CMakeFiles/swarm_robot_generate_messages_eus.dir/build.make swarm_robot/CMakeFiles/swarm_robot_generate_messages_eus.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/wade/SJTU-swarm/swarm_ws/src/cmake-build-debug/CMakeFiles --progress-num=44,45 "Built target swarm_robot_generate_messages_eus"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/wade/SJTU-swarm/swarm_ws/src/cmake-build-debug/CMakeFiles --progress-num=49,50 "Built target swarm_robot_generate_messages_eus"
 .PHONY : swarm_robot/CMakeFiles/swarm_robot_generate_messages_eus.dir/all
 
 # Build rule for subdir invocation for target.
@@ -1630,7 +1630,7 @@ swarm_robot/CMakeFiles/swarm_robot_generate_messages_nodejs.dir/all: swarm_confi
 swarm_robot/CMakeFiles/swarm_robot_generate_messages_nodejs.dir/all: swarm_robot/CMakeFiles/_swarm_robot_generate_messages_check_deps_pos_info.dir/all
 	$(MAKE) -f swarm_robot/CMakeFiles/swarm_robot_generate_messages_nodejs.dir/build.make swarm_robot/CMakeFiles/swarm_robot_generate_messages_nodejs.dir/depend
 	$(MAKE) -f swarm_robot/CMakeFiles/swarm_robot_generate_messages_nodejs.dir/build.make swarm_robot/CMakeFiles/swarm_robot_generate_messages_nodejs.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/wade/SJTU-swarm/swarm_ws/src/cmake-build-debug/CMakeFiles --progress-num=47 "Built target swarm_robot_generate_messages_nodejs"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/wade/SJTU-swarm/swarm_ws/src/cmake-build-debug/CMakeFiles --progress-num=52 "Built target swarm_robot_generate_messages_nodejs"
 .PHONY : swarm_robot/CMakeFiles/swarm_robot_generate_messages_nodejs.dir/all
 
 # Build rule for subdir invocation for target.
@@ -1679,6 +1679,7 @@ swarm_center/clean: swarm_center/CMakeFiles/swarm_center_generate_messages_eus.d
 swarm_center/clean: swarm_center/CMakeFiles/swarm_center_geneus.dir/clean
 swarm_center/clean: swarm_center/CMakeFiles/swarm_center_gencpp.dir/clean
 swarm_center/clean: swarm_center/CMakeFiles/swarm_center_generate_messages_cpp.dir/clean
+swarm_center/clean: swarm_center/CMakeFiles/_swarm_center_generate_messages_check_deps_mArmReq.dir/clean
 swarm_center/clean: swarm_center/CMakeFiles/mavros_msgs_generate_messages_py.dir/clean
 swarm_center/clean: swarm_center/CMakeFiles/swarm_center_genpy.dir/clean
 swarm_center/clean: swarm_center/CMakeFiles/mavros_msgs_generate_messages_nodejs.dir/clean
@@ -1768,7 +1769,7 @@ swarm_center/preinstall:
 swarm_center/CMakeFiles/swarm_visualization.dir/all:
 	$(MAKE) -f swarm_center/CMakeFiles/swarm_visualization.dir/build.make swarm_center/CMakeFiles/swarm_visualization.dir/depend
 	$(MAKE) -f swarm_center/CMakeFiles/swarm_visualization.dir/build.make swarm_center/CMakeFiles/swarm_visualization.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/wade/SJTU-swarm/swarm_ws/src/cmake-build-debug/CMakeFiles --progress-num=53,54 "Built target swarm_visualization"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/wade/SJTU-swarm/swarm_ws/src/cmake-build-debug/CMakeFiles --progress-num=58,59 "Built target swarm_visualization"
 .PHONY : swarm_center/CMakeFiles/swarm_visualization.dir/all
 
 # Include target in all.
@@ -1815,7 +1816,7 @@ all: swarm_center/CMakeFiles/coverage_commander.dir/all
 
 # Build rule for subdir invocation for target.
 swarm_center/CMakeFiles/coverage_commander.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/wade/SJTU-swarm/swarm_ws/src/cmake-build-debug/CMakeFiles 4
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/wade/SJTU-swarm/swarm_ws/src/cmake-build-debug/CMakeFiles 5
 	$(MAKE) -f CMakeFiles/Makefile2 swarm_center/CMakeFiles/coverage_commander.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/wade/SJTU-swarm/swarm_ws/src/cmake-build-debug/CMakeFiles 0
 .PHONY : swarm_center/CMakeFiles/coverage_commander.dir/rule
@@ -1847,7 +1848,7 @@ swarm_center/CMakeFiles/swarm_center_genlisp.dir/all: swarm_center/CMakeFiles/sw
 
 # Build rule for subdir invocation for target.
 swarm_center/CMakeFiles/swarm_center_genlisp.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/wade/SJTU-swarm/swarm_ws/src/cmake-build-debug/CMakeFiles 2
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/wade/SJTU-swarm/swarm_ws/src/cmake-build-debug/CMakeFiles 3
 	$(MAKE) -f CMakeFiles/Makefile2 swarm_center/CMakeFiles/swarm_center_genlisp.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/wade/SJTU-swarm/swarm_ws/src/cmake-build-debug/CMakeFiles 0
 .PHONY : swarm_center/CMakeFiles/swarm_center_genlisp.dir/rule
@@ -1873,16 +1874,17 @@ clean: swarm_center/CMakeFiles/swarm_center_genlisp.dir/clean
 # All Build rule for target.
 swarm_center/CMakeFiles/swarm_center_generate_messages_lisp.dir/all: swarm_config/CMakeFiles/std_msgs_generate_messages_lisp.dir/all
 swarm_center/CMakeFiles/swarm_center_generate_messages_lisp.dir/all: swarm_config/CMakeFiles/geometry_msgs_generate_messages_lisp.dir/all
+swarm_center/CMakeFiles/swarm_center_generate_messages_lisp.dir/all: swarm_center/CMakeFiles/_swarm_center_generate_messages_check_deps_mArmReq.dir/all
 swarm_center/CMakeFiles/swarm_center_generate_messages_lisp.dir/all: swarm_center/CMakeFiles/_swarm_center_generate_messages_check_deps_pos_info.dir/all
 swarm_center/CMakeFiles/swarm_center_generate_messages_lisp.dir/all: swarm_center/CMakeFiles/_swarm_center_generate_messages_check_deps_mCPPReq.dir/all
 	$(MAKE) -f swarm_center/CMakeFiles/swarm_center_generate_messages_lisp.dir/build.make swarm_center/CMakeFiles/swarm_center_generate_messages_lisp.dir/depend
 	$(MAKE) -f swarm_center/CMakeFiles/swarm_center_generate_messages_lisp.dir/build.make swarm_center/CMakeFiles/swarm_center_generate_messages_lisp.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/wade/SJTU-swarm/swarm_ws/src/cmake-build-debug/CMakeFiles --progress-num=33,34 "Built target swarm_center_generate_messages_lisp"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/wade/SJTU-swarm/swarm_ws/src/cmake-build-debug/CMakeFiles --progress-num=35,36,37 "Built target swarm_center_generate_messages_lisp"
 .PHONY : swarm_center/CMakeFiles/swarm_center_generate_messages_lisp.dir/all
 
 # Build rule for subdir invocation for target.
 swarm_center/CMakeFiles/swarm_center_generate_messages_lisp.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/wade/SJTU-swarm/swarm_ws/src/cmake-build-debug/CMakeFiles 2
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/wade/SJTU-swarm/swarm_ws/src/cmake-build-debug/CMakeFiles 3
 	$(MAKE) -f CMakeFiles/Makefile2 swarm_center/CMakeFiles/swarm_center_generate_messages_lisp.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/wade/SJTU-swarm/swarm_ws/src/cmake-build-debug/CMakeFiles 0
 .PHONY : swarm_center/CMakeFiles/swarm_center_generate_messages_lisp.dir/rule
@@ -1908,16 +1910,17 @@ clean: swarm_center/CMakeFiles/swarm_center_generate_messages_lisp.dir/clean
 # All Build rule for target.
 swarm_center/CMakeFiles/swarm_center_generate_messages_eus.dir/all: swarm_config/CMakeFiles/geometry_msgs_generate_messages_eus.dir/all
 swarm_center/CMakeFiles/swarm_center_generate_messages_eus.dir/all: swarm_config/CMakeFiles/std_msgs_generate_messages_eus.dir/all
+swarm_center/CMakeFiles/swarm_center_generate_messages_eus.dir/all: swarm_center/CMakeFiles/_swarm_center_generate_messages_check_deps_mArmReq.dir/all
 swarm_center/CMakeFiles/swarm_center_generate_messages_eus.dir/all: swarm_center/CMakeFiles/_swarm_center_generate_messages_check_deps_pos_info.dir/all
 swarm_center/CMakeFiles/swarm_center_generate_messages_eus.dir/all: swarm_center/CMakeFiles/_swarm_center_generate_messages_check_deps_mCPPReq.dir/all
 	$(MAKE) -f swarm_center/CMakeFiles/swarm_center_generate_messages_eus.dir/build.make swarm_center/CMakeFiles/swarm_center_generate_messages_eus.dir/depend
 	$(MAKE) -f swarm_center/CMakeFiles/swarm_center_generate_messages_eus.dir/build.make swarm_center/CMakeFiles/swarm_center_generate_messages_eus.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/wade/SJTU-swarm/swarm_ws/src/cmake-build-debug/CMakeFiles --progress-num=30,31,32 "Built target swarm_center_generate_messages_eus"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/wade/SJTU-swarm/swarm_ws/src/cmake-build-debug/CMakeFiles --progress-num=31,32,33,34 "Built target swarm_center_generate_messages_eus"
 .PHONY : swarm_center/CMakeFiles/swarm_center_generate_messages_eus.dir/all
 
 # Build rule for subdir invocation for target.
 swarm_center/CMakeFiles/swarm_center_generate_messages_eus.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/wade/SJTU-swarm/swarm_ws/src/cmake-build-debug/CMakeFiles 3
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/wade/SJTU-swarm/swarm_ws/src/cmake-build-debug/CMakeFiles 4
 	$(MAKE) -f CMakeFiles/Makefile2 swarm_center/CMakeFiles/swarm_center_generate_messages_eus.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/wade/SJTU-swarm/swarm_ws/src/cmake-build-debug/CMakeFiles 0
 .PHONY : swarm_center/CMakeFiles/swarm_center_generate_messages_eus.dir/rule
@@ -1949,7 +1952,7 @@ swarm_center/CMakeFiles/swarm_center_geneus.dir/all: swarm_center/CMakeFiles/swa
 
 # Build rule for subdir invocation for target.
 swarm_center/CMakeFiles/swarm_center_geneus.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/wade/SJTU-swarm/swarm_ws/src/cmake-build-debug/CMakeFiles 3
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/wade/SJTU-swarm/swarm_ws/src/cmake-build-debug/CMakeFiles 4
 	$(MAKE) -f CMakeFiles/Makefile2 swarm_center/CMakeFiles/swarm_center_geneus.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/wade/SJTU-swarm/swarm_ws/src/cmake-build-debug/CMakeFiles 0
 .PHONY : swarm_center/CMakeFiles/swarm_center_geneus.dir/rule
@@ -1981,7 +1984,7 @@ swarm_center/CMakeFiles/swarm_center_gencpp.dir/all: swarm_center/CMakeFiles/swa
 
 # Build rule for subdir invocation for target.
 swarm_center/CMakeFiles/swarm_center_gencpp.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/wade/SJTU-swarm/swarm_ws/src/cmake-build-debug/CMakeFiles 2
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/wade/SJTU-swarm/swarm_ws/src/cmake-build-debug/CMakeFiles 3
 	$(MAKE) -f CMakeFiles/Makefile2 swarm_center/CMakeFiles/swarm_center_gencpp.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/wade/SJTU-swarm/swarm_ws/src/cmake-build-debug/CMakeFiles 0
 .PHONY : swarm_center/CMakeFiles/swarm_center_gencpp.dir/rule
@@ -2007,16 +2010,17 @@ clean: swarm_center/CMakeFiles/swarm_center_gencpp.dir/clean
 # All Build rule for target.
 swarm_center/CMakeFiles/swarm_center_generate_messages_cpp.dir/all: swarm_config/CMakeFiles/geometry_msgs_generate_messages_cpp.dir/all
 swarm_center/CMakeFiles/swarm_center_generate_messages_cpp.dir/all: swarm_config/CMakeFiles/std_msgs_generate_messages_cpp.dir/all
+swarm_center/CMakeFiles/swarm_center_generate_messages_cpp.dir/all: swarm_center/CMakeFiles/_swarm_center_generate_messages_check_deps_mArmReq.dir/all
 swarm_center/CMakeFiles/swarm_center_generate_messages_cpp.dir/all: swarm_center/CMakeFiles/_swarm_center_generate_messages_check_deps_pos_info.dir/all
 swarm_center/CMakeFiles/swarm_center_generate_messages_cpp.dir/all: swarm_center/CMakeFiles/_swarm_center_generate_messages_check_deps_mCPPReq.dir/all
 	$(MAKE) -f swarm_center/CMakeFiles/swarm_center_generate_messages_cpp.dir/build.make swarm_center/CMakeFiles/swarm_center_generate_messages_cpp.dir/depend
 	$(MAKE) -f swarm_center/CMakeFiles/swarm_center_generate_messages_cpp.dir/build.make swarm_center/CMakeFiles/swarm_center_generate_messages_cpp.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/wade/SJTU-swarm/swarm_ws/src/cmake-build-debug/CMakeFiles --progress-num=28,29 "Built target swarm_center_generate_messages_cpp"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/wade/SJTU-swarm/swarm_ws/src/cmake-build-debug/CMakeFiles --progress-num=28,29,30 "Built target swarm_center_generate_messages_cpp"
 .PHONY : swarm_center/CMakeFiles/swarm_center_generate_messages_cpp.dir/all
 
 # Build rule for subdir invocation for target.
 swarm_center/CMakeFiles/swarm_center_generate_messages_cpp.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/wade/SJTU-swarm/swarm_ws/src/cmake-build-debug/CMakeFiles 2
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/wade/SJTU-swarm/swarm_ws/src/cmake-build-debug/CMakeFiles 3
 	$(MAKE) -f CMakeFiles/Makefile2 swarm_center/CMakeFiles/swarm_center_generate_messages_cpp.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/wade/SJTU-swarm/swarm_ws/src/cmake-build-debug/CMakeFiles 0
 .PHONY : swarm_center/CMakeFiles/swarm_center_generate_messages_cpp.dir/rule
@@ -2033,6 +2037,38 @@ swarm_center/CMakeFiles/swarm_center_generate_messages_cpp.dir/clean:
 
 # clean rule for target.
 clean: swarm_center/CMakeFiles/swarm_center_generate_messages_cpp.dir/clean
+
+.PHONY : clean
+
+#=============================================================================
+# Target rules for target swarm_center/CMakeFiles/_swarm_center_generate_messages_check_deps_mArmReq.dir
+
+# All Build rule for target.
+swarm_center/CMakeFiles/_swarm_center_generate_messages_check_deps_mArmReq.dir/all:
+	$(MAKE) -f swarm_center/CMakeFiles/_swarm_center_generate_messages_check_deps_mArmReq.dir/build.make swarm_center/CMakeFiles/_swarm_center_generate_messages_check_deps_mArmReq.dir/depend
+	$(MAKE) -f swarm_center/CMakeFiles/_swarm_center_generate_messages_check_deps_mArmReq.dir/build.make swarm_center/CMakeFiles/_swarm_center_generate_messages_check_deps_mArmReq.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/wade/SJTU-swarm/swarm_ws/src/cmake-build-debug/CMakeFiles --progress-num= "Built target _swarm_center_generate_messages_check_deps_mArmReq"
+.PHONY : swarm_center/CMakeFiles/_swarm_center_generate_messages_check_deps_mArmReq.dir/all
+
+# Build rule for subdir invocation for target.
+swarm_center/CMakeFiles/_swarm_center_generate_messages_check_deps_mArmReq.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/wade/SJTU-swarm/swarm_ws/src/cmake-build-debug/CMakeFiles 0
+	$(MAKE) -f CMakeFiles/Makefile2 swarm_center/CMakeFiles/_swarm_center_generate_messages_check_deps_mArmReq.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/wade/SJTU-swarm/swarm_ws/src/cmake-build-debug/CMakeFiles 0
+.PHONY : swarm_center/CMakeFiles/_swarm_center_generate_messages_check_deps_mArmReq.dir/rule
+
+# Convenience name for target.
+_swarm_center_generate_messages_check_deps_mArmReq: swarm_center/CMakeFiles/_swarm_center_generate_messages_check_deps_mArmReq.dir/rule
+
+.PHONY : _swarm_center_generate_messages_check_deps_mArmReq
+
+# clean rule for target.
+swarm_center/CMakeFiles/_swarm_center_generate_messages_check_deps_mArmReq.dir/clean:
+	$(MAKE) -f swarm_center/CMakeFiles/_swarm_center_generate_messages_check_deps_mArmReq.dir/build.make swarm_center/CMakeFiles/_swarm_center_generate_messages_check_deps_mArmReq.dir/clean
+.PHONY : swarm_center/CMakeFiles/_swarm_center_generate_messages_check_deps_mArmReq.dir/clean
+
+# clean rule for target.
+clean: swarm_center/CMakeFiles/_swarm_center_generate_messages_check_deps_mArmReq.dir/clean
 
 .PHONY : clean
 
@@ -2080,7 +2116,7 @@ swarm_center/CMakeFiles/swarm_center_genpy.dir/all: swarm_center/CMakeFiles/swar
 
 # Build rule for subdir invocation for target.
 swarm_center/CMakeFiles/swarm_center_genpy.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/wade/SJTU-swarm/swarm_ws/src/cmake-build-debug/CMakeFiles 4
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/wade/SJTU-swarm/swarm_ws/src/cmake-build-debug/CMakeFiles 5
 	$(MAKE) -f CMakeFiles/Makefile2 swarm_center/CMakeFiles/swarm_center_genpy.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/wade/SJTU-swarm/swarm_ws/src/cmake-build-debug/CMakeFiles 0
 .PHONY : swarm_center/CMakeFiles/swarm_center_genpy.dir/rule
@@ -2171,7 +2207,7 @@ clean: swarm_center/CMakeFiles/mavros_msgs_generate_messages_eus.dir/clean
 swarm_center/CMakeFiles/swarm_driver.dir/all: swarm_center/CMakeFiles/swarm_tools.dir/all
 	$(MAKE) -f swarm_center/CMakeFiles/swarm_driver.dir/build.make swarm_center/CMakeFiles/swarm_driver.dir/depend
 	$(MAKE) -f swarm_center/CMakeFiles/swarm_driver.dir/build.make swarm_center/CMakeFiles/swarm_driver.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/wade/SJTU-swarm/swarm_ws/src/cmake-build-debug/CMakeFiles --progress-num=41,42 "Built target swarm_driver"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/wade/SJTU-swarm/swarm_ws/src/cmake-build-debug/CMakeFiles --progress-num=46,47 "Built target swarm_driver"
 .PHONY : swarm_center/CMakeFiles/swarm_driver.dir/all
 
 # Include target in all.
@@ -2661,7 +2697,7 @@ clean: swarm_center/CMakeFiles/vicon_bridge_gencfg.dir/clean
 swarm_center/CMakeFiles/swarm_tools.dir/all:
 	$(MAKE) -f swarm_center/CMakeFiles/swarm_tools.dir/build.make swarm_center/CMakeFiles/swarm_tools.dir/depend
 	$(MAKE) -f swarm_center/CMakeFiles/swarm_tools.dir/build.make swarm_center/CMakeFiles/swarm_tools.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/wade/SJTU-swarm/swarm_ws/src/cmake-build-debug/CMakeFiles --progress-num=50,51,52 "Built target swarm_tools"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/wade/SJTU-swarm/swarm_ws/src/cmake-build-debug/CMakeFiles --progress-num=55,56,57 "Built target swarm_tools"
 .PHONY : swarm_center/CMakeFiles/swarm_tools.dir/all
 
 # Include target in all.
@@ -2744,7 +2780,7 @@ all: swarm_center/CMakeFiles/swarm_center_generate_messages.dir/all
 
 # Build rule for subdir invocation for target.
 swarm_center/CMakeFiles/swarm_center_generate_messages.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/wade/SJTU-swarm/swarm_ws/src/cmake-build-debug/CMakeFiles 13
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/wade/SJTU-swarm/swarm_ws/src/cmake-build-debug/CMakeFiles 18
 	$(MAKE) -f CMakeFiles/Makefile2 swarm_center/CMakeFiles/swarm_center_generate_messages.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/wade/SJTU-swarm/swarm_ws/src/cmake-build-debug/CMakeFiles 0
 .PHONY : swarm_center/CMakeFiles/swarm_center_generate_messages.dir/rule
@@ -2904,7 +2940,7 @@ swarm_center/CMakeFiles/swarm_center_gennodejs.dir/all: swarm_center/CMakeFiles/
 
 # Build rule for subdir invocation for target.
 swarm_center/CMakeFiles/swarm_center_gennodejs.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/wade/SJTU-swarm/swarm_ws/src/cmake-build-debug/CMakeFiles 2
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/wade/SJTU-swarm/swarm_ws/src/cmake-build-debug/CMakeFiles 3
 	$(MAKE) -f CMakeFiles/Makefile2 swarm_center/CMakeFiles/swarm_center_gennodejs.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/wade/SJTU-swarm/swarm_ws/src/cmake-build-debug/CMakeFiles 0
 .PHONY : swarm_center/CMakeFiles/swarm_center_gennodejs.dir/rule
@@ -3122,16 +3158,17 @@ clean: swarm_center/CMakeFiles/dynamic_reconfigure_generate_messages_nodejs.dir/
 # All Build rule for target.
 swarm_center/CMakeFiles/swarm_center_generate_messages_nodejs.dir/all: swarm_config/CMakeFiles/std_msgs_generate_messages_nodejs.dir/all
 swarm_center/CMakeFiles/swarm_center_generate_messages_nodejs.dir/all: swarm_config/CMakeFiles/geometry_msgs_generate_messages_nodejs.dir/all
+swarm_center/CMakeFiles/swarm_center_generate_messages_nodejs.dir/all: swarm_center/CMakeFiles/_swarm_center_generate_messages_check_deps_mArmReq.dir/all
 swarm_center/CMakeFiles/swarm_center_generate_messages_nodejs.dir/all: swarm_center/CMakeFiles/_swarm_center_generate_messages_check_deps_pos_info.dir/all
 swarm_center/CMakeFiles/swarm_center_generate_messages_nodejs.dir/all: swarm_center/CMakeFiles/_swarm_center_generate_messages_check_deps_mCPPReq.dir/all
 	$(MAKE) -f swarm_center/CMakeFiles/swarm_center_generate_messages_nodejs.dir/build.make swarm_center/CMakeFiles/swarm_center_generate_messages_nodejs.dir/depend
 	$(MAKE) -f swarm_center/CMakeFiles/swarm_center_generate_messages_nodejs.dir/build.make swarm_center/CMakeFiles/swarm_center_generate_messages_nodejs.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/wade/SJTU-swarm/swarm_ws/src/cmake-build-debug/CMakeFiles --progress-num=35,36 "Built target swarm_center_generate_messages_nodejs"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/wade/SJTU-swarm/swarm_ws/src/cmake-build-debug/CMakeFiles --progress-num=38,39,40 "Built target swarm_center_generate_messages_nodejs"
 .PHONY : swarm_center/CMakeFiles/swarm_center_generate_messages_nodejs.dir/all
 
 # Build rule for subdir invocation for target.
 swarm_center/CMakeFiles/swarm_center_generate_messages_nodejs.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/wade/SJTU-swarm/swarm_ws/src/cmake-build-debug/CMakeFiles 2
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/wade/SJTU-swarm/swarm_ws/src/cmake-build-debug/CMakeFiles 3
 	$(MAKE) -f CMakeFiles/Makefile2 swarm_center/CMakeFiles/swarm_center_generate_messages_nodejs.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/wade/SJTU-swarm/swarm_ws/src/cmake-build-debug/CMakeFiles 0
 .PHONY : swarm_center/CMakeFiles/swarm_center_generate_messages_nodejs.dir/rule
@@ -3573,16 +3610,17 @@ clean: swarm_center/CMakeFiles/diagnostic_msgs_generate_messages_eus.dir/clean
 # All Build rule for target.
 swarm_center/CMakeFiles/swarm_center_generate_messages_py.dir/all: swarm_config/CMakeFiles/geometry_msgs_generate_messages_py.dir/all
 swarm_center/CMakeFiles/swarm_center_generate_messages_py.dir/all: swarm_config/CMakeFiles/std_msgs_generate_messages_py.dir/all
+swarm_center/CMakeFiles/swarm_center_generate_messages_py.dir/all: swarm_center/CMakeFiles/_swarm_center_generate_messages_check_deps_mArmReq.dir/all
 swarm_center/CMakeFiles/swarm_center_generate_messages_py.dir/all: swarm_center/CMakeFiles/_swarm_center_generate_messages_check_deps_pos_info.dir/all
 swarm_center/CMakeFiles/swarm_center_generate_messages_py.dir/all: swarm_center/CMakeFiles/_swarm_center_generate_messages_check_deps_mCPPReq.dir/all
 	$(MAKE) -f swarm_center/CMakeFiles/swarm_center_generate_messages_py.dir/build.make swarm_center/CMakeFiles/swarm_center_generate_messages_py.dir/depend
 	$(MAKE) -f swarm_center/CMakeFiles/swarm_center_generate_messages_py.dir/build.make swarm_center/CMakeFiles/swarm_center_generate_messages_py.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/wade/SJTU-swarm/swarm_ws/src/cmake-build-debug/CMakeFiles --progress-num=37,38,39,40 "Built target swarm_center_generate_messages_py"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/wade/SJTU-swarm/swarm_ws/src/cmake-build-debug/CMakeFiles --progress-num=41,42,43,44,45 "Built target swarm_center_generate_messages_py"
 .PHONY : swarm_center/CMakeFiles/swarm_center_generate_messages_py.dir/all
 
 # Build rule for subdir invocation for target.
 swarm_center/CMakeFiles/swarm_center_generate_messages_py.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/wade/SJTU-swarm/swarm_ws/src/cmake-build-debug/CMakeFiles 4
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/wade/SJTU-swarm/swarm_ws/src/cmake-build-debug/CMakeFiles 5
 	$(MAKE) -f CMakeFiles/Makefile2 swarm_center/CMakeFiles/swarm_center_generate_messages_py.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/wade/SJTU-swarm/swarm_ws/src/cmake-build-debug/CMakeFiles 0
 .PHONY : swarm_center/CMakeFiles/swarm_center_generate_messages_py.dir/rule

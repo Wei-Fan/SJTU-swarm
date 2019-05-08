@@ -1,6 +1,7 @@
 file(REMOVE_RECURSE
   "CMakeFiles/swarm_center_generate_messages_cpp"
   "../devel/include/swarm_center/pos_info.h"
+  "../devel/include/swarm_center/mArmReq.h"
   "../devel/include/swarm_center/mCPPReq.h"
 )
 

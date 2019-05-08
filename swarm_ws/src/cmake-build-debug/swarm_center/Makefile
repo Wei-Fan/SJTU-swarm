@@ -288,6 +288,21 @@ swarm_center_generate_messages_cpp/fast:
 .PHONY : swarm_center_generate_messages_cpp/fast
 
 # Convenience name for target.
+swarm_center/CMakeFiles/_swarm_center_generate_messages_check_deps_mArmReq.dir/rule:
+	cd /home/wade/SJTU-swarm/swarm_ws/src/cmake-build-debug && $(MAKE) -f CMakeFiles/Makefile2 swarm_center/CMakeFiles/_swarm_center_generate_messages_check_deps_mArmReq.dir/rule
+.PHONY : swarm_center/CMakeFiles/_swarm_center_generate_messages_check_deps_mArmReq.dir/rule
+
+# Convenience name for target.
+_swarm_center_generate_messages_check_deps_mArmReq: swarm_center/CMakeFiles/_swarm_center_generate_messages_check_deps_mArmReq.dir/rule
+
+.PHONY : _swarm_center_generate_messages_check_deps_mArmReq
+
+# fast build rule for target.
+_swarm_center_generate_messages_check_deps_mArmReq/fast:
+	cd /home/wade/SJTU-swarm/swarm_ws/src/cmake-build-debug && $(MAKE) -f swarm_center/CMakeFiles/_swarm_center_generate_messages_check_deps_mArmReq.dir/build.make swarm_center/CMakeFiles/_swarm_center_generate_messages_check_deps_mArmReq.dir/build
+.PHONY : _swarm_center_generate_messages_check_deps_mArmReq/fast
+
+# Convenience name for target.
 swarm_center/CMakeFiles/mavros_msgs_generate_messages_py.dir/rule:
 	cd /home/wade/SJTU-swarm/swarm_ws/src/cmake-build-debug && $(MAKE) -f CMakeFiles/Makefile2 swarm_center/CMakeFiles/mavros_msgs_generate_messages_py.dir/rule
 .PHONY : swarm_center/CMakeFiles/mavros_msgs_generate_messages_py.dir/rule
@@ -1632,6 +1647,7 @@ help:
 	@echo "... swarm_center_gencpp"
 	@echo "... install/local"
 	@echo "... swarm_center_generate_messages_cpp"
+	@echo "... _swarm_center_generate_messages_check_deps_mArmReq"
 	@echo "... mavros_msgs_generate_messages_py"
 	@echo "... swarm_center_genpy"
 	@echo "... mavros_msgs_generate_messages_nodejs"

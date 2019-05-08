@@ -855,6 +855,19 @@ swarm_center_generate_messages_cpp/fast:
 .PHONY : swarm_center_generate_messages_cpp/fast
 
 #=============================================================================
+# Target rules for targets named _swarm_center_generate_messages_check_deps_mArmReq
+
+# Build rule for target.
+_swarm_center_generate_messages_check_deps_mArmReq: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 _swarm_center_generate_messages_check_deps_mArmReq
+.PHONY : _swarm_center_generate_messages_check_deps_mArmReq
+
+# fast build rule for target.
+_swarm_center_generate_messages_check_deps_mArmReq/fast:
+	$(MAKE) -f swarm_center/CMakeFiles/_swarm_center_generate_messages_check_deps_mArmReq.dir/build.make swarm_center/CMakeFiles/_swarm_center_generate_messages_check_deps_mArmReq.dir/build
+.PHONY : _swarm_center_generate_messages_check_deps_mArmReq/fast
+
+#=============================================================================
 # Target rules for targets named mavros_msgs_generate_messages_py
 
 # Build rule for target.
@@ -1882,6 +1895,7 @@ help:
 	@echo "... swarm_center_geneus"
 	@echo "... swarm_center_gencpp"
 	@echo "... swarm_center_generate_messages_cpp"
+	@echo "... _swarm_center_generate_messages_check_deps_mArmReq"
 	@echo "... mavros_msgs_generate_messages_py"
 	@echo "... swarm_center_genpy"
 	@echo "... mavros_msgs_generate_messages_nodejs"

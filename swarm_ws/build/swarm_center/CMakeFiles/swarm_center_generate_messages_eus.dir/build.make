@@ -54,6 +54,7 @@ CMAKE_BINARY_DIR = /home/wade/SJTU-swarm/swarm_ws/build
 include swarm_center/CMakeFiles/swarm_center_generate_messages_eus.dir/progress.make
 
 swarm_center/CMakeFiles/swarm_center_generate_messages_eus: /home/wade/SJTU-swarm/swarm_ws/devel/share/roseus/ros/swarm_center/msg/pos_info.l
+swarm_center/CMakeFiles/swarm_center_generate_messages_eus: /home/wade/SJTU-swarm/swarm_ws/devel/share/roseus/ros/swarm_center/srv/mArmReq.l
 swarm_center/CMakeFiles/swarm_center_generate_messages_eus: /home/wade/SJTU-swarm/swarm_ws/devel/share/roseus/ros/swarm_center/srv/mCPPReq.l
 swarm_center/CMakeFiles/swarm_center_generate_messages_eus: /home/wade/SJTU-swarm/swarm_ws/devel/share/roseus/ros/swarm_center/manifest.l
 
@@ -68,17 +69,23 @@ swarm_center/CMakeFiles/swarm_center_generate_messages_eus: /home/wade/SJTU-swar
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/wade/SJTU-swarm/swarm_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating EusLisp code from swarm_center/pos_info.msg"
 	cd /home/wade/SJTU-swarm/swarm_ws/build/swarm_center && ../catkin_generated/env_cached.sh /usr/bin/python /opt/ros/kinetic/share/geneus/cmake/../../../lib/geneus/gen_eus.py /home/wade/SJTU-swarm/swarm_ws/src/swarm_center/msg/pos_info.msg -Iswarm_center:/home/wade/SJTU-swarm/swarm_ws/src/swarm_center/msg -Igeometry_msgs:/opt/ros/kinetic/share/geometry_msgs/cmake/../msg -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -p swarm_center -o /home/wade/SJTU-swarm/swarm_ws/devel/share/roseus/ros/swarm_center/msg
 
+/home/wade/SJTU-swarm/swarm_ws/devel/share/roseus/ros/swarm_center/srv/mArmReq.l: /opt/ros/kinetic/lib/geneus/gen_eus.py
+/home/wade/SJTU-swarm/swarm_ws/devel/share/roseus/ros/swarm_center/srv/mArmReq.l: /home/wade/SJTU-swarm/swarm_ws/src/swarm_center/srv/mArmReq.srv
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/wade/SJTU-swarm/swarm_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Generating EusLisp code from swarm_center/mArmReq.srv"
+	cd /home/wade/SJTU-swarm/swarm_ws/build/swarm_center && ../catkin_generated/env_cached.sh /usr/bin/python /opt/ros/kinetic/share/geneus/cmake/../../../lib/geneus/gen_eus.py /home/wade/SJTU-swarm/swarm_ws/src/swarm_center/srv/mArmReq.srv -Iswarm_center:/home/wade/SJTU-swarm/swarm_ws/src/swarm_center/msg -Igeometry_msgs:/opt/ros/kinetic/share/geometry_msgs/cmake/../msg -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -p swarm_center -o /home/wade/SJTU-swarm/swarm_ws/devel/share/roseus/ros/swarm_center/srv
+
 /home/wade/SJTU-swarm/swarm_ws/devel/share/roseus/ros/swarm_center/srv/mCPPReq.l: /opt/ros/kinetic/lib/geneus/gen_eus.py
 /home/wade/SJTU-swarm/swarm_ws/devel/share/roseus/ros/swarm_center/srv/mCPPReq.l: /home/wade/SJTU-swarm/swarm_ws/src/swarm_center/srv/mCPPReq.srv
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/wade/SJTU-swarm/swarm_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Generating EusLisp code from swarm_center/mCPPReq.srv"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/wade/SJTU-swarm/swarm_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Generating EusLisp code from swarm_center/mCPPReq.srv"
 	cd /home/wade/SJTU-swarm/swarm_ws/build/swarm_center && ../catkin_generated/env_cached.sh /usr/bin/python /opt/ros/kinetic/share/geneus/cmake/../../../lib/geneus/gen_eus.py /home/wade/SJTU-swarm/swarm_ws/src/swarm_center/srv/mCPPReq.srv -Iswarm_center:/home/wade/SJTU-swarm/swarm_ws/src/swarm_center/msg -Igeometry_msgs:/opt/ros/kinetic/share/geometry_msgs/cmake/../msg -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -p swarm_center -o /home/wade/SJTU-swarm/swarm_ws/devel/share/roseus/ros/swarm_center/srv
 
 /home/wade/SJTU-swarm/swarm_ws/devel/share/roseus/ros/swarm_center/manifest.l: /opt/ros/kinetic/lib/geneus/gen_eus.py
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/wade/SJTU-swarm/swarm_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Generating EusLisp manifest code for swarm_center"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/wade/SJTU-swarm/swarm_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Generating EusLisp manifest code for swarm_center"
 	cd /home/wade/SJTU-swarm/swarm_ws/build/swarm_center && ../catkin_generated/env_cached.sh /usr/bin/python /opt/ros/kinetic/share/geneus/cmake/../../../lib/geneus/gen_eus.py -m -o /home/wade/SJTU-swarm/swarm_ws/devel/share/roseus/ros/swarm_center swarm_center geometry_msgs std_msgs
 
 swarm_center_generate_messages_eus: swarm_center/CMakeFiles/swarm_center_generate_messages_eus
 swarm_center_generate_messages_eus: /home/wade/SJTU-swarm/swarm_ws/devel/share/roseus/ros/swarm_center/msg/pos_info.l
+swarm_center_generate_messages_eus: /home/wade/SJTU-swarm/swarm_ws/devel/share/roseus/ros/swarm_center/srv/mArmReq.l
 swarm_center_generate_messages_eus: /home/wade/SJTU-swarm/swarm_ws/devel/share/roseus/ros/swarm_center/srv/mCPPReq.l
 swarm_center_generate_messages_eus: /home/wade/SJTU-swarm/swarm_ws/devel/share/roseus/ros/swarm_center/manifest.l
 swarm_center_generate_messages_eus: swarm_center/CMakeFiles/swarm_center_generate_messages_eus.dir/build.make

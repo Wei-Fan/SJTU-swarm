@@ -1,6 +1,6 @@
 # generated from genmsg/cmake/pkg-genmsg.cmake.em
 
-message(STATUS "swarm_center: 1 messages, 1 services")
+message(STATUS "swarm_center: 1 messages, 2 services")
 
 set(MSG_I_FLAGS "-Iswarm_center:/home/wade/SJTU-swarm/swarm_ws/src/swarm_center/msg;-Igeometry_msgs:/opt/ros/kinetic/share/geometry_msgs/cmake/../msg;-Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg")
 
@@ -16,6 +16,11 @@ add_custom_target(swarm_center_generate_messages ALL)
 # verify that message/service dependencies have not changed since configure
 
 
+
+get_filename_component(_filename "/home/wade/SJTU-swarm/swarm_ws/src/swarm_center/srv/mArmReq.srv" NAME_WE)
+add_custom_target(_swarm_center_generate_messages_check_deps_${_filename}
+  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "swarm_center" "/home/wade/SJTU-swarm/swarm_ws/src/swarm_center/srv/mArmReq.srv" ""
+)
 
 get_filename_component(_filename "/home/wade/SJTU-swarm/swarm_ws/src/swarm_center/srv/mCPPReq.srv" NAME_WE)
 add_custom_target(_swarm_center_generate_messages_check_deps_${_filename}
@@ -42,6 +47,12 @@ _generate_msg_cpp(swarm_center
 
 ### Generating Services
 _generate_srv_cpp(swarm_center
+  "/home/wade/SJTU-swarm/swarm_ws/src/swarm_center/srv/mArmReq.srv"
+  "${MSG_I_FLAGS}"
+  ""
+  ${CATKIN_DEVEL_PREFIX}/${gencpp_INSTALL_DIR}/swarm_center
+)
+_generate_srv_cpp(swarm_center
   "/home/wade/SJTU-swarm/swarm_ws/src/swarm_center/srv/mCPPReq.srv"
   "${MSG_I_FLAGS}"
   ""
@@ -60,6 +71,8 @@ add_custom_target(swarm_center_generate_messages_cpp
 add_dependencies(swarm_center_generate_messages swarm_center_generate_messages_cpp)
 
 # add dependencies to all check dependencies targets
+get_filename_component(_filename "/home/wade/SJTU-swarm/swarm_ws/src/swarm_center/srv/mArmReq.srv" NAME_WE)
+add_dependencies(swarm_center_generate_messages_cpp _swarm_center_generate_messages_check_deps_${_filename})
 get_filename_component(_filename "/home/wade/SJTU-swarm/swarm_ws/src/swarm_center/srv/mCPPReq.srv" NAME_WE)
 add_dependencies(swarm_center_generate_messages_cpp _swarm_center_generate_messages_check_deps_${_filename})
 get_filename_component(_filename "/home/wade/SJTU-swarm/swarm_ws/src/swarm_center/msg/pos_info.msg" NAME_WE)
@@ -83,6 +96,12 @@ _generate_msg_eus(swarm_center
 
 ### Generating Services
 _generate_srv_eus(swarm_center
+  "/home/wade/SJTU-swarm/swarm_ws/src/swarm_center/srv/mArmReq.srv"
+  "${MSG_I_FLAGS}"
+  ""
+  ${CATKIN_DEVEL_PREFIX}/${geneus_INSTALL_DIR}/swarm_center
+)
+_generate_srv_eus(swarm_center
   "/home/wade/SJTU-swarm/swarm_ws/src/swarm_center/srv/mCPPReq.srv"
   "${MSG_I_FLAGS}"
   ""
@@ -101,6 +120,8 @@ add_custom_target(swarm_center_generate_messages_eus
 add_dependencies(swarm_center_generate_messages swarm_center_generate_messages_eus)
 
 # add dependencies to all check dependencies targets
+get_filename_component(_filename "/home/wade/SJTU-swarm/swarm_ws/src/swarm_center/srv/mArmReq.srv" NAME_WE)
+add_dependencies(swarm_center_generate_messages_eus _swarm_center_generate_messages_check_deps_${_filename})
 get_filename_component(_filename "/home/wade/SJTU-swarm/swarm_ws/src/swarm_center/srv/mCPPReq.srv" NAME_WE)
 add_dependencies(swarm_center_generate_messages_eus _swarm_center_generate_messages_check_deps_${_filename})
 get_filename_component(_filename "/home/wade/SJTU-swarm/swarm_ws/src/swarm_center/msg/pos_info.msg" NAME_WE)
@@ -124,6 +145,12 @@ _generate_msg_lisp(swarm_center
 
 ### Generating Services
 _generate_srv_lisp(swarm_center
+  "/home/wade/SJTU-swarm/swarm_ws/src/swarm_center/srv/mArmReq.srv"
+  "${MSG_I_FLAGS}"
+  ""
+  ${CATKIN_DEVEL_PREFIX}/${genlisp_INSTALL_DIR}/swarm_center
+)
+_generate_srv_lisp(swarm_center
   "/home/wade/SJTU-swarm/swarm_ws/src/swarm_center/srv/mCPPReq.srv"
   "${MSG_I_FLAGS}"
   ""
@@ -142,6 +169,8 @@ add_custom_target(swarm_center_generate_messages_lisp
 add_dependencies(swarm_center_generate_messages swarm_center_generate_messages_lisp)
 
 # add dependencies to all check dependencies targets
+get_filename_component(_filename "/home/wade/SJTU-swarm/swarm_ws/src/swarm_center/srv/mArmReq.srv" NAME_WE)
+add_dependencies(swarm_center_generate_messages_lisp _swarm_center_generate_messages_check_deps_${_filename})
 get_filename_component(_filename "/home/wade/SJTU-swarm/swarm_ws/src/swarm_center/srv/mCPPReq.srv" NAME_WE)
 add_dependencies(swarm_center_generate_messages_lisp _swarm_center_generate_messages_check_deps_${_filename})
 get_filename_component(_filename "/home/wade/SJTU-swarm/swarm_ws/src/swarm_center/msg/pos_info.msg" NAME_WE)
@@ -165,6 +194,12 @@ _generate_msg_nodejs(swarm_center
 
 ### Generating Services
 _generate_srv_nodejs(swarm_center
+  "/home/wade/SJTU-swarm/swarm_ws/src/swarm_center/srv/mArmReq.srv"
+  "${MSG_I_FLAGS}"
+  ""
+  ${CATKIN_DEVEL_PREFIX}/${gennodejs_INSTALL_DIR}/swarm_center
+)
+_generate_srv_nodejs(swarm_center
   "/home/wade/SJTU-swarm/swarm_ws/src/swarm_center/srv/mCPPReq.srv"
   "${MSG_I_FLAGS}"
   ""
@@ -183,6 +218,8 @@ add_custom_target(swarm_center_generate_messages_nodejs
 add_dependencies(swarm_center_generate_messages swarm_center_generate_messages_nodejs)
 
 # add dependencies to all check dependencies targets
+get_filename_component(_filename "/home/wade/SJTU-swarm/swarm_ws/src/swarm_center/srv/mArmReq.srv" NAME_WE)
+add_dependencies(swarm_center_generate_messages_nodejs _swarm_center_generate_messages_check_deps_${_filename})
 get_filename_component(_filename "/home/wade/SJTU-swarm/swarm_ws/src/swarm_center/srv/mCPPReq.srv" NAME_WE)
 add_dependencies(swarm_center_generate_messages_nodejs _swarm_center_generate_messages_check_deps_${_filename})
 get_filename_component(_filename "/home/wade/SJTU-swarm/swarm_ws/src/swarm_center/msg/pos_info.msg" NAME_WE)
@@ -206,6 +243,12 @@ _generate_msg_py(swarm_center
 
 ### Generating Services
 _generate_srv_py(swarm_center
+  "/home/wade/SJTU-swarm/swarm_ws/src/swarm_center/srv/mArmReq.srv"
+  "${MSG_I_FLAGS}"
+  ""
+  ${CATKIN_DEVEL_PREFIX}/${genpy_INSTALL_DIR}/swarm_center
+)
+_generate_srv_py(swarm_center
   "/home/wade/SJTU-swarm/swarm_ws/src/swarm_center/srv/mCPPReq.srv"
   "${MSG_I_FLAGS}"
   ""
@@ -224,6 +267,8 @@ add_custom_target(swarm_center_generate_messages_py
 add_dependencies(swarm_center_generate_messages swarm_center_generate_messages_py)
 
 # add dependencies to all check dependencies targets
+get_filename_component(_filename "/home/wade/SJTU-swarm/swarm_ws/src/swarm_center/srv/mArmReq.srv" NAME_WE)
+add_dependencies(swarm_center_generate_messages_py _swarm_center_generate_messages_check_deps_${_filename})
 get_filename_component(_filename "/home/wade/SJTU-swarm/swarm_ws/src/swarm_center/srv/mCPPReq.srv" NAME_WE)
 add_dependencies(swarm_center_generate_messages_py _swarm_center_generate_messages_check_deps_${_filename})
 get_filename_component(_filename "/home/wade/SJTU-swarm/swarm_ws/src/swarm_center/msg/pos_info.msg" NAME_WE)

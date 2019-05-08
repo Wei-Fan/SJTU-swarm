@@ -1,7 +1,7 @@
 # generated from genmsg/cmake/pkg-genmsg.context.in
 
 messages_str = "/home/wade/SJTU-swarm/swarm_ws/src/swarm_center/msg/pos_info.msg"
-services_str = "/home/wade/SJTU-swarm/swarm_ws/src/swarm_center/srv/mCPPReq.srv"
+services_str = "/home/wade/SJTU-swarm/swarm_ws/src/swarm_center/srv/mCPPReq.srv;/home/wade/SJTU-swarm/swarm_ws/src/swarm_center/srv/mArmReq.srv"
 pkg_name = "swarm_center"
 dependencies_str = "geometry_msgs;std_msgs"
 langs = "gencpp;geneus;genlisp;gennodejs;genpy"

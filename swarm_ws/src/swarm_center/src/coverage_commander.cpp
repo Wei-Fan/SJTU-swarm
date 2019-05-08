@@ -851,7 +851,7 @@ public:
             float len_x = (P_grid_t[0](1)-GRID_SIZE/2+0.5)*AREA_SIZE/GRID_SIZE/LEN_COF - robot_init_x[k];
             float len_y = (P_grid_t[0](0)-GRID_SIZE/2+0.5)*AREA_SIZE/GRID_SIZE/LEN_COF - robot_init_y[k];
             for (int i = 1; i <= 10; ++i) {
-                outfile << robot_init_x[k]+len_x*i/10 << ',' << robot_init_y[k]+len_y*i/10 << ',' << 1 << endl;
+                outfile << robot_init_x[k]+len_x*i/10 << ',' << robot_init_y[k]+len_y*i/10 << ',' << 1.5 << endl;
             }
 
             for (int i = 0; i < P_grid_t.size()-1; ++i) {
@@ -887,7 +887,7 @@ public:
 
 
                 for (int j = 0; j < turn_blank/2; ++j) {
-                    outfile << (P_grid_t[i](1)-GRID_SIZE/2+0.5)*AREA_SIZE/GRID_SIZE/LEN_COF << ',' << (P_grid_t[i](0)-GRID_SIZE/2+0.5)*AREA_SIZE/GRID_SIZE/LEN_COF << ',' << 1 << endl;
+                    outfile << (P_grid_t[i](1)-GRID_SIZE/2+0.5)*AREA_SIZE/GRID_SIZE/LEN_COF << ',' << (P_grid_t[i](0)-GRID_SIZE/2+0.5)*AREA_SIZE/GRID_SIZE/LEN_COF << ',' << 1.5 << endl;
                 }
 
                 if (s > s_c) {
@@ -908,14 +908,14 @@ public:
                         }
                         if (xoy==1){
                             if (P_grid_t[i](1)<P_grid_t[i+1](1))
-                                outfile << (x+P_grid_t[i](1)-GRID_SIZE/2+0.5)*AREA_SIZE/GRID_SIZE/LEN_COF << ',' << (P_grid_t[i](0)-GRID_SIZE/2+0.5)*AREA_SIZE/GRID_SIZE/LEN_COF << ',' << 1 << endl;
+                                outfile << (x+P_grid_t[i](1)-GRID_SIZE/2+0.5)*AREA_SIZE/GRID_SIZE/LEN_COF << ',' << (P_grid_t[i](0)-GRID_SIZE/2+0.5)*AREA_SIZE/GRID_SIZE/LEN_COF << ',' << 1.5 << endl;
                             else
-                                outfile << (-x+P_grid_t[i](1)-GRID_SIZE/2+0.5)*AREA_SIZE/GRID_SIZE/LEN_COF << ',' << (P_grid_t[i](0)-GRID_SIZE/2+0.5)*AREA_SIZE/GRID_SIZE/LEN_COF << ',' << 1 << endl;
+                                outfile << (-x+P_grid_t[i](1)-GRID_SIZE/2+0.5)*AREA_SIZE/GRID_SIZE/LEN_COF << ',' << (P_grid_t[i](0)-GRID_SIZE/2+0.5)*AREA_SIZE/GRID_SIZE/LEN_COF << ',' << 1.5 << endl;
                         } else{
                             if (P_grid_t[i](0)<P_grid_t[i+1](0))
-                                outfile << (P_grid_t[i](1)-GRID_SIZE/2+0.5)*AREA_SIZE/GRID_SIZE/LEN_COF << ',' << (x+P_grid_t[i](0)-GRID_SIZE/2+0.5)*AREA_SIZE/GRID_SIZE/LEN_COF << ',' << 1 << endl;
+                                outfile << (P_grid_t[i](1)-GRID_SIZE/2+0.5)*AREA_SIZE/GRID_SIZE/LEN_COF << ',' << (x+P_grid_t[i](0)-GRID_SIZE/2+0.5)*AREA_SIZE/GRID_SIZE/LEN_COF << ',' << 1.5 << endl;
                             else
-                                outfile << (P_grid_t[i](1)-GRID_SIZE/2+0.5)*AREA_SIZE/GRID_SIZE/LEN_COF << ',' << (-x+P_grid_t[i](0)-GRID_SIZE/2+0.5)*AREA_SIZE/GRID_SIZE/LEN_COF << ',' << 1 << endl;
+                                outfile << (P_grid_t[i](1)-GRID_SIZE/2+0.5)*AREA_SIZE/GRID_SIZE/LEN_COF << ',' << (-x+P_grid_t[i](0)-GRID_SIZE/2+0.5)*AREA_SIZE/GRID_SIZE/LEN_COF << ',' << 1.5 << endl;
                         }
                     }
 
@@ -934,14 +934,14 @@ public:
                         }
                         if (xoy==1) {
                             if (P_grid_t[i](1)<P_grid_t[i+1](1))
-                                outfile << (x+P_grid_t[i](1)-GRID_SIZE/2+0.5)*AREA_SIZE/GRID_SIZE/LEN_COF << ',' << (P_grid_t[i](0)-GRID_SIZE/2+0.5)*AREA_SIZE/GRID_SIZE/LEN_COF << ',' << 1 << endl;
+                                outfile << (x+P_grid_t[i](1)-GRID_SIZE/2+0.5)*AREA_SIZE/GRID_SIZE/LEN_COF << ',' << (P_grid_t[i](0)-GRID_SIZE/2+0.5)*AREA_SIZE/GRID_SIZE/LEN_COF << ',' << 1.5 << endl;
                             else
-                                outfile << (-x+P_grid_t[i](1)-GRID_SIZE/2+0.5)*AREA_SIZE/GRID_SIZE/LEN_COF << ',' << (P_grid_t[i](0)-GRID_SIZE/2+0.5)*AREA_SIZE/GRID_SIZE/LEN_COF << ',' << 1 << endl;
+                                outfile << (-x+P_grid_t[i](1)-GRID_SIZE/2+0.5)*AREA_SIZE/GRID_SIZE/LEN_COF << ',' << (P_grid_t[i](0)-GRID_SIZE/2+0.5)*AREA_SIZE/GRID_SIZE/LEN_COF << ',' << 1.5 << endl;
                         } else {
                             if (P_grid_t[i](0)<P_grid_t[i+1](0))
-                                outfile << (P_grid_t[i](1)-GRID_SIZE/2+0.5)*AREA_SIZE/GRID_SIZE/LEN_COF << ',' << (x+P_grid_t[i](0)-GRID_SIZE/2+0.5)*AREA_SIZE/GRID_SIZE/LEN_COF << ',' << 1 << endl;
+                                outfile << (P_grid_t[i](1)-GRID_SIZE/2+0.5)*AREA_SIZE/GRID_SIZE/LEN_COF << ',' << (x+P_grid_t[i](0)-GRID_SIZE/2+0.5)*AREA_SIZE/GRID_SIZE/LEN_COF << ',' << 1.5 << endl;
                             else
-                                outfile << (P_grid_t[i](1)-GRID_SIZE/2+0.5)*AREA_SIZE/GRID_SIZE/LEN_COF << ',' << (-x+P_grid_t[i](0)-GRID_SIZE/2+0.5)*AREA_SIZE/GRID_SIZE/LEN_COF << ',' << 1 << endl;
+                                outfile << (P_grid_t[i](1)-GRID_SIZE/2+0.5)*AREA_SIZE/GRID_SIZE/LEN_COF << ',' << (-x+P_grid_t[i](0)-GRID_SIZE/2+0.5)*AREA_SIZE/GRID_SIZE/LEN_COF << ',' << 1.5 << endl;
                         }
                     }
                 }

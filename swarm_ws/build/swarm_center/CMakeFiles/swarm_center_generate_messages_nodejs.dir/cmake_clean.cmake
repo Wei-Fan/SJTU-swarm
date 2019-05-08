@@ -1,6 +1,7 @@
 file(REMOVE_RECURSE
   "CMakeFiles/swarm_center_generate_messages_nodejs"
   "/home/wade/SJTU-swarm/swarm_ws/devel/share/gennodejs/ros/swarm_center/msg/pos_info.js"
+  "/home/wade/SJTU-swarm/swarm_ws/devel/share/gennodejs/ros/swarm_center/srv/mArmReq.js"
   "/home/wade/SJTU-swarm/swarm_ws/devel/share/gennodejs/ros/swarm_center/srv/mCPPReq.js"
 )
 

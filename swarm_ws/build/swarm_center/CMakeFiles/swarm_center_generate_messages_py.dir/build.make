@@ -54,6 +54,7 @@ CMAKE_BINARY_DIR = /home/wade/SJTU-swarm/swarm_ws/build
 include swarm_center/CMakeFiles/swarm_center_generate_messages_py.dir/progress.make
 
 swarm_center/CMakeFiles/swarm_center_generate_messages_py: /home/wade/SJTU-swarm/swarm_ws/devel/lib/python2.7/dist-packages/swarm_center/msg/_pos_info.py
+swarm_center/CMakeFiles/swarm_center_generate_messages_py: /home/wade/SJTU-swarm/swarm_ws/devel/lib/python2.7/dist-packages/swarm_center/srv/_mArmReq.py
 swarm_center/CMakeFiles/swarm_center_generate_messages_py: /home/wade/SJTU-swarm/swarm_ws/devel/lib/python2.7/dist-packages/swarm_center/srv/_mCPPReq.py
 swarm_center/CMakeFiles/swarm_center_generate_messages_py: /home/wade/SJTU-swarm/swarm_ws/devel/lib/python2.7/dist-packages/swarm_center/msg/__init__.py
 swarm_center/CMakeFiles/swarm_center_generate_messages_py: /home/wade/SJTU-swarm/swarm_ws/devel/lib/python2.7/dist-packages/swarm_center/srv/__init__.py
@@ -69,25 +70,33 @@ swarm_center/CMakeFiles/swarm_center_generate_messages_py: /home/wade/SJTU-swarm
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/wade/SJTU-swarm/swarm_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating Python from MSG swarm_center/pos_info"
 	cd /home/wade/SJTU-swarm/swarm_ws/build/swarm_center && ../catkin_generated/env_cached.sh /usr/bin/python /opt/ros/kinetic/share/genpy/cmake/../../../lib/genpy/genmsg_py.py /home/wade/SJTU-swarm/swarm_ws/src/swarm_center/msg/pos_info.msg -Iswarm_center:/home/wade/SJTU-swarm/swarm_ws/src/swarm_center/msg -Igeometry_msgs:/opt/ros/kinetic/share/geometry_msgs/cmake/../msg -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -p swarm_center -o /home/wade/SJTU-swarm/swarm_ws/devel/lib/python2.7/dist-packages/swarm_center/msg
 
+/home/wade/SJTU-swarm/swarm_ws/devel/lib/python2.7/dist-packages/swarm_center/srv/_mArmReq.py: /opt/ros/kinetic/lib/genpy/gensrv_py.py
+/home/wade/SJTU-swarm/swarm_ws/devel/lib/python2.7/dist-packages/swarm_center/srv/_mArmReq.py: /home/wade/SJTU-swarm/swarm_ws/src/swarm_center/srv/mArmReq.srv
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/wade/SJTU-swarm/swarm_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Generating Python code from SRV swarm_center/mArmReq"
+	cd /home/wade/SJTU-swarm/swarm_ws/build/swarm_center && ../catkin_generated/env_cached.sh /usr/bin/python /opt/ros/kinetic/share/genpy/cmake/../../../lib/genpy/gensrv_py.py /home/wade/SJTU-swarm/swarm_ws/src/swarm_center/srv/mArmReq.srv -Iswarm_center:/home/wade/SJTU-swarm/swarm_ws/src/swarm_center/msg -Igeometry_msgs:/opt/ros/kinetic/share/geometry_msgs/cmake/../msg -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -p swarm_center -o /home/wade/SJTU-swarm/swarm_ws/devel/lib/python2.7/dist-packages/swarm_center/srv
+
 /home/wade/SJTU-swarm/swarm_ws/devel/lib/python2.7/dist-packages/swarm_center/srv/_mCPPReq.py: /opt/ros/kinetic/lib/genpy/gensrv_py.py
 /home/wade/SJTU-swarm/swarm_ws/devel/lib/python2.7/dist-packages/swarm_center/srv/_mCPPReq.py: /home/wade/SJTU-swarm/swarm_ws/src/swarm_center/srv/mCPPReq.srv
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/wade/SJTU-swarm/swarm_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Generating Python code from SRV swarm_center/mCPPReq"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/wade/SJTU-swarm/swarm_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Generating Python code from SRV swarm_center/mCPPReq"
 	cd /home/wade/SJTU-swarm/swarm_ws/build/swarm_center && ../catkin_generated/env_cached.sh /usr/bin/python /opt/ros/kinetic/share/genpy/cmake/../../../lib/genpy/gensrv_py.py /home/wade/SJTU-swarm/swarm_ws/src/swarm_center/srv/mCPPReq.srv -Iswarm_center:/home/wade/SJTU-swarm/swarm_ws/src/swarm_center/msg -Igeometry_msgs:/opt/ros/kinetic/share/geometry_msgs/cmake/../msg -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -p swarm_center -o /home/wade/SJTU-swarm/swarm_ws/devel/lib/python2.7/dist-packages/swarm_center/srv
 
 /home/wade/SJTU-swarm/swarm_ws/devel/lib/python2.7/dist-packages/swarm_center/msg/__init__.py: /opt/ros/kinetic/lib/genpy/genmsg_py.py
 /home/wade/SJTU-swarm/swarm_ws/devel/lib/python2.7/dist-packages/swarm_center/msg/__init__.py: /home/wade/SJTU-swarm/swarm_ws/devel/lib/python2.7/dist-packages/swarm_center/msg/_pos_info.py
+/home/wade/SJTU-swarm/swarm_ws/devel/lib/python2.7/dist-packages/swarm_center/msg/__init__.py: /home/wade/SJTU-swarm/swarm_ws/devel/lib/python2.7/dist-packages/swarm_center/srv/_mArmReq.py
 /home/wade/SJTU-swarm/swarm_ws/devel/lib/python2.7/dist-packages/swarm_center/msg/__init__.py: /home/wade/SJTU-swarm/swarm_ws/devel/lib/python2.7/dist-packages/swarm_center/srv/_mCPPReq.py
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/wade/SJTU-swarm/swarm_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Generating Python msg __init__.py for swarm_center"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/wade/SJTU-swarm/swarm_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Generating Python msg __init__.py for swarm_center"
 	cd /home/wade/SJTU-swarm/swarm_ws/build/swarm_center && ../catkin_generated/env_cached.sh /usr/bin/python /opt/ros/kinetic/share/genpy/cmake/../../../lib/genpy/genmsg_py.py -o /home/wade/SJTU-swarm/swarm_ws/devel/lib/python2.7/dist-packages/swarm_center/msg --initpy
 
 /home/wade/SJTU-swarm/swarm_ws/devel/lib/python2.7/dist-packages/swarm_center/srv/__init__.py: /opt/ros/kinetic/lib/genpy/genmsg_py.py
 /home/wade/SJTU-swarm/swarm_ws/devel/lib/python2.7/dist-packages/swarm_center/srv/__init__.py: /home/wade/SJTU-swarm/swarm_ws/devel/lib/python2.7/dist-packages/swarm_center/msg/_pos_info.py
+/home/wade/SJTU-swarm/swarm_ws/devel/lib/python2.7/dist-packages/swarm_center/srv/__init__.py: /home/wade/SJTU-swarm/swarm_ws/devel/lib/python2.7/dist-packages/swarm_center/srv/_mArmReq.py
 /home/wade/SJTU-swarm/swarm_ws/devel/lib/python2.7/dist-packages/swarm_center/srv/__init__.py: /home/wade/SJTU-swarm/swarm_ws/devel/lib/python2.7/dist-packages/swarm_center/srv/_mCPPReq.py
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/wade/SJTU-swarm/swarm_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Generating Python srv __init__.py for swarm_center"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/wade/SJTU-swarm/swarm_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Generating Python srv __init__.py for swarm_center"
 	cd /home/wade/SJTU-swarm/swarm_ws/build/swarm_center && ../catkin_generated/env_cached.sh /usr/bin/python /opt/ros/kinetic/share/genpy/cmake/../../../lib/genpy/genmsg_py.py -o /home/wade/SJTU-swarm/swarm_ws/devel/lib/python2.7/dist-packages/swarm_center/srv --initpy
 
 swarm_center_generate_messages_py: swarm_center/CMakeFiles/swarm_center_generate_messages_py
 swarm_center_generate_messages_py: /home/wade/SJTU-swarm/swarm_ws/devel/lib/python2.7/dist-packages/swarm_center/msg/_pos_info.py
+swarm_center_generate_messages_py: /home/wade/SJTU-swarm/swarm_ws/devel/lib/python2.7/dist-packages/swarm_center/srv/_mArmReq.py
 swarm_center_generate_messages_py: /home/wade/SJTU-swarm/swarm_ws/devel/lib/python2.7/dist-packages/swarm_center/srv/_mCPPReq.py
 swarm_center_generate_messages_py: /home/wade/SJTU-swarm/swarm_ws/devel/lib/python2.7/dist-packages/swarm_center/msg/__init__.py
 swarm_center_generate_messages_py: /home/wade/SJTU-swarm/swarm_ws/devel/lib/python2.7/dist-packages/swarm_center/srv/__init__.py

@@ -1,6 +1,7 @@
 file(REMOVE_RECURSE
   "CMakeFiles/swarm_center_generate_messages_lisp"
   "/home/wade/SJTU-swarm/swarm_ws/devel/share/common-lisp/ros/swarm_center/msg/pos_info.lisp"
+  "/home/wade/SJTU-swarm/swarm_ws/devel/share/common-lisp/ros/swarm_center/srv/mArmReq.lisp"
   "/home/wade/SJTU-swarm/swarm_ws/devel/share/common-lisp/ros/swarm_center/srv/mCPPReq.lisp"
 )
 
