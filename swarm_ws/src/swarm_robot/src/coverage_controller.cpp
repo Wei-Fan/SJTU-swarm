@@ -25,6 +25,9 @@ using namespace std;
 
 string traj_path = "/home/wade/SJTU-swarm/swarm_ws/src/swarm_center/launch/";
 
+float assemble_x = 2.0; //temp
+float assemble_y = 0.0; //temp
+
 /* action-behavior declaration */
 enum FlightState{
     None=0, Hovering=1, Takeoff=2, Commanding=3, Landing=4, Returnback=5, Headout=6 // None and Hovering are also served as waiting states
@@ -161,18 +164,22 @@ public:
             switch (new_index) {
                 case 1: {
                     this->m_flight_behavior = EXEC_FROM_BEGNNING;
+                    this->m_flight_curr_index = 0;
                     break;
                 }
                 case 2: {
                     this->m_flight_behavior = EXEC_FROM_MIDDLE;
+                    this->m_flight_curr_index = 0;
                     break;
                 }
                 case 3: {
                     this->m_flight_behavior = DISENGAGE;
+                    this->m_flight_curr_index = 0;
                     break;
                 }
                 case 4: {
                     this->m_flight_behavior = ENGAGE;
+                    this->m_flight_curr_index = 0;
                     break;
                 }
             }
@@ -272,9 +279,12 @@ public:
                     }
                     ROS_INFO("request for arm successfully");
 
+                    float height = 1.5;
+                    if (this->m_flight_behavior.behavior_index == 4)
+                        height = 1.0;
                     pos_sp.pose.position.z = 0;
                     for (int i = 1; i <= 200; ++i) {
-                        pos_sp.pose.position.z = 1.5*float(i)/200.0;
+                        pos_sp.pose.position.z = height*float(i)/200.0;
 
                         cmd_pos_pub.publish(pos_sp);
                         ros::spinOnce();
@@ -293,9 +303,71 @@ public:
                     break;
                 }
                 case Hovering: {
+                    ROS_INFO("robot %d taking off", this->robot_id);
+                    pos_sp.pose.position = curr_pos.position;
+                    pos_sp.pose.position.z = 1.5;
+                    for (int i = 1; i <= 40; ++i) {
+                        cmd_pos_pub.publish(pos_sp);
+                        ros::spinOnce();
+                        run_rate.sleep();
+                    }
+
+                    if (!this->taskPauseLight) {
+                        this->m_flight_curr_index++;
+                    }
+
                     break;
                 }
                 case Returnback: {
+                    ROS_INFO("robot %d 's returning back to assemble point",this->robot_id);
+
+                    /* descent to return back height */
+                    pos_sp.pose = curr_pos;
+                    pos_sp.pose.position.z = 1.5;
+                    for (int i = 0; i < 40; ++i) {
+                        pos_sp.pose.position.z -= 0.5*float(i)/40;
+                        cmd_pos_pub.publish(pos_sp);
+                        ros::spinOnce();
+                        run_rate.sleep();
+                    }
+
+                    float start_x = curr_pos.position.x;
+                    float start_y = curr_pos.position.y;
+                    for (int i = 1; i <= 120; ++i) {
+                        pos_sp.pose.position.x = float(i)/120*(assemble_x-start_x)+start_x;
+                        pos_sp.pose.position.y = float(i)/120*(assemble_y-start_y)+start_y;
+
+                        cmd_pos_pub.publish(pos_sp);
+                        ros::spinOnce();
+                        run_rate.sleep();
+                    }
+
+                    this->m_flight_curr_index++;
+                    break;
+                }
+                case Headout: {
+                    ROS_INFO("robot %d 's heading out to assigned position",this->robot_id);
+                    float start_x = curr_pos.position.x;
+                    float start_y = curr_pos.position.y;
+                    pos_sp.pose.position.z = 1.0;
+                    for (int i = 1; i <= 120; ++i) {
+                        pos_sp.pose.position.x = float(i)/120*(cmd_incsv[0].xyz[0]-start_x)+start_x;
+                        pos_sp.pose.position.y = float(i)/120*(cmd_incsv[0].xyz[1]-start_y)+start_y;
+
+                        cmd_pos_pub.publish(pos_sp);
+                        ros::spinOnce();
+                        run_rate.sleep();
+                    }
+
+                    /* pull up to normal height */
+                    for (int i = 0; i < 40; ++i) {
+                        pos_sp.pose.position.z += 0.5*float(i)/40;
+                        cmd_pos_pub.publish(pos_sp);
+                        ros::spinOnce();
+                        run_rate.sleep();
+                    }
+
+                    this->m_flight_curr_index++;
                     break;
                 }
                 case Landing: {
