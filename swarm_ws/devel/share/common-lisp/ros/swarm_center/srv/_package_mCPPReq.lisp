@@ -1,6 +1,8 @@
 (cl:in-package swarm_center-srv)
-(cl:export '(A-VAL
-          A
+(cl:export '(X-VAL
+          X
+          Y-VAL
+          Y
           B-VAL
           B
 ))

@@ -49,8 +49,8 @@ string project_path = "/home/wade/SJTU-swarm/swarm_ws/src/swarm_center/";
 class CoverageCommander
 {
 private:
-//    int robot_number;
     int robot_number;
+    int active_number;
     string prefix = "swarmbot";
 
     ros::NodeHandle global;
@@ -99,9 +99,10 @@ public:
             ROS_WARN("Did not set up robot number, using default 2");
             this->robot_number = 2;
         }
+        this->active_number = this->robot_number;
         ROS_INFO("COVERAGE COMMANDER is activated! COMMANDER has %d robots to dispose", this->robot_number);
-        robot_init_x.resize(this->robot_number);
-        robot_init_y.resize(this->robot_number);
+//        robot_init_x.resize(this->robot_number);
+//        robot_init_y.resize(this->robot_number);
 
         service = global.advertiseService("/mCPP_req",&CoverageCommander::plan,this);
 
@@ -112,48 +113,59 @@ public:
         ready_pub = global.advertise<std_msgs::Bool>("/plan_ready",1);
 
         /* obtain raw position for each time planning */
-        raw_sub.resize(this->robot_number);
-        for (int i = 0; i < this->robot_number; ++i) {
-            char msg_name[50];
-            sprintf(msg_name, "/%s%d/raw_position", this->prefix.c_str(), i);
-            raw_sub[i] = global.subscribe<geometry_msgs::PoseStamped>(msg_name, 1, &CoverageCommander::rawPosCallback, this);
-        }
-//        this->get_init_pos = false;
-        robot_core_x.resize(this->robot_number);
-        robot_core_y.resize(this->robot_number);
-        robot_grid_x.resize(this->robot_number);
-        robot_grid_y.resize(this->robot_number);
-        get_init_bool.resize(this->robot_number, false);
+//        raw_sub.resize(this->robot_number);
+//        for (int i = 0; i < this->robot_number; ++i) {
+//            char msg_name[50];
+//            sprintf(msg_name, "/%s%d/raw_position", this->prefix.c_str(), i);
+//            raw_sub[i] = global.subscribe<geometry_msgs::PoseStamped>(msg_name, 1, &CoverageCommander::rawPosCallback, this);
+//        }
 
-        robot_curr_x.resize(this->robot_number);
-        robot_curr_y.resize(this->robot_number);
+//        robot_core_x.resize(this->robot_number);
+//        robot_core_y.resize(this->robot_number);
+//        robot_grid_x.resize(this->robot_number);
+//        robot_grid_y.resize(this->robot_number);
+//        get_init_bool.resize(this->robot_number, false);
+//
+//        robot_curr_x.resize(this->robot_number);
+//        robot_curr_y.resize(this->robot_number);
         first_draw = true;
         plan_ready = false;
         /* initial matrix*/
         K.setZero(); //set zeros
     }
 
-    void rawPosCallback(const geometry_msgs::PoseStamped::ConstPtr &msg) {
-
-        int id = stoi(msg->header.frame_id);
-
-        if (!get_init_bool[id])
-        {
-            robot_init_x[id] = msg->pose.position.x;
-            robot_init_y[id] = msg->pose.position.y;
-            get_init_bool[id] = true;
-            ROS_INFO("get robot %d 's init_pos : %f, %f",id,robot_init_x[id],robot_init_y[id]);
-        } else {
-            robot_curr_x[id] = msg->pose.position.x;
-            robot_curr_y[id] = msg->pose.position.y;
-        }
-    }
+//    void rawPosCallback(const geometry_msgs::PoseStamped::ConstPtr &msg) {
+//
+//        int id = stoi(msg->header.frame_id);
+//
+//        if (!get_init_bool[id])
+//        {
+//            robot_init_x[id] = msg->pose.position.x;
+//            robot_init_y[id] = msg->pose.position.y;
+//            get_init_bool[id] = true;
+//            ROS_INFO("get robot %d 's init_pos : %f, %f",id,robot_init_x[id],robot_init_y[id]);
+//        } else {
+//            robot_curr_x[id] = msg->pose.position.x;
+//            robot_curr_y[id] = msg->pose.position.y;
+//        }
+//    }
 
     bool plan(swarm_center::mCPPReq::Request &req,
               swarm_center::mCPPReq::Response &res)
 //    void run()
     {
         ROS_INFO("request recieved!");
+        this->active_number = req.x.size();
+        robot_init_x.resize(this->robot_number);
+        robot_init_y.resize(this->robot_number);
+        robot_core_x.resize(this->active_number);
+        robot_core_y.resize(this->active_number);
+        robot_grid_x.resize(this->active_number);
+        robot_grid_y.resize(this->active_number);
+        for (int i = 0; i < this->active_number; ++i) {
+            robot_init_x[i] = req.x[i];
+            robot_init_y[i] = req.y[i];
+        }
         /* respond only one time per period */
 //        auto cur_time = std::chrono::high_resolution_clock::now();
 //        std::chrono::duration<double> lock_time = cur_time-recieve_time;
@@ -167,18 +179,18 @@ public:
 //        }
 
         /* check if init positions are obtained */
-        int get_init_cnt = 0;
-        while (get_init_cnt != this->robot_number) {
-            get_init_cnt = 0;
-            for (int i = 0; i < this->robot_number; ++i) {
-                if (get_init_bool[i]) {
-                    get_init_cnt++;
-                }
-            }
-//            ROS_INFO("check init_position");
-            ros::spinOnce();
-        }
-        ROS_INFO("finish init_position collection");
+//        int get_init_cnt = 0;
+//        while (get_init_cnt != this->active_number) {
+//            get_init_cnt = 0;
+//            for (int i = 0; i < this->active_number; ++i) {
+//                if (get_init_bool[i]) {
+//                    get_init_cnt++;
+//                }
+//            }
+////            ROS_INFO("check init_position");
+//            ros::spinOnce();
+//        }
+//        ROS_INFO("finish init_position collection");
 //        robot_init_x = {0.5, -0.5, -0.5, 0.5};
 //        robot_init_y = {0.5, 0.5, -0.5, -0.5};
 
@@ -202,7 +214,7 @@ public:
 //            robot_grid_y.push_back((y_init[i] - 50)*GRID_SIZE/AREA_SIZE);
 //            ROS_INFO("robot : %d,%d",robot_core_x[i],robot_core_y[i]);
 //        }
-        for (int i = 0; i < this->robot_number; ++i) {
+        for (int i = 0; i < this->active_number; ++i) {
             robot_core_x[i] = (robot_init_x[i]*LEN_COF+AREA_SIZE/2)*CORE_SIZE/AREA_SIZE;
             robot_core_y[i] = (robot_init_y[i]*LEN_COF+AREA_SIZE/2)*CORE_SIZE/AREA_SIZE;
             robot_grid_x[i] = (robot_init_x[i]*LEN_COF+AREA_SIZE/2)*GRID_SIZE/AREA_SIZE;
@@ -212,8 +224,8 @@ public:
 
 
         /*these codes need to be moved if the robot number comes from elsewhere*/
-        C.setOnes(this->robot_number*CORE_SIZE,CORE_SIZE);
-        m.setOnes(this->robot_number); //size : (agents_number,1)
+        C.setOnes(this->active_number*CORE_SIZE,CORE_SIZE);
+        m.setOnes(this->active_number); //size : (agents_number,1)
 
         /*
          * divide area
@@ -280,7 +292,7 @@ public:
 //            ROS_INFO("draw K complete");
         }
 
-        for (int k = 0; k < this->robot_number; ++k) {
+        for (int k = 0; k < this->active_number; ++k) {
             int x_t = AREA_SIZE/2 - robot_curr_y[k]*LEN_COF + 50;
             int y_t = AREA_SIZE/2 + robot_curr_x[k]*LEN_COF + 50;
             circle(board,Point(x_t,y_t),10,CV_RGB(10*k,20*k,30*k),-1);
@@ -312,11 +324,11 @@ public:
 
     bool divide_area(){
         /*Generate the first matrix*/
-        S.setZero(this->robot_number);
+        S.setZero(this->active_number);
         for (int i = 0; i < CORE_SIZE; ++i) {
             for (int j = 0; j < CORE_SIZE; ++j) {
                 double tmp = -1;
-                for (int k = 0; k < this->robot_number; ++k) {
+                for (int k = 0; k < this->active_number; ++k) {
 //                        MatrixXi E_t = E.block<CORE_SIZE,CORE_SIZE>(k*CORE_SIZE,0);
 //                        MatrixXi C_t = C.block<CORE_SIZE,CORE_SIZE>(k*CORE_SIZE,0);
                     double Ekji = C(j+k*CORE_SIZE,i) * m(k) * sqrt((i-robot_core_x[k])*(i-robot_core_x[k])+(j-robot_core_y[k])*(j-robot_core_y[k]));
@@ -339,7 +351,7 @@ public:
         {
             iteration_count++;
 
-            S.setZero(this->robot_number); // size : (agents_number,1)
+            S.setZero(this->active_number); // size : (agents_number,1)
             int count = 0;
 
             /*check every grid*/
@@ -347,7 +359,7 @@ public:
             for (int i = 0; i < CORE_SIZE; ++i) { //cols
                 for (int j = 0; j < CORE_SIZE; ++j) { //rows
                     double tmp = -1;
-                    for (int k = 0; k < this->robot_number; ++k) {
+                    for (int k = 0; k < this->active_number; ++k) {
 //                        MatrixXi E_t = E.block<CORE_SIZE,CORE_SIZE>(k*CORE_SIZE,0);
 //                        MatrixXi C_t = C.block<CORE_SIZE,CORE_SIZE>(k*CORE_SIZE,0);
                         double Ekji = C(j+k*CORE_SIZE,i) * m(k) * sqrt((i-robot_core_x[k])*(i-robot_core_x[k])+(j-robot_core_y[k])*(j-robot_core_y[k]));
@@ -367,8 +379,8 @@ public:
             /*update C*/
             // obtain the assignment matrix for every robot
             Matrix<int,Dynamic,CORE_SIZE> Kd;
-            Kd.resize(this->robot_number*CORE_SIZE,CORE_SIZE);
-            for (int k = 0; k < this->robot_number; ++k) {
+            Kd.resize(this->active_number*CORE_SIZE,CORE_SIZE);
+            for (int k = 0; k < this->active_number; ++k) {
                 for (int i = 0; i < CORE_SIZE; ++i) {
                     for (int j = 0; j < CORE_SIZE; ++j) {
                         if (K(j,i)==k)
@@ -383,7 +395,7 @@ public:
 //            cout << isConnect(1,1,K,1,2) << endl;
             vector<vector<Vector2i>> con_set;
             vector<vector<Vector2i>> dcon_set;
-            for (int k = 0; k < this->robot_number; ++k) {
+            for (int k = 0; k < this->active_number; ++k) {
                 vector<Vector2i> con_t;
                 vector<Vector2i> dcon_t;
                 MatrixXi K_t = Kd.block<CORE_SIZE,CORE_SIZE>(k*CORE_SIZE,0);
@@ -408,7 +420,7 @@ public:
                 dcon_set.push_back(dcon_t);
             }
 
-            for (int k = 0; k < this->robot_number; ++k) {
+            for (int k = 0; k < this->active_number; ++k) {
                 vector<Vector2i> con_t = con_set[k];
                 vector<Vector2i> dcon_t = dcon_set[k];
                 MatrixXd C_t;
@@ -443,7 +455,7 @@ public:
             }
 
             /*recalcuate S*/
-            for (int k = 0; k < this->robot_number; ++k) {
+            for (int k = 0; k < this->active_number; ++k) {
                 S(k) -= dcon_set[k].size();
             }
 
@@ -451,8 +463,8 @@ public:
             double threshold = CORE_SIZE*CORE_SIZE/30.0;
             if (iteration_count>100)
                 threshold = threshold * (iteration_count/50.0)*(iteration_count/50.0);
-            for (int k = 0; k < this->robot_number; ++k) {
-                double dm = S(k) - CORE_SIZE*CORE_SIZE/this->robot_number;
+            for (int k = 0; k < this->active_number; ++k) {
+                double dm = S(k) - CORE_SIZE*CORE_SIZE/this->active_number;
                 if (dm>threshold || dm<(-1)*threshold)
                     m(k) += 0.002*dm;
                 else
@@ -461,11 +473,11 @@ public:
 
             /*stop condition check*/
             bool stop1 = false;
-            if (count==this->robot_number)
+            if (count==this->active_number)
                 stop1 = true;
 
             bool stop2 = true;
-            for (int k = 0; k < this->robot_number; ++k) {
+            for (int k = 0; k < this->active_number; ++k) {
                 if (dcon_set[k].size()!=0)
                 {
                     stop2 = false;
@@ -587,8 +599,8 @@ public:
         /*prepare input*/
         // obtain the assignment matrix for every robot
         Matrix<int,Dynamic,CORE_SIZE> Kd;
-        Kd.resize(this->robot_number*CORE_SIZE,CORE_SIZE);
-        for (int k = 0; k < this->robot_number; ++k) {
+        Kd.resize(this->active_number*CORE_SIZE,CORE_SIZE);
+        for (int k = 0; k < this->active_number; ++k) {
             for (int i = 0; i < CORE_SIZE; ++i) {
                 for (int j = 0; j < CORE_SIZE; ++j) {
                     if (K(j,i)==k)
@@ -614,7 +626,7 @@ public:
         direction.push_back(dir_t);
 
         /*main proccess*/
-        for (int k = 0; k < this->robot_number; ++k) {
+        for (int k = 0; k < this->active_number; ++k) {
 
 
             /*neccessary preparation*/
@@ -686,7 +698,7 @@ public:
     }
 
     void path_planning(){
-        for (int k = 0; k < this->robot_number; ++k) {
+        for (int k = 0; k < this->active_number; ++k) {
             /*clockwise planning method*/
             Matrix<int,CORE_SIZE,CORE_SIZE> T_t = T[k]; // load spanning tree
 
@@ -831,7 +843,7 @@ public:
     }
 
     void generate_path(){
-        for (int k = 0; k < this->robot_number; ++k) {
+        for (int k = 0; k < this->active_number; ++k) {
             /* path name */
             vector<Vector2i> P_grid_t = P_grid[k];
             string filename = project_path + "launch/cover_robot" + to_string(k) + ".csv";

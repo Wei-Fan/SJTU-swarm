@@ -21,22 +21,31 @@ class mCPPReqRequest {
   constructor(initObj={}) {
     if (initObj === null) {
       // initObj === null is a special case for deserialization where we don't initialize fields
-      this.a = null;
+      this.x = null;
+      this.y = null;
     }
     else {
-      if (initObj.hasOwnProperty('a')) {
-        this.a = initObj.a
+      if (initObj.hasOwnProperty('x')) {
+        this.x = initObj.x
       }
       else {
-        this.a = false;
+        this.x = [];
+      }
+      if (initObj.hasOwnProperty('y')) {
+        this.y = initObj.y
+      }
+      else {
+        this.y = [];
       }
     }
   }
 
   static serialize(obj, buffer, bufferOffset) {
     // Serializes a message object of type mCPPReqRequest
-    // Serialize message field [a]
-    bufferOffset = _serializer.bool(obj.a, buffer, bufferOffset);
+    // Serialize message field [x]
+    bufferOffset = _arraySerializer.float32(obj.x, buffer, bufferOffset, null);
+    // Serialize message field [y]
+    bufferOffset = _arraySerializer.float32(obj.y, buffer, bufferOffset, null);
     return bufferOffset;
   }
 
@@ -44,13 +53,18 @@ class mCPPReqRequest {
     //deserializes a message object of type mCPPReqRequest
     let len;
     let data = new mCPPReqRequest(null);
-    // Deserialize message field [a]
-    data.a = _deserializer.bool(buffer, bufferOffset);
+    // Deserialize message field [x]
+    data.x = _arrayDeserializer.float32(buffer, bufferOffset, null)
+    // Deserialize message field [y]
+    data.y = _arrayDeserializer.float32(buffer, bufferOffset, null)
     return data;
   }
 
   static getMessageSize(object) {
-    return 1;
+    let length = 0;
+    length += 4 * object.x.length;
+    length += 4 * object.y.length;
+    return length + 8;
   }
 
   static datatype() {
@@ -60,13 +74,14 @@ class mCPPReqRequest {
 
   static md5sum() {
     //Returns md5sum for a message object
-    return '685b546c53fb0b7de5dfef48cf30fe1f';
+    return '462ac0ba687f22c2e73c0ec0413e0202';
   }
 
   static messageDefinition() {
     // Returns full string definition for message
     return `
-    bool a
+    float32[] x
+    float32[] y
     
     `;
   }
@@ -77,11 +92,18 @@ class mCPPReqRequest {
       msg = {};
     }
     const resolved = new mCPPReqRequest(null);
-    if (msg.a !== undefined) {
-      resolved.a = msg.a;
+    if (msg.x !== undefined) {
+      resolved.x = msg.x;
     }
     else {
-      resolved.a = false
+      resolved.x = []
+    }
+
+    if (msg.y !== undefined) {
+      resolved.y = msg.y;
+    }
+    else {
+      resolved.y = []
     }
 
     return resolved;
@@ -163,6 +185,6 @@ class mCPPReqResponse {
 module.exports = {
   Request: mCPPReqRequest,
   Response: mCPPReqResponse,
-  md5sum() { return '81f01bfd9a951b1adf9102125874ff5b'; },
+  md5sum() { return '7b6a8c3e6d19ea93d36f2733e920800f'; },
   datatype() { return 'swarm_center/mCPPReq'; }
 };

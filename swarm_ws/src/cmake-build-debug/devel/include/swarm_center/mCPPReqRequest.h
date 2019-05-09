@@ -24,17 +24,22 @@ struct mCPPReqRequest_
   typedef mCPPReqRequest_<ContainerAllocator> Type;
 
   mCPPReqRequest_()
-    : a(false)  {
+    : x()
+    , y()  {
     }
   mCPPReqRequest_(const ContainerAllocator& _alloc)
-    : a(false)  {
+    : x(_alloc)
+    , y(_alloc)  {
   (void)_alloc;
     }
 
 
 
-   typedef uint8_t _a_type;
-  _a_type a;
+   typedef std::vector<float, typename ContainerAllocator::template rebind<float>::other >  _x_type;
+  _x_type x;
+
+   typedef std::vector<float, typename ContainerAllocator::template rebind<float>::other >  _y_type;
+  _y_type y;
 
 
 
@@ -70,7 +75,7 @@ namespace message_traits
 
 
 
-// BOOLTRAITS {'IsFixedSize': True, 'IsMessage': True, 'HasHeader': False}
+// BOOLTRAITS {'IsFixedSize': False, 'IsMessage': True, 'HasHeader': False}
 // {'std_msgs': ['/opt/ros/kinetic/share/std_msgs/cmake/../msg'], 'geometry_msgs': ['/opt/ros/kinetic/share/geometry_msgs/cmake/../msg'], 'swarm_center': ['/home/wade/SJTU-swarm/swarm_ws/src/swarm_center/msg']}
 
 // !!!!!!!!!!! ['__class__', '__delattr__', '__dict__', '__doc__', '__eq__', '__format__', '__getattribute__', '__hash__', '__init__', '__module__', '__ne__', '__new__', '__reduce__', '__reduce_ex__', '__repr__', '__setattr__', '__sizeof__', '__str__', '__subclasshook__', '__weakref__', '_parsed_fields', 'constants', 'fields', 'full_name', 'has_header', 'header_present', 'names', 'package', 'parsed_fields', 'short_name', 'text', 'types']
@@ -80,12 +85,12 @@ namespace message_traits
 
 template <class ContainerAllocator>
 struct IsFixedSize< ::swarm_center::mCPPReqRequest_<ContainerAllocator> >
-  : TrueType
+  : FalseType
   { };
 
 template <class ContainerAllocator>
 struct IsFixedSize< ::swarm_center::mCPPReqRequest_<ContainerAllocator> const>
-  : TrueType
+  : FalseType
   { };
 
 template <class ContainerAllocator>
@@ -114,12 +119,12 @@ struct MD5Sum< ::swarm_center::mCPPReqRequest_<ContainerAllocator> >
 {
   static const char* value()
   {
-    return "685b546c53fb0b7de5dfef48cf30fe1f";
+    return "462ac0ba687f22c2e73c0ec0413e0202";
   }
 
   static const char* value(const ::swarm_center::mCPPReqRequest_<ContainerAllocator>&) { return value(); }
-  static const uint64_t static_value1 = 0x685b546c53fb0b7dULL;
-  static const uint64_t static_value2 = 0xe5dfef48cf30fe1fULL;
+  static const uint64_t static_value1 = 0x462ac0ba687f22c2ULL;
+  static const uint64_t static_value2 = 0xe73c0ec0413e0202ULL;
 };
 
 template<class ContainerAllocator>
@@ -138,7 +143,8 @@ struct Definition< ::swarm_center::mCPPReqRequest_<ContainerAllocator> >
 {
   static const char* value()
   {
-    return "bool a\n\
+    return "float32[] x\n\
+float32[] y\n\
 ";
   }
 
@@ -157,7 +163,8 @@ namespace serialization
   {
     template<typename Stream, typename T> inline static void allInOne(Stream& stream, T m)
     {
-      stream.next(m.a);
+      stream.next(m.x);
+      stream.next(m.y);
     }
 
     ROS_DECLARE_ALLINONE_SERIALIZER
@@ -176,8 +183,18 @@ struct Printer< ::swarm_center::mCPPReqRequest_<ContainerAllocator> >
 {
   template<typename Stream> static void stream(Stream& s, const std::string& indent, const ::swarm_center::mCPPReqRequest_<ContainerAllocator>& v)
   {
-    s << indent << "a: ";
-    Printer<uint8_t>::stream(s, indent + "  ", v.a);
+    s << indent << "x[]" << std::endl;
+    for (size_t i = 0; i < v.x.size(); ++i)
+    {
+      s << indent << "  x[" << i << "]: ";
+      Printer<float>::stream(s, indent + "  ", v.x[i]);
+    }
+    s << indent << "y[]" << std::endl;
+    for (size_t i = 0; i < v.y.size(); ++i)
+    {
+      s << indent << "  y[" << i << "]: ";
+      Printer<float>::stream(s, indent + "  ", v.y[i]);
+    }
   }
 };
 

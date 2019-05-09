@@ -23,6 +23,7 @@ class DispatchCenter
 {
 private:
     int robot_number;
+    int active_number;
     string prefix = "swarmbot";
 
     ros::NodeHandle local;
@@ -37,7 +38,7 @@ private:
     /* client for coverage planning request */
     ros::ServiceClient plan_client;
 
-    bool all_ready;
+//    bool all_ready;
     bool plan_ready;
     bool first_run;
 
@@ -57,8 +58,8 @@ public:
 
         this->first_run = true;
 
-        this->all_ready = false;
-        ready_sub = global.subscribe<std_msgs::Bool>("/setup_ready",1,&DispatchCenter::armedReadyCallback,this);
+//        this->all_ready = false;
+//        ready_sub = global.subscribe<std_msgs::Bool>("/setup_ready",1,&DispatchCenter::armedReadyCallback,this);
         this->plan_ready = false;
         ready_sub = global.subscribe<std_msgs::Bool>("/plan_ready",1,&DispatchCenter::planReadyCallback,this);
 
@@ -77,12 +78,12 @@ public:
         plan_client = global.serviceClient<swarm_center::mCPPReq>("/mCPP_req");
     }
 
-    void armedReadyCallback(const std_msgs::Bool::ConstPtr &msg) {
-        if(!this->all_ready) {
-            this->all_ready = msg->data;
-            ROS_INFO("vehicles are all armed");
-        }
-    }
+//    void armedReadyCallback(const std_msgs::Bool::ConstPtr &msg) {
+//        if(!this->all_ready) {
+//            this->all_ready = msg->data;
+//            ROS_INFO("vehicles are all armed");
+//        }
+//    }
 
     void planReadyCallback(const std_msgs::Bool::ConstPtr &msg) {
         this->plan_ready = msg->data;
@@ -94,15 +95,15 @@ public:
     void run(){
         ros::Rate r(DEFAULT_RATE);
 
-        swarm_center::mCPPReq srv;
-        srv.request.a = true;
-        srv.response.b = false;
-        while (ros::ok()&&!srv.response.b) {
-            plan_client.call(srv);
-            ros::spinOnce();
-            r.sleep();
-            ROS_INFO("request for first plan, response %d", srv.response.b);
-        }
+//        swarm_center::mCPPReq srv;
+//        srv.request.a = true;
+//        srv.response.b = false;
+//        while (ros::ok()&&!srv.response.b) {
+//            plan_client.call(srv);
+//            ros::spinOnce();
+//            r.sleep();
+//            ROS_INFO("request for first plan, response %d", srv.response.b);
+//        }
 
         while(ros::ok()){
             ros::spinOnce();
