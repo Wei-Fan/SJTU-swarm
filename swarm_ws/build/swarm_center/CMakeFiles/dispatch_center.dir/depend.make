@@ -5,6 +5,10 @@ swarm_center/CMakeFiles/dispatch_center.dir/src/dispatch_center.cpp.o: /home/wad
 swarm_center/CMakeFiles/dispatch_center.dir/src/dispatch_center.cpp.o: /home/wade/SJTU-swarm/swarm_ws/devel/include/swarm_center/mCPPReqRequest.h
 swarm_center/CMakeFiles/dispatch_center.dir/src/dispatch_center.cpp.o: /home/wade/SJTU-swarm/swarm_ws/devel/include/swarm_center/mCPPReqResponse.h
 swarm_center/CMakeFiles/dispatch_center.dir/src/dispatch_center.cpp.o: /home/wade/SJTU-swarm/swarm_ws/src/swarm_center/src/dispatch_center.cpp
+swarm_center/CMakeFiles/dispatch_center.dir/src/dispatch_center.cpp.o: /opt/ros/kinetic/include/geometry_msgs/Point.h
+swarm_center/CMakeFiles/dispatch_center.dir/src/dispatch_center.cpp.o: /opt/ros/kinetic/include/geometry_msgs/Pose.h
+swarm_center/CMakeFiles/dispatch_center.dir/src/dispatch_center.cpp.o: /opt/ros/kinetic/include/geometry_msgs/PoseStamped.h
+swarm_center/CMakeFiles/dispatch_center.dir/src/dispatch_center.cpp.o: /opt/ros/kinetic/include/geometry_msgs/Quaternion.h
 swarm_center/CMakeFiles/dispatch_center.dir/src/dispatch_center.cpp.o: /opt/ros/kinetic/include/ros/advertise_options.h
 swarm_center/CMakeFiles/dispatch_center.dir/src/dispatch_center.cpp.o: /opt/ros/kinetic/include/ros/advertise_service_options.h
 swarm_center/CMakeFiles/dispatch_center.dir/src/dispatch_center.cpp.o: /opt/ros/kinetic/include/ros/assert.h
@@ -62,6 +66,8 @@ swarm_center/CMakeFiles/dispatch_center.dir/src/dispatch_center.cpp.o: /opt/ros/
 swarm_center/CMakeFiles/dispatch_center.dir/src/dispatch_center.cpp.o: /opt/ros/kinetic/include/ros/wall_timer_options.h
 swarm_center/CMakeFiles/dispatch_center.dir/src/dispatch_center.cpp.o: /opt/ros/kinetic/include/rosconsole/macros_generated.h
 swarm_center/CMakeFiles/dispatch_center.dir/src/dispatch_center.cpp.o: /opt/ros/kinetic/include/std_msgs/Bool.h
+swarm_center/CMakeFiles/dispatch_center.dir/src/dispatch_center.cpp.o: /opt/ros/kinetic/include/std_msgs/Empty.h
+swarm_center/CMakeFiles/dispatch_center.dir/src/dispatch_center.cpp.o: /opt/ros/kinetic/include/std_msgs/Header.h
 swarm_center/CMakeFiles/dispatch_center.dir/src/dispatch_center.cpp.o: /opt/ros/kinetic/include/std_msgs/UInt8.h
 swarm_center/CMakeFiles/dispatch_center.dir/src/dispatch_center.cpp.o: /opt/ros/kinetic/include/xmlrpcpp/XmlRpcDecl.h
 swarm_center/CMakeFiles/dispatch_center.dir/src/dispatch_center.cpp.o: /opt/ros/kinetic/include/xmlrpcpp/XmlRpcValue.h

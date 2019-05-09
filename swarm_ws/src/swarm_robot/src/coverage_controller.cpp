@@ -54,6 +54,7 @@ private:
     FlightBehavior EXEC_FROM_MIDDLE;
     FlightBehavior DISENGAGE;
     FlightBehavior ENGAGE;
+    FlightBehavior SLEEP;
     FlightBehavior m_flight_behavior;
     FlightState m_flight_state;
     int m_flight_curr_index;
@@ -104,16 +105,18 @@ public:
         DISENGAGE.action_seq = {Hovering,Returnback,Landing};
         ENGAGE.behavior_index = 4;
         ENGAGE.action_seq = {None,Takeoff,Headout,Hovering,Commanding,Landing};
+        SLEEP.behavior_index = 0;
+        SLEEP.action_seq = {None};
 
         /* flags */
 //        m_flight_state = None;
         state_prepare = false;
-        pos_prepare = false;
+        this->pos_prepare = false;
         this->plan_ready = false;
         this->taskOccupiedLight = true;
         this->taskPauseLight = true;
         this->taskIndexLight = false;
-        this->taskAlterLight = true;
+        this->taskAlterLight = false;
 
         /* get robot id and initial task id */
         this->robot_name = robot_name;
@@ -124,7 +127,7 @@ public:
         this->robot_id = atoi(index.c_str());
         this->task_index = this->robot_id;
         // init m_flight_state
-        this->m_flight_behavior = EXEC_FROM_BEGNNING;
+        this->m_flight_behavior = SLEEP;
         this->m_flight_curr_index = 0;
         this->m_flight_state = this->m_flight_behavior.action_seq[m_flight_curr_index];
 
@@ -184,6 +187,12 @@ public:
                     this->m_flight_curr_index = 0;
                     break;
                 }
+                default: {
+                    this->m_flight_behavior = SLEEP;
+                    this->m_flight_curr_index = 0;
+                    this->taskAlterLight = false;
+                    this->taskOccupiedLight = false;
+                }
             }
         }
 //        state_prepare = true;
@@ -206,7 +215,7 @@ public:
     {
         csvdata intp;
         FILE *fp;
-        string filename = traj_path + "cover_robot" + to_string(robot_id) + ".csv";
+        string filename = traj_path + "cover_robot" + to_string(this->task_index) + ".csv";
         fp = fopen(filename.c_str(),"r");
         if(fp){cout<<"open path csv"<< filename << endl;}
         while(1){
@@ -257,7 +266,7 @@ public:
             pos_sp.header.frame_id = to_string(this->robot_id);
             switch (this->m_flight_state) {
                 case None: {
-                    if (!this->taskPauseLight) {
+                    if (!this->taskPauseLight&&this->pos_prepare) {
                         this->m_flight_curr_index++;
                     }
                     if (this->taskOccupiedLight) {
@@ -413,7 +422,8 @@ public:
                     }
 
                     this->taskOccupiedLight = false;
-                    this->m_flight_state = None;
+                    this->m_flight_behavior = SLEEP;
+                    this->m_flight_curr_index = 0;
 
                     break;
                 }
