@@ -25,7 +25,7 @@ using namespace std;
 
 string traj_path = "/home/wade/SJTU-swarm/swarm_ws/src/swarm_center/launch/";
 
-float assemble_x = 2.0; //temp
+float assemble_x = 0.0; //temp
 float assemble_y = 0.0; //temp
 
 /* action-behavior declaration */
