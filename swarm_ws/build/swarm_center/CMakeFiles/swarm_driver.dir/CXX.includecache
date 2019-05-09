@@ -6,6 +6,46 @@
 
 #IncludeRegexTransform: 
 
+/home/wade/SJTU-swarm/swarm_ws/devel/include/swarm_center/mArmReq.h
+ros/service_traits.h
+-
+swarm_center/mArmReqRequest.h
+-
+swarm_center/mArmReqResponse.h
+-
+
+/home/wade/SJTU-swarm/swarm_ws/devel/include/swarm_center/mArmReqRequest.h
+string
+-
+vector
+-
+map
+-
+ros/types.h
+-
+ros/serialization.h
+-
+ros/builtin_message_traits.h
+-
+ros/message_operations.h
+-
+
+/home/wade/SJTU-swarm/swarm_ws/devel/include/swarm_center/mArmReqResponse.h
+string
+-
+vector
+-
+map
+-
+ros/types.h
+-
+ros/serialization.h
+-
+ros/builtin_message_traits.h
+-
+ros/message_operations.h
+-
+
 /home/wade/SJTU-swarm/swarm_ws/devel/include/swarm_center/pos_info.h
 string
 -
@@ -71,6 +111,8 @@ geometry_msgs/PoseWithCovarianceStamped.h
 -
 swarm_center/pos_info.h
 -
+swarm_center/mArmReq.h
+/home/wade/SJTU-swarm/swarm_ws/src/swarm_center/src/swarm_center/mArmReq.h
 
 /opt/ros/kinetic/include/geometry_msgs/Point.h
 string

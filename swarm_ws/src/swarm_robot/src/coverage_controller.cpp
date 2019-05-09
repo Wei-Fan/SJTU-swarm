@@ -152,6 +152,8 @@ public:
         // call armed through swarm_driver
         arm_client = global.serviceClient<swarm_center::mArmReq>("/mArm_req");
 
+        curr_pos.position.x = 0.0;
+        curr_pos.position.y = 0.0;
     }
 
     void flightTaskCallback(const std_msgs::UInt8::ConstPtr& msg)
@@ -220,6 +222,18 @@ public:
         ros::Rate run_rate(RUN_RATE);
         ros::Rate sleep_rate(SLEEP_RATE);
 
+        geometry_msgs::PoseStamped pos_sp;
+        pos_sp.header.frame_id = to_string(this->robot_id);
+        pos_sp.pose.position.x = curr_pos.position.x;
+        pos_sp.pose.position.y = curr_pos.position.y;
+        pos_sp.pose.position.z = -1;
+        /* test link */
+        for (int i = 1; i <= 20; ++i) {//*(this->robot_id+1); ++i) {
+            cmd_pos_pub.publish(pos_sp);
+            ros::spinOnce();
+            run_rate.sleep();
+        }
+
         /* main loop */
         while (ros::ok()) {
             if (this->taskAlterLight) {
@@ -257,12 +271,12 @@ public:
                 }
                 case Takeoff: {
                     ROS_INFO("robot %d taking off", this->robot_id);
-                    pos_sp.pose.position.x = cmd_incsv[0].xyz[0];
-                    pos_sp.pose.position.y = cmd_incsv[0].xyz[1];
+                    pos_sp.pose.position.x = curr_pos.position.x;
+                    pos_sp.pose.position.y = curr_pos.position.y;
                     pos_sp.pose.position.z = -1;
 
                     /* test link */
-                    for (int i = 1; i <= 80; ++i) {//*(this->robot_id+1); ++i) {
+                    for (int i = 1; i <= 20; ++i) {//*(this->robot_id+1); ++i) {
                         cmd_pos_pub.publish(pos_sp);
                         ros::spinOnce();
                         run_rate.sleep();
@@ -278,6 +292,12 @@ public:
                         run_rate.sleep();
                     }
                     ROS_INFO("request for arm successfully");
+
+                    for (int i = 1; i <= 60; ++i) {//*(this->robot_id+1); ++i) {
+                        cmd_pos_pub.publish(pos_sp);
+                        ros::spinOnce();
+                        run_rate.sleep();
+                    }
 
                     float height = 1.5;
                     if (this->m_flight_behavior.behavior_index == 4)

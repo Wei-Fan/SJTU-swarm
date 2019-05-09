@@ -25,7 +25,6 @@
 #include <geometry_msgs/PoseWithCovarianceStamped.h>
 
 #include <swarm_center/pos_info.h>
-#include "swarm_center/mArmReq.h"
 
 //#define USING_OPTFLOW
 //#define USING_OFFLINE_TRAJECTORY
@@ -236,10 +235,7 @@ void MiniflyRos::offb_pos_ctrl(float cur_time) // current_pos not finish!!!!!!
 class MiniSwarm
 {
 private:
-//    ros::Publisher ready_pub;
-    ros::NodeHandle global;
-    ros::NodeHandle local;
-    ros::ServiceServer arm_server;
+    ros::Publisher ready_pub;
     vector<ros::Publisher> raw_pub;
     string prefix = "swarmbot";
     int robot_number;
@@ -247,7 +243,6 @@ private:
     vector<float> position_err_y;
     vector<float> position_err_z;
     vector<bool> first_update;
-    vector<bool> just_armed;
 //    bool plan_ready;
 
 public:
@@ -264,16 +259,12 @@ public:
     void send_att_sp(uint8_t id, float *rpyt);
     void run();
     float get_ros_time(ros::Time time_begin);
-    bool ArmSrvCallback(swarm_center::mArmReq::Request &req,
-                        swarm_center::mArmReq::Response &res);
 };
 //
 MiniSwarm::MiniSwarm(const std::string &dev_name, int baudrate)
 {
-    ros::NodeHandle global("");
+    ros::NodeHandle node("");
     ros::NodeHandle local("/swarm_driver");
-    this->global = global;
-    this->local = local;
     if(!local.getParam("robot_number", this->robot_number)){
         ROS_WARN("Did not set up robot number, using default 1");
         this->robot_number = 1;
@@ -281,18 +272,15 @@ MiniSwarm::MiniSwarm(const std::string &dev_name, int baudrate)
     ROS_INFO("SWARM DRIVER is activated! DRIVER has %d robots to dispose", this->robot_number);
 
     // tell dispatch_center that all vehecles armed
-//    ready_pub = global.advertise<std_msgs::Bool>("/setup_ready",100);
+    ready_pub = node.advertise<std_msgs::Bool>("/setup_ready",100);
 
     // publish raw pos for coverage_controllers and coverage_commander
     raw_pub.resize(this->robot_number);
     for (int i = 0; i < this->robot_number; ++i) {
         char msg_name[50];
         sprintf(msg_name,"/%s%d/raw_position",prefix.c_str(),i);
-        raw_pub[i] = global.advertise<geometry_msgs::PoseStamped>(msg_name,1);
+        raw_pub[i] = node.advertise<geometry_msgs::PoseStamped>(msg_name,1);
     }
-
-    /* arm server */
-    arm_server = global.advertiseService("/mArm_req",&MiniSwarm::ArmSrvCallback, this);
 
     try
     {
@@ -327,7 +315,6 @@ MiniSwarm::MiniSwarm(const std::string &dev_name, int baudrate)
     position_err_y.resize(this->robot_number,0);
     position_err_z.resize(this->robot_number,0);
     first_update.resize(this->robot_number,true);
-    just_armed.resize(this->robot_number,false);
 
 //    plan_ready = false;
 }
@@ -338,18 +325,6 @@ MiniSwarm::~MiniSwarm()
         delete mf;
     }
 }
-
-bool MiniSwarm::ArmSrvCallback(swarm_center::mArmReq::Request &req, swarm_center::mArmReq::Response &res)
-{
-    int arm_id = req.a;
-    first_update[arm_id] = true;
-    just_armed[arm_id] = true;
-    take_off((uint8_t)arm_id);
-    res.b = true;
-    ROS_INFO("robot %d is armed!", arm_id);
-    return true;
-}
-
 void MiniSwarm::addMf(uint8_t id, float *init_pos)//const std::string &parampath, uint8_t id)
 {
     MiniflyRos* mf = new MiniflyRos(id,init_pos);//parampath,id);
@@ -556,8 +531,33 @@ void MiniSwarm::run()
     }
     cout<<"~~~~~~take off!"<<endl;
 
-    /* test link */
-    for(int i = 0; i<40; ++i)
+    for(int i = 0; i<20; ++i)
+    {
+        for(auto mf:Mfs){
+            float cmd[3];
+            cmd[0] = mf->pos_cmd[0] - position_bias_x[mf->id];
+            cmd[1] = mf->pos_cmd[1] - position_bias_y[mf->id];
+            cmd[2] = -1;
+            send_pos_sp(mf->id,cmd);
+            // cout<<mf->id<<endl;
+            // printf("%02X\n",mf->id);
+//            ROS_INFO("send link test");
+        }
+        ros::spinOnce();
+        loop_rate.sleep();
+    }
+
+    ROS_INFO("prepare to call armed");
+    for(auto mf:Mfs){
+        take_off(mf->id);
+    }
+    /* armed */
+//    std_msgs::Bool ready;
+//    ready.data = true;
+//    ready_pub.publish(ready);
+//    ros::spinOnce();
+//    loop_rate.sleep();
+    for(int i = 0; i<20; ++i)
     {
         for(auto mf:Mfs){
             float cmd[3];
