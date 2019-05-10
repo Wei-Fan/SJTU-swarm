@@ -19,7 +19,7 @@
 //#include <swarm_robot/p>
 
 #define RUN_RATE 20
-#define SLEEP_RATE 1
+#define SLEEP_RATE 2
 
 using namespace std;
 
@@ -80,7 +80,8 @@ private:
     ros::Subscriber pos_sub;
 
     /* subscribe current states from dispatch center */
-    ros::Subscriber state_sub;
+    ros::Subscriber task_sub;
+    ros::Subscriber index_sub;
 
     /*Publish the position command*/
     ros::Publisher cmd_pos_pub;
@@ -95,6 +96,10 @@ private:
 
 public:
     CoverageController(const string &robot_name, bool debug = false){
+        ros::NodeHandle local("/coverage_controller");
+        ros::NodeHandle global("");
+        this->local = local;
+        this->global = global;
         /* define behavior */
         //change behavior only can be allowed when no drone is in disengage mode
         EXEC_FROM_BEGNNING.behavior_index = 1;
@@ -113,7 +118,7 @@ public:
         state_prepare = false;
         this->pos_prepare = false;
         this->plan_ready = false;
-        this->taskOccupiedLight = true;
+        this->taskOccupiedLight = false;
         this->taskPauseLight = true;
         this->taskIndexLight = false;
         this->taskAlterLight = false;
@@ -135,7 +140,7 @@ public:
         // wait for dispatch_center's signal to alter flight state
         char msg_name0[50];
         sprintf(msg_name0,"/%s/flight_task",this->robot_name.c_str());
-        state_sub = global.subscribe<std_msgs::UInt8>(msg_name0,1,&CoverageController::flightTaskCallback,this);
+        task_sub = global.subscribe<std_msgs::UInt8>(msg_name0,1,&CoverageController::flightTaskCallback,this);
 
         // get raw_pos from swarm_driver
         char msg_name1[50];
@@ -150,7 +155,7 @@ public:
         // wait for dispatch_center's signal to alter task number for planning file
         char msg_name3[50];
         sprintf(msg_name3,"/%s/task_index",this->robot_name.c_str());
-        state_sub = global.subscribe<std_msgs::UInt8>(msg_name3,1,&CoverageController::taskIndCallback,this);
+        index_sub = global.subscribe<std_msgs::UInt8>(msg_name3,1,&CoverageController::taskIndCallback,this);
 
         // call armed through swarm_driver
         arm_client = global.serviceClient<swarm_center::mArmReq>("/mArm_req");
@@ -164,6 +169,8 @@ public:
         // 1--EXEC_FROM_BEGINNING; 2--EXEC_FROM_MIDDLE; 3--DISENGAGE; 4--ENGAGE
         // 0--init check
         int new_index = (int)msg->data;
+        ROS_INFO("robot %d change flight task to %d", this->robot_id, new_index);
+        fflush(stdout);
         if (new_index != this->m_flight_behavior.behavior_index) {
             this->taskAlterLight = true;
             switch (new_index) {
@@ -200,7 +207,7 @@ public:
 
     void taskIndCallback(const std_msgs::UInt8::ConstPtr& msg)
     {
-        ROS_INFO("robot %d alter task Number",this->robot_id);
+        ROS_INFO("robot %d alter task Number to %d",this->robot_id, msg->data);
         this->taskIndexLight = true;
         this->task_index = (int)msg->data;
     }
@@ -218,7 +225,7 @@ public:
         string filename = traj_path + "cover_robot" + to_string(this->task_index) + ".csv";
         fp = fopen(filename.c_str(),"r");
         if(fp){cout<<"open path csv"<< filename << endl;}
-        while(1){
+        while(true){
             fscanf(fp,"%f,%f,%f",&intp.xyz[0],&intp.xyz[1],&intp.xyz[2]);
             cmd_incsv.push_back(intp);
             // std::cout<<"takeoff_pos: x="<<intp.xyz[0]<<"; y="<<intp.xyz[1]<<"; z="<<intp.xyz[2]<<std::endl;
@@ -243,6 +250,7 @@ public:
             run_rate.sleep();
         }
 
+        ROS_INFO("robot %d start main loop", this->robot_id);
         /* main loop */
         while (ros::ok()) {
             if (this->taskAlterLight) {
@@ -251,8 +259,8 @@ public:
                 this->taskOccupiedLight = true;
             }
 
-            if (this->taskIndexLight) {
-                /* read file (how to respond to replanning???)*/
+            if (this->taskIndexLight&&this->taskOccupiedLight) {
+                /* read file */
                 cmd_incsv.clear();
                 read_Pos_traj();
                 cmd_cnt = 0;
@@ -267,12 +275,14 @@ public:
             switch (this->m_flight_state) {
                 case None: {
                     if (!this->taskPauseLight&&this->pos_prepare) {
+                        ROS_INFO("robot %d not long stay put~", this->robot_id);
                         this->m_flight_curr_index++;
                     }
                     if (this->taskOccupiedLight) {
                         ros::spinOnce();
                         run_rate.sleep();
                     } else {
+//                        ROS_INFO("robot %d sleeps", this->robot_id);
                         ros::spinOnce();
                         sleep_rate.sleep();
                     }
@@ -353,8 +363,8 @@ public:
                     /* descent to return back height */
                     pos_sp.pose = curr_pos;
                     pos_sp.pose.position.z = 1.5;
-                    for (int i = 0; i < 40; ++i) {
-                        pos_sp.pose.position.z -= 0.5*float(i)/40;
+                    for (int i = 0; i < 60; ++i) {
+                        pos_sp.pose.position.z -= 1.0*float(i)/40;
                         cmd_pos_pub.publish(pos_sp);
                         ros::spinOnce();
                         run_rate.sleep();
@@ -424,6 +434,7 @@ public:
                     this->taskOccupiedLight = false;
                     this->m_flight_behavior = SLEEP;
                     this->m_flight_curr_index = 0;
+                    ROS_INFO("robot %d sleep", this->robot_id);
 
                     break;
                 }

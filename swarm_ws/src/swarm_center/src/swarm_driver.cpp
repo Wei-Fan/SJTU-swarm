@@ -53,8 +53,8 @@ using namespace std;
 
 string parameter_file = "/home/wade/SJTU-swarm/swarm_ws/src/swarm_config/include/swarm_config/Minifly";
 /* pre-defined position */
-float position_bias_x[4] = {0.5,-0.5,-0.5,0.5};//{0.23, -0.115, -0.115, 0.5};
-float position_bias_y[4] = {0.5,0.5,-0.5,-0.5};//{0.0, 0.2, -0.2, -0.5};
+float position_bias_x[5] = {0.5,-0.5,-0.5,0.5,0.0};//{0.23, -0.115, -0.115, 0.5};
+float position_bias_y[5] = {0.5,0.5,-0.5,-0.5,0.0};//{0.0, 0.2, -0.2, -0.5};
 
 class MiniflyRos
 {
@@ -544,6 +544,9 @@ void MiniSwarm::run()
     while (waiting&&ros::ok()) {
 //        ROS_INFO("waiting");
         raw_data_decoding();
+        ros::spinOnce();
+        loop_rate.sleep();
+
         int cnt_tmp = 0;
         for (int i = 0; i < this->robot_number; ++i) {
             if (Mfs[i]->recieve_sp)
@@ -551,14 +554,13 @@ void MiniSwarm::run()
         }
         if (cnt_tmp == this->robot_number)
             waiting = false;
-        ros::spinOnce();
-        loop_rate.sleep();
     }
     cout<<"~~~~~~take off!"<<endl;
 
     /* test link */
     for(int i = 0; i<40; ++i)
     {
+        raw_data_decoding();
         for(auto mf:Mfs){
             float cmd[3];
             cmd[0] = mf->pos_cmd[0] - position_bias_x[mf->id];

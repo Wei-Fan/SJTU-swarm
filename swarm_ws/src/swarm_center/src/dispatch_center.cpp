@@ -80,13 +80,15 @@ public:
         flight_index_pub.resize(this->robot_number);
         for (int i = 0; i < this->robot_number; ++i) {
             char msg_name0[50];
-            sprintf(msg_name0,"/%s%d/flight_task",this->prefix.c_str(),i);
-            flight_task_pub[i] = global.advertise<std_msgs::UInt8>(msg_name0,1);
+            sprintf(msg_name0, "/%s%d/flight_task", this->prefix.c_str(), i);
+            flight_task_pub[i] = global.advertise<std_msgs::UInt8>(msg_name0, 1);
             std_msgs::UInt8 test;
             test.data = 0;
             for (int j = 0; j < 10; ++j) {
                 flight_task_pub[i].publish(test);
             }
+        }
+        for (int i = 0; i < this->robot_number; ++i) {
             char msg_name1[50];
             sprintf(msg_name1,"/%s%d/task_index",this->prefix.c_str(),i);
             flight_index_pub[i] = global.advertise<std_msgs::UInt8>(msg_name1,1);
@@ -146,14 +148,20 @@ public:
         }
 
         /* setup first time mission */
+        ROS_INFO("start first time mission");
         // send out task to robots
         std_msgs::UInt8 init_task;
+//        for (int j = 0; j < 4; ++j) {
         init_task.data = 1;
         for (int i = 0; i < this->active_number; ++i) {
             flight_task_pub[i].publish(init_task);
         }
         init_task.data = 0;
         flight_task_pub[this->robot_number-1].publish(init_task);
+        ros::spinOnce();
+        r.sleep();
+//        }
+        ROS_INFO("send out first time mission's task");
 
         // request coverage planning
         swarm_center::mCPPReq srv;
@@ -174,7 +182,7 @@ public:
             task_id.data = i;
             flight_index_pub[i].publish(task_id);
         }
-
+        ROS_INFO("begin main loop");
         /* main loop */
         while(ros::ok()){
             ros::spinOnce();
