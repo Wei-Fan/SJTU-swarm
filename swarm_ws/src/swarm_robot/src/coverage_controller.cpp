@@ -25,8 +25,8 @@ using namespace std;
 
 string traj_path = "/home/wade/SJTU-swarm/swarm_ws/src/swarm_center/launch/";
 
-float assemble_x = 0.0; //temp
-float assemble_y = 0.0; //temp
+float TAKEOFF_POS[2] = {-2,0};
+float LANDING_POS[2] = {2,0};
 
 /* action-behavior declaration */
 enum FlightState{
@@ -373,8 +373,8 @@ public:
                     float start_x = curr_pos.position.x;
                     float start_y = curr_pos.position.y;
                     for (int i = 1; i <= 120; ++i) {
-                        pos_sp.pose.position.x = float(i)/120*(assemble_x-start_x)+start_x;
-                        pos_sp.pose.position.y = float(i)/120*(assemble_y-start_y)+start_y;
+                        pos_sp.pose.position.x = float(i)/120*(LANDING_POS[0]-start_x)+start_x;
+                        pos_sp.pose.position.y = float(i)/120*(LANDING_POS[1]-start_y)+start_y;
 
                         cmd_pos_pub.publish(pos_sp);
                         ros::spinOnce();
