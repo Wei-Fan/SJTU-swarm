@@ -166,6 +166,21 @@ depend:
 .PHONY : depend
 
 # Convenience name for target.
+swarm_center/CMakeFiles/vicon_node.dir/rule:
+	cd /home/wade/SJTU-swarm/swarm_ws/build && $(MAKE) -f CMakeFiles/Makefile2 swarm_center/CMakeFiles/vicon_node.dir/rule
+.PHONY : swarm_center/CMakeFiles/vicon_node.dir/rule
+
+# Convenience name for target.
+vicon_node: swarm_center/CMakeFiles/vicon_node.dir/rule
+
+.PHONY : vicon_node
+
+# fast build rule for target.
+vicon_node/fast:
+	cd /home/wade/SJTU-swarm/swarm_ws/build && $(MAKE) -f swarm_center/CMakeFiles/vicon_node.dir/build.make swarm_center/CMakeFiles/vicon_node.dir/build
+.PHONY : vicon_node/fast
+
+# Convenience name for target.
 swarm_center/CMakeFiles/swarm_visualization.dir/rule:
 	cd /home/wade/SJTU-swarm/swarm_ws/build && $(MAKE) -f CMakeFiles/Makefile2 swarm_center/CMakeFiles/swarm_visualization.dir/rule
 .PHONY : swarm_center/CMakeFiles/swarm_visualization.dir/rule
@@ -1626,6 +1641,33 @@ src/swarm_visualization.cpp.s:
 	cd /home/wade/SJTU-swarm/swarm_ws/build && $(MAKE) -f swarm_center/CMakeFiles/swarm_visualization.dir/build.make swarm_center/CMakeFiles/swarm_visualization.dir/src/swarm_visualization.cpp.s
 .PHONY : src/swarm_visualization.cpp.s
 
+src/vicon_node.o: src/vicon_node.cpp.o
+
+.PHONY : src/vicon_node.o
+
+# target to build an object file
+src/vicon_node.cpp.o:
+	cd /home/wade/SJTU-swarm/swarm_ws/build && $(MAKE) -f swarm_center/CMakeFiles/vicon_node.dir/build.make swarm_center/CMakeFiles/vicon_node.dir/src/vicon_node.cpp.o
+.PHONY : src/vicon_node.cpp.o
+
+src/vicon_node.i: src/vicon_node.cpp.i
+
+.PHONY : src/vicon_node.i
+
+# target to preprocess a source file
+src/vicon_node.cpp.i:
+	cd /home/wade/SJTU-swarm/swarm_ws/build && $(MAKE) -f swarm_center/CMakeFiles/vicon_node.dir/build.make swarm_center/CMakeFiles/vicon_node.dir/src/vicon_node.cpp.i
+.PHONY : src/vicon_node.cpp.i
+
+src/vicon_node.s: src/vicon_node.cpp.s
+
+.PHONY : src/vicon_node.s
+
+# target to generate assembly for a file
+src/vicon_node.cpp.s:
+	cd /home/wade/SJTU-swarm/swarm_ws/build && $(MAKE) -f swarm_center/CMakeFiles/vicon_node.dir/build.make swarm_center/CMakeFiles/vicon_node.dir/src/vicon_node.cpp.s
+.PHONY : src/vicon_node.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -1636,6 +1678,7 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
 	@echo "... test"
+	@echo "... vicon_node"
 	@echo "... swarm_visualization"
 	@echo "... coverage_commander"
 	@echo "... swarm_center_genlisp"
@@ -1746,6 +1789,9 @@ help:
 	@echo "... src/swarm_visualization.o"
 	@echo "... src/swarm_visualization.i"
 	@echo "... src/swarm_visualization.s"
+	@echo "... src/vicon_node.o"
+	@echo "... src/vicon_node.i"
+	@echo "... src/vicon_node.s"
 .PHONY : help
 
 

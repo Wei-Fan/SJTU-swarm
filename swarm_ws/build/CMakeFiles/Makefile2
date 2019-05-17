@@ -1654,6 +1654,7 @@ clean: swarm_robot/CMakeFiles/swarm_robot_generate_messages_nodejs.dir/clean
 # Directory level rules for directory swarm_center
 
 # Convenience name for "all" pass in the directory.
+swarm_center/all: swarm_center/CMakeFiles/vicon_node.dir/all
 swarm_center/all: swarm_center/CMakeFiles/swarm_visualization.dir/all
 swarm_center/all: swarm_center/CMakeFiles/coverage_commander.dir/all
 swarm_center/all: swarm_center/CMakeFiles/swarm_driver.dir/all
@@ -1666,6 +1667,7 @@ swarm_center/all: swarm_center/CMakeFiles/formation_commander.dir/all
 .PHONY : swarm_center/all
 
 # Convenience name for "clean" pass in the directory.
+swarm_center/clean: swarm_center/CMakeFiles/vicon_node.dir/clean
 swarm_center/clean: swarm_center/CMakeFiles/swarm_visualization.dir/clean
 swarm_center/clean: swarm_center/CMakeFiles/coverage_commander.dir/clean
 swarm_center/clean: swarm_center/CMakeFiles/swarm_center_genlisp.dir/clean
@@ -1756,6 +1758,43 @@ swarm_center/clean: swarm_center/CMakeFiles/uuid_msgs_generate_messages_nodejs.d
 swarm_center/preinstall:
 
 .PHONY : swarm_center/preinstall
+
+#=============================================================================
+# Target rules for target swarm_center/CMakeFiles/vicon_node.dir
+
+# All Build rule for target.
+swarm_center/CMakeFiles/vicon_node.dir/all:
+	$(MAKE) -f swarm_center/CMakeFiles/vicon_node.dir/build.make swarm_center/CMakeFiles/vicon_node.dir/depend
+	$(MAKE) -f swarm_center/CMakeFiles/vicon_node.dir/build.make swarm_center/CMakeFiles/vicon_node.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/wade/SJTU-swarm/swarm_ws/build/CMakeFiles --progress-num=60,61 "Built target vicon_node"
+.PHONY : swarm_center/CMakeFiles/vicon_node.dir/all
+
+# Include target in all.
+all: swarm_center/CMakeFiles/vicon_node.dir/all
+
+.PHONY : all
+
+# Build rule for subdir invocation for target.
+swarm_center/CMakeFiles/vicon_node.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/wade/SJTU-swarm/swarm_ws/build/CMakeFiles 2
+	$(MAKE) -f CMakeFiles/Makefile2 swarm_center/CMakeFiles/vicon_node.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/wade/SJTU-swarm/swarm_ws/build/CMakeFiles 0
+.PHONY : swarm_center/CMakeFiles/vicon_node.dir/rule
+
+# Convenience name for target.
+vicon_node: swarm_center/CMakeFiles/vicon_node.dir/rule
+
+.PHONY : vicon_node
+
+# clean rule for target.
+swarm_center/CMakeFiles/vicon_node.dir/clean:
+	$(MAKE) -f swarm_center/CMakeFiles/vicon_node.dir/build.make swarm_center/CMakeFiles/vicon_node.dir/clean
+.PHONY : swarm_center/CMakeFiles/vicon_node.dir/clean
+
+# clean rule for target.
+clean: swarm_center/CMakeFiles/vicon_node.dir/clean
+
+.PHONY : clean
 
 #=============================================================================
 # Target rules for target swarm_center/CMakeFiles/swarm_visualization.dir

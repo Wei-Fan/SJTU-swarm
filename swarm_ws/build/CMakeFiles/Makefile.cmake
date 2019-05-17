@@ -331,6 +331,7 @@ set(CMAKE_DEPEND_INFO_FILES
   "swarm_robot/CMakeFiles/formation_controller.dir/DependInfo.cmake"
   "swarm_robot/CMakeFiles/swarm_robot_generate_messages_eus.dir/DependInfo.cmake"
   "swarm_robot/CMakeFiles/swarm_robot_generate_messages_nodejs.dir/DependInfo.cmake"
+  "swarm_center/CMakeFiles/vicon_node.dir/DependInfo.cmake"
   "swarm_center/CMakeFiles/swarm_visualization.dir/DependInfo.cmake"
   "swarm_center/CMakeFiles/coverage_commander.dir/DependInfo.cmake"
   "swarm_center/CMakeFiles/swarm_center_genlisp.dir/DependInfo.cmake"

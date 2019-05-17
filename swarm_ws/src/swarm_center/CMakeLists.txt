@@ -169,6 +169,7 @@ add_executable(dispatch_center src/dispatch_center.cpp)
 add_executable(swarm_driver src/swarm_driver.cpp)
 add_executable(record_center src/record_center.cpp)
 add_executable(swarm_visualization src/swarm_visualization.cpp)
+add_executable(vicon_node src/vicon_node.cpp)
 
 ## Rename C++ executable without prefix
 ## The above recommended prefix causes long target names, the following renames the
@@ -191,6 +192,7 @@ target_link_libraries(dispatch_center ${catkin_LIBRARIES})
 target_link_libraries(swarm_driver ${catkin_LIBRARIES} swarm_tools)
 target_link_libraries(record_center ${catkin_LIBRARIES} ${OpenCV_LIBS})
 target_link_libraries(swarm_visualization ${catkin_LIBRARIES})
+target_link_libraries(vicon_node ${catkin_LIBRARIES})
 
 #############
 ## Install ##
