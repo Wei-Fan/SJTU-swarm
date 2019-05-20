@@ -753,6 +753,19 @@ swarm_robot_generate_messages_nodejs/fast:
 .PHONY : swarm_robot_generate_messages_nodejs/fast
 
 #=============================================================================
+# Target rules for targets named vicon_node
+
+# Build rule for target.
+vicon_node: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 vicon_node
+.PHONY : vicon_node
+
+# fast build rule for target.
+vicon_node/fast:
+	$(MAKE) -f swarm_center/CMakeFiles/vicon_node.dir/build.make swarm_center/CMakeFiles/vicon_node.dir/build
+.PHONY : vicon_node/fast
+
+#=============================================================================
 # Target rules for targets named swarm_visualization
 
 # Build rule for target.
@@ -1889,6 +1902,7 @@ help:
 	@echo "... formation_controller"
 	@echo "... swarm_robot_generate_messages_eus"
 	@echo "... swarm_robot_generate_messages_nodejs"
+	@echo "... vicon_node"
 	@echo "... swarm_visualization"
 	@echo "... coverage_commander"
 	@echo "... swarm_center_genlisp"

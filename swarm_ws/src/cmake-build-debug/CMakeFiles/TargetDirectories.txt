@@ -82,6 +82,7 @@
 /home/wade/SJTU-swarm/swarm_ws/src/cmake-build-debug/swarm_center/CMakeFiles/rebuild_cache.dir
 /home/wade/SJTU-swarm/swarm_ws/src/cmake-build-debug/swarm_center/CMakeFiles/edit_cache.dir
 /home/wade/SJTU-swarm/swarm_ws/src/cmake-build-debug/swarm_center/CMakeFiles/test.dir
+/home/wade/SJTU-swarm/swarm_ws/src/cmake-build-debug/swarm_center/CMakeFiles/vicon_node.dir
 /home/wade/SJTU-swarm/swarm_ws/src/cmake-build-debug/swarm_center/CMakeFiles/swarm_visualization.dir
 /home/wade/SJTU-swarm/swarm_ws/src/cmake-build-debug/swarm_center/CMakeFiles/coverage_commander.dir
 /home/wade/SJTU-swarm/swarm_ws/src/cmake-build-debug/swarm_center/CMakeFiles/swarm_center_genlisp.dir
