@@ -140,18 +140,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5b582add-7293-46c9-8cb2-5d9a77dfa8df" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/swarm_ws/src/cmake-build-debug/CMakeFiles/Makefile.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/swarm_ws/src/cmake-build-debug/CMakeFiles/Makefile.cmake" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/swarm_ws/src/cmake-build-debug/CMakeFiles/Makefile2" beforeDir="false" afterPath="$PROJECT_DIR$/swarm_ws/src/cmake-build-debug/CMakeFiles/Makefile2" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/swarm_ws/src/cmake-build-debug/CMakeFiles/TargetDirectories.txt" beforeDir="false" afterPath="$PROJECT_DIR$/swarm_ws/src/cmake-build-debug/CMakeFiles/TargetDirectories.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/swarm_ws/src/cmake-build-debug/CMakeFiles/progress.marks" beforeDir="false" afterPath="$PROJECT_DIR$/swarm_ws/src/cmake-build-debug/CMakeFiles/progress.marks" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/swarm_ws/src/cmake-build-debug/Makefile" beforeDir="false" afterPath="$PROJECT_DIR$/swarm_ws/src/cmake-build-debug/Makefile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/swarm_ws/src/cmake-build-debug/Project.cbp" beforeDir="false" afterPath="$PROJECT_DIR$/swarm_ws/src/cmake-build-debug/Project.cbp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/swarm_ws/src/cmake-build-debug/devel/lib/swarm_center/coverage_commander" beforeDir="false" afterPath="$PROJECT_DIR$/swarm_ws/src/cmake-build-debug/devel/lib/swarm_center/coverage_commander" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/swarm_ws/src/cmake-build-debug/swarm_center/CMakeFiles/coverage_commander.dir/src/coverage_commander.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/swarm_ws/src/cmake-build-debug/swarm_center/CMakeFiles/coverage_commander.dir/src/coverage_commander.cpp.o" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/swarm_ws/src/cmake-build-debug/swarm_center/CMakeFiles/progress.marks" beforeDir="false" afterPath="$PROJECT_DIR$/swarm_ws/src/cmake-build-debug/swarm_center/CMakeFiles/progress.marks" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/swarm_ws/src/cmake-build-debug/swarm_center/Makefile" beforeDir="false" afterPath="$PROJECT_DIR$/swarm_ws/src/cmake-build-debug/swarm_center/Makefile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/swarm_ws/src/cmake-build-debug/swarm_center/swarm_center.cbp" beforeDir="false" afterPath="$PROJECT_DIR$/swarm_ws/src/cmake-build-debug/swarm_center/swarm_center.cbp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/swarm_ws/src/swarm_center/src/vicon_node.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/swarm_ws/src/swarm_center/src/vicon_node.cpp" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/swarm_ws/src/cmake-build-debug/" />
@@ -215,7 +203,7 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="cpp" value="27972" />
+          <entry key="cpp" value="28489" />
           <entry key="h" value="41" />
           <entry key="launch" value="583" />
           <entry key="md" value="2035" />
@@ -229,7 +217,7 @@
           <entry key="DTD" value="583" />
           <entry key="Doxygen file" value="3" />
           <entry key="Markdown" value="2035" />
-          <entry key="ObjectiveC" value="28010" />
+          <entry key="ObjectiveC" value="28527" />
           <entry key="XML" value="20" />
         </counts>
       </usages-collector>
@@ -334,8 +322,10 @@
           <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/swarm_ws/src/swarm_center/src/vicon_node.cpp">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="587">
-                  <caret line="147" column="23" selection-start-line="147" selection-start-column="23" selection-end-line="147" selection-end-column="23" />
+                <state relative-caret-position="4871">
+                  <caret line="495" column="35" selection-start-line="495" selection-start-column="35" selection-end-line="495" selection-end-column="35" />
+                  <caret line="494" column="35" selection-start-line="494" selection-start-column="35" selection-end-line="494" selection-end-column="35" />
+                  <caret line="493" column="35" selection-start-line="493" selection-start-column="35" selection-end-line="493" selection-end-column="35" />
                   <folding>
                     <element signature="e#75#95#0" expanded="true" />
                   </folding>
@@ -404,11 +394,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>flight_task_pub</find>
-      <find>update_state</find>
-      <find>global</find>
-      <find>raw_sub</find>
-      <find>rawPosCallback</find>
       <find>MiniflyRos</find>
       <find>addMf</find>
       <find>position_bias_y</find>
@@ -416,7 +401,6 @@
       <find>just_armed</find>
       <find>vicon_sub</find>
       <find>assemble_x</find>
-      <find>curr_pos</find>
       <find>positionCallback</find>
       <find>pos_prepare</find>
       <find>RecordCenter</find>
@@ -424,7 +408,6 @@
       <find>start_first_cnt</find>
       <find>ViconCallback</find>
       <find>z_ground</find>
-      <find>unite</find>
       <find>x_init_pos</find>
       <find>amp_coeff</find>
       <find>AMP_COEFF</find>
@@ -434,6 +417,13 @@
       <find>curr_pos_x</find>
       <find>raw_pub</find>
       <find>swarm_pos_step</find>
+      <find>g_vehicle_num</find>
+      <find>unite</find>
+      <find>curr_pos</find>
+      <find>swarm_pos_predict</find>
+      <find>REVISE_WEIGHT</find>
+      <find>VEHICLE_SIZE</find>
+      <find>swarm_pos_p</find>
     </findStrings>
     <replaceStrings>
       <replace>FormationController</replace>
@@ -441,7 +431,6 @@
       <replace>DispatchCenter</replace>
       <replace>CoverageController</replace>
       <replace>agents_number</replace>
-      <replace>this-&gt;robot_number</replace>
       <replace>RecordCenter</replace>
       <replace>new_swarm_position</replace>
       <replace>taskIndexLight</replace>
@@ -455,6 +444,7 @@
       <replace>first_run</replace>
       <replace>ViconNode</replace>
       <replace>AMP_COEFF</replace>
+      <replace>this-&gt;robot_number</replace>
     </replaceStrings>
   </component>
   <component name="Git.Settings">
@@ -500,9 +490,9 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds" extendedState="4">
-    <option name="x" value="992" />
+    <option name="x" value="489" />
     <option name="y" value="24" />
-    <option name="width" value="928" />
+    <option name="width" value="1431" />
     <option name="height" value="1056" />
   </component>
   <component name="ProjectView">
@@ -1418,15 +1408,15 @@
       <workItem from="1557470679713" duration="214000" />
       <workItem from="1558057106651" duration="438000" />
       <workItem from="1558057768593" duration="7415000" />
-      <workItem from="1558331562632" duration="5119000" />
+      <workItem from="1558331562632" duration="11277000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="252553000" />
+    <option name="totallyTimeSpent" value="258711000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="992" y="24" width="928" height="1056" extended-state="4" />
+    <frame x="489" y="24" width="1431" height="1056" extended-state="4" />
     <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" sideWeight="0.29707113" weight="0.1973466" />
@@ -1705,8 +1695,10 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/swarm_ws/src/swarm_center/src/vicon_node.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="587">
-          <caret line="147" column="23" selection-start-line="147" selection-start-column="23" selection-end-line="147" selection-end-column="23" />
+        <state relative-caret-position="4871">
+          <caret line="495" column="35" selection-start-line="495" selection-start-column="35" selection-end-line="495" selection-end-column="35" />
+          <caret line="494" column="35" selection-start-line="494" selection-start-column="35" selection-end-line="494" selection-end-column="35" />
+          <caret line="493" column="35" selection-start-line="493" selection-start-column="35" selection-end-line="493" selection-end-column="35" />
           <folding>
             <element signature="e#75#95#0" expanded="true" />
           </folding>
