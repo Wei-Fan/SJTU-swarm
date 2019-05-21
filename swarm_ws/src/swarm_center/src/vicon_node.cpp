@@ -18,6 +18,8 @@
 #include <vicon_bridge/Markers.h>
 #include <vicon_bridge/Marker.h>
 
+#include "tf/transform_listener.h"
+
 #define DEFAULT_RATE 20
 
 
@@ -25,7 +27,9 @@ using namespace std;
 using namespace cv;
 
 #define REVISE_WEIGHT 0.1
-#define VEHICLE_SIZE 0.15
+#define VEHICLE_SIZE 0.20
+#define VEHICLE_EDGE_THRESHOLD 0.065
+#define ABOUT_EDGE 0.5
 
 vector<float> x_marker_init;
 vector<float> y_marker_init;
@@ -64,8 +68,8 @@ private:
     vector<geometry_msgs::Pose> swarm_pos_predict;
     vector<geometry_msgs::Pose> swarm_pos_err;
     vector<geometry_msgs::Pose> swarm_pos_step;
-    ros::Time m_last_time_vicon;
-    ros::Time m_this_time_vicon;
+//    ros::Time m_last_time_vicon;
+//    ros::Time m_this_time_vicon;
 
 
     Mat background = Mat(Size(1000,1000),CV_8UC3,Scalar(0));
@@ -102,8 +106,8 @@ public:
                 pos[1] = Marker.translation.y/1000.0f;
                 pos[2] = Marker.translation.z/1000.0f;
 
-                x_marker_init.push_back(pos(0));
-                y_marker_init.push_back(pos(1));
+                x_marker_init.push_back(pos[0]);
+                y_marker_init.push_back(pos[1]);
                 if (pos[2] < 0.2)
                 {
                     z_ground += pos[2];
@@ -299,60 +303,59 @@ public:
                             m_curr_pos[i] = tmp;
                         } else if (tmp_len_1/tmp_len_2 < 1.5 && tmp_len_1/tmp_len_2 > 1.3)
                         {
-                            Vector3f tmp;
+                            geometry_msgs::Pose tmp;
                             tmp.position.x = 0.5*(close_points[1].position.x + close_points[0].position.x);
                             tmp.position.y = 0.5*(close_points[1].position.y + close_points[0].position.y);
                             tmp.position.z = 0.5*(close_points[1].position.z + close_points[0].position.z);
-                            m_swarm_pos[i] = tmp;
+                            m_curr_pos[i] = tmp;
                         } else{
                             printf("*****condition 3 failed! failure number : 1\n");
                         }
                     } else if (ctheta < 0.1 && fabs(tmp_len_2-tmp_len_1)<0.2)
                     {
-                        Vector3f tmp;
+                        geometry_msgs::Pose tmp;
                         tmp.position.x = 0.5*(close_points[2].position.x + close_points[1].position.x);
                         tmp.position.y = 0.5*(close_points[2].position.y + close_points[1].position.y);
                         tmp.position.z = 0.5*(close_points[2].position.z + close_points[1].position.z);
-                        m_swarm_pos[i] = tmp;
+                        m_curr_pos[i] = tmp;
                     } else {
                         printf("*****condition 3 failed! failure number : 2\n");
                     }
                 } else if (close_points.size() == 2) //condition 2
                 {
                     //printf("*****condition 2\n");
-                    Vector3f tmp_vec;
-                    float tmp_len;
+                    geometry_msgs::Pose tmp_vec;
                     tmp_vec.position.x = close_points[1].position.x - close_points[0].position.x;
                     tmp_vec.position.y = close_points[1].position.y - close_points[0].position.y;
                     tmp_vec.position.z = close_points[1].position.z - close_points[0].position.z;
-                    vec3f_norm(&tmp_vec, &tmp_len);
+
+                    float tmp_len = sqrt(tmp_vec.position.x*tmp_vec.position.x+tmp_vec.position.y*tmp_vec.position.y+tmp_vec.position.z*tmp_vec.position.z);
 
                     if (tmp_len > VEHICLE_EDGE_THRESHOLD && tmp_len < VEHICLE_EDGE_THRESHOLD+0.02)
                     {
-                        Vector3f tmp;
+                        geometry_msgs::Pose tmp;
                         tmp.position.x = 0.5*(close_points[1].position.x + close_points[0].position.x);
                         tmp.position.y = 0.5*(close_points[1].position.y + close_points[0].position.y);
                         tmp.position.z = 0.5*(close_points[1].position.z + close_points[0].position.z);
-                        m_swarm_pos[i] = tmp;
+                        m_curr_pos[i] = tmp;
                     } else if (tmp_len < VEHICLE_EDGE_THRESHOLD && tmp_len > VEHICLE_EDGE_THRESHOLD-0.02)
                     {
-                        Vector3f center_pos;
+                        geometry_msgs::Pose center_pos;
                         center_pos.position.x = 0.5*(close_points[1].position.x + close_points[0].position.x);
                         center_pos.position.y = 0.5*(close_points[1].position.y + close_points[0].position.y);
                         center_pos.position.z = 0.5*(close_points[1].position.z + close_points[0].position.z);
-                        Vector3f predict_diff;
+                        geometry_msgs::Pose predict_diff;
                         predict_diff.position.x = swarm_pos_predict[i].position.x - center_pos.position.x;
                         predict_diff.position.y = swarm_pos_predict[i].position.y - center_pos.position.y;
                         predict_diff.position.z = swarm_pos_predict[i].position.z - center_pos.position.z;
-                        float tmp_dist;
-                        vec3f_norm(&predict_diff, &tmp_dist);
+                        float tmp_dist = sqrt(predict_diff.position.x*predict_diff.position.x+predict_diff.position.y*predict_diff.position.y+predict_diff.position.z*predict_diff.position.z);
 
                         float ratio = 0.035/tmp_dist;
-                        Vector3f tmp;
+                        geometry_msgs::Pose tmp;
                         tmp.position.x = (1-ratio)*center_pos.position.x + ratio*swarm_pos_predict[0].position.x;
                         tmp.position.y = (1-ratio)*center_pos.position.y + ratio*swarm_pos_predict[0].position.y;
                         tmp.position.z = (1-ratio)*center_pos.position.z + ratio*swarm_pos_predict[0].position.z;
-                        m_swarm_pos[i] = tmp;
+                        m_curr_pos[i] = tmp;
                     } else {
                         printf("*****condition 2 failed! failure number : 0\n");
                     }
@@ -360,56 +363,44 @@ public:
                 } else if (close_points.size() == 1)
                 {
                     //printf("*****condition 1\n");
-                    Vector3f predict_diff;
+                    geometry_msgs::Pose predict_diff;
                     predict_diff.position.x = swarm_pos_predict[i].position.x - close_points[0].position.x;
                     predict_diff.position.y = swarm_pos_predict[i].position.y - close_points[0].position.y;
                     predict_diff.position.z = swarm_pos_predict[i].position.z - close_points[0].position.z;
-                    float tmp_dist;
-                    vec3f_norm(&predict_diff, &tmp_dist);
+                    float tmp_dist = sqrt(predict_diff.position.x*predict_diff.position.x+predict_diff.position.y*predict_diff.position.y+predict_diff.position.z*predict_diff.position.z);
 
                     float ratio = 0.035/tmp_dist;
-                    Vector3f tmp;
+                    geometry_msgs::Pose tmp;
                     tmp.position.x = (1-ratio)*close_points[0].position.x + ratio*swarm_pos_predict[0].position.x;
                     tmp.position.y = (1-ratio)*close_points[0].position.y + ratio*swarm_pos_predict[0].position.y;
                     tmp.position.z = (1-ratio)*close_points[0].position.z + ratio*swarm_pos_predict[0].position.z;
-                    m_swarm_pos[i] = tmp;
+                    m_curr_pos[i] = tmp;
                 } else {
                     printf("*****Cannot find vehicle%d\n", i);
                     continue;
                 }
 
                 /*renew error*/
-                swarm_pos_err[i].position.x = m_swarm_pos[i].position.x - swarm_pos_predict[i].position.x;
-                swarm_pos_err[i].position.y = m_swarm_pos[i].position.y - swarm_pos_predict[i].position.y;
-                swarm_pos_err[i].position.z = m_swarm_pos[i].position.z - swarm_pos_predict[i].position.z;
+                swarm_pos_err[i].position.x = m_curr_pos[i].position.x - swarm_pos_predict[i].position.x;
+                swarm_pos_err[i].position.y = m_curr_pos[i].position.y - swarm_pos_predict[i].position.y;
+                swarm_pos_err[i].position.z = m_curr_pos[i].position.z - swarm_pos_predict[i].position.z;
 
             }//i
 
             /*renew and publish*/
-            for (int i = 0; i < swarm_pos.size(); ++i)
+            for (int i = 0; i < this->robot_number; ++i)
             {
-                swarm_pos_step[i].position.x = m_swarm_pos[i].position.x - swarm_pos[i].position.x;
-                swarm_pos_step[i].position.y = m_swarm_pos[i].position.y - swarm_pos[i].position.y;
-                swarm_pos_step[i].position.z = m_swarm_pos[i].position.z - swarm_pos[i].position.z;
+                swarm_pos_step[i].position.x = m_curr_pos[i].position.x - curr_pos[i].position.x;
+                swarm_pos_step[i].position.y = m_curr_pos[i].position.y - curr_pos[i].position.y;
+                swarm_pos_step[i].position.z = m_curr_pos[i].position.z - curr_pos[i].position.z;
 
-                swarm_pos[i] = m_swarm_pos[i];
-                m_pos_estmsg.pos_est.x = swarm_pos[i].position.x;
-                m_pos_estmsg.pos_est.y = swarm_pos[i].position.y;
-                m_pos_estmsg.pos_est.z = swarm_pos[i].position.z;
-                m_pos_estmsg.vehicle_index = i;
-                m_pos_est_v[i].publish(m_pos_estmsg);
+                curr_pos[i] = m_curr_pos[i];
+                geometry_msgs::PoseStamped msg;
+                msg.pose = curr_pos[i];
+                msg.header.frame_id = to_string(i);
+                raw_pub[i].publish(msg);
 
                 //printf("*****vehicle%d: %f  %f  %f\n", i, swarm_pos[i](0), swarm_pos[i](1), swarm_pos[i](2));
-            }
-            if(isHovering)
-            {
-                for(int i=0;i<this->robot_number;++i)
-                {
-                    m_hover_pos[i].position.x = swarm_pos[i].position.x;
-                    m_hover_pos[i].position.y = swarm_pos[i].position.y;
-                    m_hover_pos[i].position.z = swarm_pos[i].position.z;
-                }
-                isHovering = false;
             }
         }// else if
     }
@@ -489,12 +480,11 @@ public:
             int close_index = -1;//index in x_marker_init
             for (int j = 0; j < x_marker_init.size(); ++j)//for every x_marker_init
             {
-                Vector3f tmp_diff;
-                float tmp_len;
+                geometry_msgs::Pose tmp_diff;
                 tmp_diff.position.x = x_init_pos[nearest_index] - x_marker_init[j];
                 tmp_diff.position.y = y_init_pos[nearest_index] - y_marker_init[j];
                 tmp_diff.position.z = 0;
-                tmp_len = sqrt(tmp_diff(0)*tmp_diff(0)+tmp_diff(1)*tmp_diff(1));
+                float tmp_len = sqrt(tmp_diff.position.x*tmp_diff.position.x+tmp_diff.position.y*tmp_diff.position.y);
                 printf("**********%d\n", j);
                 if (tmp_len > VEHICLE_SIZE)
                     continue;

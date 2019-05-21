@@ -192,7 +192,7 @@ target_link_libraries(dispatch_center ${catkin_LIBRARIES})
 target_link_libraries(swarm_driver ${catkin_LIBRARIES} swarm_tools)
 target_link_libraries(record_center ${catkin_LIBRARIES} ${OpenCV_LIBS})
 target_link_libraries(swarm_visualization ${catkin_LIBRARIES})
-target_link_libraries(vicon_node ${catkin_LIBRARIES})
+target_link_libraries(vicon_node ${catkin_LIBRARIES} ${OpenCV_LIBS})
 
 #############
 ## Install ##

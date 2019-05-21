@@ -25,10 +25,10 @@ set(CMAKE_CXX_TARGET_INCLUDE_PATH
   "/home/wade/catkin_ws/src/mavros/mavros_msgs/include"
   "/opt/ros/kinetic/include"
   "/opt/ros/kinetic/share/xmlrpcpp/cmake/../../../include/xmlrpcpp"
-  "/opt/ros/kinetic/include/opencv-3.3.1-dev"
-  "/opt/ros/kinetic/include/opencv-3.3.1-dev/opencv"
   "/usr/include/eigen3"
   "/usr/lib/../include"
+  "/opt/ros/kinetic/include/opencv-3.3.1-dev"
+  "/opt/ros/kinetic/include/opencv-3.3.1-dev/opencv"
   )
 
 # Targets to which this target links.
