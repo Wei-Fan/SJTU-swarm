@@ -378,7 +378,7 @@ gtest_main_LIB_DEPENDS:STATIC=general;-lpthread;general;gtest;
 image_transport_DIR:PATH=/opt/ros/kinetic/share/image_transport/cmake
 
 //Path to a library.
-lib:FILEPATH=/opt/ros/kinetic/lib/libeigen_conversions.so
+lib:FILEPATH=/opt/ros/kinetic/lib/libxmlrpcpp.so
 
 //The directory containing a CMake configuration file for libmavconn.
 libmavconn_DIR:PATH=/home/wade/catkin_ws/devel/share/libmavconn/cmake
@@ -484,6 +484,12 @@ uuid_msgs_DIR:PATH=/opt/ros/kinetic/share/uuid_msgs/cmake
 
 //The directory containing a CMake configuration file for vicon_bridge.
 vicon_bridge_DIR:PATH=/home/wade/catkin_ws/devel/share/vicon_bridge/cmake
+
+//Value Computed by CMake
+viconros_BINARY_DIR:STATIC=/home/wade/SJTU-swarm/swarm_ws/build/viconros
+
+//Value Computed by CMake
+viconros_SOURCE_DIR:STATIC=/home/wade/SJTU-swarm/swarm_ws/src/viconros
 
 //The directory containing a CMake configuration file for xmlrpcpp.
 xmlrpcpp_DIR:PATH=/opt/ros/kinetic/share/xmlrpcpp/cmake
@@ -602,7 +608,7 @@ CMAKE_MODULE_LINKER_FLAGS_RELWITHDEBINFO-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_NM
 CMAKE_NM-ADVANCED:INTERNAL=1
 //number of local generators
-CMAKE_NUMBER_OF_MAKEFILES:INTERNAL=6
+CMAKE_NUMBER_OF_MAKEFILES:INTERNAL=7
 //ADVANCED property for variable: CMAKE_OBJCOPY
 CMAKE_OBJCOPY-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_OBJDUMP

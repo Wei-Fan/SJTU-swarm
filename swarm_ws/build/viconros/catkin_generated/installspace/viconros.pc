@@ -1,0 +1,8 @@
+prefix=/home/wade/SJTU-swarm/swarm_ws/install
+
+Name: viconros
+Description: Description of viconros
+Version: 0.0.0
+Cflags: -I/home/wade/SJTU-swarm/swarm_ws/install/include
+Libs: -L/home/wade/SJTU-swarm/swarm_ws/install/lib 
+Requires: 

@@ -82,18 +82,22 @@ public:
     std::string prefix;
     bool recieve_sp;
 //    bool update_raw;
-    // ros::Subscriber Mf_pos_sub;
-	// ros::Subscriber Mf_vel_sub;
+     ros::Subscriber Mf_pos_sub;
+	 ros::Subscriber Mf_vel_sub;
 //	ros::Publisher thrust_pub;
 //	ros::Publisher err_pub;
 //	ros::Publisher err_vec_pub;
 //	void pos_cb(const geometry_msgs::PoseStamped::ConstPtr &msg);
 //	void vel_cb(const geometry_msgs::TwistStamped::ConstPtr &msg);
 	void offb_pos_ctrl(float cur_time);
+    void pos_cb(const geometry_msgs::Vector3::ConstPtr &msg);
+    void vel_cb(const geometry_msgs::Vector3::ConstPtr &msg);
+
 
 	ros::Subscriber pos_sub;
 	void spCallback(const geometry_msgs::PoseStamped::ConstPtr &msg);
 
+    ros::Publisher raw_pub;
 };
 //
 // MiniflyRos::MiniflyRos(const std::string &dev_name, const std::string &parampath, int baudrate):
@@ -104,7 +108,9 @@ MiniflyRos::MiniflyRos(uint8_t id_input)://const std::string &parampath, uint8_t
     prefix = "swarmbot" + std::to_string(id);
     ros::NodeHandle n(prefix);
     // n.setCallbackQueue(&queue);
-	// Mf_pos_sub = n.subscribe<geometry_msgs::PoseStamped>("/mocap/pose", 10, &MiniflyRos::pos_cb,this);
+    Mf_pos_sub = n.subscribe<geometry_msgs::Vector3>(prefix+"/CamPosEst", 5, &MiniflyRos::pos_cb,this);
+    Mf_vel_sub = n.subscribe<geometry_msgs::Vector3>(prefix+"/CamVelEst", 5, &MiniflyRos::vel_cb,this);
+    // Mf_pos_sub = n.subscribe<geometry_msgs::PoseStamped>("/mocap/pose", 10, &MiniflyRos::pos_cb,this);
 	// Mf_vel_sub = n.subscribe<geometry_msgs::TwistStamped>("/mocap/vel", 10, &MiniflyRos::vel_cb,this);
 //	thrust_pub=n.advertise<std_msgs::Float64>(prefix + "/thrust",100);
 //	err_pub=n.advertise<geometry_msgs::PoseStamped>(prefix + "/err_pos",100);
@@ -119,6 +125,11 @@ MiniflyRos::MiniflyRos(uint8_t id_input)://const std::string &parampath, uint8_t
     char msg_name0[50];
     sprintf(msg_name0,"/%s/set_position",prefix.c_str());
     pos_sub = n.subscribe<geometry_msgs::PoseStamped>(msg_name0,1,&MiniflyRos::spCallback,this);
+
+    // publish raw position
+    char msg_name[50];
+    sprintf(msg_name,"/%s%d/raw_position",prefix.c_str());
+    raw_pub = n.advertise<geometry_msgs::PoseStamped>(msg_name,1);
 
     /* read PID parameter from file */
 	Parameter param;
@@ -156,6 +167,34 @@ MiniflyRos::MiniflyRos(uint8_t id_input)://const std::string &parampath, uint8_t
     // memcpy(pos_cmd,tmp,3);
     // float tmp1[] = {0.0,0.0,0.0,1000.0};
     // memcpy(rpyt_cmd,tmp,4);
+}
+
+void MiniflyRos::pos_cb(const geometry_msgs::Vector3::ConstPtr &msg)
+{
+    // geometry_msgs::Vector3 tmp = *msg;
+    current_pos[0] = msg->x;
+    current_pos[1] = -msg->y;
+    current_pos[2] = msg->z;
+    // current_pos[0] = msg->y;
+    // current_pos[1] = -msg->x;
+    // current_pos[2] = msg->z;
+    geometry_msgs::PoseStamped pub_msg;
+    pub_msg.header.frame_id = to_string(this->id);
+    pub_msg.pose.position.x = current_pos[0];
+    pub_msg.pose.position.y = current_pos[1];
+    pub_msg.pose.position.z = current_pos[2];
+    raw_pub.publish(pub_msg);
+}
+
+void MiniflyRos::vel_cb(const geometry_msgs::Vector3::ConstPtr &msg){
+    // geometry_msgs::Vector3 tmp = *msg;
+    current_vel[0] = msg->x;
+    current_vel[1] = -msg->y;
+    current_vel[2] = msg->z;
+    // current_vel[0] = msg->y;
+    // current_vel[1] = -msg->x;
+    // current_vel[2] = msg->z;
+    // cout<<id<<" current_pos: "<<current_vel[0]<<" "<<current_vel[1]<<" "<<current_vel[2]<<endl;
 }
 
 void MiniflyRos::spCallback(const geometry_msgs::PoseStamped::ConstPtr &msg) {
@@ -240,8 +279,8 @@ private:
     ros::NodeHandle global;
     ros::NodeHandle local;
     ros::ServiceServer arm_server;
-    vector<ros::Publisher> raw_pub;
-    vector<ros::Subscriber> vicon_sub;
+//    vector<ros::Publisher> raw_pub;
+//    vector<ros::Subscriber> vicon_sub;
     string prefix = "swarmbot";
     int robot_number;
     vector<float> position_err_x;
@@ -262,13 +301,13 @@ public:
     void update_state(std::string &pkg_tmp);
     void raw_data_decoding();
     void take_off(uint8_t id);
-    void send_pos_sp(uint8_t id, float *xyz);
+    void send_pos_sp(uint8_t id, float *xyz_sp, float *xyz_est, float *vxyz_est);//uint8_t id, float *xyz);
     void send_att_sp(uint8_t id, float *rpyt);
     void run();
     float get_ros_time(ros::Time time_begin);
     bool ArmSrvCallback(swarm_center::mArmReq::Request &req,
                         swarm_center::mArmReq::Response &res);
-    void ViconCallback(const geometry_msgs::PoseStamped::ConstPtr &msg);
+//    void ViconCallback(const geometry_msgs::PoseStamped::ConstPtr &msg);
 };
 //
 MiniSwarm::MiniSwarm(const std::string &dev_name, int baudrate)
@@ -287,20 +326,20 @@ MiniSwarm::MiniSwarm(const std::string &dev_name, int baudrate)
 //    ready_pub = global.advertise<std_msgs::Bool>("/setup_ready",100);
 
     // recieve vicon position
-    vicon_sub.resize(this->robot_number);
-    for (int i = 0; i < this->robot_number; ++i) {
-        char msg_name0[50];
-        sprintf(msg_name0,"/vicon/minifly%d",i);
-        vicon_sub[i] = global.subscribe<geometry_msgs::PoseStamped>(msg_name0,1,&MiniSwarm::ViconCallback,this);
-    }
+//    vicon_sub.resize(this->robot_number);
+//    for (int i = 0; i < this->robot_number; ++i) {
+//        char msg_name0[50];
+//        sprintf(msg_name0,"/vicon/minifly%d",i);
+//        vicon_sub[i] = global.subscribe<geometry_msgs::PoseStamped>(msg_name0,1,&MiniSwarm::ViconCallback,this);
+//    }
 
     // publish raw pos for coverage_controllers and coverage_commander
-    raw_pub.resize(this->robot_number);
-    for (int i = 0; i < this->robot_number; ++i) {
-        char msg_name[50];
-        sprintf(msg_name,"/%s%d/raw_position",prefix.c_str(),i);
-        raw_pub[i] = global.advertise<geometry_msgs::PoseStamped>(msg_name,1);
-    }
+//    raw_pub.resize(this->robot_number);
+//    for (int i = 0; i < this->robot_number; ++i) {
+//        char msg_name[50];
+//        sprintf(msg_name,"/%s%d/raw_position",prefix.c_str(),i);
+//        raw_pub[i] = global.advertise<geometry_msgs::PoseStamped>(msg_name,1);
+//    }
 
     /* arm server */
     arm_server = global.advertiseService("/mArm_req",&MiniSwarm::ArmSrvCallback, this);
@@ -346,17 +385,17 @@ MiniSwarm::~MiniSwarm()
         delete mf;
     }
 }
-void MiniSwarm::ViconCallback(const geometry_msgs::PoseStamped::ConstPtr &msg) {
-
-    int id = stoi(msg->header.frame_id);
-    Mfs[id]->current_pos[0] = msg->pose.position.x;
-    Mfs[id]->current_pos[1] = msg->pose.position.y;
-    Mfs[id]->current_pos[2] = msg->pose.position.z;
-    geometry_msgs::PoseStamped pub_msg;
-    pub_msg.header.frame_id = msg->header.frame_id;
-    pub_msg.pose = msg->pose;
-    raw_pub[id].publish(pub_msg);
-}
+//void MiniSwarm::ViconCallback(const geometry_msgs::PoseStamped::ConstPtr &msg) {
+//
+//    int id = stoi(msg->header.frame_id);
+//    Mfs[id]->current_pos[0] = msg->pose.position.x;
+//    Mfs[id]->current_pos[1] = msg->pose.position.y;
+//    Mfs[id]->current_pos[2] = msg->pose.position.z;
+//    geometry_msgs::PoseStamped pub_msg;
+//    pub_msg.header.frame_id = msg->header.frame_id;
+//    pub_msg.pose = msg->pose;
+//    raw_pub[id].publish(pub_msg);
+//}
 
 bool MiniSwarm::ArmSrvCallback(swarm_center::mArmReq::Request &req, swarm_center::mArmReq::Response &res)
 {
@@ -512,25 +551,53 @@ void MiniSwarm::take_off(uint8_t id){
     ros_ser.write(takeoff,8);
 }
 
-void MiniSwarm::send_pos_sp(uint8_t id, float *xyz)
+void MiniSwarm::send_pos_sp(uint8_t id, float *xyz_sp, float *xyz_est, float *vxyz_est)//uint8_t id, float *xyz)
 {
-    uint8_t cmd[]={0xAA,0xAF,0x60,0x0D,0x01,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00};
-    uint8_t cksum = 0xC7 + id;
-    cmd[2] = cmd[2] + id;
+//    uint8_t cmd[]={0xAA,0xAF,0x60,0x0D,0x01,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00};
+//    uint8_t cksum = 0xC7 + id;
+//    cmd[2] = cmd[2] + id;
+//    int cnt = 5;
+//    float tmp;
+//    for(int i = 0; i<3; ++i){
+//        tmp = xyz[i];
+//        cmd[cnt++] = BYTE0(tmp);
+//        cmd[cnt++] = BYTE1(tmp);
+//        cmd[cnt++] = BYTE2(tmp);
+//        cmd[cnt++] = BYTE3(tmp);
+//        cksum += BYTE3(tmp) + BYTE2(tmp) + BYTE1(tmp) + BYTE0(tmp);
+//        // printf("%02hhX %02hhX %02hhX %02hhX ", BYTE0(tmp), BYTE1(tmp), BYTE2(tmp), BYTE3(tmp));
+//    }
+//    cmd[cnt] = cksum;
+//    printf("msgid: %02hhX, xyz: %5.5f %5.5f %5.5f \n",cmd[2],xyz[0],xyz[1],xyz[2]);
+//    ros_ser.write(cmd,18);
+    uint8_t cmd[]={0xAA,0xAF,0x60,0x13,0x02,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00};
+    uint8_t cksum = 0xCE + id;
+    cmd[2] += id;
+    int16_t tmp;
     int cnt = 5;
-    float tmp;
-    for(int i = 0; i<3; ++i){
-        tmp = xyz[i];
+    for(int i=0; i<3; ++i)
+    {
+        tmp = (int16_t)(xyz_sp[i]*1000);
         cmd[cnt++] = BYTE0(tmp);
         cmd[cnt++] = BYTE1(tmp);
-        cmd[cnt++] = BYTE2(tmp);
-        cmd[cnt++] = BYTE3(tmp);
-        cksum += BYTE3(tmp) + BYTE2(tmp) + BYTE1(tmp) + BYTE0(tmp);
-        // printf("%02hhX %02hhX %02hhX %02hhX ", BYTE0(tmp), BYTE1(tmp), BYTE2(tmp), BYTE3(tmp));
+        cksum += BYTE1(tmp) + BYTE0(tmp);
+    }
+    for(int i=0; i<3; ++i)
+    {
+        tmp = (int16_t)(xyz_est[i]*1000);
+        cmd[cnt++] = BYTE0(tmp);
+        cmd[cnt++] = BYTE1(tmp);
+        cksum += BYTE1(tmp) + BYTE0(tmp);
+    }
+    for(int i=0; i<3; ++i)
+    {
+        tmp = (int16_t)(vxyz_est[i]*1000);
+        cmd[cnt++] = BYTE0(tmp);
+        cmd[cnt++] = BYTE1(tmp);
+        cksum += BYTE1(tmp) + BYTE0(tmp);
     }
     cmd[cnt] = cksum;
-//    printf("msgid: %02hhX, xyz: %5.5f %5.5f %5.5f \n",cmd[2],xyz[0],xyz[1],xyz[2]);
-    ros_ser.write(cmd,18);
+    ros_ser.write(cmd,24);
 }
 
 void MiniSwarm::send_att_sp(uint8_t id, float *rpyt)
@@ -585,7 +652,7 @@ void MiniSwarm::run()
             cmd[0] = mf->pos_cmd[0];// - position_bias_x[mf->id];
             cmd[1] = mf->pos_cmd[1];// - position_bias_y[mf->id];
             cmd[2] = -1;
-            send_pos_sp(mf->id,cmd);
+            send_pos_sp(mf->id,cmd,mf->current_pos,mf->current_vel);
             // cout<<mf->id<<endl;
             // printf("%02X\n",mf->id);
 //            ROS_INFO("send link test");
@@ -604,12 +671,12 @@ void MiniSwarm::run()
 //			memcpy(mf->pos_cmd,mf->cmd_incsv[cnt].xyz,12);
 //			mf->offb_pos_ctrl(cur_time);
 //			send_att_sp(mf->id,mf->rpyt_cmd);
-            float cmd[3];
-            cmd[0] = mf->pos_cmd[0];// - position_bias_x[mf->id];
-            cmd[1] = mf->pos_cmd[1];// - position_bias_y[mf->id];
-            cmd[2] = mf->pos_cmd[2];
-            send_pos_sp(mf->id,cmd);
-			ROS_INFO("robot %d send out sp: %f, %f, %f",mf->id,cmd[0],cmd[1],cmd[2]);
+//            float cmd[3];
+//            cmd[0] = mf->pos_cmd[0];// - position_bias_x[mf->id];
+//            cmd[1] = mf->pos_cmd[1];// - position_bias_y[mf->id];
+//            cmd[2] = mf->pos_cmd[2];
+            send_pos_sp(mf->id,mf->pos_cmd,mf->current_pos,mf->current_vel);
+			ROS_INFO("robot %d send out sp: %f, %f, %f",mf->id,mf->pos_cmd[0],mf->pos_cmd[1],mf->pos_cmd[2]);
 		}
 
         ros::spinOnce();
