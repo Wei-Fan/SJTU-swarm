@@ -140,27 +140,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5b582add-7293-46c9-8cb2-5d9a77dfa8df" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/swarm_ws/build/CMakeCache.txt" beforeDir="false" afterPath="$PROJECT_DIR$/swarm_ws/build/CMakeCache.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/swarm_ws/build/CMakeFiles/CMakeRuleHashes.txt" beforeDir="false" afterPath="$PROJECT_DIR$/swarm_ws/build/CMakeFiles/CMakeRuleHashes.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/swarm_ws/build/CMakeFiles/Makefile.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/swarm_ws/build/CMakeFiles/Makefile.cmake" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/swarm_ws/build/CMakeFiles/Makefile2" beforeDir="false" afterPath="$PROJECT_DIR$/swarm_ws/build/CMakeFiles/Makefile2" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/swarm_ws/build/CMakeFiles/TargetDirectories.txt" beforeDir="false" afterPath="$PROJECT_DIR$/swarm_ws/build/CMakeFiles/TargetDirectories.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/swarm_ws/build/CMakeFiles/progress.marks" beforeDir="false" afterPath="$PROJECT_DIR$/swarm_ws/build/CMakeFiles/progress.marks" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/swarm_ws/build/CTestTestfile.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/swarm_ws/build/CTestTestfile.cmake" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/swarm_ws/build/Makefile" beforeDir="false" afterPath="$PROJECT_DIR$/swarm_ws/build/Makefile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/swarm_ws/build/catkin_generated/order_packages.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/swarm_ws/build/catkin_generated/order_packages.cmake" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/swarm_ws/build/catkin_make.cache" beforeDir="false" afterPath="$PROJECT_DIR$/swarm_ws/build/catkin_make.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/swarm_ws/build/cmake_install.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/swarm_ws/build/cmake_install.cmake" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/swarm_ws/build/swarm_center/CMakeFiles/swarm_driver.dir/src/swarm_driver.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/swarm_ws/build/swarm_center/CMakeFiles/swarm_driver.dir/src/swarm_driver.cpp.o" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/swarm_ws/build/swarm_center/CMakeFiles/vicon_node.dir/CXX.includecache" beforeDir="false" afterPath="$PROJECT_DIR$/swarm_ws/build/swarm_center/CMakeFiles/vicon_node.dir/CXX.includecache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/swarm_ws/build/swarm_center/CMakeFiles/vicon_node.dir/depend.internal" beforeDir="false" afterPath="$PROJECT_DIR$/swarm_ws/build/swarm_center/CMakeFiles/vicon_node.dir/depend.internal" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/swarm_ws/build/swarm_center/CMakeFiles/vicon_node.dir/depend.make" beforeDir="false" afterPath="$PROJECT_DIR$/swarm_ws/build/swarm_center/CMakeFiles/vicon_node.dir/depend.make" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/swarm_ws/build/swarm_center/CMakeFiles/vicon_node.dir/src/vicon_node.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/swarm_ws/build/swarm_center/CMakeFiles/vicon_node.dir/src/vicon_node.cpp.o" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/swarm_ws/devel/lib/swarm_center/swarm_driver" beforeDir="false" afterPath="$PROJECT_DIR$/swarm_ws/devel/lib/swarm_center/swarm_driver" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/swarm_ws/devel/lib/swarm_center/vicon_node" beforeDir="false" afterPath="$PROJECT_DIR$/swarm_ws/devel/lib/swarm_center/vicon_node" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/swarm_ws/src/swarm_center/src/swarm_driver.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/swarm_ws/src/swarm_center/src/swarm_driver.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/swarm_ws/src/viconros" beforeDir="false" afterPath="$PROJECT_DIR$/swarm_ws/src/viconros" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/swarm_ws/src/viconros/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/swarm_ws/src/viconros/CMakeLists.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/swarm_ws/src/viconros/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/swarm_ws/src/viconros/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/swarm_ws/src/viconros/launch/unit.launch" beforeDir="false" afterPath="$PROJECT_DIR$/swarm_ws/src/viconros/launch/unit.launch" afterDir="false" />
@@ -210,7 +190,7 @@
         <counts>
           <entry key="cpp" value="38" />
           <entry key="h" value="2" />
-          <entry key="launch" value="13" />
+          <entry key="launch" value="14" />
           <entry key="md" value="6" />
           <entry key="srv" value="1" />
           <entry key="txt" value="14" />
@@ -220,7 +200,7 @@
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="CMakeLists.txt" value="14" />
-          <entry key="DTD" value="13" />
+          <entry key="DTD" value="14" />
           <entry key="Markdown" value="6" />
           <entry key="ObjectiveC" value="40" />
           <entry key="PLAIN_TEXT" value="1" />
@@ -231,7 +211,7 @@
         <counts>
           <entry key="cpp" value="28845" />
           <entry key="h" value="41" />
-          <entry key="launch" value="583" />
+          <entry key="launch" value="584" />
           <entry key="md" value="2035" />
           <entry key="txt" value="745" />
           <entry key="xml" value="20" />
@@ -240,7 +220,7 @@
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="CMakeLists.txt" value="745" />
-          <entry key="DTD" value="583" />
+          <entry key="DTD" value="584" />
           <entry key="Doxygen file" value="3" />
           <entry key="Markdown" value="2035" />
           <entry key="ObjectiveC" value="28883" />
@@ -255,18 +235,9 @@
     </session>
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.53012717">
+    <splitter split-orientation="horizontal" split-proportion="0.5507143">
       <split-first>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/swarm_ws/src/swarm_center/launch/commander.launch">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="38">
-                  <caret line="2" column="27" selection-start-line="2" selection-start-column="15" selection-end-line="2" selection-end-column="27" />
-                </state>
-              </provider>
-            </entry>
-          </file>
           <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/swarm_ws/src/swarm_robot/launch/behaviour_lib/coverage_control.launch">
               <provider selected="true" editor-type-id="text-editor">
@@ -318,15 +289,24 @@
               </provider>
             </entry>
           </file>
-          <file pinned="false" current-in-tab="true">
+          <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/swarm_ws/src/viconros/src/viconros_swarm.cpp">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="133">
-                  <caret line="28" column="14" lean-forward="true" selection-start-line="28" selection-start-column="14" selection-end-line="28" selection-end-column="14" />
+                <state relative-caret-position="931">
+                  <caret line="49" column="21" lean-forward="true" selection-start-line="49" selection-start-column="21" selection-end-line="49" selection-end-column="21" />
                   <folding>
                     <element signature="e#0#20#0" expanded="true" />
                     <element signature="e#93#128#0" expanded="true" />
                   </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/swarm_ws/src/viconros/launch/miniswarm_cap.launch">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="171">
+                  <caret line="9" lean-forward="true" selection-start-line="9" selection-end-line="9" />
                 </state>
               </provider>
             </entry>
@@ -504,6 +484,7 @@
         <option value="$PROJECT_DIR$/swarm_ws/src/swarm_center/src/vicon_node.cpp" />
         <option value="$PROJECT_DIR$/swarm_ws/src/viconros/src/viconros_swarm.cpp" />
         <option value="$PROJECT_DIR$/swarm_ws/src/swarm_center/src/swarm_driver.cpp" />
+        <option value="$PROJECT_DIR$/swarm_ws/src/viconros/launch/miniswarm_cap.launch" />
       </list>
     </option>
   </component>
@@ -558,6 +539,15 @@
               <item name="swarm_ws" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="viconros" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="SJTU-swarm" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SJTU-swarm" type="47feb1d3:ProjectViewModuleNode" />
+              <item name="SJTU-swarm" type="462c0819:PsiDirectoryNode" />
+              <item name="swarm_ws" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="viconros" type="462c0819:PsiDirectoryNode" />
+              <item name="launch" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -1445,15 +1435,16 @@
       <workItem from="1558403741164" duration="5531000" />
       <workItem from="1558551252541" duration="599000" />
       <workItem from="1558601481803" duration="304000" />
-      <workItem from="1558621848936" duration="2853000" />
+      <workItem from="1558621848936" duration="3938000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="267998000" />
+    <option name="totallyTimeSpent" value="269083000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="65" y="-4" width="1855" height="1084" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.29707113" visible="true" weight="0.22609176" />
       <window_info id="Structure" order="1" sideWeight="0.70292884" side_tool="true" weight="0.1973466" />
@@ -1743,12 +1734,19 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/swarm_ws/src/viconros/src/viconros_swarm.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="133">
-          <caret line="28" column="14" lean-forward="true" selection-start-line="28" selection-start-column="14" selection-end-line="28" selection-end-column="14" />
+        <state relative-caret-position="931">
+          <caret line="49" column="21" lean-forward="true" selection-start-line="49" selection-start-column="21" selection-end-line="49" selection-end-column="21" />
           <folding>
             <element signature="e#0#20#0" expanded="true" />
             <element signature="e#93#128#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/swarm_ws/src/viconros/launch/miniswarm_cap.launch">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="171">
+          <caret line="9" lean-forward="true" selection-start-line="9" selection-end-line="9" />
         </state>
       </provider>
     </entry>
