@@ -202,7 +202,7 @@ void MiniflyRos::spCallback(const geometry_msgs::PoseStamped::ConstPtr &msg) {
     pos_cmd[1] = msg->pose.position.y;
     pos_cmd[2] = msg->pose.position.z;
     recieve_sp = true;
-//    ROS_INFO("robot %d recieve sp : %f, %f, %f", this->id, pos_cmd[0], pos_cmd[1], pos_cmd[2]);
+    ROS_INFO("robot %d recieve sp : %f, %f, %f", this->id, pos_cmd[0], pos_cmd[1], pos_cmd[2]);
 }
 
 MiniflyRos::~MiniflyRos()
@@ -676,7 +676,7 @@ void MiniSwarm::run()
 //            cmd[1] = mf->pos_cmd[1];// - position_bias_y[mf->id];
 //            cmd[2] = mf->pos_cmd[2];
             send_pos_sp(mf->id,mf->pos_cmd,mf->current_pos,mf->current_vel);
-			ROS_INFO("robot %d send out sp: %f, %f, %f",mf->id,mf->pos_cmd[0],mf->pos_cmd[1],mf->pos_cmd[2]);
+//			ROS_INFO("robot %d send out sp: %f, %f, %f",mf->id,mf->pos_cmd[0],mf->pos_cmd[1],mf->pos_cmd[2]);
 		}
 
         ros::spinOnce();
