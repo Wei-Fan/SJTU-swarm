@@ -194,7 +194,7 @@ void MiniflyRos::pos_cb(const geometry_msgs::Vector3::ConstPtr &msg)
 {
     // geometry_msgs::Vector3 tmp = *msg;
     current_pos[0] = msg->x;
-    current_pos[1] = -msg->y;
+    current_pos[1] = msg->y;
     current_pos[2] = msg->z;
     // current_pos[0] = msg->y;
     // current_pos[1] = -msg->x;
@@ -210,7 +210,7 @@ void MiniflyRos::pos_cb(const geometry_msgs::Vector3::ConstPtr &msg)
 void MiniflyRos::vel_cb(const geometry_msgs::Vector3::ConstPtr &msg){
     // geometry_msgs::Vector3 tmp = *msg;
     current_vel[0] = msg->x;
-    current_vel[1] = -msg->y;
+    current_vel[1] = msg->y;
     current_vel[2] = msg->z;
     // current_vel[0] = msg->y;
     // current_vel[1] = -msg->x;
@@ -255,7 +255,7 @@ void MiniflyRos::offb_pos_ctrl(float cur_time)
     VyPid.add_error(0.1*PyPid.Output - current_vel[1]*100,cur_time);VyPid.pid_output();
     VzPid.add_error(PzPid.Output - current_vel[2]*100,cur_time);VzPid.pid_output();
     rpyt_cmd[1] = 0.15*VxPid.Output + rpy_trim[1];
-    rpyt_cmd[0] = 0.15*VyPid.Output + rpy_trim[0];
+    rpyt_cmd[0] = -0.15*VyPid.Output + rpy_trim[0];
     rpyt_cmd[3] = (VzPid.Output + thrust_base);
     rpyt_cmd[2] = 0.0 + rpy_trim[2];
 
@@ -477,6 +477,7 @@ bool MiniSwarm::ArmSrvCallback(swarm_center::mArmReq::Request &req, swarm_center
 
 void MiniSwarm::sleepCallback(const std_msgs::UInt8::ConstPtr &msg) {
     just_armed[msg->data] = false;
+    ROS_INFO("robot %d recieve sleep signal",(int)msg->data);
 }
 
 void MiniSwarm::addMf(uint8_t id)//const std::string &parampath, uint8_t id)

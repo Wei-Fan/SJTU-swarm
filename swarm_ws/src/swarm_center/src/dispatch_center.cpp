@@ -218,6 +218,9 @@ public:
                 go_task.data = 4; //engage
                 flight_task_pub[up_id].publish(go_task);
 
+                ros::spinOnce();
+                r.sleep();
+
                 // request coverage planning
                 swarm_center::mCPPReq srv;
                 for (int i = 0; i < this->robot_number; ++i) {

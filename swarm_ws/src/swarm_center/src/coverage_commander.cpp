@@ -130,8 +130,6 @@ public:
 //        robot_curr_y.resize(this->robot_number);
         first_draw = true;
         plan_ready = false;
-        /* initial matrix*/
-        K.setZero(); //set zeros
     }
 
 //    void rawPosCallback(const geometry_msgs::PoseStamped::ConstPtr &msg) {
@@ -155,13 +153,26 @@ public:
 //    void run()
     {
         ROS_INFO("request recieved!");
+        /* initial matrix*/
+        K.setZero(); //set zeros
+//        C.setZero();
+        T.clear();
+        P.clear();
+        P_grid.clear();
+
         this->active_number = req.x.size();
-        robot_init_x.resize(this->robot_number);
-        robot_init_y.resize(this->robot_number);
-        robot_core_x.resize(this->active_number);
-        robot_core_y.resize(this->active_number);
-        robot_grid_x.resize(this->active_number);
-        robot_grid_y.resize(this->active_number);
+        robot_init_x.clear();
+        robot_init_y.clear();
+        robot_core_x.clear();
+        robot_core_y.clear();
+        robot_grid_x.clear();
+        robot_grid_y.clear();
+        robot_init_x.resize(this->robot_number,0);
+        robot_init_y.resize(this->robot_number,0);
+        robot_core_x.resize(this->active_number,0);
+        robot_core_y.resize(this->active_number,0);
+        robot_grid_x.resize(this->active_number,0);
+        robot_grid_y.resize(this->active_number,0);
         for (int i = 0; i < this->active_number; ++i) {
             robot_init_x[i] = req.x[i];
             robot_init_y[i] = req.y[i];
@@ -963,6 +974,7 @@ public:
                     outfile << (P_grid_t[i+1](1)-GRID_SIZE/2+0.5)*AREA_SIZE/GRID_SIZE/LEN_COF << ',' << (P_grid_t[i+1](0)-GRID_SIZE/2+0.5)*AREA_SIZE/GRID_SIZE/LEN_COF << ',' << 1.2 << endl;
                 }
             }
+            outfile.close();
         }
 
     }
