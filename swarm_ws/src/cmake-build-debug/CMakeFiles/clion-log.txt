@@ -14,10 +14,11 @@
 -- catkin 0.7.14
 -- BUILD_SHARED_LIBS is on
 -- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
--- ~~  traversing 3 packages in topological order:
+-- ~~  traversing 4 packages in topological order:
 -- ~~  - swarm_config
 -- ~~  - swarm_robot
 -- ~~  - swarm_center
+-- ~~  - viconros
 -- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 -- +++ processing catkin package: 'swarm_config'
 -- ==> add_subdirectory(swarm_config)
@@ -35,6 +36,28 @@
 -- Boost version: 1.58.0
 -- Found the following Boost libraries:
 --   program_options
+-- +++ processing catkin package: 'viconros'
+-- ==> add_subdirectory(viconros)
+-- Using these message generators: gencpp;geneus;genlisp;gennodejs;genpy
+-- viconros: 1 messages, 0 services
 -- Configuring done
+CMake Warning (dev) at viconros/CMakeLists.txt:180 (add_dependencies):
+  Policy CMP0046 is not set: Error on non-existent dependency in
+  add_dependencies.  Run "cmake --help-policy CMP0046" for policy details.
+  Use the cmake_policy command to set the policy and suppress this warning.
+
+  The dependency target "beginner_tutorials_generate_messages_cpp" of target
+  "viconros_swarm" does not exist.
+This warning is for project developers.  Use -Wno-dev to suppress it.
+
+CMake Warning (dev) at viconros/CMakeLists.txt:176 (add_dependencies):
+  Policy CMP0046 is not set: Error on non-existent dependency in
+  add_dependencies.  Run "cmake --help-policy CMP0046" for policy details.
+  Use the cmake_policy command to set the policy and suppress this warning.
+
+  The dependency target "beginner_tutorials_generate_messages_cpp" of target
+  "viconros" does not exist.
+This warning is for project developers.  Use -Wno-dev to suppress it.
+
 -- Generating done
 -- Build files have been written to: /home/wade/SJTU-swarm/swarm_ws/src/cmake-build-debug

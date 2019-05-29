@@ -2,135 +2,136 @@
 <project version="4">
   <component name="CMakeRunConfigurationManager" shouldGenerate="true" shouldDeleteObsolete="true" buildAllGenerated="true">
     <generated>
-      <config projectName="Project" targetName="gmock" />
-      <config projectName="Project" targetName="std_srvs_generate_messages_lisp" />
-      <config projectName="Project" targetName="sensor_msgs_generate_messages_eus" />
-      <config projectName="Project" targetName="geometry_msgs_generate_messages_lisp" />
-      <config projectName="Project" targetName="tf2_msgs_generate_messages_lisp" />
-      <config projectName="Project" targetName="swarm_center_geneus" />
-      <config projectName="Project" targetName="uuid_msgs_generate_messages_nodejs" />
-      <config projectName="Project" targetName="actionlib_msgs_generate_messages_nodejs" />
-      <config projectName="Project" targetName="std_msgs_generate_messages_nodejs" />
-      <config projectName="Project" targetName="std_msgs_generate_messages_lisp" />
-      <config projectName="Project" targetName="std_srvs_generate_messages_cpp" />
-      <config projectName="Project" targetName="rosgraph_msgs_generate_messages_eus" />
-      <config projectName="Project" targetName="mavros_msgs_generate_messages_cpp" />
-      <config projectName="Project" targetName="actionlib_generate_messages_cpp" />
-      <config projectName="Project" targetName="swarm_center_gennodejs" />
-      <config projectName="Project" targetName="download_extra_data" />
-      <config projectName="Project" targetName="sensor_msgs_generate_messages_py" />
-      <config projectName="Project" targetName="nav_msgs_generate_messages_py" />
-      <config projectName="Project" targetName="doxygen" />
-      <config projectName="Project" targetName="actionlib_msgs_generate_messages_eus" />
-      <config projectName="Project" targetName="gtest_main" />
-      <config projectName="Project" targetName="_swarm_center_generate_messages_check_deps_mArmReq" />
-      <config projectName="Project" targetName="clean_test_results" />
-      <config projectName="Project" targetName="vicon_bridge_generate_messages_cpp" />
-      <config projectName="Project" targetName="geometry_msgs_generate_messages_py" />
-      <config projectName="Project" targetName="roscpp_generate_messages_lisp" />
-      <config projectName="Project" targetName="nav_msgs_generate_messages_eus" />
-      <config projectName="Project" targetName="actionlib_msgs_generate_messages_py" />
-      <config projectName="Project" targetName="formation_controller" />
-      <config projectName="Project" targetName="formation_commander" />
-      <config projectName="Project" targetName="dynamic_reconfigure_generate_messages_cpp" />
-      <config projectName="Project" targetName="rosgraph_msgs_generate_messages_nodejs" />
-      <config projectName="Project" targetName="tf2_msgs_generate_messages_py" />
-      <config projectName="Project" targetName="roscpp_generate_messages_py" />
-      <config projectName="Project" targetName="std_msgs_generate_messages_py" />
-      <config projectName="Project" targetName="uuid_msgs_generate_messages_lisp" />
-      <config projectName="Project" targetName="coverage_commander" />
-      <config projectName="Project" targetName="swarm_robot_gennodejs" />
-      <config projectName="Project" targetName="swarm_center_gencpp" />
-      <config projectName="Project" targetName="diagnostic_msgs_generate_messages_cpp" />
-      <config projectName="Project" targetName="actionlib_generate_messages_eus" />
-      <config projectName="Project" targetName="geographic_msgs_generate_messages_nodejs" />
-      <config projectName="Project" targetName="_swarm_center_generate_messages_check_deps_pos_info" />
-      <config projectName="Project" targetName="swarm_robot_generate_messages_cpp" />
-      <config projectName="Project" targetName="dynamic_reconfigure_generate_messages_lisp" />
-      <config projectName="Project" targetName="swarm_robot_generate_messages" />
-      <config projectName="Project" targetName="actionlib_msgs_generate_messages_lisp" />
-      <config projectName="Project" targetName="vicon_bridge_generate_messages_lisp" />
-      <config projectName="Project" targetName="sensor_msgs_generate_messages_lisp" />
-      <config projectName="Project" targetName="rosgraph_msgs_generate_messages_lisp" />
-      <config projectName="Project" targetName="coverage_controller" />
-      <config projectName="Project" targetName="hey_swarm" />
-      <config projectName="Project" targetName="swarm_tools" />
-      <config projectName="Project" targetName="geometry_msgs_generate_messages_cpp" />
-      <config projectName="Project" targetName="vicon_bridge_generate_messages_eus" />
-      <config projectName="Project" targetName="tf2_msgs_generate_messages_cpp" />
-      <config projectName="Project" targetName="swarm_center_genpy" />
-      <config projectName="Project" targetName="gtest" />
-      <config projectName="Project" targetName="gmock_main" />
-      <config projectName="Project" targetName="swarm_driver" />
-      <config projectName="Project" targetName="swarm_center_generate_messages_cpp" />
-      <config projectName="Project" targetName="diagnostic_msgs_generate_messages_eus" />
-      <config projectName="Project" targetName="geographic_msgs_generate_messages_cpp" />
-      <config projectName="Project" targetName="dynamic_reconfigure_generate_messages_eus" />
-      <config projectName="Project" targetName="vicon_bridge_gencfg" />
-      <config projectName="Project" targetName="swarm_center_generate_messages" />
-      <config projectName="Project" targetName="actionlib_generate_messages_py" />
-      <config projectName="Project" targetName="nav_msgs_generate_messages_cpp" />
-      <config projectName="Project" targetName="roscpp_generate_messages_cpp" />
-      <config projectName="Project" targetName="swarm_center_genlisp" />
-      <config projectName="Project" targetName="actionlib_generate_messages_lisp" />
-      <config projectName="Project" targetName="dynamic_reconfigure_gencfg" />
-      <config projectName="Project" targetName="swarm_robot_gencpp" />
-      <config projectName="Project" targetName="robot_controller" />
-      <config projectName="Project" targetName="geographic_msgs_generate_messages_lisp" />
-      <config projectName="Project" targetName="actionlib_generate_messages_nodejs" />
-      <config projectName="Project" targetName="mavros_msgs_generate_messages_eus" />
-      <config projectName="Project" targetName="swarm_robot_generate_messages_eus" />
-      <config projectName="Project" targetName="_swarm_robot_generate_messages_check_deps_pos_info" />
-      <config projectName="Project" targetName="std_msgs_generate_messages_cpp" />
-      <config projectName="Project" targetName="swarm_robot_generate_messages_py" />
-      <config projectName="Project" targetName="swarm_robot_genlisp" />
-      <config projectName="Project" targetName="roscpp_generate_messages_eus" />
-      <config projectName="Project" targetName="sensor_msgs_generate_messages_nodejs" />
-      <config projectName="Project" targetName="nav_msgs_generate_messages_nodejs" />
-      <config projectName="Project" targetName="dynamic_reconfigure_generate_messages_py" />
-      <config projectName="Project" targetName="geographic_msgs_generate_messages_eus" />
-      <config projectName="Project" targetName="std_srvs_generate_messages_py" />
-      <config projectName="Project" targetName="swarm_center_generate_messages_py" />
-      <config projectName="Project" targetName="tf2_msgs_generate_messages_eus" />
-      <config projectName="Project" targetName="swarm_robot_generate_messages_lisp" />
-      <config projectName="Project" targetName="geographic_msgs_generate_messages_py" />
-      <config projectName="Project" targetName="uuid_msgs_generate_messages_cpp" />
-      <config projectName="Project" targetName="std_srvs_generate_messages_nodejs" />
-      <config projectName="Project" targetName="dispatch_center" />
-      <config projectName="Project" targetName="uuid_msgs_generate_messages_py" />
-      <config projectName="Project" targetName="mavros_msgs_generate_messages_nodejs" />
-      <config projectName="Project" targetName="sensor_msgs_generate_messages_cpp" />
-      <config projectName="Project" targetName="nav_msgs_generate_messages_lisp" />
-      <config projectName="Project" targetName="tf2_msgs_generate_messages_nodejs" />
-      <config projectName="Project" targetName="_swarm_center_generate_messages_check_deps_mCPPReq" />
       <config projectName="Project" targetName="diagnostic_msgs_generate_messages_lisp" />
-      <config projectName="Project" targetName="std_srvs_generate_messages_eus" />
-      <config projectName="Project" targetName="swarm_visualization" />
-      <config projectName="Project" targetName="diagnostic_msgs_generate_messages_nodejs" />
-      <config projectName="Project" targetName="swarm_robot_geneus" />
-      <config projectName="Project" targetName="dynamic_reconfigure_generate_messages_nodejs" />
+      <config projectName="Project" targetName="viconros_generate_messages_cpp" />
+      <config projectName="Project" targetName="geographic_msgs_generate_messages_eus" />
+      <config projectName="Project" targetName="nav_msgs_generate_messages_py" />
+      <config projectName="Project" targetName="roscpp_generate_messages_py" />
+      <config projectName="Project" targetName="tf2_msgs_generate_messages_cpp" />
+      <config projectName="Project" targetName="actionlib_generate_messages_nodejs" />
+      <config projectName="Project" targetName="viconros_swarm" />
+      <config projectName="Project" targetName="uuid_msgs_generate_messages_nodejs" />
+      <config projectName="Project" targetName="clean_test_results" />
+      <config projectName="Project" targetName="nav_msgs_generate_messages_cpp" />
+      <config projectName="Project" targetName="_swarm_robot_generate_messages_check_deps_pos_info" />
       <config projectName="Project" targetName="swarm_center_generate_messages_nodejs" />
-      <config projectName="Project" targetName="swarm_robot_generate_messages_nodejs" />
-      <config projectName="Project" targetName="vicon_node" />
-      <config projectName="Project" targetName="swarm_center_generate_messages_eus" />
+      <config projectName="Project" targetName="geometry_msgs_generate_messages_cpp" />
+      <config projectName="Project" targetName="swarm_center_generate_messages" />
       <config projectName="Project" targetName="rosgraph_msgs_generate_messages_cpp" />
+      <config projectName="Project" targetName="geometry_msgs_generate_messages_lisp" />
       <config projectName="Project" targetName="rosgraph_msgs_generate_messages_py" />
-      <config projectName="Project" targetName="std_msgs_generate_messages_eus" />
-      <config projectName="Project" targetName="tests" />
-      <config projectName="Project" targetName="vicon_bridge_generate_messages_nodejs" />
-      <config projectName="Project" targetName="geometry_msgs_generate_messages_eus" />
-      <config projectName="Project" targetName="mavros_msgs_generate_messages_lisp" />
-      <config projectName="Project" targetName="swarm_robot_genpy" />
-      <config projectName="Project" targetName="actionlib_msgs_generate_messages_cpp" />
-      <config projectName="Project" targetName="run_tests" />
-      <config projectName="Project" targetName="diagnostic_msgs_generate_messages_py" />
-      <config projectName="Project" targetName="vicon_bridge_generate_messages_py" />
-      <config projectName="Project" targetName="record_center" />
-      <config projectName="Project" targetName="swarm_center_generate_messages_lisp" />
+      <config projectName="Project" targetName="swarm_robot_generate_messages_lisp" />
+      <config projectName="Project" targetName="actionlib_msgs_generate_messages_eus" />
+      <config projectName="Project" targetName="tf2_msgs_generate_messages_eus" />
+      <config projectName="Project" targetName="uuid_msgs_generate_messages_lisp" />
+      <config projectName="Project" targetName="nav_msgs_generate_messages_eus" />
+      <config projectName="Project" targetName="actionlib_msgs_generate_messages_lisp" />
+      <config projectName="Project" targetName="tf2_msgs_generate_messages_nodejs" />
+      <config projectName="Project" targetName="actionlib_generate_messages_py" />
+      <config projectName="Project" targetName="viconros_generate_messages_lisp" />
+      <config projectName="Project" targetName="rosgraph_msgs_generate_messages_nodejs" />
+      <config projectName="Project" targetName="actionlib_generate_messages_eus" />
+      <config projectName="Project" targetName="rosgraph_msgs_generate_messages_eus" />
       <config projectName="Project" targetName="roscpp_generate_messages_nodejs" />
-      <config projectName="Project" targetName="uuid_msgs_generate_messages_eus" />
-      <config projectName="Project" targetName="mavros_msgs_generate_messages_py" />
+      <config projectName="Project" targetName="download_extra_data" />
+      <config projectName="Project" targetName="swarm_center_gennodejs" />
+      <config projectName="Project" targetName="std_srvs_generate_messages_cpp" />
+      <config projectName="Project" targetName="geometry_msgs_generate_messages_py" />
       <config projectName="Project" targetName="geometry_msgs_generate_messages_nodejs" />
+      <config projectName="Project" targetName="actionlib_msgs_generate_messages_cpp" />
+      <config projectName="Project" targetName="actionlib_generate_messages_lisp" />
+      <config projectName="Project" targetName="viconros_gennodejs" />
+      <config projectName="Project" targetName="_swarm_center_generate_messages_check_deps_pos_info" />
+      <config projectName="Project" targetName="geographic_msgs_generate_messages_lisp" />
+      <config projectName="Project" targetName="actionlib_msgs_generate_messages_py" />
+      <config projectName="Project" targetName="mavros_msgs_generate_messages_cpp" />
+      <config projectName="Project" targetName="sensor_msgs_generate_messages_eus" />
+      <config projectName="Project" targetName="swarm_robot_generate_messages" />
+      <config projectName="Project" targetName="std_msgs_generate_messages_lisp" />
+      <config projectName="Project" targetName="swarm_tools" />
+      <config projectName="Project" targetName="actionlib_generate_messages_cpp" />
+      <config projectName="Project" targetName="tf2_msgs_generate_messages_py" />
+      <config projectName="Project" targetName="gmock_main" />
+      <config projectName="Project" targetName="swarm_robot_generate_messages_eus" />
+      <config projectName="Project" targetName="swarm_center_gencpp" />
+      <config projectName="Project" targetName="viconros" />
+      <config projectName="Project" targetName="viconros_generate_messages_eus" />
+      <config projectName="Project" targetName="gtest_main" />
+      <config projectName="Project" targetName="geographic_msgs_generate_messages_cpp" />
+      <config projectName="Project" targetName="geographic_msgs_generate_messages_nodejs" />
+      <config projectName="Project" targetName="std_srvs_generate_messages_eus" />
+      <config projectName="Project" targetName="mavros_msgs_generate_messages_eus" />
+      <config projectName="Project" targetName="sensor_msgs_generate_messages_cpp" />
+      <config projectName="Project" targetName="viconros_generate_messages_py" />
+      <config projectName="Project" targetName="uuid_msgs_generate_messages_eus" />
+      <config projectName="Project" targetName="dispatch_center" />
+      <config projectName="Project" targetName="swarm_robot_generate_messages_cpp" />
+      <config projectName="Project" targetName="swarm_center_geneus" />
+      <config projectName="Project" targetName="nav_msgs_generate_messages_lisp" />
+      <config projectName="Project" targetName="diagnostic_msgs_generate_messages_eus" />
+      <config projectName="Project" targetName="sensor_msgs_generate_messages_nodejs" />
+      <config projectName="Project" targetName="std_msgs_generate_messages_cpp" />
+      <config projectName="Project" targetName="swarm_robot_geneus" />
+      <config projectName="Project" targetName="swarm_center_generate_messages_eus" />
+      <config projectName="Project" targetName="diagnostic_msgs_generate_messages_py" />
+      <config projectName="Project" targetName="uuid_msgs_generate_messages_cpp" />
+      <config projectName="Project" targetName="gtest" />
+      <config projectName="Project" targetName="swarm_center_generate_messages_py" />
+      <config projectName="Project" targetName="swarm_center_genlisp" />
+      <config projectName="Project" targetName="std_msgs_generate_messages_nodejs" />
+      <config projectName="Project" targetName="mavros_msgs_generate_messages_lisp" />
+      <config projectName="Project" targetName="swarm_robot_gennodejs" />
+      <config projectName="Project" targetName="formation_commander" />
+      <config projectName="Project" targetName="rosgraph_msgs_generate_messages_lisp" />
+      <config projectName="Project" targetName="sensor_msgs_generate_messages_py" />
+      <config projectName="Project" targetName="std_srvs_generate_messages_nodejs" />
+      <config projectName="Project" targetName="swarm_visualization" />
+      <config projectName="Project" targetName="std_msgs_generate_messages_py" />
+      <config projectName="Project" targetName="swarm_center_generate_messages_lisp" />
+      <config projectName="Project" targetName="gmock" />
+      <config projectName="Project" targetName="roscpp_generate_messages_eus" />
+      <config projectName="Project" targetName="doxygen" />
+      <config projectName="Project" targetName="_viconros_generate_messages_check_deps_viconmocap" />
+      <config projectName="Project" targetName="diagnostic_msgs_generate_messages_cpp" />
+      <config projectName="Project" targetName="tests" />
+      <config projectName="Project" targetName="_swarm_center_generate_messages_check_deps_mArmReq" />
+      <config projectName="Project" targetName="swarm_robot_generate_messages_py" />
+      <config projectName="Project" targetName="std_msgs_generate_messages_eus" />
+      <config projectName="Project" targetName="viconros_geneus" />
+      <config projectName="Project" targetName="swarm_robot_gencpp" />
+      <config projectName="Project" targetName="swarm_center_generate_messages_cpp" />
+      <config projectName="Project" targetName="formation_controller" />
+      <config projectName="Project" targetName="std_srvs_generate_messages_py" />
+      <config projectName="Project" targetName="swarm_robot_generate_messages_nodejs" />
+      <config projectName="Project" targetName="record_center" />
+      <config projectName="Project" targetName="mavros_msgs_generate_messages_py" />
+      <config projectName="Project" targetName="coverage_controller" />
+      <config projectName="Project" targetName="mavros_msgs_generate_messages_nodejs" />
+      <config projectName="Project" targetName="robot_controller" />
+      <config projectName="Project" targetName="run_tests" />
+      <config projectName="Project" targetName="roscpp_generate_messages_cpp" />
+      <config projectName="Project" targetName="actionlib_msgs_generate_messages_nodejs" />
+      <config projectName="Project" targetName="hey_swarm" />
+      <config projectName="Project" targetName="swarm_center_genpy" />
+      <config projectName="Project" targetName="viconros_gencpp" />
+      <config projectName="Project" targetName="tf2_msgs_generate_messages_lisp" />
+      <config projectName="Project" targetName="diagnostic_msgs_generate_messages_nodejs" />
+      <config projectName="Project" targetName="_swarm_center_generate_messages_check_deps_mCPPReq" />
+      <config projectName="Project" targetName="sensor_msgs_generate_messages_lisp" />
+      <config projectName="Project" targetName="uuid_msgs_generate_messages_py" />
+      <config projectName="Project" targetName="swarm_driver" />
+      <config projectName="Project" targetName="std_srvs_generate_messages_lisp" />
+      <config projectName="Project" targetName="viconros_generate_messages_nodejs" />
+      <config projectName="Project" targetName="viconros_generate_messages" />
+      <config projectName="Project" targetName="viconros_genlisp" />
+      <config projectName="Project" targetName="geographic_msgs_generate_messages_py" />
+      <config projectName="Project" targetName="nav_msgs_generate_messages_nodejs" />
+      <config projectName="Project" targetName="roscpp_generate_messages_lisp" />
+      <config projectName="Project" targetName="coverage_commander" />
+      <config projectName="Project" targetName="swarm_robot_genpy" />
+      <config projectName="Project" targetName="geometry_msgs_generate_messages_eus" />
+      <config projectName="Project" targetName="swarm_robot_genlisp" />
+      <config projectName="Project" targetName="viconros_genpy" />
     </generated>
   </component>
   <component name="CMakeSettings">
@@ -140,7 +141,47 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5b582add-7293-46c9-8cb2-5d9a77dfa8df" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/swarm_ws/src/swarm_center/src/swarm_driver.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/swarm_ws/src/swarm_center/src/swarm_driver.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/swarm_ws/src/cmake-build-debug/CMakeCache.txt" beforeDir="false" afterPath="$PROJECT_DIR$/swarm_ws/src/cmake-build-debug/CMakeCache.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/swarm_ws/src/cmake-build-debug/CMakeFiles/CMakeRuleHashes.txt" beforeDir="false" afterPath="$PROJECT_DIR$/swarm_ws/src/cmake-build-debug/CMakeFiles/CMakeRuleHashes.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/swarm_ws/src/cmake-build-debug/CMakeFiles/Makefile.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/swarm_ws/src/cmake-build-debug/CMakeFiles/Makefile.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/swarm_ws/src/cmake-build-debug/CMakeFiles/Makefile2" beforeDir="false" afterPath="$PROJECT_DIR$/swarm_ws/src/cmake-build-debug/CMakeFiles/Makefile2" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/swarm_ws/src/cmake-build-debug/CMakeFiles/TargetDirectories.txt" beforeDir="false" afterPath="$PROJECT_DIR$/swarm_ws/src/cmake-build-debug/CMakeFiles/TargetDirectories.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/swarm_ws/src/cmake-build-debug/CMakeFiles/clion-log.txt" beforeDir="false" afterPath="$PROJECT_DIR$/swarm_ws/src/cmake-build-debug/CMakeFiles/clion-log.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/swarm_ws/src/cmake-build-debug/CMakeFiles/progress.marks" beforeDir="false" afterPath="$PROJECT_DIR$/swarm_ws/src/cmake-build-debug/CMakeFiles/progress.marks" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/swarm_ws/src/cmake-build-debug/CTestTestfile.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/swarm_ws/src/cmake-build-debug/CTestTestfile.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/swarm_ws/src/cmake-build-debug/Makefile" beforeDir="false" afterPath="$PROJECT_DIR$/swarm_ws/src/cmake-build-debug/Makefile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/swarm_ws/src/cmake-build-debug/Project.cbp" beforeDir="false" afterPath="$PROJECT_DIR$/swarm_ws/src/cmake-build-debug/Project.cbp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/swarm_ws/src/cmake-build-debug/catkin_generated/order_packages.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/swarm_ws/src/cmake-build-debug/catkin_generated/order_packages.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/swarm_ws/src/cmake-build-debug/cmake_install.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/swarm_ws/src/cmake-build-debug/cmake_install.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/swarm_ws/src/cmake-build-debug/devel/lib/pkgconfig/swarm_center.pc" beforeDir="false" afterPath="$PROJECT_DIR$/swarm_ws/src/cmake-build-debug/devel/lib/pkgconfig/swarm_center.pc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/swarm_ws/src/cmake-build-debug/devel/share/swarm_center/cmake/swarm_centerConfig.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/swarm_ws/src/cmake-build-debug/devel/share/swarm_center/cmake/swarm_centerConfig.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/swarm_ws/src/cmake-build-debug/gtest/gmock.cbp" beforeDir="false" afterPath="$PROJECT_DIR$/swarm_ws/src/cmake-build-debug/gtest/gmock.cbp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/swarm_ws/src/cmake-build-debug/gtest/gtest/gtest.cbp" beforeDir="false" afterPath="$PROJECT_DIR$/swarm_ws/src/cmake-build-debug/gtest/gtest/gtest.cbp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/swarm_ws/src/cmake-build-debug/swarm_center/CMakeFiles/coverage_commander.dir/build.make" beforeDir="false" afterPath="$PROJECT_DIR$/swarm_ws/src/cmake-build-debug/swarm_center/CMakeFiles/coverage_commander.dir/build.make" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/swarm_ws/src/cmake-build-debug/swarm_center/CMakeFiles/coverage_commander.dir/link.txt" beforeDir="false" afterPath="$PROJECT_DIR$/swarm_ws/src/cmake-build-debug/swarm_center/CMakeFiles/coverage_commander.dir/link.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/swarm_ws/src/cmake-build-debug/swarm_center/CMakeFiles/dispatch_center.dir/build.make" beforeDir="false" afterPath="$PROJECT_DIR$/swarm_ws/src/cmake-build-debug/swarm_center/CMakeFiles/dispatch_center.dir/build.make" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/swarm_ws/src/cmake-build-debug/swarm_center/CMakeFiles/dispatch_center.dir/link.txt" beforeDir="false" afterPath="$PROJECT_DIR$/swarm_ws/src/cmake-build-debug/swarm_center/CMakeFiles/dispatch_center.dir/link.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/swarm_ws/src/cmake-build-debug/swarm_center/CMakeFiles/formation_commander.dir/build.make" beforeDir="false" afterPath="$PROJECT_DIR$/swarm_ws/src/cmake-build-debug/swarm_center/CMakeFiles/formation_commander.dir/build.make" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/swarm_ws/src/cmake-build-debug/swarm_center/CMakeFiles/formation_commander.dir/link.txt" beforeDir="false" afterPath="$PROJECT_DIR$/swarm_ws/src/cmake-build-debug/swarm_center/CMakeFiles/formation_commander.dir/link.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/swarm_ws/src/cmake-build-debug/swarm_center/CMakeFiles/progress.marks" beforeDir="false" afterPath="$PROJECT_DIR$/swarm_ws/src/cmake-build-debug/swarm_center/CMakeFiles/progress.marks" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/swarm_ws/src/cmake-build-debug/swarm_center/CMakeFiles/record_center.dir/build.make" beforeDir="false" afterPath="$PROJECT_DIR$/swarm_ws/src/cmake-build-debug/swarm_center/CMakeFiles/record_center.dir/build.make" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/swarm_ws/src/cmake-build-debug/swarm_center/CMakeFiles/record_center.dir/link.txt" beforeDir="false" afterPath="$PROJECT_DIR$/swarm_ws/src/cmake-build-debug/swarm_center/CMakeFiles/record_center.dir/link.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/swarm_ws/src/cmake-build-debug/swarm_center/CMakeFiles/swarm_driver.dir/build.make" beforeDir="false" afterPath="$PROJECT_DIR$/swarm_ws/src/cmake-build-debug/swarm_center/CMakeFiles/swarm_driver.dir/build.make" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/swarm_ws/src/cmake-build-debug/swarm_center/CMakeFiles/swarm_driver.dir/link.txt" beforeDir="false" afterPath="$PROJECT_DIR$/swarm_ws/src/cmake-build-debug/swarm_center/CMakeFiles/swarm_driver.dir/link.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/swarm_ws/src/cmake-build-debug/swarm_center/CMakeFiles/swarm_visualization.dir/build.make" beforeDir="false" afterPath="$PROJECT_DIR$/swarm_ws/src/cmake-build-debug/swarm_center/CMakeFiles/swarm_visualization.dir/build.make" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/swarm_ws/src/cmake-build-debug/swarm_center/CMakeFiles/swarm_visualization.dir/link.txt" beforeDir="false" afterPath="$PROJECT_DIR$/swarm_ws/src/cmake-build-debug/swarm_center/CMakeFiles/swarm_visualization.dir/link.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/swarm_ws/src/cmake-build-debug/swarm_center/Makefile" beforeDir="false" afterPath="$PROJECT_DIR$/swarm_ws/src/cmake-build-debug/swarm_center/Makefile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/swarm_ws/src/cmake-build-debug/swarm_center/catkin_generated/installspace/swarm_center.pc" beforeDir="false" afterPath="$PROJECT_DIR$/swarm_ws/src/cmake-build-debug/swarm_center/catkin_generated/installspace/swarm_center.pc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/swarm_ws/src/cmake-build-debug/swarm_center/catkin_generated/installspace/swarm_centerConfig.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/swarm_ws/src/cmake-build-debug/swarm_center/catkin_generated/installspace/swarm_centerConfig.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/swarm_ws/src/cmake-build-debug/swarm_center/catkin_generated/package.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/swarm_ws/src/cmake-build-debug/swarm_center/catkin_generated/package.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/swarm_ws/src/cmake-build-debug/swarm_center/catkin_generated/pkg.develspace.context.pc.py" beforeDir="false" afterPath="$PROJECT_DIR$/swarm_ws/src/cmake-build-debug/swarm_center/catkin_generated/pkg.develspace.context.pc.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/swarm_ws/src/cmake-build-debug/swarm_center/catkin_generated/pkg.installspace.context.pc.py" beforeDir="false" afterPath="$PROJECT_DIR$/swarm_ws/src/cmake-build-debug/swarm_center/catkin_generated/pkg.installspace.context.pc.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/swarm_ws/src/cmake-build-debug/swarm_center/catkin_generated/stamps/swarm_center/package.xml.stamp" beforeDir="false" afterPath="$PROJECT_DIR$/swarm_ws/src/cmake-build-debug/swarm_center/catkin_generated/stamps/swarm_center/package.xml.stamp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/swarm_ws/src/cmake-build-debug/swarm_center/swarm_center.cbp" beforeDir="false" afterPath="$PROJECT_DIR$/swarm_ws/src/cmake-build-debug/swarm_center/swarm_center.cbp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/swarm_ws/src/cmake-build-debug/swarm_config/swarm_config.cbp" beforeDir="false" afterPath="$PROJECT_DIR$/swarm_ws/src/cmake-build-debug/swarm_config/swarm_config.cbp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/swarm_ws/src/cmake-build-debug/swarm_robot/swarm_robot.cbp" beforeDir="false" afterPath="$PROJECT_DIR$/swarm_ws/src/cmake-build-debug/swarm_robot/swarm_robot.cbp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/swarm_ws/src/viconros" beforeDir="false" afterPath="$PROJECT_DIR$/swarm_ws/src/viconros" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/swarm_ws/src/viconros/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/swarm_ws/src/viconros/CMakeLists.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/swarm_ws/src/viconros/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/swarm_ws/src/viconros/README.md" afterDir="false" />
@@ -181,10 +222,10 @@
           <entry key="project.open.time.14" value="1" />
           <entry key="project.open.time.4" value="1" />
           <entry key="project.open.time.5" value="12" />
-          <entry key="project.open.time.6" value="31" />
+          <entry key="project.open.time.6" value="32" />
           <entry key="project.open.time.7" value="16" />
           <entry key="project.open.time.8" value="3" />
-          <entry key="project.opened" value="66" />
+          <entry key="project.opened" value="67" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
@@ -192,7 +233,7 @@
           <entry key="cpp" value="38" />
           <entry key="h" value="2" />
           <entry key="launch" value="14" />
-          <entry key="md" value="6" />
+          <entry key="md" value="7" />
           <entry key="srv" value="1" />
           <entry key="txt" value="14" />
           <entry key="xml" value="9" />
@@ -202,7 +243,7 @@
         <counts>
           <entry key="CMakeLists.txt" value="14" />
           <entry key="DTD" value="14" />
-          <entry key="Markdown" value="6" />
+          <entry key="Markdown" value="7" />
           <entry key="ObjectiveC" value="40" />
           <entry key="PLAIN_TEXT" value="1" />
           <entry key="XML" value="9" />
@@ -213,7 +254,7 @@
           <entry key="cpp" value="28845" />
           <entry key="h" value="41" />
           <entry key="launch" value="584" />
-          <entry key="md" value="2035" />
+          <entry key="md" value="2818" />
           <entry key="txt" value="745" />
           <entry key="xml" value="20" />
         </counts>
@@ -223,7 +264,7 @@
           <entry key="CMakeLists.txt" value="745" />
           <entry key="DTD" value="584" />
           <entry key="Doxygen file" value="3" />
-          <entry key="Markdown" value="2035" />
+          <entry key="Markdown" value="2818" />
           <entry key="ObjectiveC" value="28883" />
           <entry key="XML" value="20" />
         </counts>
@@ -236,7 +277,7 @@
     </session>
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.45715865">
+    <splitter split-orientation="horizontal" split-proportion="0.121681415">
       <split-first>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
           <file pinned="false" current-in-tab="false">
@@ -281,8 +322,8 @@
           <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/swarm_ws/src/swarm_robot/src/coverage_controller.cpp">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="-1134">
-                  <caret line="162" column="16" selection-start-line="162" selection-start-column="8" selection-end-line="162" selection-end-column="16" />
+                <state relative-caret-position="76">
+                  <caret line="165" column="27" lean-forward="true" selection-start-line="165" selection-start-column="27" selection-end-line="165" selection-end-column="27" />
                   <folding>
                     <element signature="e#184#204#0" expanded="true" />
                   </folding>
@@ -293,8 +334,8 @@
           <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/swarm_ws/src/viconros/src/viconros_swarm.cpp">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="931">
-                  <caret line="49" column="21" selection-start-line="49" selection-start-column="21" selection-end-line="49" selection-end-column="21" />
+                <state relative-caret-position="950">
+                  <caret line="50" column="21" selection-start-line="50" selection-start-column="21" selection-end-line="50" selection-end-column="21" />
                   <folding>
                     <element signature="e#0#20#0" expanded="true" />
                     <element signature="e#93#128#0" expanded="true" />
@@ -307,7 +348,7 @@
             <entry file="file://$PROJECT_DIR$/swarm_ws/src/viconros/launch/miniswarm_cap.launch">
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="171">
-                  <caret line="9" selection-start-line="9" selection-end-line="9" />
+                  <caret line="11" selection-start-line="11" selection-end-line="11" />
                 </state>
               </provider>
             </entry>
@@ -369,14 +410,28 @@
               </provider>
             </entry>
           </file>
-          <file pinned="false" current-in-tab="true">
+          <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/swarm_ws/src/swarm_center/src/swarm_driver.cpp">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="614">
-                  <caret line="679" column="9" lean-forward="true" selection-start-line="679" selection-start-column="9" selection-end-line="679" selection-end-column="9" />
+                <state relative-caret-position="538">
+                  <caret line="675" column="56" lean-forward="true" selection-start-line="675" selection-start-column="56" selection-end-line="675" selection-end-column="56" />
                   <folding>
                     <element signature="e#168#188#0" expanded="true" />
                   </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/README.md">
+              <provider selected="true" editor-type-id="split-provider[text-editor;MarkdownPreviewEditor]">
+                <state split_layout="SPLIT">
+                  <first_editor relative-caret-position="228">
+                    <caret line="12" column="45" selection-start-line="12" selection-start-column="45" selection-end-line="12" selection-end-column="45" />
+                  </first_editor>
+                  <second_editor>
+                    <markdownNavigatorState />
+                  </second_editor>
                 </state>
               </provider>
             </entry>
@@ -464,7 +519,6 @@
         <option value="$PROJECT_DIR$/swarm_ws/src/swarm_config/src/swarm_generator.cpp" />
         <option value="$PROJECT_DIR$/Note.md" />
         <option value="$PROJECT_DIR$/swarm_ws/src/swarm_config/CMakeLists.txt" />
-        <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/swarm_ws/src/swarm_center/src/formation_commander.cpp" />
         <option value="$PROJECT_DIR$/swarm_ws/src/swarm_robot/launch/one_robot.launch" />
         <option value="$PROJECT_DIR$/swarm_ws/src/swarm_robot/launch/behaviour_lib/coverage_control.launch" />
@@ -484,6 +538,7 @@
         <option value="$PROJECT_DIR$/swarm_ws/src/viconros/src/viconros_swarm.cpp" />
         <option value="$PROJECT_DIR$/swarm_ws/src/viconros/launch/miniswarm_cap.launch" />
         <option value="$PROJECT_DIR$/swarm_ws/src/swarm_center/src/swarm_driver.cpp" />
+        <option value="$PROJECT_DIR$/README.md" />
       </list>
     </option>
   </component>
@@ -505,6 +560,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -530,11 +586,27 @@
               <item name="swarm_ws" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="SJTU-swarm" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SJTU-swarm" type="47feb1d3:ProjectViewModuleNode" />
+              <item name="SJTU-swarm" type="462c0819:PsiDirectoryNode" />
+              <item name="swarm_ws" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="swarm_center" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="SJTU-swarm" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SJTU-swarm" type="47feb1d3:ProjectViewModuleNode" />
+              <item name="SJTU-swarm" type="462c0819:PsiDirectoryNode" />
+              <item name="swarm_ws" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="swarm_center" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -577,6 +649,11 @@
       </method>
     </configuration>
     <configuration name="_swarm_robot_generate_messages_check_deps_pos_info" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="Project" TARGET_NAME="_swarm_robot_generate_messages_check_deps_pos_info" CONFIG_NAME="Debug">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="_viconros_generate_messages_check_deps_viconmocap" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="Project" TARGET_NAME="_viconros_generate_messages_check_deps_viconmocap" CONFIG_NAME="Debug">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
@@ -682,36 +759,6 @@
       </method>
     </configuration>
     <configuration name="doxygen" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="Project" TARGET_NAME="doxygen" CONFIG_NAME="Debug">
-      <method v="2">
-        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="dynamic_reconfigure_gencfg" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="Project" TARGET_NAME="dynamic_reconfigure_gencfg" CONFIG_NAME="Debug">
-      <method v="2">
-        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="dynamic_reconfigure_generate_messages_cpp" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="Project" TARGET_NAME="dynamic_reconfigure_generate_messages_cpp" CONFIG_NAME="Debug">
-      <method v="2">
-        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="dynamic_reconfigure_generate_messages_eus" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="Project" TARGET_NAME="dynamic_reconfigure_generate_messages_eus" CONFIG_NAME="Debug">
-      <method v="2">
-        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="dynamic_reconfigure_generate_messages_lisp" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="Project" TARGET_NAME="dynamic_reconfigure_generate_messages_lisp" CONFIG_NAME="Debug">
-      <method v="2">
-        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="dynamic_reconfigure_generate_messages_nodejs" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="Project" TARGET_NAME="dynamic_reconfigure_generate_messages_nodejs" CONFIG_NAME="Debug">
-      <method v="2">
-        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="dynamic_reconfigure_generate_messages_py" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="Project" TARGET_NAME="dynamic_reconfigure_generate_messages_py" CONFIG_NAME="Debug">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
@@ -1171,37 +1218,67 @@
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
     </configuration>
-    <configuration name="vicon_bridge_gencfg" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="Project" TARGET_NAME="vicon_bridge_gencfg" CONFIG_NAME="Debug">
+    <configuration name="viconros" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="Project" TARGET_NAME="viconros" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="Project" RUN_TARGET_NAME="viconros">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
     </configuration>
-    <configuration name="vicon_bridge_generate_messages_cpp" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="Project" TARGET_NAME="vicon_bridge_generate_messages_cpp" CONFIG_NAME="Debug">
+    <configuration name="viconros_gencpp" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="Project" TARGET_NAME="viconros_gencpp" CONFIG_NAME="Debug">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
     </configuration>
-    <configuration name="vicon_bridge_generate_messages_eus" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="Project" TARGET_NAME="vicon_bridge_generate_messages_eus" CONFIG_NAME="Debug">
+    <configuration name="viconros_generate_messages" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="Project" TARGET_NAME="viconros_generate_messages" CONFIG_NAME="Debug">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
     </configuration>
-    <configuration name="vicon_bridge_generate_messages_lisp" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="Project" TARGET_NAME="vicon_bridge_generate_messages_lisp" CONFIG_NAME="Debug">
+    <configuration name="viconros_generate_messages_cpp" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="Project" TARGET_NAME="viconros_generate_messages_cpp" CONFIG_NAME="Debug">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
     </configuration>
-    <configuration name="vicon_bridge_generate_messages_nodejs" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="Project" TARGET_NAME="vicon_bridge_generate_messages_nodejs" CONFIG_NAME="Debug">
+    <configuration name="viconros_generate_messages_eus" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="Project" TARGET_NAME="viconros_generate_messages_eus" CONFIG_NAME="Debug">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
     </configuration>
-    <configuration name="vicon_bridge_generate_messages_py" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="Project" TARGET_NAME="vicon_bridge_generate_messages_py" CONFIG_NAME="Debug">
+    <configuration name="viconros_generate_messages_lisp" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="Project" TARGET_NAME="viconros_generate_messages_lisp" CONFIG_NAME="Debug">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
     </configuration>
-    <configuration name="vicon_node" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="Project" TARGET_NAME="vicon_node" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="Project" RUN_TARGET_NAME="vicon_node">
+    <configuration name="viconros_generate_messages_nodejs" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="Project" TARGET_NAME="viconros_generate_messages_nodejs" CONFIG_NAME="Debug">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="viconros_generate_messages_py" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="Project" TARGET_NAME="viconros_generate_messages_py" CONFIG_NAME="Debug">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="viconros_geneus" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="Project" TARGET_NAME="viconros_geneus" CONFIG_NAME="Debug">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="viconros_genlisp" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="Project" TARGET_NAME="viconros_genlisp" CONFIG_NAME="Debug">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="viconros_gennodejs" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="Project" TARGET_NAME="viconros_gennodejs" CONFIG_NAME="Debug">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="viconros_genpy" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="Project" TARGET_NAME="viconros_genpy" CONFIG_NAME="Debug">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="viconros_swarm" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="Project" TARGET_NAME="viconros_swarm" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="Project" RUN_TARGET_NAME="viconros_swarm">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
@@ -1231,12 +1308,6 @@
       <item itemvalue="Application.diagnostic_msgs_generate_messages_lisp" />
       <item itemvalue="Application.diagnostic_msgs_generate_messages_nodejs" />
       <item itemvalue="Application.diagnostic_msgs_generate_messages_py" />
-      <item itemvalue="Application.dynamic_reconfigure_gencfg" />
-      <item itemvalue="Application.dynamic_reconfigure_generate_messages_cpp" />
-      <item itemvalue="Application.dynamic_reconfigure_generate_messages_eus" />
-      <item itemvalue="Application.dynamic_reconfigure_generate_messages_lisp" />
-      <item itemvalue="Application.dynamic_reconfigure_generate_messages_nodejs" />
-      <item itemvalue="Application.dynamic_reconfigure_generate_messages_py" />
       <item itemvalue="Application.formation_commander" />
       <item itemvalue="Application.geographic_msgs_generate_messages_cpp" />
       <item itemvalue="Application.geographic_msgs_generate_messages_eus" />
@@ -1307,12 +1378,6 @@
       <item itemvalue="Application.uuid_msgs_generate_messages_lisp" />
       <item itemvalue="Application.uuid_msgs_generate_messages_nodejs" />
       <item itemvalue="Application.uuid_msgs_generate_messages_py" />
-      <item itemvalue="Application.vicon_bridge_gencfg" />
-      <item itemvalue="Application.vicon_bridge_generate_messages_cpp" />
-      <item itemvalue="Application.vicon_bridge_generate_messages_eus" />
-      <item itemvalue="Application.vicon_bridge_generate_messages_lisp" />
-      <item itemvalue="Application.vicon_bridge_generate_messages_nodejs" />
-      <item itemvalue="Application.vicon_bridge_generate_messages_py" />
       <item itemvalue="Application.hey_swarm" />
       <item itemvalue="Application.formation_controller" />
       <item itemvalue="Application.robot_controller" />
@@ -1333,10 +1398,23 @@
       <item itemvalue="Application.swarm_robot_genlisp" />
       <item itemvalue="Application.swarm_robot_gennodejs" />
       <item itemvalue="Application.swarm_robot_genpy" />
+      <item itemvalue="Application._viconros_generate_messages_check_deps_viconmocap" />
+      <item itemvalue="Application.viconros" />
+      <item itemvalue="Application.viconros_gencpp" />
+      <item itemvalue="Application.viconros_generate_messages" />
+      <item itemvalue="Application.viconros_generate_messages_cpp" />
+      <item itemvalue="Application.viconros_generate_messages_eus" />
+      <item itemvalue="Application.viconros_generate_messages_lisp" />
+      <item itemvalue="Application.viconros_generate_messages_nodejs" />
+      <item itemvalue="Application.viconros_generate_messages_py" />
+      <item itemvalue="Application.viconros_geneus" />
+      <item itemvalue="Application.viconros_genlisp" />
+      <item itemvalue="Application.viconros_gennodejs" />
+      <item itemvalue="Application.viconros_genpy" />
+      <item itemvalue="Application.viconros_swarm" />
       <item itemvalue="Application.record_center" />
       <item itemvalue="Application.swarm_visualization" />
       <item itemvalue="Application._swarm_center_generate_messages_check_deps_mArmReq" />
-      <item itemvalue="Application.vicon_node" />
     </list>
   </component>
   <component name="StructureViewFactory">
@@ -1419,17 +1497,18 @@
       <workItem from="1558601481803" duration="304000" />
       <workItem from="1558621848936" duration="3938000" />
       <workItem from="1558667937385" duration="280000" />
+      <workItem from="1559108683584" duration="1127000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="269363000" />
+    <option name="totallyTimeSpent" value="270490000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="65" y="-4" width="1855" height="1084" extended-state="6" />
+    <frame x="64" y="-11" width="1857" height="1092" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.29707113" weight="0.22885571" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.29707113" visible="true" weight="0.22885571" />
       <window_info id="Structure" order="1" sideWeight="0.70292884" side_tool="true" weight="0.1973466" />
       <window_info id="Favorites" order="2" side_tool="true" weight="0.32991913" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -1538,18 +1617,6 @@
         <state relative-caret-position="-1834" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/README.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;MarkdownPreviewEditor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="456">
-            <caret line="24" column="27" selection-start-line="24" selection-start-column="27" selection-end-line="24" selection-end-column="27" />
-          </first_editor>
-          <second_editor>
-            <markdownNavigatorState />
-          </second_editor>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/swarm_ws/src/swarm_center/srv/mCPPReq.srv">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -1647,12 +1714,19 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/swarm_ws/src/viconros/src/viconros_swarm.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="931">
-          <caret line="49" column="21" selection-start-line="49" selection-start-column="21" selection-end-line="49" selection-end-column="21" />
+        <state relative-caret-position="950">
+          <caret line="50" column="21" selection-start-line="50" selection-start-column="21" selection-end-line="50" selection-end-column="21" />
           <folding>
             <element signature="e#0#20#0" expanded="true" />
             <element signature="e#93#128#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/swarm_ws/src/viconros/launch/miniswarm_cap.launch">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="171">
+          <caret line="11" selection-start-line="11" selection-end-line="11" />
         </state>
       </provider>
     </entry>
@@ -1670,13 +1744,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="266">
           <caret line="14" column="25" selection-start-line="14" selection-start-column="25" selection-end-line="14" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/swarm_ws/src/viconros/launch/miniswarm_cap.launch">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="171">
-          <caret line="9" selection-start-line="9" selection-end-line="9" />
         </state>
       </provider>
     </entry>
@@ -1711,23 +1778,35 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/swarm_ws/src/swarm_center/src/swarm_driver.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="538">
+          <caret line="675" column="56" lean-forward="true" selection-start-line="675" selection-start-column="56" selection-end-line="675" selection-end-column="56" />
+          <folding>
+            <element signature="e#168#188#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/swarm_ws/src/swarm_robot/src/coverage_controller.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1134">
-          <caret line="162" column="16" selection-start-line="162" selection-start-column="8" selection-end-line="162" selection-end-column="16" />
+        <state relative-caret-position="76">
+          <caret line="165" column="27" lean-forward="true" selection-start-line="165" selection-start-column="27" selection-end-line="165" selection-end-column="27" />
           <folding>
             <element signature="e#184#204#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/swarm_ws/src/swarm_center/src/swarm_driver.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="614">
-          <caret line="679" column="9" lean-forward="true" selection-start-line="679" selection-start-column="9" selection-end-line="679" selection-end-column="9" />
-          <folding>
-            <element signature="e#168#188#0" expanded="true" />
-          </folding>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;MarkdownPreviewEditor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="228">
+            <caret line="12" column="45" selection-start-line="12" selection-start-column="45" selection-end-line="12" selection-end-column="45" />
+          </first_editor>
+          <second_editor>
+            <markdownNavigatorState />
+          </second_editor>
         </state>
       </provider>
     </entry>

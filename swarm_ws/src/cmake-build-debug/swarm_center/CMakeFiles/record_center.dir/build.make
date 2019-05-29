@@ -84,7 +84,6 @@ devel/lib/swarm_center/record_center: /opt/ros/kinetic/lib/x86_64-linux-gnu/libo
 devel/lib/swarm_center/record_center: /opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_imgproc3.so.3.3.1
 devel/lib/swarm_center/record_center: /opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_imgcodecs3.so.3.3.1
 devel/lib/swarm_center/record_center: /opt/ros/kinetic/lib/libimage_transport.so
-devel/lib/swarm_center/record_center: /opt/ros/kinetic/lib/libdynamic_reconfigure_config_init_mutex.so
 devel/lib/swarm_center/record_center: /opt/ros/kinetic/lib/libserial.so
 devel/lib/swarm_center/record_center: /home/wade/catkin_ws/devel/lib/libmavros.so
 devel/lib/swarm_center/record_center: /usr/lib/x86_64-linux-gnu/libGeographic.so

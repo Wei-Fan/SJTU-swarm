@@ -125,6 +125,7 @@ if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   include("/home/wade/SJTU-swarm/swarm_ws/src/cmake-build-debug/swarm_config/cmake_install.cmake")
   include("/home/wade/SJTU-swarm/swarm_ws/src/cmake-build-debug/swarm_robot/cmake_install.cmake")
   include("/home/wade/SJTU-swarm/swarm_ws/src/cmake-build-debug/swarm_center/cmake_install.cmake")
+  include("/home/wade/SJTU-swarm/swarm_ws/src/cmake-build-debug/viconros/cmake_install.cmake")
 
 endif()
 
