@@ -111,6 +111,8 @@ geometry_msgs/PoseWithCovarianceStamped.h
 -
 swarm_center/pos_info.h
 -
+std_msgs/UInt8.h
+-
 swarm_center/mArmReq.h
 /home/wade/SJTU-swarm/swarm_ws/src/swarm_center/src/swarm_center/mArmReq.h
 
@@ -1017,6 +1019,22 @@ ros/message_operations.h
 -
 
 /opt/ros/kinetic/include/std_msgs/String.h
+string
+-
+vector
+-
+map
+-
+ros/types.h
+-
+ros/serialization.h
+-
+ros/builtin_message_traits.h
+-
+ros/message_operations.h
+-
+
+/opt/ros/kinetic/include/std_msgs/UInt8.h
 string
 -
 vector

@@ -74,9 +74,9 @@
   <build_export_depend>image_transport</build_export_depend>
   <exec_depend>image_transport</exec_depend>
 
-  <build_depend>vicon_bridge</build_depend>
-  <build_export_depend>vicon_bridge</build_export_depend>
-  <exec_depend>vicon_bridge</exec_depend>
+  <!--<build_depend>vicon_bridge</build_depend>-->
+  <!--<build_export_depend>vicon_bridge</build_export_depend>-->
+  <!--<exec_depend>vicon_bridge</exec_depend>-->
 
   <build_depend>visualization_msgs</build_depend>
   <build_export_depend>visualization_msgs</build_export_depend>

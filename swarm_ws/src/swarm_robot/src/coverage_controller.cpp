@@ -18,15 +18,15 @@
 
 //#include <swarm_robot/p>
 
-#define RUN_RATE 20
+#define RUN_RATE 50
 #define SLEEP_RATE 2
 
 using namespace std;
 
 string traj_path = "/home/wade/SJTU-swarm/swarm_ws/src/swarm_center/launch/";
 
-float TAKEOFF_POS[2] = {-2,0};
-float LANDING_POS[2] = {2,0};
+float TAKEOFF_POS[2] = {-2,-2};
+float LANDING_POS[2] = {1,1};
 
 /* action-behavior declaration */
 enum FlightState{
@@ -38,6 +38,13 @@ public:
     int behavior_index;
     vector<FlightState> action_seq;
     FlightBehavior(int a = 0){behavior_index = a;}
+    void equal(FlightBehavior a) {
+        this->behavior_index = a.behavior_index;
+        this->action_seq.clear();
+        for (int i = 0; i < a.action_seq.size(); ++i) {
+            this->action_seq.push_back(a.action_seq[i]);
+        }
+    }
     ~FlightBehavior(){}
 };
 
@@ -89,6 +96,9 @@ private:
     /* call arm */
     ros::ServiceClient arm_client;
 
+    /* sleep signal */
+    ros::Publisher sleep_pub;
+
     vector<csvdata> cmd_incsv;
     int cmd_cnt;
     int cmd_limit;
@@ -132,7 +142,7 @@ public:
         this->robot_id = atoi(index.c_str());
         this->task_index = this->robot_id;
         // init m_flight_state
-        this->m_flight_behavior = SLEEP;
+        this->m_flight_behavior.equal(SLEEP);
         this->m_flight_curr_index = 0;
         this->m_flight_state = this->m_flight_behavior.action_seq[m_flight_curr_index];
 
@@ -160,6 +170,10 @@ public:
         // call armed through swarm_driver
         arm_client = global.serviceClient<swarm_center::mArmReq>("/mArm_req");
 
+        // tell swarm_driver
+        sleep_pub = global.advertise<std_msgs::UInt8>("/sleep",1);
+
+
         curr_pos.position.x = 0.0;
         curr_pos.position.y = 0.0;
     }
@@ -175,27 +189,27 @@ public:
             this->taskAlterLight = true;
             switch (new_index) {
                 case 1: {
-                    this->m_flight_behavior = EXEC_FROM_BEGNNING;
+                    this->m_flight_behavior.equal(EXEC_FROM_BEGNNING);
                     this->m_flight_curr_index = 0;
                     break;
                 }
                 case 2: {
-                    this->m_flight_behavior = EXEC_FROM_MIDDLE;
+                    this->m_flight_behavior.equal(EXEC_FROM_MIDDLE);
                     this->m_flight_curr_index = 0;
                     break;
                 }
                 case 3: {
-                    this->m_flight_behavior = DISENGAGE;
+                    this->m_flight_behavior.equal(DISENGAGE);
                     this->m_flight_curr_index = 0;
                     break;
                 }
                 case 4: {
-                    this->m_flight_behavior = ENGAGE;
+                    this->m_flight_behavior.equal(ENGAGE);
                     this->m_flight_curr_index = 0;
                     break;
                 }
                 default: {
-                    this->m_flight_behavior = SLEEP;
+                    this->m_flight_behavior.equal(SLEEP);
                     this->m_flight_curr_index = 0;
                     this->taskAlterLight = false;
                     this->taskOccupiedLight = false;
@@ -238,13 +252,19 @@ public:
         ros::Rate run_rate(RUN_RATE);
         ros::Rate sleep_rate(SLEEP_RATE);
 
+        while (ros::ok()&&!pos_prepare) {
+            ros::spinOnce();
+            run_rate.sleep();
+        }
+        ROS_INFO("robot %d recieve vicon position", this->robot_id);
+
         geometry_msgs::PoseStamped pos_sp;
         pos_sp.header.frame_id = to_string(this->robot_id);
         pos_sp.pose.position.x = curr_pos.position.x;
         pos_sp.pose.position.y = curr_pos.position.y;
         pos_sp.pose.position.z = -1;
         /* test link */
-        for (int i = 1; i <= 20; ++i) {//*(this->robot_id+1); ++i) {
+        for (int i = 1; i <= 10; ++i) {//*(this->robot_id+1); ++i) {
             cmd_pos_pub.publish(pos_sp);
             ros::spinOnce();
             run_rate.sleep();
@@ -257,6 +277,7 @@ public:
                 this->plan_ready = false;
                 this->taskPauseLight = true;
                 this->taskOccupiedLight = true;
+                this->taskAlterLight = false;
             }
 
             if (this->taskIndexLight&&this->taskOccupiedLight) {
@@ -267,6 +288,7 @@ public:
                 cmd_limit = cmd_incsv.size();
                 this->taskPauseLight = false;
                 this->taskIndexLight = false;
+                ROS_INFO("Read file!");
             }
 
             this->m_flight_state = this->m_flight_behavior.action_seq[m_flight_curr_index];
@@ -295,7 +317,7 @@ public:
                     pos_sp.pose.position.z = -1;
 
                     /* test link */
-                    for (int i = 1; i <= 20; ++i) {//*(this->robot_id+1); ++i) {
+                    for (int i = 1; i <= 50; ++i) {//*(this->robot_id+1); ++i) {
                         cmd_pos_pub.publish(pos_sp);
                         ros::spinOnce();
                         run_rate.sleep();
@@ -312,29 +334,30 @@ public:
                     }
                     ROS_INFO("request for arm successfully");
 
-                    for (int i = 1; i <= 60; ++i) {//*(this->robot_id+1); ++i) {
-                        cmd_pos_pub.publish(pos_sp);
-                        ros::spinOnce();
-                        run_rate.sleep();
-                    }
+//                    for (int i = 1; i <= 60; ++i) {//*(this->robot_id+1); ++i) {
+//                        cmd_pos_pub.publish(pos_sp);
+//                        ros::spinOnce();
+//                        run_rate.sleep();
+//                    }
 
-                    float height = 1.5;
+                    float height = 1.2;
                     if (this->m_flight_behavior.behavior_index == 4)
-                        height = 1.0;
-                    pos_sp.pose.position.z = 0;
-                    for (int i = 1; i <= 200; ++i) {
-                        pos_sp.pose.position.z = height*float(i)/200.0;
+                        height = 0.9;
+                    float start_height= curr_pos.position.z;
+                    pos_sp.pose.position.z = start_height;
+                    for (int i = 1; i <= 400; ++i) {
+                        pos_sp.pose.position.z += (height-start_height)/600.0;
 
                         cmd_pos_pub.publish(pos_sp);
                         ros::spinOnce();
                         run_rate.sleep();
                     }
 
-                    for (int i = 1; i <= 40; ++i) {
-                        cmd_pos_pub.publish(pos_sp);
-                        ros::spinOnce();
-                        run_rate.sleep();
-                    }
+//                    for (int i = 1; i <= 40; ++i) {
+//                        cmd_pos_pub.publish(pos_sp);
+//                        ros::spinOnce();
+//                        run_rate.sleep();
+//                    }
 
                     ROS_INFO("robot %d has taken off", this->robot_id);
                     this->m_flight_curr_index++;
@@ -342,17 +365,22 @@ public:
                     break;
                 }
                 case Hovering: {
-                    ROS_INFO("robot %d taking off", this->robot_id);
+                    ROS_INFO("robot %d Hovering", this->robot_id);
                     pos_sp.pose.position = curr_pos.position;
-                    pos_sp.pose.position.z = 1.5;
-                    for (int i = 1; i <= 40; ++i) {
+                    pos_sp.pose.position.z = 1.2;
+                    for (int i = 1; i <= 400; ++i) {
                         cmd_pos_pub.publish(pos_sp);
                         ros::spinOnce();
                         run_rate.sleep();
                     }
 
-                    if (!this->taskPauseLight) {
+                    if(this->m_flight_behavior.behavior_index==2) {
+                        if (!this->taskPauseLight)
+                            this->m_flight_curr_index++;
+                        ROS_INFO("robot %d Start Commanding", this->robot_id);
+                    } else {
                         this->m_flight_curr_index++;
+                        ROS_INFO("robot %d Start Commanding", this->robot_id);
                     }
 
                     break;
@@ -362,9 +390,9 @@ public:
 
                     /* descent to return back height */
                     pos_sp.pose = curr_pos;
-                    pos_sp.pose.position.z = 1.5;
-                    for (int i = 0; i < 60; ++i) {
-                        pos_sp.pose.position.z -= 1.0*float(i)/40;
+                    pos_sp.pose.position.z = 1.2;
+                    for (int i = 0; i < 200; ++i) {
+                        pos_sp.pose.position.z -= 0.3*float(i)/200;
                         cmd_pos_pub.publish(pos_sp);
                         ros::spinOnce();
                         run_rate.sleep();
@@ -372,9 +400,9 @@ public:
 
                     float start_x = curr_pos.position.x;
                     float start_y = curr_pos.position.y;
-                    for (int i = 1; i <= 120; ++i) {
-                        pos_sp.pose.position.x = float(i)/120*(LANDING_POS[0]-start_x)+start_x;
-                        pos_sp.pose.position.y = float(i)/120*(LANDING_POS[1]-start_y)+start_y;
+                    for (int i = 1; i <= 400; ++i) {
+                        pos_sp.pose.position.x = float(i)/400*(LANDING_POS[0]-start_x)+start_x;
+                        pos_sp.pose.position.y = float(i)/400*(LANDING_POS[1]-start_y)+start_y;
 
                         cmd_pos_pub.publish(pos_sp);
                         ros::spinOnce();
@@ -388,10 +416,10 @@ public:
                     ROS_INFO("robot %d 's heading out to assigned position",this->robot_id);
                     float start_x = curr_pos.position.x;
                     float start_y = curr_pos.position.y;
-                    pos_sp.pose.position.z = 1.0;
-                    for (int i = 1; i <= 120; ++i) {
-                        pos_sp.pose.position.x = float(i)/120*(cmd_incsv[0].xyz[0]-start_x)+start_x;
-                        pos_sp.pose.position.y = float(i)/120*(cmd_incsv[0].xyz[1]-start_y)+start_y;
+                    pos_sp.pose.position.z = 0.9;
+                    for (int i = 1; i <= 600; ++i) {
+                        pos_sp.pose.position.x = float(i)/600*(cmd_incsv[0].xyz[0]-start_x)+start_x;
+                        pos_sp.pose.position.y = float(i)/600*(cmd_incsv[0].xyz[1]-start_y)+start_y;
 
                         cmd_pos_pub.publish(pos_sp);
                         ros::spinOnce();
@@ -399,8 +427,8 @@ public:
                     }
 
                     /* pull up to normal height */
-                    for (int i = 0; i < 40; ++i) {
-                        pos_sp.pose.position.z += 0.5*float(i)/40;
+                    for (int i = 0; i < 200; ++i) {
+                        pos_sp.pose.position.z += 0.3*float(i)/200;
                         cmd_pos_pub.publish(pos_sp);
                         ros::spinOnce();
                         run_rate.sleep();
@@ -410,35 +438,39 @@ public:
                     break;
                 }
                 case Landing: {
-                    pos_sp.pose.position.x = cmd_incsv[cmd_cnt].xyz[0];
-                    pos_sp.pose.position.y = cmd_incsv[cmd_cnt].xyz[1];
-                    pos_sp.pose.position.z = cmd_incsv[cmd_cnt].xyz[2];
-                    for (int i = 1; i <= 80; ++i) {
-                        pos_sp.pose.position.z -= 1.5*(1-i/80);
+                    pos_sp.pose = curr_pos;
+                    for (int i = 1; i <= 200; ++i) {
+                        if (this->m_flight_behavior.behavior_index != 3)
+                            pos_sp.pose.position.z -= 1.2*(1-i/200.0);
+                        else
+                            pos_sp.pose.position.z -= 0.9*(1-i/200.0);
                         cmd_pos_pub.publish(pos_sp);
                         ros::spinOnce();
                         run_rate.sleep();
                     }
 
                     /* put robot to sleep */
-                    pos_sp.pose.position.x = cmd_incsv[cmd_cnt].xyz[0];
-                    pos_sp.pose.position.y = cmd_incsv[cmd_cnt].xyz[1];
+                    pos_sp.pose = curr_pos;
                     pos_sp.pose.position.z = -1;
 
-                    for (int i = 1; i <= 40; ++i) {//*(this->robot_id+1); ++i) {
+                    for (int i = 1; i <= 50; ++i) {//*(this->robot_id+1); ++i) {
                         cmd_pos_pub.publish(pos_sp);
                         ros::spinOnce();
                         run_rate.sleep();
                     }
 
                     this->taskOccupiedLight = false;
-                    this->m_flight_behavior = SLEEP;
+                    this->m_flight_behavior.equal(SLEEP);
                     this->m_flight_curr_index = 0;
+                    std_msgs::UInt8 msg;
+                    msg.data = this->robot_id;
+                    sleep_pub.publish(msg);
                     ROS_INFO("robot %d sleep", this->robot_id);
 
                     break;
                 }
                 case Commanding: {
+//                    ROS_INFO("robot %d Commanding", this->robot_id);
                     pos_sp.pose.position.x = cmd_incsv[cmd_cnt].xyz[0];
                     pos_sp.pose.position.y = cmd_incsv[cmd_cnt].xyz[1];
                     pos_sp.pose.position.z = cmd_incsv[cmd_cnt].xyz[2];

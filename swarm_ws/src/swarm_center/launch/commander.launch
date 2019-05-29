@@ -23,6 +23,11 @@
 
     <node pkg="swarm_center" type="swarm_driver" name="swarm_driver" output="screen">
         <param name="robot_number" value="$(arg robot_number)"></param>
+        <!--<param name="num_of_radios" value="2"/>-->
+        <!--<param name="show_id" value="6"/>-->
+        <!--<param name="run_rate" value="40"/>-->
+        <param name="serial_dev0" value="/dev/ttyACM0"/>
+        <param name="serial_dev1" value="/dev/ttyACM1"/>
         <!--<remap from="cmd_vel" to="robot_controller/cmd_vel"/>-->
     </node>
 

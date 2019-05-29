@@ -95,7 +95,6 @@ swarm_visualization_EXTERNAL_OBJECTS =
 /home/wade/SJTU-swarm/swarm_ws/devel/lib/swarm_center/swarm_visualization: /opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_imgproc3.so.3.3.1
 /home/wade/SJTU-swarm/swarm_ws/devel/lib/swarm_center/swarm_visualization: /opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_imgcodecs3.so.3.3.1
 /home/wade/SJTU-swarm/swarm_ws/devel/lib/swarm_center/swarm_visualization: /opt/ros/kinetic/lib/libimage_transport.so
-/home/wade/SJTU-swarm/swarm_ws/devel/lib/swarm_center/swarm_visualization: /opt/ros/kinetic/lib/libdynamic_reconfigure_config_init_mutex.so
 /home/wade/SJTU-swarm/swarm_ws/devel/lib/swarm_center/swarm_visualization: /opt/ros/kinetic/lib/libserial.so
 /home/wade/SJTU-swarm/swarm_ws/devel/lib/swarm_center/swarm_visualization: /home/wade/catkin_ws/devel/lib/libmavros.so
 /home/wade/SJTU-swarm/swarm_ws/devel/lib/swarm_center/swarm_visualization: /usr/lib/x86_64-linux-gnu/libGeographic.so

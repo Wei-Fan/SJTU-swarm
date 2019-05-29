@@ -192,27 +192,30 @@ public:
                 /* dispatch!!! */
                 int up_id;
                 for (int i = 0; i < this->robot_number; ++i) {
-                    if (active_list[i] == false)
+                    if (active_list[i] == false) {
                         up_id = i;
+                        active_list[i] = true;
+                    }
                 }
                 int down_id = up_id + 1;
                 if (down_id == this->robot_number)
                     down_id = 0;
+                active_list[down_id] = false;
 
                 /* request coverage plan */
                 // send out task to robots
                 std_msgs::UInt8 continue_task;
-                continue_task.data = 2;
+                continue_task.data = 2; //start from middle
                 for (int i = 0; i < this->robot_number; ++i) {
                     if (i==down_id||i==up_id)
                         continue;
                     flight_task_pub[i].publish(continue_task);
                 }
                 std_msgs::UInt8 return_task;
-                return_task.data = 3;
+                return_task.data = 3; //return
                 flight_task_pub[down_id].publish(return_task);
                 std_msgs::UInt8 go_task;
-                go_task.data = 1;
+                go_task.data = 4; //engage
                 flight_task_pub[up_id].publish(go_task);
 
                 // request coverage planning

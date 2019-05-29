@@ -81,6 +81,10 @@ bool Parameter::readParam(const char *addr) {
             rpy_trim[1] = value[1];
             rpy_trim[2] = value[2];
         }
+        else if (name == "thrust_base")
+        {
+            thrust_base = value[0];
+        }
 
     }
     std::cout << "read config file successfully!"<<std::endl;

@@ -34,6 +34,7 @@ public:
     float vz_d;
 
     float rpy_trim[3];
+    float thrust_base;
 
 
     bool readParam(const char* addr);

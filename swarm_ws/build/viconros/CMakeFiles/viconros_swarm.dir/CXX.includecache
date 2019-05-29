@@ -35,7 +35,7 @@ geometry_msgs/Vector3.h
 -
 sstream
 -
-string
+string.h
 -
 CFetchViconData.h
 /home/wade/SJTU-swarm/swarm_ws/src/viconros/src/CFetchViconData.h

@@ -81,6 +81,7 @@ swarm_center/CMakeFiles/swarm_driver.dir/src/swarm_driver.cpp.o
  /opt/ros/kinetic/include/std_msgs/Float64.h
  /opt/ros/kinetic/include/std_msgs/Header.h
  /opt/ros/kinetic/include/std_msgs/String.h
+ /opt/ros/kinetic/include/std_msgs/UInt8.h
  /opt/ros/kinetic/include/xmlrpcpp/XmlRpcDecl.h
  /opt/ros/kinetic/include/xmlrpcpp/XmlRpcValue.h
  /usr/lib/../include/_G_config.h

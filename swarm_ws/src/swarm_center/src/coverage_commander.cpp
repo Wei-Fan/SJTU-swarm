@@ -30,9 +30,9 @@
 //#include <geometry_msgs/Twist.h>
 
 //#define DEFAULT_RATE 50
-#define GRID_SIZE 24
-#define CORE_SIZE 12 //CORE_SIZE = GRID_SIZE / 2
-#define AREA_SIZE 800
+#define GRID_SIZE 20
+#define CORE_SIZE 10 //CORE_SIZE = GRID_SIZE / 2
+#define AREA_SIZE 500
 #define LEN_COF 200 // real world length * LEN_COF = Grid length
 
 using namespace std;
@@ -96,10 +96,10 @@ public:
         this->local = local;
         this->global = global;
         if(!this->local.getParam("robot_number", this->robot_number)){
-            ROS_WARN("Did not set up robot number, using default 2");
-            this->robot_number = 2;
+            ROS_WARN("Did not set up robot number, using default 5");
+            this->robot_number = 5;
         }
-        this->active_number = this->robot_number;
+        this->active_number = this->robot_number-1;
         ROS_INFO("COVERAGE COMMANDER is activated! COMMANDER has %d robots to dispose", this->robot_number);
 //        robot_init_x.resize(this->robot_number);
 //        robot_init_y.resize(this->robot_number);
@@ -849,10 +849,10 @@ public:
             string filename = project_path + "launch/cover_robot" + to_string(k) + ".csv";
 
             /* velocity condition*/
-            double vmax = 1.2;
-            double amax = 1;
+            double vmax = 0.6;
+            double amax = 0.6;
             double s_c = vmax*vmax/amax*LEN_COF*GRID_SIZE/AREA_SIZE;
-            double dt = 0.05;//s
+            double dt = 0.02;//s
             double turn_blank = 8;
 
             /* write csv file */
@@ -863,7 +863,7 @@ public:
             float len_x = (P_grid_t[0](1)-GRID_SIZE/2+0.5)*AREA_SIZE/GRID_SIZE/LEN_COF - robot_init_x[k];
             float len_y = (P_grid_t[0](0)-GRID_SIZE/2+0.5)*AREA_SIZE/GRID_SIZE/LEN_COF - robot_init_y[k];
             for (int i = 1; i <= 10; ++i) {
-                outfile << robot_init_x[k]+len_x*i/10 << ',' << robot_init_y[k]+len_y*i/10 << ',' << 1.5 << endl;
+                outfile << robot_init_x[k]+len_x*i/10 << ',' << robot_init_y[k]+len_y*i/10 << ',' << 1.2 << endl;
             }
 
             for (int i = 0; i < P_grid_t.size()-1; ++i) {
@@ -899,7 +899,7 @@ public:
 
 
                 for (int j = 0; j < turn_blank/2; ++j) {
-                    outfile << (P_grid_t[i](1)-GRID_SIZE/2+0.5)*AREA_SIZE/GRID_SIZE/LEN_COF << ',' << (P_grid_t[i](0)-GRID_SIZE/2+0.5)*AREA_SIZE/GRID_SIZE/LEN_COF << ',' << 1.5 << endl;
+                    outfile << (P_grid_t[i](1)-GRID_SIZE/2+0.5)*AREA_SIZE/GRID_SIZE/LEN_COF << ',' << (P_grid_t[i](0)-GRID_SIZE/2+0.5)*AREA_SIZE/GRID_SIZE/LEN_COF << ',' << 1.2 << endl;
                 }
 
                 if (s > s_c) {
@@ -920,14 +920,14 @@ public:
                         }
                         if (xoy==1){
                             if (P_grid_t[i](1)<P_grid_t[i+1](1))
-                                outfile << (x+P_grid_t[i](1)-GRID_SIZE/2+0.5)*AREA_SIZE/GRID_SIZE/LEN_COF << ',' << (P_grid_t[i](0)-GRID_SIZE/2+0.5)*AREA_SIZE/GRID_SIZE/LEN_COF << ',' << 1.5 << endl;
+                                outfile << (x+P_grid_t[i](1)-GRID_SIZE/2+0.5)*AREA_SIZE/GRID_SIZE/LEN_COF << ',' << (P_grid_t[i](0)-GRID_SIZE/2+0.5)*AREA_SIZE/GRID_SIZE/LEN_COF << ',' << 1.2 << endl;
                             else
-                                outfile << (-x+P_grid_t[i](1)-GRID_SIZE/2+0.5)*AREA_SIZE/GRID_SIZE/LEN_COF << ',' << (P_grid_t[i](0)-GRID_SIZE/2+0.5)*AREA_SIZE/GRID_SIZE/LEN_COF << ',' << 1.5 << endl;
+                                outfile << (-x+P_grid_t[i](1)-GRID_SIZE/2+0.5)*AREA_SIZE/GRID_SIZE/LEN_COF << ',' << (P_grid_t[i](0)-GRID_SIZE/2+0.5)*AREA_SIZE/GRID_SIZE/LEN_COF << ',' << 1.2 << endl;
                         } else{
                             if (P_grid_t[i](0)<P_grid_t[i+1](0))
-                                outfile << (P_grid_t[i](1)-GRID_SIZE/2+0.5)*AREA_SIZE/GRID_SIZE/LEN_COF << ',' << (x+P_grid_t[i](0)-GRID_SIZE/2+0.5)*AREA_SIZE/GRID_SIZE/LEN_COF << ',' << 1.5 << endl;
+                                outfile << (P_grid_t[i](1)-GRID_SIZE/2+0.5)*AREA_SIZE/GRID_SIZE/LEN_COF << ',' << (x+P_grid_t[i](0)-GRID_SIZE/2+0.5)*AREA_SIZE/GRID_SIZE/LEN_COF << ',' << 1.2 << endl;
                             else
-                                outfile << (P_grid_t[i](1)-GRID_SIZE/2+0.5)*AREA_SIZE/GRID_SIZE/LEN_COF << ',' << (-x+P_grid_t[i](0)-GRID_SIZE/2+0.5)*AREA_SIZE/GRID_SIZE/LEN_COF << ',' << 1.5 << endl;
+                                outfile << (P_grid_t[i](1)-GRID_SIZE/2+0.5)*AREA_SIZE/GRID_SIZE/LEN_COF << ',' << (-x+P_grid_t[i](0)-GRID_SIZE/2+0.5)*AREA_SIZE/GRID_SIZE/LEN_COF << ',' << 1.2 << endl;
                         }
                     }
 
@@ -946,21 +946,21 @@ public:
                         }
                         if (xoy==1) {
                             if (P_grid_t[i](1)<P_grid_t[i+1](1))
-                                outfile << (x+P_grid_t[i](1)-GRID_SIZE/2+0.5)*AREA_SIZE/GRID_SIZE/LEN_COF << ',' << (P_grid_t[i](0)-GRID_SIZE/2+0.5)*AREA_SIZE/GRID_SIZE/LEN_COF << ',' << 1.5 << endl;
+                                outfile << (x+P_grid_t[i](1)-GRID_SIZE/2+0.5)*AREA_SIZE/GRID_SIZE/LEN_COF << ',' << (P_grid_t[i](0)-GRID_SIZE/2+0.5)*AREA_SIZE/GRID_SIZE/LEN_COF << ',' << 1.2 << endl;
                             else
-                                outfile << (-x+P_grid_t[i](1)-GRID_SIZE/2+0.5)*AREA_SIZE/GRID_SIZE/LEN_COF << ',' << (P_grid_t[i](0)-GRID_SIZE/2+0.5)*AREA_SIZE/GRID_SIZE/LEN_COF << ',' << 1.5 << endl;
+                                outfile << (-x+P_grid_t[i](1)-GRID_SIZE/2+0.5)*AREA_SIZE/GRID_SIZE/LEN_COF << ',' << (P_grid_t[i](0)-GRID_SIZE/2+0.5)*AREA_SIZE/GRID_SIZE/LEN_COF << ',' << 1.2 << endl;
                         } else {
                             if (P_grid_t[i](0)<P_grid_t[i+1](0))
-                                outfile << (P_grid_t[i](1)-GRID_SIZE/2+0.5)*AREA_SIZE/GRID_SIZE/LEN_COF << ',' << (x+P_grid_t[i](0)-GRID_SIZE/2+0.5)*AREA_SIZE/GRID_SIZE/LEN_COF << ',' << 1.5 << endl;
+                                outfile << (P_grid_t[i](1)-GRID_SIZE/2+0.5)*AREA_SIZE/GRID_SIZE/LEN_COF << ',' << (x+P_grid_t[i](0)-GRID_SIZE/2+0.5)*AREA_SIZE/GRID_SIZE/LEN_COF << ',' << 1.2 << endl;
                             else
-                                outfile << (P_grid_t[i](1)-GRID_SIZE/2+0.5)*AREA_SIZE/GRID_SIZE/LEN_COF << ',' << (-x+P_grid_t[i](0)-GRID_SIZE/2+0.5)*AREA_SIZE/GRID_SIZE/LEN_COF << ',' << 1.5 << endl;
+                                outfile << (P_grid_t[i](1)-GRID_SIZE/2+0.5)*AREA_SIZE/GRID_SIZE/LEN_COF << ',' << (-x+P_grid_t[i](0)-GRID_SIZE/2+0.5)*AREA_SIZE/GRID_SIZE/LEN_COF << ',' << 1.2 << endl;
                         }
                     }
                 }
 
                 i = ind - 1;
                 for (int j = 0; j < turn_blank/2; ++j) {
-                    outfile << (P_grid_t[i+1](1)-GRID_SIZE/2+0.5)*AREA_SIZE/GRID_SIZE/LEN_COF << ',' << (P_grid_t[i+1](0)-GRID_SIZE/2+0.5)*AREA_SIZE/GRID_SIZE/LEN_COF << ',' << 1 << endl;
+                    outfile << (P_grid_t[i+1](1)-GRID_SIZE/2+0.5)*AREA_SIZE/GRID_SIZE/LEN_COF << ',' << (P_grid_t[i+1](0)-GRID_SIZE/2+0.5)*AREA_SIZE/GRID_SIZE/LEN_COF << ',' << 1.2 << endl;
                 }
             }
         }
